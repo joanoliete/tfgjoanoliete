@@ -18,7 +18,12 @@
   },
   "devDependencies": {
     "@types/jest": "^26.0.20",
+    "@types/mongoose": "^5.10.3",
     "lerna": "^3.22.1",
     "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "mongodb-memory-server": "^6.9.3",
+    "mongoose": "^5.10.18"
   }
 }

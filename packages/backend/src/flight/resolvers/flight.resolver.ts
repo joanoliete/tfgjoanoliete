@@ -1,26 +1,34 @@
-import { Args, Query, Resolver } from '@nestjs/graphql';
-import { ObjectID } from 'src/common/types/objectid.type';
+import { Args, ID, Mutation, Query, Resolver } from '@nestjs/graphql';
+import { ObjectIDPipe } from '../../common/pipes/objectid.pipe';
+import { ObjectID } from '../../common/types/objectid.type';
+import { FlightCreateDto } from '../dto/flight-create.dto';
 import { Flight } from '../gqltypes/flight.gqlype';
+import { FlightCreatePipe } from '../pipes/flight-create.pipe';
 import { FlightService } from '../services/flight.service';
 
 @Resolver(() => Flight)
 export class FlightResolver {
 	/**
 	 * Dependency injection.
-	 * @param flightService Course service
+	 * @param flightService Flight service
 	 */
 	constructor(private readonly flightService: FlightService) {}
 
 	/**
-	 * Finds all existing favourite Flights of an user in our database.
-	 * @param userId userId ObjectId
-	 * @returns Flights array
+	 * Creates a new flight, and adds it to the user favourites flights.
+	 *
+	 * @param {ObjectID} userId User ObjectId
+	 * @param flightData Flight creation data
+	 * @returns Flight object id
 	 */
-	@Query(() => [Flight])
-	flights_favourites_by_user_find_all(
-		@Args('userId', { type: () => String, nullable: false })
-		userId: ObjectID
-	): Promise<Flight[]> {
-		return this.flightService.findAllFavouritesByUser(userId);
+	@Mutation(() => Boolean)
+	async flight_create_and_user_addition(
+		@Args('userId', ObjectIDPipe)
+		userId: ObjectID,
+		@Args('flightData', { type: () => FlightCreateDto }, FlightCreatePipe)
+		flightData: FlightCreateDto
+	) {
+		await this.flightService.createFavouriteFlight(userId, flightData);
+		return true;
 	}
 }
