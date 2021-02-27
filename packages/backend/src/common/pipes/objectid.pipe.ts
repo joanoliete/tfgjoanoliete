@@ -14,7 +14,7 @@ export class ObjectIDPipe implements PipeTransform {
 	 * @param  {ObjectID}
 	 * @returns ObjectID
 	 */
-	transform(value: string): ObjectID {
+	transform(value: string): any {
 		if (!isValidObjectId(value))
 			throw new BadRequestException(Errors.INVALID_OBJECTID);
 

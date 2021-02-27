@@ -49,7 +49,7 @@ export class FlightService {
 	 * @returns void
 	 */
 	async createFavouriteFlight(
-		userId: ObjectID,
+		email: string,
 		flightData: FlightCreateDto
 	): Promise<void> {
 		const { url_reference } = flightData;
@@ -62,19 +62,27 @@ export class FlightService {
 			});
 		}
 
-		await this.userService.addFlightToUserFavourites(existingFlight, userId);
+		await this.userService.addFlightToUserFavourites(existingFlight, email);
 	}
 
 	/**
-	 * Finds some floghts by an array of ids.
+	 * Finds some flights by an array of ids.
 	 * @param flightsIds Flight ObjectIds array
 	 * @returns Flights array
 	 */
 	findFlightsByArrayReference(
-		flightIds: Ref<Flight, string>[]
+		flightIds: Ref<Flight, ObjectID>[]
 	): Promise<Flight[]> {
 		return this.flightModel.find().where('_id').in(flightIds).exec() as Promise<
 			Flight[]
 		>;
+	}
+
+	/**
+	 * Finds all flights in database
+	 * @returns Flight array
+	 */
+	findAllFlights(): Promise<DocumentType<Flight>[] | undefined> {
+		return this.flightModel.find().exec() as Promise<DocumentType<Flight>[]>;
 	}
 }

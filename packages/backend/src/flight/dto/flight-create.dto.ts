@@ -1,12 +1,9 @@
-import { InputType, Field, Float, Int } from '@nestjs/graphql';
+import { InputType, Field, Float, Int, ID } from '@nestjs/graphql';
 import { TimeStamps } from '@typegoose/typegoose/lib/defaultClasses';
 import { ObjectID } from '../../common/types/objectid.type';
 
 @InputType()
 export class FlightCreateDto {
-	@Field()
-	_id: string;
-
 	@Field()
 	url_reference: string;
 
@@ -22,12 +19,12 @@ export class FlightCreateDto {
 	@Field()
 	date_to: Date;
 
-	@Field()
-	adults: typeof Int;
+	@Field(type => Int)
+	adults: number;
 
-	@Field()
-	children: typeof Int;
+	@Field(type => Int)
+	children: number;
 
-	@Field()
-	price: typeof Float;
+	@Field(type => Float)
+	price: number;
 }

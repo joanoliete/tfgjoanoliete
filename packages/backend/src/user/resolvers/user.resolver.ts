@@ -14,16 +14,11 @@ export class UserResolver {
 	constructor(private readonly userService: UserService) {}
 
 	/**
-	 * Segurament en un futur cambiar argument userId per sessionId
-	 * Finds all existing favourite Flights of an user in our database.
-	 * @param {ObjectId} userId User ObjectId
+	 * Finds all existingflights in database.
 	 * @returns Flights array
 	 */
 	@Query(() => [User])
-	favourite_flights_by_user_find_all(
-		@Args('userId', { type: () => String, nullable: false })
-		userId: ObjectID
-	): Promise<Flight[]> {
-		return this.userService.findAllFavouritesByUser(userId);
+	getAllUsers(): Promise<User[]> {
+		return this.userService.findAllUsers();
 	}
 }

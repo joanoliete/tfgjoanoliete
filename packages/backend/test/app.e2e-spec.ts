@@ -4,23 +4,26 @@ import * as request from 'supertest';
 import { AppModule } from './../src/app.module';
 import { gql } from 'graphql-request';
 import { MongoMemoryReplSet } from 'mongodb-memory-server';
-import { connect } from 'mongoose';
+import { connect, disconnect } from 'mongoose';
+import { mongoose } from '@typegoose/typegoose';
+import { MongoClient } from 'mongodb';
+require('dotenv/config');
 
 let sessionToken;
 
-const replSet = new MongoMemoryReplSet({
-	replSet: { storageEngine: 'wiredTiger', name: 'tfgjoanoliete' },
-	instanceOpts: [
-		{
-			port: 27018,
-		},
-	],
-});
-
-describe('AppController (e2e)', () => {
+describe('All tests (e2e)', () => {
 	let app: INestApplication;
+	let connection;
+	let db;
 
 	beforeEach(async () => {
+		//Setting up Database
+		connection = await MongoClient.connect(process.env.DATABASE_URI, {
+			useNewUrlParser: true,
+			useUnifiedTopology: true,
+		});
+		db = await connection.db();
+
 		const moduleFixture: TestingModule = await Test.createTestingModule({
 			imports: [AppModule],
 		}).compile();
@@ -30,51 +33,26 @@ describe('AppController (e2e)', () => {
 	});
 
 	it('/ (GET)', () => {
-		return request(app.getHttpServer()).get('/flight/').expect(200);
-	});
-});
-
-describe('User (e2e)', () => {
-	let app: INestApplication;
-
-	beforeAll(async () => {
-		//Starting app
-		const moduleFixture: TestingModule = await Test.createTestingModule({
-			imports: [AppModule],
-		}).compile();
-
-		app = moduleFixture.createNestApplication();
-		await app.init();
+		return request(app.getHttpServer()).get('/flight').expect(404);
 	});
 
 	//Can nextAuth be tested? Does it need to be inicialized and be passed as a header?
-	it('User - Login', () => {
-		test.todo('User - Login');
-	});
-});
+	it('Mocking registering a user', async () => {
+		const users = db.collection('users');
+		await db
+			.collection('users')
+			.deleteMany({ email: 'olietetejedor@gmail.com' });
 
-describe('Favourite flights (e2e)', () => {
-	let app: INestApplication;
+		const mockUser = {
+			_id: new mongoose.mongo.ObjectId('56cb91bdc3464f14678934ca'),
+			email: 'olietetejedor@gmail.com',
+		};
+		await users.insertOne(mockUser);
 
-	beforeAll(async () => {
-		//Setting up Database
-		await replSet.waitUntilRunning();
-		const uri = await replSet.getUri();
-		connect(uri, {
-			useNewUrlParser: true,
-			useUnifiedTopology: true,
-			useFindAndModify: false,
-			useCreateIndex: true,
+		const insertedUser = await users.findOne({
+			_id: mongoose.Types.ObjectId('56cb91bdc3464f14678934ca'),
 		});
-		process.env.DATABASE_URI = uri;
-
-		//Starting app
-		const moduleFixture: TestingModule = await Test.createTestingModule({
-			imports: [AppModule],
-		}).compile();
-
-		app = moduleFixture.createNestApplication();
-		await app.init();
+		expect(insertedUser).toEqual(mockUser);
 	});
 
 	it('Favourite flights - Add', async () => {
@@ -84,7 +62,8 @@ describe('Favourite flights (e2e)', () => {
 				query: gql`
 					mutation {
 						flight_create_and_user_addition(
-							input: {
+							email: "olietetejedor@gmail.com"
+							flightData: {
 								url_reference: "http://hola.com"
 								fly_from: "BCN"
 								fly_to: "MDR"
@@ -94,17 +73,7 @@ describe('Favourite flights (e2e)', () => {
 								children: 4
 								price: 4.0
 							}
-						) {
-							url_reference
-							fly_from
-							fly_to
-							date_from
-							date_to
-							adults
-							children
-							price
-							createdAt
-						}
+						)
 					}
 				`,
 			})
@@ -117,15 +86,23 @@ describe('Favourite flights (e2e)', () => {
 			.send({
 				query: gql`
 					query {
-						favourite_flights_by_user_find_all(userId: "1") {
-							_id
+						favourite_flights_by_user_find_all(
+							email: "olietetejedor@gmail.com"
+						) {
+							url_reference
 						}
 					}
 				`,
 			})
 			.expect(200)
 			.expect(({ body }) => {
-				expect(body.data.user.savedFlights).toBeTruthy();
+				expect(body.data.favourite_flights_by_user_find_all).toBeTruthy();
 			});
+	});
+
+	afterAll(async () => {
+		await app.close();
+		mongoose.disconnect();
+		await connection.close();
 	});
 });

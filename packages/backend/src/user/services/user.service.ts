@@ -25,16 +25,16 @@ export class UserService {
 	constructor(
 		@InjectModel(User)
 		private readonly userModel: ReturnModelType<typeof User>,
-		@Inject(forwardRef(() => UserService))
+		@Inject(forwardRef(() => FlightService))
 		private readonly flightService: FlightService
 	) {}
 
 	/**
-	 * Finds all existing favourite flights of an user.
+	 * Finds all existing favourite flights of an user by userId
 	 * @param userId userId ObjectId
 	 * @returns Flights array
 	 */
-	async findAllFavouritesByUser(userId: ObjectID): Promise<Flight[]> {
+	async findAllFavouritesOfUserById(userId: ObjectID): Promise<Flight[]> {
 		const user = await this.findById(userId);
 
 		const flightsReferences = user.savedFlights;
@@ -44,17 +44,32 @@ export class UserService {
 	}
 
 	/**
+	 * Finds all existing favourite flights of an user by email
+	 * @param email String
+	 * @returns Flights array
+	 */
+	async findAllFavouritesOfUserByEmail(email: string): Promise<Flight[]> {
+		const user = await this.findByEmail(email);
+
+		const flightsReferences = user.savedFlights;
+
+		//Fer funció a flights service que donat un array de ObjectsID retorni un array amb tots els vols, populate sha de fer servir
+		//return this.flightService.findFlightsByArrayReference(flightsReferences);
+		return flightsReferences;
+	}
+
+	/**
 	 * Adds a flight to a user favourites flights
 	 * @param flight Flight object
-	 * @param userId User ObjectId
+	 * @param email User email
 	 */
 	async addFlightToUserFavourites(
 		existingFlight: Flight,
-		userId: ObjectID
+		email: string
 	): Promise<void> {
-		const user = await this.findById(userId);
+		const user = await this.findByEmail(email);
 
-		user.savedFlights.push(existingFlight._id);
+		user.savedFlights.push(existingFlight);
 
 		await user.save();
 	}
@@ -68,5 +83,25 @@ export class UserService {
 		return this.userModel.findById(userId).exec() as Promise<
 			DocumentType<User>
 		>;
+	}
+
+	/**
+	 * Finds a user by id.
+	 * @param email String
+	 * @returns User data
+	 */
+	findByEmail(email: string): Promise<DocumentType<User> | undefined> {
+		return this.userModel
+			.findOne({ email: email.toLowerCase() })
+			.populate('savedFlights')
+			.exec() as Promise<DocumentType<User>>;
+	}
+
+	/**
+	 * Finds a user by id.
+	 * @returns User data
+	 */
+	findAllUsers(): Promise<DocumentType<User>[] | undefined> {
+		return this.userModel.find().exec() as Promise<DocumentType<User>[]>;
 	}
 }

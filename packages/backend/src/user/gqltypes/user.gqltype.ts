@@ -1,4 +1,5 @@
-import { Field, Float, Int, ObjectType } from '@nestjs/graphql';
+import { Field, Float, ID, Int, ObjectType } from '@nestjs/graphql';
+import { Flight } from '../../flight/gqltypes/flight.gqlype';
 import { ObjectID } from '../../common/types/objectid.type';
 
 /**
@@ -8,26 +9,23 @@ import { ObjectID } from '../../common/types/objectid.type';
 @ObjectType()
 export class User {
 	@Field()
-	_id: string;
-
-	@Field()
 	email: string;
 
 	@Field()
 	emailverified: boolean;
 
 	@Field()
-	createdAt: string;
+	createdAt: Date;
 
 	@Field()
-	udaptedAt: string;
+	udaptedAt: Date;
+
+	@Field(() => [Flight])
+	savedFlights?: Flight[];
 
 	@Field()
-	savedFlights?: ObjectID[];
+	searchQueries?: string;
 
 	@Field()
-	searchQueries?: ObjectID[];
-
-	@Field()
-	userTrips?: ObjectID[];
+	userTrips?: string;
 }

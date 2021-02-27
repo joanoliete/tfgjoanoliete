@@ -3,10 +3,48 @@
 # ------------------------------------------------------
 
 type Flight {
-  _id: String!
-  createdAt: Float
+  url_reference: String!
+  fly_from: String!
+  fly_to: String!
+  date_from: DateTime!
+  date_to: DateTime!
+  adults: Int!
+  children: Int!
+  price: Float!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type User {
+  email: String!
+  emailverified: Boolean!
+  createdAt: DateTime!
+  udaptedAt: DateTime!
+  savedFlights: [Flight!]!
+  searchQueries: String!
+  userTrips: String!
 }
 
 type Query {
-  flights_favourites_by_user_find_all(userId: String!): [Flight!]!
+  favourite_flights_by_user_find_all(email: String!): [Flight!]!
+  getAllFlights: [Flight!]!
+  getAllUsers: [User!]!
+}
+
+type Mutation {
+  flight_create_and_user_addition(flightData: FlightCreateDto!, email: String!): Boolean!
+}
+
+input FlightCreateDto {
+  url_reference: String!
+  fly_from: String!
+  fly_to: String!
+  date_from: DateTime!
+  date_to: DateTime!
+  adults: Int!
+  children: Int!
+  price: Float!
 }

@@ -1,11 +1,10 @@
 import { Float, Int } from '@nestjs/graphql';
-import { prop } from '@typegoose/typegoose';
-import { TimeStamps } from '@typegoose/typegoose/lib/defaultClasses';
+import { modelOptions, mongoose, prop } from '@typegoose/typegoose';
 import { ObjectID } from '../../common/types/objectid.type';
 
+@modelOptions({ options: { allowMixed: 0 } })
 export class Flight {
-	@prop({ required: true, unique: true })
-	_id: string;
+	_id: ObjectID;
 
 	@prop()
 	url_reference: string;
@@ -23,11 +22,11 @@ export class Flight {
 	date_to: Date;
 
 	@prop()
-	adults: typeof Int;
+	adults: number;
 
 	@prop()
-	children: typeof Int;
+	children: number;
 
 	@prop()
-	price: typeof Float;
+	price: number;
 }

@@ -5,6 +5,7 @@ import { FlightCreateDto } from '../dto/flight-create.dto';
 import { Flight } from '../gqltypes/flight.gqlype';
 import { FlightCreatePipe } from '../pipes/flight-create.pipe';
 import { FlightService } from '../services/flight.service';
+import { UserService } from '../../user/services/user.service';
 
 @Resolver(() => Flight)
 export class FlightResolver {
@@ -12,7 +13,10 @@ export class FlightResolver {
 	 * Dependency injection.
 	 * @param flightService Flight service
 	 */
-	constructor(private readonly flightService: FlightService) {}
+	constructor(
+		private readonly flightService: FlightService,
+		private readonly userService: UserService
+	) {}
 
 	/**
 	 * Creates a new flight, and adds it to the user favourites flights.
@@ -23,12 +27,35 @@ export class FlightResolver {
 	 */
 	@Mutation(() => Boolean)
 	async flight_create_and_user_addition(
-		@Args('userId', ObjectIDPipe)
-		userId: ObjectID,
+		@Args('email')
+		email: string,
 		@Args('flightData', { type: () => FlightCreateDto }, FlightCreatePipe)
 		flightData: FlightCreateDto
 	) {
-		await this.flightService.createFavouriteFlight(userId, flightData);
+		await this.flightService.createFavouriteFlight(email, flightData);
 		return true;
+	}
+
+	/**
+	 * Segurament en un futur cambiar argument userId per sessionId
+	 * Finds all existing favourite Flights of an user in our database.
+	 * @param email User email
+	 * @returns Flights array
+	 */
+	@Query(() => [Flight])
+	favourite_flights_by_user_find_all(
+		@Args('email', { type: () => String, nullable: false })
+		email: string
+	): Promise<Flight[]> {
+		return this.userService.findAllFavouritesOfUserByEmail(email);
+	}
+
+	/**
+	 * Finds all existing flights.
+	 * @returns flights array
+	 */
+	@Query(() => [Flight])
+	getAllFlights(): Promise<Flight[]> {
+		return this.flightService.findAllFlights();
 	}
 }
