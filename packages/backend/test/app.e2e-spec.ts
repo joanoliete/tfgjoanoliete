@@ -39,9 +39,13 @@ describe('All tests (e2e)', () => {
 	//Can nextAuth be tested? Does it need to be inicialized and be passed as a header?
 	it('Mocking registering a user', async () => {
 		const users = db.collection('users');
+		const flights = db.collection('flights');
+
 		await db
 			.collection('users')
 			.deleteMany({ email: 'olietetejedor@gmail.com' });
+
+		await db.collection('flights').deleteMany({});
 
 		const mockUser = {
 			_id: new mongoose.mongo.ObjectId('56cb91bdc3464f14678934ca'),
@@ -53,9 +57,22 @@ describe('All tests (e2e)', () => {
 			_id: mongoose.Types.ObjectId('56cb91bdc3464f14678934ca'),
 		});
 		expect(insertedUser).toEqual(mockUser);
+
+		const mockFlight = {
+			_id: new mongoose.mongo.ObjectId('60cb91bdc3464f14678934ca'),
+			url_reference: 'http://hola.com',
+			fly_from: 'BCN',
+			fly_to: 'MDR',
+			date_from: '1990/07/15',
+			date_to: '1990/07/15',
+			adults: 4,
+			children: 4,
+			price: 4.0,
+		};
+		await flights.insertOne(mockFlight);
 	});
 
-	it('Favourite flights - Add', async () => {
+	it('Favourite flights - Add one to a user', async () => {
 		return request(app.getHttpServer())
 			.post('/graphql')
 			.send({
@@ -64,7 +81,7 @@ describe('All tests (e2e)', () => {
 						flight_create_and_user_addition(
 							email: "olietetejedor@gmail.com"
 							flightData: {
-								url_reference: "http://hola.com"
+								url_reference: "http://link.com"
 								fly_from: "BCN"
 								fly_to: "MDR"
 								date_from: "1990/07/15"
@@ -80,7 +97,23 @@ describe('All tests (e2e)', () => {
 			.expect(200);
 	});
 
-	it('Favourite flights - Get all', () => {
+	it('Favourite flights - Delete one from a user', () => {
+		return request(app.getHttpServer())
+			.post('/graphql')
+			.send({
+				query: gql`
+					mutation {
+						user_favourite_flight_delete(
+							email: "olietetejedor@gmail.com"
+							url_reference: "http://link.com"
+						)
+					}
+				`,
+			})
+			.expect(200);
+	});
+
+	it('Favourite flights - Get all from a user', () => {
 		return request(app.getHttpServer())
 			.post('/graphql')
 			.send({

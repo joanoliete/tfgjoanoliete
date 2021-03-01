@@ -29,13 +29,14 @@ type User {
 }
 
 type Query {
-  favourite_flights_by_user_find_all(email: String!): [Flight!]!
   getAllFlights: [Flight!]!
+  favourite_flights_by_user_find_all(email: String!): [Flight!]!
   getAllUsers: [User!]!
 }
 
 type Mutation {
   flight_create_and_user_addition(flightData: FlightCreateDto!, email: String!): Boolean!
+  user_favourite_flight_delete(url_reference: String!, email: String!): Boolean!
 }
 
 input FlightCreateDto {

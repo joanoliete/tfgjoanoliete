@@ -39,13 +39,14 @@ export class User {
 }
 
 export abstract class IQuery {
-    abstract favourite_flights_by_user_find_all(email: string): Flight[] | Promise<Flight[]>;
     abstract getAllFlights(): Flight[] | Promise<Flight[]>;
+    abstract favourite_flights_by_user_find_all(email: string): Flight[] | Promise<Flight[]>;
     abstract getAllUsers(): User[] | Promise<User[]>;
 }
 
 export abstract class IMutation {
     abstract flight_create_and_user_addition(flightData: FlightCreateDto, email: string): boolean | Promise<boolean>;
+    abstract user_favourite_flight_delete(url_reference: string, email: string): boolean | Promise<boolean>;
 }
 
 export type DateTime = any;

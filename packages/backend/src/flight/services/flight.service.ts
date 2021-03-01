@@ -79,6 +79,30 @@ export class FlightService {
 	}
 
 	/**
+	 * Finds a flight by id.
+	 * @param flightId Flight ObjectId
+	 * @returns Flight data
+	 */
+	findById(flightId: ObjectID): Promise<DocumentType<Flight> | undefined> {
+		return this.flightModel.findById(flightId).exec() as Promise<
+			DocumentType<Flight>
+		>;
+	}
+
+	/**
+	 * Finds a flight by url_reference
+	 * @param url_reference String
+	 * @returns Flight data
+	 */
+	findByEmail(
+		url_reference: string
+	): Promise<DocumentType<Flight> | undefined> {
+		return this.flightModel
+			.findOne({ url_reference: url_reference.toLowerCase() })
+			.exec() as Promise<DocumentType<Flight>>;
+	}
+
+	/**
 	 * Finds all flights in database
 	 * @returns Flight array
 	 */

@@ -19,6 +19,29 @@ export class FlightResolver {
 	) {}
 
 	/**
+	 * Finds all existing flights.
+	 * @returns flights array
+	 */
+	@Query(() => [Flight])
+	getAllFlights(): Promise<Flight[]> {
+		return this.flightService.findAllFlights();
+	}
+
+	/**
+	 * Segurament en un futur cambiar argument userId per sessionId
+	 * Finds all existing favourite Flights of an user in our database.
+	 * @param email User email
+	 * @returns Flights array
+	 */
+	@Query(() => [Flight])
+	favourite_flights_by_user_find_all(
+		@Args('email', { type: () => String, nullable: false })
+		email: string
+	): Promise<Flight[]> {
+		return this.userService.findAllFavouritesOfUserByEmail(email);
+	}
+
+	/**
 	 * Creates a new flight, and adds it to the user favourites flights.
 	 *
 	 * @param {ObjectID} userId User ObjectId
@@ -37,25 +60,19 @@ export class FlightResolver {
 	}
 
 	/**
-	 * Segurament en un futur cambiar argument userId per sessionId
-	 * Finds all existing favourite Flights of an user in our database.
-	 * @param email User email
-	 * @returns Flights array
+	 * Removes a favourite flight from an user
+	 * @param email String
+	 * @param flightId ObjectId
+	 * @returns True if success
 	 */
-	@Query(() => [Flight])
-	favourite_flights_by_user_find_all(
-		@Args('email', { type: () => String, nullable: false })
-		email: string
-	): Promise<Flight[]> {
-		return this.userService.findAllFavouritesOfUserByEmail(email);
-	}
-
-	/**
-	 * Finds all existing flights.
-	 * @returns flights array
-	 */
-	@Query(() => [Flight])
-	getAllFlights(): Promise<Flight[]> {
-		return this.flightService.findAllFlights();
+	@Mutation(() => Boolean)
+	async user_favourite_flight_delete(
+		@Args('email', { type: () => String })
+		email: string,
+		@Args('url_reference', { type: () => String })
+		url_reference: string
+	): Promise<boolean> {
+		await this.userService.deleteFavouriteFlight(email, url_reference);
+		return true;
 	}
 }

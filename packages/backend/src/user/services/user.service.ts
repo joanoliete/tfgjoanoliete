@@ -3,6 +3,7 @@ import {
 	forwardRef,
 	Inject,
 	Injectable,
+	NotFoundException,
 } from '@nestjs/common';
 import { InjectModel } from 'nestjs-typegoose';
 import { Ref, ReturnModelType } from '@typegoose/typegoose';
@@ -75,6 +76,28 @@ export class UserService {
 	}
 
 	/**
+	 * Removes a flight from favourites flights of an user
+	 * @param flight Flight object
+	 * @param email User email
+	 */
+	async deleteFavouriteFlight(
+		email: string,
+		url_reference: string
+	): Promise<void> {
+		const user = await this.findByEmail(email);
+		if (!user) throw new NotFoundException('User does not exist');
+
+		//const flight=await this.flightService.findById(flightId);
+		//if (!flight) throw new NotFoundException('Flight does not exist');
+
+		user.savedFlights = user.savedFlights.filter(
+			x => x.url_reference !== url_reference
+		);
+
+		await user.save();
+	}
+
+	/**
 	 * Finds a user by id.
 	 * @param userId User ObjectId
 	 * @returns User data
@@ -86,7 +109,7 @@ export class UserService {
 	}
 
 	/**
-	 * Finds a user by id.
+	 * Finds a user by email.
 	 * @param email String
 	 * @returns User data
 	 */
@@ -98,8 +121,8 @@ export class UserService {
 	}
 
 	/**
-	 * Finds a user by id.
-	 * @returns User data
+	 * Finds all users
+	 * @returns Users data
 	 */
 	findAllUsers(): Promise<DocumentType<User>[] | undefined> {
 		return this.userModel.find().exec() as Promise<DocumentType<User>[]>;
