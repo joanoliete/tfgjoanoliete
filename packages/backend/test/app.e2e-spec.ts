@@ -47,6 +47,8 @@ describe('All tests (e2e)', () => {
 
 		await db.collection('flights').deleteMany({});
 
+		await db.collection('queryobjects').deleteMany({});
+
 		const mockUser = {
 			_id: new mongoose.mongo.ObjectId('56cb91bdc3464f14678934ca'),
 			email: 'olietetejedor@gmail.com',
@@ -58,7 +60,7 @@ describe('All tests (e2e)', () => {
 		});
 		expect(insertedUser).toEqual(mockUser);
 
-		const mockFlight = {
+		/*const mockFlight = {
 			_id: new mongoose.mongo.ObjectId('60cb91bdc3464f14678934ca'),
 			url_reference: 'http://hola.com',
 			fly_from: 'BCN',
@@ -70,6 +72,7 @@ describe('All tests (e2e)', () => {
 			price: 4.0,
 		};
 		await flights.insertOne(mockFlight);
+		*/
 	});
 
 	it('Favourite flights - Add one to a user', async () => {
@@ -130,6 +133,62 @@ describe('All tests (e2e)', () => {
 			.expect(200)
 			.expect(({ body }) => {
 				expect(body.data.favourite_flights_by_user_find_all).toBeTruthy();
+			});
+	});
+
+	it('Query history - Add one from a user', async () => {
+		return request(app.getHttpServer())
+			.post('/graphql')
+			.send({
+				query: gql`
+					mutation {
+						query_create_and_user_addition(
+							email: "olietetejedor@gmail.com"
+							queryData: {
+								departure_ap: "MDR"
+								arrival_ap: "BCN"
+								departure_date: "1990/07/15"
+								arrival_date: "1990/07/15"
+								adults: 4
+							}
+						)
+					}
+				`,
+			})
+			.expect(200);
+	});
+
+	it('Query history - Delete one of user', () => {
+		return request(app.getHttpServer())
+			.post('/graphql')
+			.send({
+				query: gql`
+					mutation {
+						user_history_query_delete(
+							email: "olietetejedor@gmail.com"
+							queryId: "603fc4e8b1722d3bac533ea0"
+						)
+					}
+				`,
+			})
+			.expect(200);
+	});
+
+	it('Query history - Get all from a user', () => {
+		return request(app.getHttpServer())
+			.post('/graphql')
+			.send({
+				query: gql`
+					query {
+						query_history_find_all_of_user(email: "olietetejedor@gmail.com") {
+							departure_ap
+						}
+					}
+				`,
+			})
+			.expect(200)
+			.expect(({ body }) => {
+				expect(body.data).toBeNull();
 			});
 	});
 

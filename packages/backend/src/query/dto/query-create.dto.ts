@@ -6,4 +6,16 @@ import { ObjectID } from '../../common/types/objectid.type';
 export class QueryCreateDto {
 	@Field()
 	departure_ap: string;
+
+	@Field()
+	arrival_ap: string;
+
+	@Field()
+	departure_date: Date;
+
+	@Field()
+	arrival_date: Date;
+
+	@Field(type => Int)
+	adults: number;
 }

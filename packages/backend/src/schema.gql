@@ -18,13 +18,21 @@ A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date
 """
 scalar DateTime
 
+type QueryObject {
+  departure_ap: String!
+  arrival_ap: String!
+  departure_date: DateTime!
+  arrival_date: DateTime!
+  adults: Int!
+}
+
 type User {
   email: String!
   emailverified: Boolean!
   createdAt: DateTime!
   udaptedAt: DateTime!
   savedFlights: [Flight!]!
-  searchQueries: String!
+  searchQueries: [QueryObject!]!
   userTrips: String!
 }
 
@@ -32,11 +40,14 @@ type Query {
   getAllFlights: [Flight!]!
   favourite_flights_by_user_find_all(email: String!): [Flight!]!
   getAllUsers: [User!]!
+  query_history_find_all_of_user(email: String!): [QueryObject!]!
 }
 
 type Mutation {
   flight_create_and_user_addition(flightData: FlightCreateDto!, email: String!): Boolean!
   user_favourite_flight_delete(url_reference: String!, email: String!): Boolean!
+  query_create_and_user_addition(queryData: QueryCreateDto!, email: String!): Boolean!
+  user_history_query_delete(queryId: ID!, email: String!): Boolean!
 }
 
 input FlightCreateDto {
@@ -48,4 +59,12 @@ input FlightCreateDto {
   adults: Int!
   children: Int!
   price: Float!
+}
+
+input QueryCreateDto {
+  departure_ap: String!
+  arrival_ap: String!
+  departure_date: DateTime!
+  arrival_date: DateTime!
+  adults: Int!
 }

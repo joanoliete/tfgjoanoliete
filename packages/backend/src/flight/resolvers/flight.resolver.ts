@@ -13,10 +13,7 @@ export class FlightResolver {
 	 * Dependency injection.
 	 * @param flightService Flight service
 	 */
-	constructor(
-		private readonly flightService: FlightService,
-		private readonly userService: UserService
-	) {}
+	constructor(private readonly flightService: FlightService) {}
 
 	/**
 	 * Finds all existing flights.
@@ -38,15 +35,15 @@ export class FlightResolver {
 		@Args('email', { type: () => String, nullable: false })
 		email: string
 	): Promise<Flight[]> {
-		return this.userService.findAllFavouritesOfUserByEmail(email);
+		return this.flightService.findAllFavouritesOfUserByEmail(email);
 	}
 
 	/**
 	 * Creates a new flight, and adds it to the user favourites flights.
 	 *
-	 * @param {ObjectID} userId User ObjectId
+	 * @param email User email String
 	 * @param flightData Flight creation data
-	 * @returns Flight object id
+	 * @returns True if success
 	 */
 	@Mutation(() => Boolean)
 	async flight_create_and_user_addition(
@@ -72,7 +69,7 @@ export class FlightResolver {
 		@Args('url_reference', { type: () => String })
 		url_reference: string
 	): Promise<boolean> {
-		await this.userService.deleteFavouriteFlight(email, url_reference);
+		await this.flightService.deleteFavouriteFlight(email, url_reference);
 		return true;
 	}
 }

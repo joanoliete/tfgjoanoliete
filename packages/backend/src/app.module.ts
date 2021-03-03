@@ -3,6 +3,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { TypegooseModule } from 'nestjs-typegoose';
 import { join } from 'path';
 import { FlightModule } from './flight/flight.module';
+import { QueryModule } from './query/query.module';
 import { UserModule } from './user/users.module';
 
 @Module({
@@ -25,6 +26,7 @@ import { UserModule } from './user/users.module';
 		),
 		FlightModule,
 		UserModule,
+		QueryModule,
 	],
 })
 export class AppModule {}

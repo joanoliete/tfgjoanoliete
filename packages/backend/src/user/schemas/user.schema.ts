@@ -1,5 +1,6 @@
 import { Float, Int } from '@nestjs/graphql';
 import { modelOptions, mongoose, prop, Ref } from '@typegoose/typegoose';
+import { QueryObject } from '../../query/schemas/query.schema';
 import { ObjectID } from '../../common/types/objectid.type';
 import { Flight } from '../../flight/schemas/flight.schema';
 
@@ -22,8 +23,8 @@ export class User {
 	@prop({ ref: () => Flight, default: [] })
 	savedFlights: Flight[];
 
-	@prop()
-	searchQueries: string;
+	@prop({ ref: () => QueryObject, default: [] })
+	searchQueries: QueryObject[];
 
 	@prop()
 	userTrips: string;

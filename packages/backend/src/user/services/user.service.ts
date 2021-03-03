@@ -13,6 +13,7 @@ import { Flight } from '../../flight/schemas/flight.schema';
 import { User } from '../schemas/user.schema';
 import { DocumentType } from '@typegoose/typegoose/lib/types';
 import { FlightService } from '../../flight/services/flight.service';
+import { QueryObject } from '../../query/schemas/query.schema';
 
 /**
  * Service for communicating with the User database
@@ -31,35 +32,6 @@ export class UserService {
 	) {}
 
 	/**
-	 * Finds all existing favourite flights of an user by userId
-	 * @param userId userId ObjectId
-	 * @returns Flights array
-	 */
-	async findAllFavouritesOfUserById(userId: ObjectID): Promise<Flight[]> {
-		const user = await this.findById(userId);
-
-		const flightsReferences = user.savedFlights;
-
-		//Fer funció a flights service que donat un array de ObjectsID retorni un array amb tots els vols, es la manera mes eficient?
-		return this.flightService.findFlightsByArrayReference(flightsReferences);
-	}
-
-	/**
-	 * Finds all existing favourite flights of an user by email
-	 * @param email String
-	 * @returns Flights array
-	 */
-	async findAllFavouritesOfUserByEmail(email: string): Promise<Flight[]> {
-		const user = await this.findByEmail(email);
-
-		const flightsReferences = user.savedFlights;
-
-		//Fer funció a flights service que donat un array de ObjectsID retorni un array amb tots els vols, populate sha de fer servir
-		//return this.flightService.findFlightsByArrayReference(flightsReferences);
-		return flightsReferences;
-	}
-
-	/**
 	 * Adds a flight to a user favourites flights
 	 * @param flight Flight object
 	 * @param email User email
@@ -76,23 +48,17 @@ export class UserService {
 	}
 
 	/**
-	 * Removes a flight from favourites flights of an user
-	 * @param flight Flight object
+	 * Adds a searched query to a user history
+	 * @param query Queryobject
 	 * @param email User email
 	 */
-	async deleteFavouriteFlight(
-		email: string,
-		url_reference: string
+	async addQueryToUserHistory(
+		newQuery: QueryObject,
+		email: string
 	): Promise<void> {
 		const user = await this.findByEmail(email);
-		if (!user) throw new NotFoundException('User does not exist');
 
-		//const flight=await this.flightService.findById(flightId);
-		//if (!flight) throw new NotFoundException('Flight does not exist');
-
-		user.savedFlights = user.savedFlights.filter(
-			x => x.url_reference !== url_reference
-		);
+		user.searchQueries.push(newQuery);
 
 		await user.save();
 	}

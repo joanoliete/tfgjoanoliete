@@ -8,4 +8,16 @@ export class QueryObject {
 
 	@prop()
 	departure_ap: string;
+
+	@prop()
+	arrival_ap: string;
+
+	@prop()
+	departure_date: Date;
+
+	@prop()
+	arrival_date: Date;
+
+	@prop()
+	adults: number;
 }
