@@ -13,6 +13,7 @@ import { Errors } from '../../common/enums/errors.enum';
 import { DocumentType, Ref } from '@typegoose/typegoose/lib/types';
 import { UserService } from './../../user/services/user.service';
 import { QueryCreateDto } from '../dto/query-create.dto';
+import { query } from 'express';
 
 /**
  * Service for communicating with the Query database
@@ -73,6 +74,10 @@ export class QueryService {
 		const user = await this.userService.findByEmail(email);
 		if (!user) throw new NotFoundException('User does not exist');
 
+		//We delete object from database
+		await this.queryModel.deleteOne({ _id: queryId });
+
+		//We delete reference of the user array
 		user.searchQueries = user.searchQueries.filter(x => !x._id.equals(queryId));
 		await user.save();
 	}

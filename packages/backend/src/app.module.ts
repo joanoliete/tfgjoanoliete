@@ -4,6 +4,7 @@ import { TypegooseModule } from 'nestjs-typegoose';
 import { join } from 'path';
 import { FlightModule } from './flight/flight.module';
 import { QueryModule } from './query/query.module';
+import { TripModule } from './trip/trip.module';
 import { UserModule } from './user/users.module';
 
 @Module({
@@ -27,6 +28,7 @@ import { UserModule } from './user/users.module';
 		FlightModule,
 		UserModule,
 		QueryModule,
+		TripModule,
 	],
 })
 export class AppModule {}

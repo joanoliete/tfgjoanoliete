@@ -14,6 +14,7 @@ import { User } from '../schemas/user.schema';
 import { DocumentType } from '@typegoose/typegoose/lib/types';
 import { FlightService } from '../../flight/services/flight.service';
 import { QueryObject } from '../../query/schemas/query.schema';
+import { Trip } from '../../trip/schemas/trip.schema';
 
 /**
  * Service for communicating with the User database
@@ -64,6 +65,19 @@ export class UserService {
 	}
 
 	/**
+	 * Adds a trip to a user
+	 * @param trip Trip object
+	 * @param email User email
+	 */
+	async addTripToUser(newTrip: Trip, email: string): Promise<void> {
+		const user = await this.findByEmail(email);
+
+		user.userTrips.push(newTrip);
+
+		await user.save();
+	}
+
+	/**
 	 * Finds a user by id.
 	 * @param userId User ObjectId
 	 * @returns User data
@@ -75,7 +89,7 @@ export class UserService {
 	}
 
 	/**
-	 * Finds a user by email.
+	 * Finds a user by email and populates all info
 	 * @param email String
 	 * @returns User data
 	 */
@@ -83,6 +97,8 @@ export class UserService {
 		return this.userModel
 			.findOne({ email: email.toLowerCase() })
 			.populate('savedFlights')
+			.populate('userTrips')
+			.populate('searchQueries')
 			.exec() as Promise<DocumentType<User>>;
 	}
 

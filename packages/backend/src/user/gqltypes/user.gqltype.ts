@@ -2,6 +2,7 @@ import { Field, Float, ID, Int, ObjectType } from '@nestjs/graphql';
 import { Flight } from '../../flight/gqltypes/flight.gqlype';
 import { ObjectID } from '../../common/types/objectid.type';
 import { QueryObject } from '../../query/gqltypes/query.gqltype';
+import { Trip } from '../../trip/gqltypes/trip.gqltype';
 
 /**
  * Graphql type: User with all its data.
@@ -27,6 +28,6 @@ export class User {
 	@Field(() => [QueryObject])
 	searchQueries?: QueryObject[];
 
-	@Field()
-	userTrips?: string;
+	@Field(() => [Trip])
+	userTrips?: Trip[];
 }

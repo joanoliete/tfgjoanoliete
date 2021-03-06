@@ -4,8 +4,6 @@ import { ObjectID } from '../../common/types/objectid.type';
 
 @modelOptions({ options: { allowMixed: 0 } })
 export class Flight {
-	_id: ObjectID;
-
 	@prop()
 	url_reference: string;
 

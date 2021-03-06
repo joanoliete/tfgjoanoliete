@@ -26,6 +26,19 @@ type QueryObject {
   adults: Int!
 }
 
+type Trip {
+  name: String!
+  description: String!
+  destinations: [Destination!]!
+}
+
+type Destination {
+  city: String!
+  aeroport: String!
+  arrival_date: DateTime!
+  flight_associated: Flight!
+}
+
 type User {
   email: String!
   emailverified: Boolean!
@@ -33,7 +46,7 @@ type User {
   udaptedAt: DateTime!
   savedFlights: [Flight!]!
   searchQueries: [QueryObject!]!
-  userTrips: String!
+  userTrips: [Trip!]!
 }
 
 type Query {
@@ -41,6 +54,7 @@ type Query {
   favourite_flights_by_user_find_all(email: String!): [Flight!]!
   getAllUsers: [User!]!
   query_history_find_all_of_user(email: String!): [QueryObject!]!
+  trip_find_all_of_user(email: String!): [Trip!]!
 }
 
 type Mutation {
@@ -48,6 +62,10 @@ type Mutation {
   user_favourite_flight_delete(url_reference: String!, email: String!): Boolean!
   query_create_and_user_addition(queryData: QueryCreateDto!, email: String!): Boolean!
   user_history_query_delete(queryId: ID!, email: String!): Boolean!
+  trip_create_and_user_addition(tripData: TripCreateDto!, email: String!): Boolean!
+  trip_modify(tripData: TripModifyDto!, tripId: ID!): Boolean!
+  user_trip_delete(tripId: ID!, email: String!): Boolean!
+  user_trip_destination_delete(destinationId: ID!, email: String!): Boolean!
 }
 
 input FlightCreateDto {
@@ -67,4 +85,30 @@ input QueryCreateDto {
   departure_date: DateTime!
   arrival_date: DateTime!
   adults: Int!
+}
+
+input TripCreateDto {
+  name: String!
+  description: String!
+  destinations: [DestinationCreateDto!]
+}
+
+input DestinationCreateDto {
+  city: String!
+  aeroport: String!
+  arrival_date: DateTime!
+  flight_associated: FlightCreateDto!
+}
+
+input TripModifyDto {
+  name: String
+  description: String
+  destinations: [DestinationModifyDto!]
+}
+
+input DestinationModifyDto {
+  city: String
+  aeroport: String
+  arrival_date: DateTime
+  flight_associated: FlightCreateDto
 }

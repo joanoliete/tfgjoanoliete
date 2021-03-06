@@ -3,6 +3,7 @@ import { modelOptions, mongoose, prop, Ref } from '@typegoose/typegoose';
 import { QueryObject } from '../../query/schemas/query.schema';
 import { ObjectID } from '../../common/types/objectid.type';
 import { Flight } from '../../flight/schemas/flight.schema';
+import { Trip } from '../../trip/schemas/trip.schema';
 
 @modelOptions({ options: { allowMixed: 0 } })
 export class User {
@@ -26,6 +27,6 @@ export class User {
 	@prop({ ref: () => QueryObject, default: [] })
 	searchQueries: QueryObject[];
 
-	@prop()
-	userTrips: string;
+	@prop({ ref: () => Trip, default: [] })
+	userTrips: Trip[];
 }

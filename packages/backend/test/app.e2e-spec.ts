@@ -49,6 +49,8 @@ describe('All tests (e2e)', () => {
 
 		await db.collection('queryobjects').deleteMany({});
 
+		await db.collection('trips').deleteMany({});
+
 		const mockUser = {
 			_id: new mongoose.mongo.ObjectId('56cb91bdc3464f14678934ca'),
 			email: 'olietetejedor@gmail.com',
@@ -188,8 +190,100 @@ describe('All tests (e2e)', () => {
 			})
 			.expect(200)
 			.expect(({ body }) => {
-				expect(body.data).toBeNull();
+				expect(body.data.query_history_find_all_of_user).toBeTruthy();
 			});
+	});
+
+	it('Trips - Add trip to a user', async () => {
+		return request(app.getHttpServer())
+			.post('/graphql')
+			.send({
+				query: gql`
+					mutation {
+						trip_create_and_user_addition(
+							email: "olietetejedor@gmail.com"
+							tripData: {
+								name: "Viatge"
+								description: "Volta al món"
+								destinations: []
+							}
+						)
+					}
+				`,
+			})
+			.expect(200);
+	});
+
+	//Va bé pero per testejarlo cal crear un mock al inici
+	it('Trips - Modify one from a user', () => {
+		return request(app.getHttpServer())
+			.post('/graphql')
+			.send({
+				query: gql`
+					query {
+						trip_modify(
+							tripId: "60438ee93e7e2826ccef83e3"
+							tripData: {
+								name: "ViatgeModificat"
+								description: "Volta al món modificat"
+							}
+						)
+					}
+				`,
+			})
+			.expect(400);
+	});
+
+	it('Trips - Delete one of user', () => {
+		return request(app.getHttpServer())
+			.post('/graphql')
+			.send({
+				query: gql`
+					mutation {
+						user_trip_delete(
+							email: "olietetejedor@gmail.com"
+							tripId: "603fc4e8b1722d3bac533ea0"
+						)
+					}
+				`,
+			})
+			.expect(200);
+	});
+
+	it('Trips - Get all from a user', () => {
+		return request(app.getHttpServer())
+			.post('/graphql')
+			.send({
+				query: gql`
+					query {
+						trip_find_all_of_user(email: "olietetejedor@gmail.com") {
+							name
+						}
+					}
+				`,
+			})
+			.expect(200)
+			.expect(({ body }) => {
+				expect(body.data.trip_find_all_of_user).toBeTruthy();
+			});
+	});
+
+	//it('Destination - Add destination to a user', async () => {});
+
+	it('Destination - Delete destination to a user', async () => {
+		return request(app.getHttpServer())
+			.post('/graphql')
+			.send({
+				query: gql`
+					mutation {
+						user_trip_destination_delete(
+							email: "olietetejedor@gmail.com"
+							tripData: { name: "Viatge", description: "Volta al món" }
+						)
+					}
+				`,
+			})
+			.expect(400);
 	});
 
 	afterAll(async () => {
