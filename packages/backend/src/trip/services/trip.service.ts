@@ -6,13 +6,13 @@ import {
 	NotFoundException,
 } from '@nestjs/common';
 import { InjectModel } from 'nestjs-typegoose';
-import { Trip } from '../schemas/trip.schema';
+import { Destination, Trip } from '../schemas/trip.schema';
 import { ReturnModelType } from '@typegoose/typegoose';
 import { ObjectID } from '../../common/types/objectid.type';
 import { Errors } from '../../common/enums/errors.enum';
 import { DocumentType, Ref } from '@typegoose/typegoose/lib/types';
 import { UserService } from './../../user/services/user.service';
-import { TripCreateDto } from '../dto/trip-create.dto';
+import { DestinationCreateDto, TripCreateDto } from '../dto/trip-create.dto';
 import { TripModifyDto } from '../dto/trip-modify.dto';
 
 /**
@@ -28,6 +28,8 @@ export class TripService {
 	constructor(
 		@InjectModel(Trip)
 		private readonly tripModel: ReturnModelType<typeof Trip>,
+		@InjectModel(Destination)
+		private readonly destinationModel: ReturnModelType<typeof Destination>,
 		@Inject(forwardRef(() => UserService))
 		private readonly userService: UserService
 	) {}
@@ -73,7 +75,7 @@ export class TripService {
 		tripId: ObjectID,
 		{ name, description, destinations }: TripModifyDto
 	): Promise<void> {
-		const existingTrip = await this.findById(tripId);
+		const existingTrip = await this.findTripById(tripId);
 
 		if (!existingTrip) throw new NotFoundException('Trip not found');
 
@@ -101,19 +103,50 @@ export class TripService {
 	}
 
 	/**
-	 * Removes a trip destination from a given user
-	 * @param email User email
+	 * Creates a new Destination and add it to a trip
+	 * @param tripId Trip ObjectId
+	 * @param destination`Data` Destination input
+	 * @returns void
+	 */
+	async createDestinationAndAddition(
+		tripId: string,
+		destinationData: DestinationCreateDto
+	): Promise<void> {
+		const existingTrip = await this.tripModel.findOne({ _id: tripId });
+
+		if (!existingTrip) throw new NotFoundException('Trip does not exist');
+
+		const newDestination = await this.destinationModel.create({
+			...destinationData,
+		});
+
+		existingTrip.destinations.push(newDestination);
+
+		await existingTrip.save();
+	}
+
+	/**
+	 * Removes a destination from a given user trip
+	 * @param tripId ObjectId
 	 * @param destinationId ObjectId
 	 */
 	async deleteDestinationFromUser(
-		email: string,
+		tripId: ObjectID,
 		destinationId: ObjectID
 	): Promise<void> {
-		const destination = await this.findById(destinationId);
+		const trip = await this.findTripById(tripId);
+
+		if (!trip) throw new NotFoundException('Trip does not exist');
+
+		const destination = await this.findDestinationById(destinationId);
 
 		if (!destination) throw new NotFoundException('Destination does not exist');
 
 		await destination.remove();
+
+		trip.destinations = trip.destinations.filter(
+			x => !x._id.equals(destinationId)
+		);
 	}
 
 	/**
@@ -121,9 +154,22 @@ export class TripService {
 	 * @param TripId Trip ObjectId
 	 * @returns Trip data
 	 */
-	findById(tripId: ObjectID): Promise<DocumentType<Trip> | undefined> {
+	findTripById(tripId: ObjectID): Promise<DocumentType<Trip> | undefined> {
 		return this.tripModel.findById(tripId).exec() as Promise<
 			DocumentType<Trip>
+		>;
+	}
+
+	/**
+	 * Finds a Destination by id.
+	 * @param DestinationId Destination ObjectId
+	 * @returns Trip data
+	 */
+	findDestinationById(
+		destinationId: ObjectID
+	): Promise<DocumentType<Destination> | undefined> {
+		return this.destinationModel.findById(destinationId).exec() as Promise<
+			DocumentType<Destination>
 		>;
 	}
 }

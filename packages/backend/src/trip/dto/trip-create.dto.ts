@@ -18,6 +18,8 @@ export class TripCreateDto {
 
 @InputType()
 export class DestinationCreateDto {
+	_id: ObjectID;
+
 	@Field()
 	city: string;
 
@@ -27,6 +29,6 @@ export class DestinationCreateDto {
 	@Field()
 	arrival_date: Date;
 
-	@Field(() => FlightCreateDto)
+	@Field(() => FlightCreateDto, { nullable: true })
 	flight_associated?: FlightCreateDto;
 }

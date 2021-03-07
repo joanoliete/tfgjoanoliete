@@ -1,5 +1,5 @@
 import { Args, ID, Mutation, Query, Resolver } from '@nestjs/graphql';
-import { TripCreateDto } from '../dto/trip-create.dto';
+import { DestinationCreateDto, TripCreateDto } from '../dto/trip-create.dto';
 import { Trip } from '../gqltypes/trip.gqltype';
 import { TripService } from '../services/trip.service';
 import { ObjectID } from '../../common/types/objectid.type';
@@ -79,19 +79,39 @@ export class TripResolver {
 	}
 
 	/**
+	 * Creates a new destinaiton, and adds it to the trip
+	 * 	@param tripId Trip ObjectId
+	 * @param DestinationData Destination creation data
+	 * @returns True if success
+	 */
+	@Mutation(() => Boolean)
+	async destination_create_and_trip_addition(
+		@Args('tripId')
+		tripId: string,
+		@Args('destinationData', { type: () => DestinationCreateDto }) //DestinationCreatePipe
+		destinationData: DestinationCreateDto
+	) {
+		await this.tripService.createDestinationAndAddition(
+			tripId,
+			destinationData
+		);
+		return true;
+	}
+
+	/**
 	 * Removes a destination from an user
-	 * @param email String
 	 * @param tripId ObjectId
+	 * @param destinationId ObjectId
 	 * @returns True if success
 	 */
 	@Mutation(() => Boolean)
 	async user_trip_destination_delete(
-		@Args('email', { type: () => String })
-		email: string,
+		@Args('tripId', { type: () => ID })
+		tripId: ObjectID,
 		@Args('destinationId', { type: () => ID })
 		destinationId: ObjectID
 	): Promise<boolean> {
-		await this.tripService.deleteDestinationFromUser(email, destinationId);
+		await this.tripService.deleteDestinationFromUser(tripId, destinationId);
 		return true;
 	}
 }

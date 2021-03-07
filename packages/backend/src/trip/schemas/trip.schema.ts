@@ -17,6 +17,8 @@ export class Trip {
 }
 
 export class Destination {
+	_id: ObjectID;
+
 	@prop()
 	city: string;
 

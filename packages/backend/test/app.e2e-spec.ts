@@ -40,16 +40,18 @@ describe('All tests (e2e)', () => {
 	it('Mocking registering a user', async () => {
 		const users = db.collection('users');
 		const flights = db.collection('flights');
+		const queryobjects = db.collection('queryobjects');
+		const trips = db.collection('trips');
+		const destinations = db.collection('destinations');
 
 		await db
 			.collection('users')
 			.deleteMany({ email: 'olietetejedor@gmail.com' });
 
-		await db.collection('flights').deleteMany({});
-
-		await db.collection('queryobjects').deleteMany({});
-
-		await db.collection('trips').deleteMany({});
+		await flights.deleteMany({});
+		await queryobjects.deleteMany({});
+		await trips.deleteMany({});
+		await destinations.deleteMany({});
 
 		const mockUser = {
 			_id: new mongoose.mongo.ObjectId('56cb91bdc3464f14678934ca'),
@@ -268,7 +270,28 @@ describe('All tests (e2e)', () => {
 			});
 	});
 
-	//it('Destination - Add destination to a user', async () => {});
+	it('Destination - Add destination to a user', async () => {
+		return request(app.getHttpServer())
+			.post('/graphql')
+			.send({
+				query: gql`
+					mutation {
+						destination_create_and_trip_addition(
+							tripId: "604399d812b5f91b4cc33c0d"
+							destinationData: {
+								city: "Barcelona"
+								aeroport: "BCN"
+								arrival_date: "2017-01-22"
+							}
+						)
+					}
+				`,
+			})
+			.expect(200)
+			.expect(({ body }) => {
+				expect(body.errors[0].message).toBe('Trip does not exist');
+			});
+	});
 
 	it('Destination - Delete destination to a user', async () => {
 		return request(app.getHttpServer())
@@ -277,13 +300,16 @@ describe('All tests (e2e)', () => {
 				query: gql`
 					mutation {
 						user_trip_destination_delete(
-							email: "olietetejedor@gmail.com"
-							tripData: { name: "Viatge", description: "Volta al món" }
+							tripId: "604399d812b5f91b4cc33c0d"
+							destinationId: "6044d9f9e60dc23bd0ac3351"
 						)
 					}
 				`,
 			})
-			.expect(400);
+			.expect(200)
+			.expect(({ body }) => {
+				expect(body.errors[0].message).toBe('Trip does not exist');
+			});
 	});
 
 	afterAll(async () => {

@@ -65,7 +65,8 @@ type Mutation {
   trip_create_and_user_addition(tripData: TripCreateDto!, email: String!): Boolean!
   trip_modify(tripData: TripModifyDto!, tripId: ID!): Boolean!
   user_trip_delete(tripId: ID!, email: String!): Boolean!
-  user_trip_destination_delete(destinationId: ID!, email: String!): Boolean!
+  destination_create_and_trip_addition(destinationData: DestinationCreateDto!, tripId: String!): Boolean!
+  user_trip_destination_delete(destinationId: ID!, tripId: ID!): Boolean!
 }
 
 input FlightCreateDto {
@@ -97,7 +98,7 @@ input DestinationCreateDto {
   city: String!
   aeroport: String!
   arrival_date: DateTime!
-  flight_associated: FlightCreateDto!
+  flight_associated: FlightCreateDto
 }
 
 input TripModifyDto {

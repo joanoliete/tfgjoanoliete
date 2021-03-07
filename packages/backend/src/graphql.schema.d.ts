@@ -35,7 +35,7 @@ export class DestinationCreateDto {
     city: string;
     aeroport: string;
     arrival_date: DateTime;
-    flight_associated: FlightCreateDto;
+    flight_associated?: FlightCreateDto;
 }
 
 export class TripModifyDto {
@@ -109,7 +109,8 @@ export abstract class IMutation {
     abstract trip_create_and_user_addition(tripData: TripCreateDto, email: string): boolean | Promise<boolean>;
     abstract trip_modify(tripData: TripModifyDto, tripId: string): boolean | Promise<boolean>;
     abstract user_trip_delete(tripId: string, email: string): boolean | Promise<boolean>;
-    abstract user_trip_destination_delete(destinationId: string, email: string): boolean | Promise<boolean>;
+    abstract destination_create_and_trip_addition(destinationData: DestinationCreateDto, tripId: string): boolean | Promise<boolean>;
+    abstract user_trip_destination_delete(destinationId: string, tripId: string): boolean | Promise<boolean>;
 }
 
 export type DateTime = any;
