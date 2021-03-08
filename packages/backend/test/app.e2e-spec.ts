@@ -270,7 +270,7 @@ describe('All tests (e2e)', () => {
 			});
 	});
 
-	it('Destination - Add destination to a user', async () => {
+	it('Destination - Add destination to a user trip', async () => {
 		return request(app.getHttpServer())
 			.post('/graphql')
 			.send({
@@ -293,7 +293,7 @@ describe('All tests (e2e)', () => {
 			});
 	});
 
-	it('Destination - Delete destination to a user', async () => {
+	it('Destination - Delete destination to a user trip', async () => {
 		return request(app.getHttpServer())
 			.post('/graphql')
 			.send({
@@ -310,6 +310,25 @@ describe('All tests (e2e)', () => {
 			.expect(({ body }) => {
 				expect(body.errors[0].message).toBe('Trip does not exist');
 			});
+	});
+
+	it('Destination - Modify one from a user trip', () => {
+		return request(app.getHttpServer())
+			.post('/graphql')
+			.send({
+				query: gql`
+					query {
+						trip_modify(
+							tripId: "60438ee93e7e2826ccef83e3"
+							tripData: {
+								name: "ViatgeModificat"
+								description: "Volta al món modificat"
+							}
+						)
+					}
+				`,
+			})
+			.expect(400);
 	});
 
 	afterAll(async () => {

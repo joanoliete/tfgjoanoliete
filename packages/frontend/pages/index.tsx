@@ -1,5 +1,6 @@
 import withApollo from '../lib/apollo/apolloClient';
 import React, { FC, useEffect, useState } from 'react';
+import Head from '../components/utils/head';
 
 /**
  * Index route
@@ -7,6 +8,7 @@ import React, { FC, useEffect, useState } from 'react';
 const Index: FC = () => {
 	return (
 		<>
+			<Head title='tfgjoanoliete' noindex />
 			<p>This is some text in a paragraph.</p>
 		</>
 	);
