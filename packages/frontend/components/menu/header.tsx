@@ -32,6 +32,7 @@ const Header: FC<any> = () => {
 							</h2>
 							<div className='hidden md:block absolute right-0 pr-4'>
 								<div className='ml-5 flex items-baseline space-x-4'>
+								
 									<Link href='/'>
 										<a className=' text-gray-300  hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium flex items-center justify-between focus:bg-gray-900'>
 											<SearchIcon className='fill-current text-white' />
@@ -39,6 +40,8 @@ const Header: FC<any> = () => {
 										</a>
 									</Link>
 
+								{session && (
+										<>
 									<Link href='/searches'>
 										<a className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center justify-between focus:bg-gray-900'>
 											<HistoryIcon className='fill-current text-white' />
@@ -59,7 +62,8 @@ const Header: FC<any> = () => {
 											<p className='pl-1'>Trips</p>
 										</a>
 									</Link>
-
+									</>
+									)}
 									{!session && (
 										<>
 											<Link href='/api/auth/signin'>

@@ -6,6 +6,8 @@ import { Flight } from '../gqltypes/flight.gqlype';
 import { FlightCreatePipe } from '../pipes/flight-create.pipe';
 import { FlightService } from '../services/flight.service';
 import { UserService } from '../../user/services/user.service';
+import { UseGuards } from '@nestjs/common';
+import { UserGqlAuthGuard } from 'src/user/auth/user-gql-auth.guard';
 
 @Resolver(() => Flight)
 export class FlightResolver {
@@ -20,6 +22,7 @@ export class FlightResolver {
 	 * @returns flights array
 	 */
 	@Query(() => [Flight])
+	@UseGuards(UserGqlAuthGuard)
 	getAllFlights(): Promise<Flight[]> {
 		return this.flightService.findAllFlights();
 	}
