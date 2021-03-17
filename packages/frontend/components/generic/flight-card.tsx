@@ -107,31 +107,4 @@ const FlightCard: FC<FlightCardProps> = ({ object }) => {
 	);
 };
 
-/**
- * Gets the graphql mutation to delete a favourite flight
- *
- * @param refetch Refetch profile query
-const onClickDelete = (
-	url_reference: string,
-	email: string,
-	refetch: ApolloQueryResult<any>
-) => {
-	//const history = useHistory();
-	const [deleteCourseMutation, { loading: deleteLoading }] = useMutation(
-		user_favourite_flight_delete,
-		{
-			variables: { email: email, url_reference: url_reference },
-			onCompleted: () => {
-				toast.success('Flight deleted');
-				//history.push('Buscar que fa push history');
-			},
-			onError: (error: ApolloError) => {
-				toast.error(error.message);
-			},
-		}
-	);
-	return { deleteCourseMutation, deleteLoading };
-};
-*/
-
 export default FlightCard;
