@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "mongodb-memory-server": "^6.9.3",
-    "mongoose": "^5.10.18"
+    "mongoose": "^5.10.18",
+    "react-toastify": "^7.0.3"
   }
 }

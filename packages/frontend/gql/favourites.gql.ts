@@ -12,3 +12,12 @@ export const favourite_flights_by_user_find_all = gql`
 		}
 	}
 `;
+
+export const user_favourite_flight_delete = gql`
+	mutation user_favourite_flight_delete(
+		$email: String!
+		$url_reference: String!
+	) {
+		user_favourite_flight_delete(email: $email, url_reference: $url_reference)
+	}
+`;

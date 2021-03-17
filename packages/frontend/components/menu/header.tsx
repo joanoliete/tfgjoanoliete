@@ -32,7 +32,6 @@ const Header: FC<any> = () => {
 							</h2>
 							<div className='hidden md:block absolute right-0 pr-4'>
 								<div className='ml-5 flex items-baseline space-x-4'>
-								
 									<Link href='/'>
 										<a className=' text-gray-300  hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium flex items-center justify-between focus:bg-gray-900'>
 											<SearchIcon className='fill-current text-white' />
@@ -40,29 +39,29 @@ const Header: FC<any> = () => {
 										</a>
 									</Link>
 
-								{session && (
+									{session && (
 										<>
-									<Link href='/searches'>
-										<a className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center justify-between focus:bg-gray-900'>
-											<HistoryIcon className='fill-current text-white' />
-											<p className='pl-1'>Search history</p>
-										</a>
-									</Link>
+											<Link href='/searches'>
+												<a className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center justify-between focus:bg-gray-900'>
+													<HistoryIcon className='fill-current text-white' />
+													<p className='pl-1'>Search history</p>
+												</a>
+											</Link>
 
-									<Link href='/favourites'>
-										<a className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center justify-between focus:bg-gray-900'>
-											<FavouritesIcon className='fill-current text-white' />
-											<p className='pl-1'>Favourites</p>
-										</a>
-									</Link>
+											<Link href='/favourites'>
+												<a className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center justify-between focus:bg-gray-900'>
+													<FavouritesIcon className='fill-current text-white' />
+													<p className='pl-1'>Favourites</p>
+												</a>
+											</Link>
 
-									<Link href='/trips'>
-										<a className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center justify-between focus:bg-gray-900'>
-											<TripsIcon className='fill-current text-white' />
-											<p className='pl-1'>Trips</p>
-										</a>
-									</Link>
-									</>
+											<Link href='/trips'>
+												<a className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center justify-between focus:bg-gray-900'>
+													<TripsIcon className='fill-current text-white' />
+													<p className='pl-1'>Trips</p>
+												</a>
+											</Link>
+										</>
 									)}
 									{!session && (
 										<>
