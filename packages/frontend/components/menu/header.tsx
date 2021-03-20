@@ -41,7 +41,7 @@ const Header: FC<any> = () => {
 
 									{session && (
 										<>
-											<Link href='/searches'>
+											<Link href='/history'>
 												<a className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center justify-between focus:bg-gray-900'>
 													<HistoryIcon className='fill-current text-white' />
 													<p className='pl-1'>Search history</p>

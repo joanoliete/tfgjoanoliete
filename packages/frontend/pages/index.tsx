@@ -11,7 +11,6 @@ const Index: FC = () => {
 	return (
 		<>
 			<Head title='tfgjoanoliete' noindex />
-			<p>Welcome to tfgjoanoliete!</p>
 			<Search></Search>
 		</>
 	);
