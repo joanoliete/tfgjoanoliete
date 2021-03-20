@@ -1,5 +1,5 @@
 import { Field, Float, Int, ID, ObjectType } from '@nestjs/graphql';
-import { ObjectID } from '../../common/types/objectid.type';
+import { ObjectID } from 'src/common/types/objectid.type';
 import { Flight } from '../../flight/gqltypes/flight.gqlype';
 
 /**

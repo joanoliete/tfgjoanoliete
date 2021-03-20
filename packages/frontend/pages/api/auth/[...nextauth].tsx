@@ -26,7 +26,7 @@ const options = {
 			return Promise.resolve(true);
 		},
 		redirect: async (url, baseUrl) => {
-			return Promise.resolve(`${baseUrl}/dashboard`);
+			return Promise.resolve(`${baseUrl}/favourites`);
 		},
 		session: async (session, user) => {
 			if (user) {

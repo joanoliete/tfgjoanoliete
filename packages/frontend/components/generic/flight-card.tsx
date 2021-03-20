@@ -19,7 +19,6 @@ import {
 	useMutation,
 } from '@apollo/react-hooks';
 import { toast } from 'react-toastify';
-//import { useHistory } from 'react-router-dom';
 import {
 	favourite_flights_by_user_find_all,
 	user_favourite_flight_delete,
