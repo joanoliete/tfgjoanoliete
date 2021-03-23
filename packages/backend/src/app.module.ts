@@ -17,9 +17,6 @@ import { UserModule } from './user/users.module';
 			playground: true,
 			autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
 			introspection: true,
-			resolverValidationOptions: {
-				requireResolversForResolveType: false,
-			},
 		}),
 		TypegooseModule.forRoot(
 			'mongodb+srv://admin:admin@cluster0.lco4k.mongodb.net/tfgjoanoliete?retryWrites=true&w=majority',
