@@ -37,7 +37,7 @@ const TripsList: FC<TripsListProps> = ({ list }) => {
 					</button>
 
 					<h2 className='text-2xl inset-0 pb-6 p-6'>Your trips</h2>
-					<ul className='space-y-2'>
+					<ul className='space-y-2 w-5/12'>
 						{list.map(object => (
 							<TripCard object={object}></TripCard>
 						))}

@@ -1,10 +1,21 @@
-import React, { Dispatch, FC, SetStateAction, useContext } from 'react';
+import React, {
+	Dispatch,
+	FC,
+	SetStateAction,
+	useContext,
+	useState,
+} from 'react';
 import Link from 'next/link';
 import ReactPaginate from 'react-paginate';
 import TripCard from './trip-card';
 import { CreateIcon } from '../icons/others/create-icon';
 import { DeleteIcon } from '../icons/others/delete-icon';
 import { Form, Formik, Field, FormikConfig } from 'formik';
+import { session, useSession } from 'next-auth/client';
+import { ApolloError, useMutation } from '@apollo/react-hooks';
+import { toast } from 'react-toastify';
+import { trip_create_and_user_addition } from '../../gql/trips.gql';
+import { Prompt } from 'react-router-dom';
 
 interface ICreateTripInput {
 	name: string;
@@ -12,7 +23,10 @@ interface ICreateTripInput {
 }
 
 const CreateModal: FC<any> = ({ show, onClose }) => {
-	const formikConfig = getFormikConfig();
+	const [session, loadingSession] = useSession();
+	const [isDone, setIsDone] = useState(false);
+	const { createTripMutation, loading } = getCreateTripMutation(setIsDone);
+	const formikConfig = getForm(session, createTripMutation, onClose);
 
 	if (show) {
 		return (
@@ -39,7 +53,6 @@ const CreateModal: FC<any> = ({ show, onClose }) => {
 										<Field
 											type='text'
 											name='name'
-											id='name'
 											placeholder='Barcelona'
 											required
 											className='w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500'
@@ -52,9 +65,8 @@ const CreateModal: FC<any> = ({ show, onClose }) => {
 											Descripton
 										</label>
 										<Field
-											type='description'
+											type='text'
 											name='description'
-											id='description'
 											placeholder='Final course trip'
 											required
 											className='w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500'
@@ -70,9 +82,8 @@ const CreateModal: FC<any> = ({ show, onClose }) => {
 									</button>
 									<button
 										className='bg-green-500 text-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
-										type='submit'
-										onClick={() => onClose() && onClose()}>
-										Save Changes
+										type='submit'>
+										Create trip
 									</button>
 								</div>
 							</div>
@@ -85,8 +96,61 @@ const CreateModal: FC<any> = ({ show, onClose }) => {
 		return null;
 	}
 };
-const getFormikConfig = (): FormikConfig<ICreateTripInput> => {
-	return;
+
+/**
+ * Gets the graphql mutation to modify the trip data
+ */
+const getCreateTripMutation = (
+	setIsDone: Dispatch<SetStateAction<boolean>>
+) => {
+	const [createTripMutation, { loading }] = useMutation(
+		trip_create_and_user_addition,
+		{
+			onCompleted: (data: any) => {
+				toast.success('Success creating new trip');
+				setIsDone(true);
+			},
+			onError: (error: ApolloError) => {
+				toast.error(error.message || 'Server error');
+			},
+		}
+	);
+
+	return { createTripMutation, loading };
+};
+
+/**
+ * Gets the formik data to build the form.
+ * @param createTripMutation Graphql mutation
+ */
+const getForm = (
+	session: any,
+	createTripMutation: any,
+	onClose: any
+): FormikConfig<ICreateTripInput> => {
+	const initialValues: ICreateTripInput = {
+		name: '',
+		description: '',
+	};
+	{
+		/*Validation schema with Yup*/
+	}
+	const onSubmit = (values: ICreateTripInput) => {
+		createTripMutation({
+			variables: {
+				email: session.user.email,
+				tripData: {
+					name: values['name'],
+					description: values['description'],
+				},
+			},
+		});
+		onClose();
+	};
+	return {
+		initialValues,
+		onSubmit,
+	};
 };
 
 export default CreateModal;
