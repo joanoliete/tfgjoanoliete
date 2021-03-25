@@ -10,7 +10,7 @@ import ReactPaginate from 'react-paginate';
 import TripCard from './trip-card';
 import { CreateIcon } from '../icons/others/create-icon';
 import { DeleteIcon } from '../icons/others/delete-icon';
-import { Form, Formik, Field, FormikConfig } from 'formik';
+import { Form, Formik, Field, FormikConfig, FieldArray } from 'formik';
 import { session, useSession } from 'next-auth/client';
 import { ApolloError, useMutation } from '@apollo/react-hooks';
 import { toast } from 'react-toastify';
@@ -23,9 +23,10 @@ import { Prompt } from 'react-router-dom';
 interface ICreateTripInput {
 	name: string;
 	description: string;
+	destinations: Array<any>;
 }
 
-const CreateModal: FC<any> = ({ show, onClose }) => {
+const CreateTripModal: FC<any> = ({ show, onClose }) => {
 	const [session, loadingSession] = useSession();
 	const [isDone, setIsDone] = useState(false);
 	const { createTripMutation, loading } = getCreateTripMutation(
@@ -77,6 +78,51 @@ const CreateModal: FC<any> = ({ show, onClose }) => {
 											required
 											className='w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500'
 										/>
+									</div>
+									<div className='mb-6'>
+										<FieldArray name='destinations'>
+											{fieldArrayProps => {
+												const { push, remove, form } = fieldArrayProps;
+												const { values } = form;
+												const { destinations } = values;
+												return (
+													<div>
+														{destinations.map((destination, index) => (
+															<div key={index}>
+																<label className='block mb-2 text-sm text-gray-600 dark:text-gray-400'>
+																	Destination
+																</label>
+																<label htmlFor={`destinations[${index}].city`}>
+																	City
+																</label>
+																<Field
+																	type='text'
+																	className='w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500'
+																	name={`destinations[${index}].city`}
+																/>
+																<label
+																	htmlFor={`destinations[${index}].arrival_date`}>
+																	Date
+																</label>
+																<Field
+																	type='text'
+																	className='w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500'
+																	name={`destinations[${index}].arrival_date`}
+																/>
+																<button
+																	type='button'
+																	onClick={() => remove(index)}>
+																	-
+																</button>
+																<button type='button' onClick={() => push('')}>
+																	+
+																</button>
+															</div>
+														))}
+													</div>
+												);
+											}}
+										</FieldArray>
 									</div>
 								</div>
 								<div className='flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b'>
@@ -146,17 +192,20 @@ const getForm = (
 	const initialValues: ICreateTripInput = {
 		name: '',
 		description: '',
+		destinations: [''],
 	};
 	{
 		/*Validation schema with Yup*/
 	}
 	const onSubmit = (values: ICreateTripInput) => {
+		console.log(values['destinations']);
 		createTripMutation({
 			variables: {
 				email: session.user.email,
 				tripData: {
 					name: values['name'],
 					description: values['description'],
+					destinations: values['destinations'],
 				},
 			},
 		});
@@ -168,4 +217,4 @@ const getForm = (
 	};
 };
 
-export default CreateModal;
+export default CreateTripModal;

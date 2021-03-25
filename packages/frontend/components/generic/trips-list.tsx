@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import TripCard from './trip-card';
 import { CreateIcon } from '../icons/others/create-icon';
-import CreateModal from './create-modal';
+import CreateTripModal from './create-trip-modal';
 
 type TripsListProps = {
 	list: any | null;
@@ -22,10 +22,10 @@ const TripsList: FC<TripsListProps> = ({ list }) => {
 
 	return (
 		<>
-			<CreateModal
+			<CreateTripModal
 				className='bg-gray-800 rounded-full font-bold inline-flex items-center text-white px-6 py-4 hover:bg-gray-700 text-xl'
 				show={modal}
-				onClose={toggle}></CreateModal>
+				onClose={toggle}></CreateTripModal>
 
 			<div className='bg-white pb-4 px-4 rounded-md w-full'>
 				<div className='items-center flex flex-col justify-center pt-4'>

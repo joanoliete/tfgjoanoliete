@@ -23,9 +23,6 @@ export class Destination {
 	city: string;
 
 	@prop()
-	aeroport: string;
-
-	@prop()
 	arrival_date: Date;
 
 	@prop({ ref: () => Flight })

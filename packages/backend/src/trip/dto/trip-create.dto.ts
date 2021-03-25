@@ -24,9 +24,6 @@ export class DestinationCreateDto {
 	city: string;
 
 	@Field()
-	aeroport: string;
-
-	@Field()
 	arrival_date: Date;
 
 	@Field(() => FlightCreateDto, { nullable: true })

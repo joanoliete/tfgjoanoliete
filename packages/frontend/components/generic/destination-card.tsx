@@ -27,10 +27,13 @@ const DestinationCard: FC<DestinationCardProps> = ({ object }) => {
 				<div className='px-4 py-1 hidden sm:block'>
 					{new Date(object.arrival_date).toUTCString()}
 				</div>
-				{/* Si no hi ha flight, mostrar encara no hi ha flights asociats */}
-				<div className='px-4 py-1 hidden sm:block'>
-					{object.flight_associated}
-				</div>
+				{object.flight_associated && (
+					<>
+						<div className='px-4 py-1 hidden sm:block'>
+							{object.flight_associated}
+						</div>
+					</>
+				)}
 				{/* Botó de modificar destinació*/}
 			</div>
 		</li>

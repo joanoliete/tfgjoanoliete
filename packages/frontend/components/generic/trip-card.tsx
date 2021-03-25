@@ -19,6 +19,7 @@ import { ObjectId } from 'bson';
 import DestinationCard from './destination-card';
 import { EditIcon } from '../icons/others/edit-icon';
 import EditModal from './edit-modal';
+import { CreateIcon } from '../icons/others/create-icon';
 
 type TripCardProps = {
 	object: any | null;
@@ -85,23 +86,21 @@ const TripCard: FC<TripCardProps> = ({ object }) => {
 						<button onClick={() => setIsOn(!isOn)} className='px-2 py-1'>
 							<ExpandIcon className=' fill-current blue cursor-pointer ' />
 						</button>
-
-						<div
-							className={`${
-								isOn ? 'block' : 'hidden'
-							} px-4 py-2 items-center flex flex-col justify-center `}>
-							<div className='pb-2'>
-								{/* Botó de crear destinació?*/}
-								{object.destinations && (
-									<>
-										<ul className='space-y-2'>
-											{object.destinations.map(object => (
-												<DestinationCard object={object}></DestinationCard>
-											))}
-										</ul>
-									</>
-								)}
-							</div>
+					</div>
+					<div
+						className={`${
+							isOn ? 'block' : 'hidden'
+						} px-4 py-2 items-center flex flex-col justify-center `}>
+						<div className='pb-2'>
+							{object.destinations && (
+								<>
+									<ul className='space-y-2'>
+										{object.destinations.map(object => (
+											<DestinationCard object={object}></DestinationCard>
+										))}
+									</ul>
+								</>
+							)}
 						</div>
 					</div>
 				</div>

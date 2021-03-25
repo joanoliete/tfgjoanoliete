@@ -23,14 +23,8 @@ export class Trip {
 
 @ObjectType()
 export class Destination {
-	@Field(() => ID)
-	_id: ObjectID;
-
 	@Field()
 	city: string;
-
-	@Field()
-	aeroport: string;
 
 	@Field()
 	arrival_date: Date;
