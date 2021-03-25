@@ -14,7 +14,6 @@ export class TripResolver {
 	constructor(private readonly tripService: TripService) {}
 
 	/**
-	 * Segurament en un futur cambiar argument email per sessionId
 	 * Finds all existing Trips from a user in our database, with destinations
 	 * @param email User email
 	 * @returns Trip array

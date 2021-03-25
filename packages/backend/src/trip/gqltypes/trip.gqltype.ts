@@ -8,6 +8,9 @@ import { Flight } from '../../flight/gqltypes/flight.gqlype';
 
 @ObjectType()
 export class Trip {
+	@Field(() => ID)
+	_id: ObjectID;
+
 	@Field()
 	name: string;
 
@@ -20,6 +23,9 @@ export class Trip {
 
 @ObjectType()
 export class Destination {
+	@Field(() => ID)
+	_id: ObjectID;
+
 	@Field()
 	city: string;
 

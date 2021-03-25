@@ -14,7 +14,10 @@ import { Form, Formik, Field, FormikConfig } from 'formik';
 import { session, useSession } from 'next-auth/client';
 import { ApolloError, useMutation } from '@apollo/react-hooks';
 import { toast } from 'react-toastify';
-import { trip_create_and_user_addition } from '../../gql/trips.gql';
+import {
+	trip_create_and_user_addition,
+	trip_find_all_of_user,
+} from '../../gql/trips.gql';
 import { Prompt } from 'react-router-dom';
 
 interface ICreateTripInput {
@@ -25,7 +28,10 @@ interface ICreateTripInput {
 const CreateModal: FC<any> = ({ show, onClose }) => {
 	const [session, loadingSession] = useSession();
 	const [isDone, setIsDone] = useState(false);
-	const { createTripMutation, loading } = getCreateTripMutation(setIsDone);
+	const { createTripMutation, loading } = getCreateTripMutation(
+		setIsDone,
+		session
+	);
 	const formikConfig = getForm(session, createTripMutation, onClose);
 
 	if (show) {
@@ -101,11 +107,20 @@ const CreateModal: FC<any> = ({ show, onClose }) => {
  * Gets the graphql mutation to modify the trip data
  */
 const getCreateTripMutation = (
-	setIsDone: Dispatch<SetStateAction<boolean>>
+	setIsDone: Dispatch<SetStateAction<boolean>>,
+	session: any
 ) => {
 	const [createTripMutation, { loading }] = useMutation(
 		trip_create_and_user_addition,
 		{
+			refetchQueries: [
+				{
+					query: trip_find_all_of_user,
+					variables: {
+						email: session.user.email,
+					},
+				},
+			],
 			onCompleted: (data: any) => {
 				toast.success('Success creating new trip');
 				setIsDone(true);

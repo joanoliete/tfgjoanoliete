@@ -60,7 +60,6 @@ const TripCard: FC<TripCardProps> = ({ object }) => {
 				className='text-sm font-normal hover:bg-gray-100 text-gray-700 border rounded-md border-b-0 shadow-md'
 				key={object._id}>
 				<div className=' border-gray-200 py-4 align-baseline grid grid-cols-6 '>
-					<div className='pl-2 py-1 hidden sm:block'>{object.id}</div>
 					<div className='px-4 py-1 hidden sm:block  col-start-1'>
 						{object.name}
 					</div>
@@ -92,13 +91,16 @@ const TripCard: FC<TripCardProps> = ({ object }) => {
 								isOn ? 'block' : 'hidden'
 							} px-4 py-2 items-center flex flex-col justify-center `}>
 							<div className='pb-2'>
-								{/* Botó de crear destinació?
-					<ul className='space-y-2'>
-						{object.destinations.map(object => (
-							<DestinationCard object={object}></DestinationCard>
-						))}
-					</ul>
-					*/}
+								{/* Botó de crear destinació?*/}
+								{object.destinations && (
+									<>
+										<ul className='space-y-2'>
+											{object.destinations.map(object => (
+												<DestinationCard object={object}></DestinationCard>
+											))}
+										</ul>
+									</>
+								)}
 							</div>
 						</div>
 					</div>

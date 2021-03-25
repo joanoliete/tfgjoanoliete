@@ -27,12 +27,14 @@ type QueryObject {
 }
 
 type Trip {
+  _id: ID!
   name: String!
   description: String!
   destinations: [Destination!]!
 }
 
 type Destination {
+  _id: ID!
   city: String!
   aeroport: String!
   arrival_date: DateTime!

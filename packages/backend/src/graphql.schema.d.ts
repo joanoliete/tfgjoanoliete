@@ -72,12 +72,14 @@ export class QueryObject {
 }
 
 export class Trip {
+    _id: string;
     name: string;
     description: string;
     destinations: Destination[];
 }
 
 export class Destination {
+    _id: string;
     city: string;
     aeroport: string;
     arrival_date: DateTime;

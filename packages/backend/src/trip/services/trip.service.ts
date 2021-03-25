@@ -44,7 +44,6 @@ export class TripService {
 
 		const tripsReferences = user.userTrips;
 
-		//Es populen destinacions ja en finddByEmail, cambiar per popularles aqui?
 		return tripsReferences;
 	}
 

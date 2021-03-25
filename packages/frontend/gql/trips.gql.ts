@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 export const trip_find_all_of_user = gql`
 	query trip_find_all_of_user($email: String!) {
 		trip_find_all_of_user(email: $email) {
+			_id
 			name
 			description
 		}
