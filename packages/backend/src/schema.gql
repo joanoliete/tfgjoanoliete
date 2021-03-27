@@ -37,7 +37,7 @@ type Destination {
   _id: ID!
   city: String!
   arrival_date: DateTime!
-  flight_associated: Flight!
+  flight_associated: Flight
 }
 
 type User {

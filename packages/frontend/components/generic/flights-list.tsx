@@ -11,7 +11,7 @@ type FlightsListProps = {
 
 const FlightsList: FC<FlightsListProps> = ({ list }) => {
 	return (
-		<div className='bg-white pb-4 px-4 rounded-md w-full'>
+		<div className='bg-white pb-4 px-4 rounded-md w-full flex-grow'>
 			<div className='items-center flex flex-col justify-center'>
 				<h2 className='text-2xl inset-0 pb-6 p-4'>Your favourite flights</h2>
 				<ul className='space-y-2'>

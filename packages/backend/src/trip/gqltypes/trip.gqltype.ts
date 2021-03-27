@@ -32,6 +32,6 @@ export class Destination {
 	@Field()
 	arrival_date: Date;
 
-	@Field(() => Flight)
+	@Field(() => Flight, { nullable: true })
 	flight_associated?: Flight;
 }

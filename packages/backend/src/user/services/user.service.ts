@@ -89,6 +89,7 @@ export class UserService {
 	}
 
 	/**
+	 * Descomposar aquest metode molt poc eficient carregar tot
 	 * Finds a user by email and populates all info
 	 * @param email String
 	 * @returns User data
@@ -97,7 +98,15 @@ export class UserService {
 		return this.userModel
 			.findOne({ email: email.toLowerCase() })
 			.populate('savedFlights')
-			.populate('userTrips')
+			.populate({
+				path: 'userTrips',
+				populate: {
+					path: 'destinations',
+					populate: {
+						path: 'flight_associated',
+					},
+				},
+			})
 			.populate('searchQueries')
 			.exec() as Promise<DocumentType<User>>;
 	}

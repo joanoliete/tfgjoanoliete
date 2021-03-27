@@ -70,7 +70,7 @@ const CreateTripModal: FC<any> = ({ show, onClose }) => {
 										<label
 											htmlFor='description'
 											className='block mb-2 text-sm text-gray-600 dark:text-gray-400'>
-											Descripton
+											Description
 										</label>
 										<Field
 											type='text'

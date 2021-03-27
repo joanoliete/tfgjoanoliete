@@ -81,7 +81,7 @@ export class Destination {
     _id: string;
     city: string;
     arrival_date: DateTime;
-    flight_associated: Flight;
+    flight_associated?: Flight;
 }
 
 export class User {

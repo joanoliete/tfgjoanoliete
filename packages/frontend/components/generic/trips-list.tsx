@@ -27,7 +27,7 @@ const TripsList: FC<TripsListProps> = ({ list }) => {
 				show={modal}
 				onClose={toggle}></CreateTripModal>
 
-			<div className='bg-white pb-4 px-4 rounded-md w-full'>
+			<div className='bg-white pb-12 px-4 rounded-md w-full flex-grow'>
 				<div className='items-center flex flex-col justify-center pt-4'>
 					<button
 						onClick={() => toggle()}

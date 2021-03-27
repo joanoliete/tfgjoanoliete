@@ -18,7 +18,7 @@ import { trip_find_all_of_user, user_trip_delete } from '../../gql/trips.gql';
 import { ObjectId } from 'bson';
 import DestinationCard from './destination-card';
 import { EditIcon } from '../icons/others/edit-icon';
-import EditModal from './edit-modal';
+import EditModal from './edit-trip-modal';
 import { CreateIcon } from '../icons/others/create-icon';
 
 type TripCardProps = {
@@ -61,7 +61,7 @@ const TripCard: FC<TripCardProps> = ({ object }) => {
 				className='text-sm font-normal hover:bg-gray-100 text-gray-700 border rounded-md border-b-0 shadow-md'
 				key={object._id}>
 				<div className=' border-gray-200 py-4 align-baseline grid grid-cols-6 '>
-					<div className='px-4 py-1 hidden sm:block  col-start-1'>
+					<div className='px-4 py-1 hidden sm:block  col-start-1 font-bold'>
 						{object.name}
 					</div>
 					<div className='px-4 py-1 hidden sm:block col-start-2 col-end-5'>
@@ -87,21 +87,20 @@ const TripCard: FC<TripCardProps> = ({ object }) => {
 							<ExpandIcon className=' fill-current blue cursor-pointer ' />
 						</button>
 					</div>
-					<div
-						className={`${
-							isOn ? 'block' : 'hidden'
-						} px-4 py-2 items-center flex flex-col justify-center `}>
-						<div className='pb-2'>
-							{object.destinations && (
-								<>
-									<ul className='space-y-2'>
-										{object.destinations.map(object => (
-											<DestinationCard object={object}></DestinationCard>
-										))}
-									</ul>
-								</>
-							)}
-						</div>
+				</div>
+				<div
+					className={`${isOn ? 'block' : 'hidden'} px-4 py-2 flex flex-col `}>
+					<div className='pb-2'>
+						{object.destinations.length == 0 && (
+							<p>No destinations yet, edit trip to add new ones!</p>
+						)}
+						{object.destinations != 0 && (
+							<ul className='space-y-2'>
+								{object.destinations.map(object => (
+									<DestinationCard object={object}></DestinationCard>
+								))}
+							</ul>
+						)}
 					</div>
 				</div>
 			</li>

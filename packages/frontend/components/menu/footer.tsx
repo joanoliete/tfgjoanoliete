@@ -2,7 +2,7 @@ import { FC, useContext } from 'react';
 
 const Footer: FC<any> = () => {
 	return (
-		<div className='pt-4 text-sm'>
+		<div className='pt-4 text-sm  bottom-0'>
 			<div className='flex flex-wrap justify-center bg-gray-800 p-3 text-white'>
 				<div className='flex flex-shrink-0 mb-4 w-full'>
 					<div className='flex flex-wrap justify-center sm:py-12 sm:flex-none sm:flex-nowrap sm:w-1/2 md:w-1/2 lg:w-1/3 '>

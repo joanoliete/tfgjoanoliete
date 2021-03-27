@@ -23,18 +23,19 @@ const DestinationCard: FC<DestinationCardProps> = ({ object }) => {
 			key={object._id}>
 			<div className=' border-gray-200 py-4 align-baseline flex '>
 				<div className='px-4 py-1 hidden sm:block'>{object.city}</div>
-				<div className='px-4 py-1 hidden sm:block'>{object.aeroport}</div>
 				<div className='px-4 py-1 hidden sm:block'>
 					{new Date(object.arrival_date).toUTCString()}
 				</div>
+
+				{!object.flight_associated && <p>No flight associated</p>}
 				{object.flight_associated && (
-					<>
-						<div className='px-4 py-1 hidden sm:block'>
-							{object.flight_associated}
-						</div>
-					</>
+					<a
+						target='_blank'
+						href={object.flight_associated.url_reference}
+						className='px-4 py-1 flex-inline bg-gray-800 rounded-xl font-bold items-center text-white  hover:bg-gray-700 '>
+						Click to see associated flight
+					</a>
 				)}
-				{/* Botó de modificar destinació*/}
 			</div>
 		</li>
 	);

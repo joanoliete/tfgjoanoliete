@@ -6,6 +6,13 @@ export const trip_find_all_of_user = gql`
 			_id
 			name
 			description
+			destinations {
+				city
+				arrival_date
+				flight_associated {
+					url_reference
+				}
+			}
 		}
 	}
 `;

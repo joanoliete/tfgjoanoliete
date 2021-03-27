@@ -13,9 +13,11 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
 		<>
 			<Provider session={pageProps.session}>
 				{/* Proveidor de cerca agafant com a prop el searchPath*/}
-				<Header />
-				<Component {...pageProps} />
-				<Footer />
+				<div className='min-h-screen flex flex-col'>
+					<Header />
+					<Component {...pageProps} />
+					<Footer />
+				</div>
 			</Provider>
 		</>
 	);

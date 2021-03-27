@@ -1,7 +1,7 @@
 import React, { Dispatch, FC, SetStateAction, useContext } from 'react';
 import { Form, Formik, FormikConfig } from 'formik';
 
-const EditModal: FC<any> = ({ show, onClose }) => {
+const EditTripModal: FC<any> = ({ show, onClose }) => {
 	if (show) {
 		return (
 			<div className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'>
@@ -12,7 +12,7 @@ const EditModal: FC<any> = ({ show, onClose }) => {
 								Edit trip
 							</h2>
 							<p className='text-gray-400 dark:text-gray-400'>
-								Add as many destinations as you want
+								Change name or description of your trip
 							</p>
 						</div>
 						<div className='m-7'>
@@ -35,7 +35,7 @@ const EditModal: FC<any> = ({ show, onClose }) => {
 								<label
 									htmlFor='description'
 									className='block mb-2 text-sm text-gray-600 dark:text-gray-400'>
-									Descripton
+									Description
 								</label>
 								<input
 									type='description'
@@ -70,4 +70,4 @@ const EditModal: FC<any> = ({ show, onClose }) => {
 	}
 };
 
-export default EditModal;
+export default EditTripModal;
