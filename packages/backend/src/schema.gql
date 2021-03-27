@@ -34,6 +34,7 @@ type Trip {
 }
 
 type Destination {
+  _id: ID!
   city: String!
   arrival_date: DateTime!
   flight_associated: Flight!
@@ -95,6 +96,7 @@ input TripCreateDto {
 }
 
 input DestinationCreateDto {
+  _id: ID!
   city: String!
   arrival_date: DateTime!
   flight_associated: FlightCreateDto
@@ -108,7 +110,6 @@ input TripModifyDto {
 
 input DestinationModifyDto {
   city: String
-  aeroport: String
   arrival_date: DateTime
   flight_associated: FlightCreateDto
 }

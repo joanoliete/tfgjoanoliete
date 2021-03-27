@@ -33,6 +33,7 @@ export class TripCreateDto {
 }
 
 export class DestinationCreateDto {
+    _id: string;
     city: string;
     arrival_date: DateTime;
     flight_associated?: FlightCreateDto;
@@ -46,7 +47,6 @@ export class TripModifyDto {
 
 export class DestinationModifyDto {
     city?: string;
-    aeroport?: string;
     arrival_date?: DateTime;
     flight_associated?: FlightCreateDto;
 }
@@ -78,6 +78,7 @@ export class Trip {
 }
 
 export class Destination {
+    _id: string;
     city: string;
     arrival_date: DateTime;
     flight_associated: Flight;

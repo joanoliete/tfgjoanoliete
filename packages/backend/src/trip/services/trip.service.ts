@@ -60,6 +60,7 @@ export class TripService {
 		const newTrip = await this.tripModel.create({
 			...tripData,
 		});
+		console.log(newTrip);
 		await this.userService.addTripToUser(newTrip, email);
 	}
 

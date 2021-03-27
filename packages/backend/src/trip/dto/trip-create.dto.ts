@@ -18,6 +18,7 @@ export class TripCreateDto {
 
 @InputType()
 export class DestinationCreateDto {
+	@Field(() => ID)
 	_id: ObjectID;
 
 	@Field()

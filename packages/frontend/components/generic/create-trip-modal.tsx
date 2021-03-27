@@ -39,33 +39,34 @@ const CreateTripModal: FC<any> = ({ show, onClose }) => {
 		return (
 			<Formik {...formikConfig}>
 				<Form>
-					<div className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'>
+					<div className='justify-center items-center flex-grow  overflow-auto fixed inset-0 z-50 outline-none focus:outline-none'>
 						<div className='relative w-auto my-6 mx-auto max-w-3xl'>
-							<div className='border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none '>
-								<div className='items-start justify-between p-5 border-b border-solid rounded-t'>
+							<div className='border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none  '>
+								<div className='p-5 border-b border-solid rounded-t'>
 									<h2 className='my-3 text-3xl font-semibold text-gray-700 dark:text-gray-200 '>
 										Create trip
 									</h2>
 									<p className='text-gray-400 dark:text-gray-400'>
-										Add as many destinations as you want
+										Add as many destinations as you want, and associate your
+										favourite flights
 									</p>
 								</div>
 								<div className='m-7'>
-									<div className='mb-6'>
-										<label
-											htmlFor='name'
-											className='block mb-2 text-sm text-gray-600 dark:text-gray-400'>
-											Name
-										</label>
-										<Field
-											type='text'
-											name='name'
-											placeholder='Barcelona'
-											required
-											className='w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500'
-										/>
-									</div>
-									<div className='mb-6'>
+									<div className='pb-2'>
+										<div className='mb-2'>
+											<label
+												htmlFor='name'
+												className='block mb-2 text-sm text-gray-600 dark:text-gray-400'>
+												Name
+											</label>
+											<Field
+												type='text'
+												name='name'
+												placeholder='Barcelona'
+												required
+												className='w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500'
+											/>
+										</div>
 										<label
 											htmlFor='description'
 											className='block mb-2 text-sm text-gray-600 dark:text-gray-400'>
@@ -79,7 +80,7 @@ const CreateTripModal: FC<any> = ({ show, onClose }) => {
 											className='w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500'
 										/>
 									</div>
-									<div className='mb-6'>
+									<div className='mb-2 flex justify-center'>
 										<FieldArray name='destinations'>
 											{fieldArrayProps => {
 												const { push, remove, form } = fieldArrayProps;
@@ -89,10 +90,13 @@ const CreateTripModal: FC<any> = ({ show, onClose }) => {
 													<div>
 														{destinations.map((destination, index) => (
 															<div key={index}>
-																<label className='block mb-2 text-sm text-gray-600 dark:text-gray-400'>
-																	Destination
+																<label className='block mb-2 text-sm text-gray-600 dark:text-gray-400 font-bold text-center pt-2'>
+																	Destination {index + 1}
 																</label>
-																<label htmlFor={`destinations[${index}].city`}>
+
+																<label
+																	className='block mb-2 text-sm text-gray-600 dark:text-gray-400'
+																	htmlFor={`destinations[${index}].city`}>
 																	City
 																</label>
 																<Field
@@ -101,6 +105,7 @@ const CreateTripModal: FC<any> = ({ show, onClose }) => {
 																	name={`destinations[${index}].city`}
 																/>
 																<label
+																	className='block mb-2 text-sm text-gray-600 dark:text-gray-400'
 																	htmlFor={`destinations[${index}].arrival_date`}>
 																	Date
 																</label>
@@ -109,16 +114,24 @@ const CreateTripModal: FC<any> = ({ show, onClose }) => {
 																	className='w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500'
 																	name={`destinations[${index}].arrival_date`}
 																/>
-																<button
-																	type='button'
-																	onClick={() => remove(index)}>
-																	-
-																</button>
-																<button type='button' onClick={() => push('')}>
-																	+
-																</button>
+																<div className='pt-2 w-full inline-flex justify-center'>
+																	<button
+																		type='button'
+																		className='flex bg-gray-800 rounded-full font-bold  p-2  text-white  hover:bg-gray-700 text-xl'
+																		onClick={() => remove(index)}>
+																		<DeleteIcon className='inline fill-current white cursor-pointer'></DeleteIcon>
+																	</button>
+																</div>
 															</div>
 														))}
+														<div className='pt-4 w-full inline-flex justify-center'>
+															<button
+																type='button'
+																className=' w-full inline-flex justify-center bg-gray-800 rounded-full font-bold text-white px-2 py-2 hover:bg-gray-700 text-xl '
+																onClick={() => push('')}>
+																<CreateIcon className='fill-current white cursor-pointer ' />
+															</button>
+														</div>
 													</div>
 												);
 											}}
@@ -205,7 +218,7 @@ const getForm = (
 				tripData: {
 					name: values['name'],
 					description: values['description'],
-					destinations: values['destinations'],
+					//destinations: values['destinations'],
 				},
 			},
 		});
