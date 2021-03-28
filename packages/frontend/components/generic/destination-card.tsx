@@ -18,9 +18,7 @@ type DestinationCardProps = {
 
 const DestinationCard: FC<DestinationCardProps> = ({ object }) => {
 	return (
-		<li
-			className='text-sm font-normal hover:bg-gray-100 text-gray-700 border rounded-md border-b-0 shadow-md'
-			key={object._id}>
+		<li className='text-sm font-normal hover:bg-gray-100 text-gray-700 border rounded-md border-b-0 shadow-md'>
 			<div className=' border-gray-200 py-4 align-baseline flex '>
 				<div className='px-4 py-1 hidden sm:block'>{object.city}</div>
 				<div className='px-4 py-1 hidden sm:block'>

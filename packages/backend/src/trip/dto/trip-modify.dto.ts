@@ -18,6 +18,7 @@ export class TripModifyDto {
 
 @InputType()
 export class DestinationModifyDto {
+	@Field(() => ID)
 	_id: ObjectID;
 
 	@Field({ nullable: true })

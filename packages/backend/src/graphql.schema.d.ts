@@ -46,6 +46,7 @@ export class TripModifyDto {
 }
 
 export class DestinationModifyDto {
+    _id: string;
     city?: string;
     arrival_date?: DateTime;
     flight_associated?: FlightCreateDto;

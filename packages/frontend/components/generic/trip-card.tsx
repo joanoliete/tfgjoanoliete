@@ -55,11 +55,10 @@ const TripCard: FC<TripCardProps> = ({ object }) => {
 			<EditModal
 				className='bg-gray-800 rounded-full font-bold inline-flex items-center text-white px-6 py-4 hover:bg-gray-700 text-xl'
 				show={modal}
-				onClose={toggle}></EditModal>
+				onClose={toggle}
+				object={object}></EditModal>
 
-			<li
-				className='text-sm font-normal hover:bg-gray-100 text-gray-700 border rounded-md border-b-0 shadow-md'
-				key={object._id}>
+			<li className='text-sm font-normal hover:bg-gray-100 text-gray-700 border rounded-md border-b-0 shadow-md'>
 				<div className=' border-gray-200 py-4 align-baseline grid grid-cols-6 '>
 					<div className='px-4 py-1 hidden sm:block  col-start-1 font-bold'>
 						{object.name}
@@ -96,8 +95,10 @@ const TripCard: FC<TripCardProps> = ({ object }) => {
 						)}
 						{object.destinations != 0 && (
 							<ul className='space-y-2'>
-								{object.destinations.map(object => (
-									<DestinationCard object={object}></DestinationCard>
+								{object.destinations.map(destination => (
+									<DestinationCard
+										key={destination._id}
+										object={destination}></DestinationCard>
 								))}
 							</ul>
 						)}

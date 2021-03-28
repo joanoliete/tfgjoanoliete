@@ -26,6 +26,12 @@ export const trip_create_and_user_addition = gql`
 	}
 `;
 
+export const trip_modify = gql`
+	mutation trip_modify($tripId: ID!, $tripData: TripModifyDto!) {
+		trip_modify(tripId: $tripId, tripData: $tripData)
+	}
+`;
+
 export const user_trip_delete = gql`
 	mutation user_trip_delete($email: String!, $tripId: ID!) {
 		user_trip_delete(email: $email, tripId: $tripId)
