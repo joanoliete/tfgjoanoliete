@@ -4,6 +4,8 @@ import Header from '../components/menu/header';
 import Footer from '../components/menu/footer';
 import 'tailwindcss/tailwind.css';
 import { Provider } from 'next-auth/client';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 /**
  * Application entry point component
@@ -19,6 +21,7 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
 					<Footer />
 				</div>
 			</Provider>
+			<ToastContainer />
 		</>
 	);
 };

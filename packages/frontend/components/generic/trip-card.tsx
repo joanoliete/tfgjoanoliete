@@ -20,6 +20,7 @@ import DestinationCard from './destination-card';
 import { EditIcon } from '../icons/others/edit-icon';
 import EditModal from './edit-trip-modal';
 import { CreateIcon } from '../icons/others/create-icon';
+import { toast } from 'react-toastify';
 
 type TripCardProps = {
 	object: any | null;
@@ -44,6 +45,7 @@ const TripCard: FC<TripCardProps> = ({ object }) => {
 		onClickDelete({
 			variables: { email: email, tripId: tripId },
 		});
+		toast.success('Deleted trip!');
 	};
 
 	const toggle = () => {
