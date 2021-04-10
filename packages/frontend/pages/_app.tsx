@@ -6,6 +6,10 @@ import 'tailwindcss/tailwind.css';
 import { Provider } from 'next-auth/client';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {
+	defaultState,
+	SearchContext,
+} from '../../frontend/searchContext/searchContext';
 
 /**
  * Application entry point component
@@ -14,12 +18,13 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
 	return (
 		<>
 			<Provider session={pageProps.session}>
-				{/* Proveidor de cerca agafant com a prop el searchPath*/}
-				<div className='min-h-screen flex flex-col'>
-					<Header />
-					<Component {...pageProps} />
-					<Footer />
-				</div>
+				<SearchContext.Provider value={defaultState}>
+					<div className='min-h-screen flex flex-col'>
+						<Header />
+						<Component {...pageProps} />
+						<Footer />
+					</div>
+				</SearchContext.Provider>
 			</Provider>
 			<ToastContainer />
 		</>

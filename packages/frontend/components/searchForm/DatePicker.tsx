@@ -1,8 +1,10 @@
 import React, { Dispatch, FC, SetStateAction, useContext } from 'react';
 import Router from 'next/router';
 import { useRouter } from 'next/router';
+import { SearchContext } from '../../searchContext/searchContext';
 
 const DatePickers: FC<any> = ({}) => {
+	const { dateFrom, dateTo } = useContext(SearchContext);
 	return (
 		<div className='bg-white pb-4 px-4 rounded-md w-full'>
 			<div className='items-center flex flex-col justify-center'>
