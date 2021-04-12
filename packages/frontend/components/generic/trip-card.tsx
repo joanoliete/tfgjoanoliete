@@ -61,15 +61,13 @@ const TripCard: FC<TripCardProps> = ({ object }) => {
 				object={object}></EditModal>
 
 			<li className='text-sm font-normal hover:bg-gray-100 text-gray-700 border rounded-md border-b-0 shadow-md'>
-				<div className=' border-gray-200 py-4 align-baseline grid grid-cols-6 '>
-					<div className='px-4 py-1 hidden sm:block  col-start-1 font-bold'>
-						{object.name}
-					</div>
-					<div className='px-4 py-1 hidden sm:block col-start-2 col-end-5'>
-						{object.description}
+				<div className='border-gray-200 py-4 flex justify-between'>
+					<div className='flex flex-wrap'>
+						<div className='px-4 py-1 font-bold'>{object.name}</div>
+						<div className='px-4 py-1 justify-start'>{object.description}</div>
 					</div>
 
-					<div className=' col-start-6'>
+					<div className='flex flex-nowrap'>
 						<button
 							onClick={() => onDelete(session.user.email, object._id)}
 							className='py-1 '>

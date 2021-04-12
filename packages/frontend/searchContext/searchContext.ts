@@ -1,14 +1,11 @@
 import withApollo from '../lib/apollo/apolloClient';
 import React, { createContext, FC, Provider, useEffect, useState } from 'react';
 import Head from '../components/utils/head';
-import FlightsList from '../components/generic/flights-list';
-import Search from '../components/search/Search';
 import * as DateFNS from 'date-fns';
 import {
 	ParseFieldsParams,
 	TRIP_TYPES,
 	SearchContextState,
-	StateParams,
 } from './searchContextTypes';
 import { getParser, PARSER_CONFIG } from '.';
 
@@ -34,7 +31,7 @@ const defaultPlaces = {
 	],
 };
 
-export const defaultState = {
+export const defaultState: SearchContextState = {
 	tripType: TRIP_TYPES.ONEWAY,
 	travelFrom: defaultPlaces.origin,
 	travelTo: defaultPlaces.departure,
@@ -49,13 +46,12 @@ export const defaultState = {
 	returnDateTo: defaultReturnDate,
 	adults: 1,
 	infants: 0,
-	actions: {
-		switchFromTo: () => null,
-		setDepartureDate: () => null,
-		setReturnDate: () => null,
-	},
+	switchFromTo: () => null,
+	setDepartureDate: () => null,
+	setReturnDate: () => null,
 };
 
+//Other way of making searchContect?
 const SearchContextProvider = ({ children }) => {
 	function getDefaultState(routerQuery?: ParseFieldsParams) {
 		const derivedStateFromURL = parseURLqueryToState(routerQuery);
@@ -80,6 +76,4 @@ const SearchContextProvider = ({ children }) => {
 	}
 };
 
-export const SearchContext = createContext<StateParams>(
-	defaultState as StateParams
-);
+export const SearchContext = createContext<SearchContextState>(defaultState);

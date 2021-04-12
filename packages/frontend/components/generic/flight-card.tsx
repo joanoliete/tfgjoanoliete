@@ -29,6 +29,7 @@ type FlightCardProps = {
 };
 
 const FlightCard: FC<FlightCardProps> = ({ object }) => {
+	const dateNow = new Date().getTime();
 	const [session, loading] = useSession();
 	const [isOn, setIsOn] = useState(false);
 	const [onClickDelete, result] = useMutation(user_favourite_flight_delete, {
@@ -50,12 +51,16 @@ const FlightCard: FC<FlightCardProps> = ({ object }) => {
 
 	return (
 		<li
-			className='text-sm font-normal hover:bg-gray-100 text-gray-700 border rounded-md border-b-0 shadow-md'
+			className={`${
+				dateNow < new Date(object.date_from).getTime()
+					? 'bg-green-300 hover:bg-green-200'
+					: 'bg-red-300 hover:bg-red-200'
+			} text-sm font-normal text-gray-700 border rounded-md border-b-0 shadow-md`}
 			key={object.url_reference}>
 			<div className=' border-gray-200 py-4 align-baseline flex '>
-				<div className='px-4 py-1 hidden sm:block'>USD {object.price}</div>
+				<div className='px-4 py-1 font-bold'>USD {object.price}</div>
 
-				<div className='px-8 py-1 hidden sm:block'>
+				<div className='px-4 py-1 '>
 					<img src='' alt='' />
 				</div>
 
@@ -63,15 +68,15 @@ const FlightCard: FC<FlightCardProps> = ({ object }) => {
 					{new Date(object.date_from).toUTCString()}
 				</div>
 
-				<div className='px-4 py-1 lg:block '>
+				<div className='px-4 py-1 hidden sm:block'>
 					{new Date(object.date_to).toUTCString()}
 				</div>
 
-				<div className='px-4 py-1 hidden sm:block'>{object.fly_from}</div>
+				<div className='px-4 py-1 '>{object.fly_from}</div>
 
-				<div className='px-4 py-1 hidden sm:block'>{object.fly_to}</div>
+				<div className='pl-4 py-1 '>{object.fly_to}</div>
 
-				<div className='px-4 pl-10 py-1 hidden sm:block'>Direct</div>
+				<div className='px-4 pl-10 py-1 '>Direct</div>
 
 				<button
 					onClick={() => onDelete(object.url_reference, session.user.email)}
@@ -89,7 +94,7 @@ const FlightCard: FC<FlightCardProps> = ({ object }) => {
 					isOn ? 'block' : 'hidden'
 				} px-4 py-2 items-center flex flex-col justify-center `}>
 				<div className='pb-2'>
-					<button className='px-4 py-2 pb-3 border border-gray-200 rounded-md'>
+					<button className='px-4 py-2 pb-3 border border-gray-900 rounded-md'>
 						<p>Detailed flight information</p>
 					</button>
 				</div>

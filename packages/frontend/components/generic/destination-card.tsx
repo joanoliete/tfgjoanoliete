@@ -11,6 +11,7 @@ import Router from 'next/router';
 import { useRouter } from 'next/router';
 import { ObjectId } from 'bson';
 import Loader from '../utils/loader';
+import { DoubleRightArrowIcon } from '../icons/others/double-right-arrow-icon';
 
 type DestinationCardProps = {
 	object: any | null;
@@ -19,9 +20,9 @@ type DestinationCardProps = {
 const DestinationCard: FC<DestinationCardProps> = ({ object }) => {
 	return (
 		<li className='text-sm font-normal hover:bg-gray-100 text-gray-700 border rounded-md border-b-0 shadow-md'>
-			<div className=' border-gray-200 py-4 align-baseline flex '>
-				<div className='px-4 py-1 hidden sm:block'>{object.city}</div>
-				<div className='px-4 py-1 hidden sm:block'>
+			<div className=' border-gray-200 py-4 align-baseline flex pr-3'>
+				<div className='px-4 py-1'>{object.city}</div>
+				<div className='px-4 py-1'>
 					{new Date(object.arrival_date).toUTCString()}
 				</div>
 
@@ -30,8 +31,9 @@ const DestinationCard: FC<DestinationCardProps> = ({ object }) => {
 					<a
 						target='_blank'
 						href={object.flight_associated.url_reference}
-						className='px-4 py-1 flex-inline bg-gray-800 rounded-xl font-bold items-center text-white  hover:bg-gray-700 '>
-						Click to see associated flight
+						className='flex px-2 py-1 bg-gray-800 rounded-xl font-bold items-center text-white text-center hover:bg-gray-700'>
+						Associated flight
+						<DoubleRightArrowIcon />
 					</a>
 				)}
 			</div>

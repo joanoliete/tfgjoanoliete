@@ -1,16 +1,41 @@
-import React, { Dispatch, FC, SetStateAction, useContext } from 'react';
+import React, {
+	Dispatch,
+	FC,
+	SetStateAction,
+	useContext,
+	useState,
+} from 'react';
 import Router from 'next/router';
 import { useRouter } from 'next/router';
 import { SearchContext } from '../../searchContext/searchContext';
+import { DatePicker } from 'react-nice-dates';
+import { enGB } from 'date-fns/locale';
+import 'react-nice-dates/build/style.css';
+import { CalendarIcon } from '../icons/others/calendar-icon';
 
 const DatePickers: FC<any> = ({}) => {
-	const { dateFrom, dateTo } = useContext(SearchContext);
+	const [date, setDate] = useState(new Date());
+	const { dateFrom, dateTo, setDepartureDate, setReturnDate } = useContext(
+		SearchContext
+	);
 	return (
-		<div className='bg-white pb-4 px-4 rounded-md w-full'>
-			<div className='items-center flex flex-col justify-center'>
-				<h2 className='text-2xl inset-0 pb-6 p-4'>DatePicker</h2>
+		<>
+			<div className='items-center flex justify-center pr-4'>
+				<DatePicker date={date} onDateChange={setDate} locale={enGB}>
+					{({ inputProps, focused }) => (
+						<input
+							className={
+								'input' +
+								(focused ? ' -focused' : '') +
+								'bg-white border rounded-md px-2 py-3 border-gray-400 text-base text-gray-900 outline-none'
+							}
+							{...inputProps}
+						/>
+						//Icona de calendari
+					)}
+				</DatePicker>
 			</div>
-		</div>
+		</>
 	);
 };
 

@@ -1,9 +1,7 @@
-export interface SearchContextState {
-	StateParams: StateParams;
-	actions: StateActions;
-}
+export type SearchContextState = StateParamsType & StateActionsType;
 
-export interface StateParams {
+export interface StateParamsType {
+	tripType: string;
 	travelFrom: ReadonlyArray<Location>;
 	travelTo: ReadonlyArray<Location>;
 	isNightsInDestinationSelected: boolean;
@@ -15,12 +13,11 @@ export interface StateParams {
 	dateTo: Date;
 	returnDateFrom: Date;
 	returnDateTo: Date;
-	tripType: string;
 	infants: number;
 	adults: number;
 }
 
-export interface StateActions {
+export interface StateActionsType {
 	switchFromTo: () => void;
 	setDepartureDate: (dateFrom: Date, dateTo: Date) => void;
 	setReturnDate: (dateFrom: Date, dateTo: Date) => void;
