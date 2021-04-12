@@ -9,9 +9,11 @@ import { signIn, signOut, useSession } from 'next-auth/client';
 import { LoginIcon } from '../icons/header/login-icon';
 import { LogoutIcon } from '../icons/header/logout-icon';
 import { useApolloClient } from '@apollo/react-hooks';
+import { useRouter } from 'next/router';
 
 const Header: FC<any> = () => {
 	const [session, loading] = useSession();
+	const route = useRouter().route;
 
 	return (
 		<div className='pb-6'>
@@ -33,7 +35,10 @@ const Header: FC<any> = () => {
 							<div className='hidden md:block absolute right-0 pr-4'>
 								<div className='ml-5 flex items-baseline space-x-4'>
 									<Link href='/'>
-										<a className=' text-gray-300  hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium flex items-center justify-between focus:bg-gray-900'>
+										<a
+											className={`${
+												route == '/' ? 'bg-gray-900' : ''
+											} text-gray-300  hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium flex items-center justify-between focus:bg-gray-900`}>
 											<SearchIcon className='fill-current text-white' />
 											<p className='pl-1'>Search</p>
 										</a>
@@ -42,21 +47,30 @@ const Header: FC<any> = () => {
 									{session && (
 										<>
 											<Link href='/history'>
-												<a className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center justify-between focus:bg-gray-900'>
+												<a
+													className={`${
+														route == '/history' ? 'bg-gray-900' : ''
+													} text-gray-300  hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium flex items-center justify-between focus:bg-gray-900`}>
 													<HistoryIcon className='fill-current text-white' />
 													<p className='pl-1'>Search history</p>
 												</a>
 											</Link>
 
 											<Link href='/favourites'>
-												<a className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center justify-between focus:bg-gray-900'>
+												<a
+													className={`${
+														route == '/favourites' ? 'bg-gray-900' : ''
+													} text-gray-300  hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium flex items-center justify-between focus:bg-gray-900`}>
 													<FavouritesIcon className='fill-current text-white' />
 													<p className='pl-1'>Favourites</p>
 												</a>
 											</Link>
 
 											<Link href='/trips'>
-												<a className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center justify-between focus:bg-gray-900'>
+												<a
+													className={`${
+														route == '/trips' ? 'bg-gray-900' : ''
+													} text-gray-300  hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium flex items-center justify-between focus:bg-gray-900`}>
 													<TripsIcon className='fill-current text-white' />
 													<p className='pl-1'>Trips</p>
 												</a>

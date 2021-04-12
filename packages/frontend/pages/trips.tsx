@@ -6,9 +6,12 @@ import withApollo from '../lib/apollo/apolloClient';
 import Head from '../components/utils/head';
 import Loader from '../components/utils/loader';
 import { trip_find_all_of_user } from '../gql/trips.gql';
+import NotFound from './404';
 
 const Trips: FC = () => {
 	const [session, loadingSession] = useSession();
+	if (loadingSession) return null;
+	if (!loadingSession && !session) return <NotFound />;
 
 	const { data, loading } = useQuery(trip_find_all_of_user, {
 		variables: {

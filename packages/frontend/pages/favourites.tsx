@@ -6,12 +6,15 @@ import withApollo from '../lib/apollo/apolloClient';
 import Head from '../components/utils/head';
 import { getSession, useSession } from 'next-auth/client';
 import FlightsList from '../components/generic/flights-list';
+import NotFound from './404';
 
 /**
  * Favourites route
  */
 export const Favourites: FC = () => {
 	const [session, loadingSession] = useSession();
+	if (loadingSession) return null;
+	if (!loadingSession && !session) return <NotFound />;
 
 	const { data, loading } = useQuery(favourite_flights_by_user_find_all, {
 		variables: {
@@ -25,6 +28,12 @@ export const Favourites: FC = () => {
 	return favouriteFlightsList ? (
 		<>
 			<Head title={`tfgjoanoliete | Favourite flights`} noindex />
+			{favouriteFlightsList.length == 0 && (
+				<p>
+					No favourite flights yet, go search and add new ones to keep track of
+					them!
+				</p>
+			)}
 			<FlightsList list={favouriteFlightsList} />
 		</>
 	) : (
