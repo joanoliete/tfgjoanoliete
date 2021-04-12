@@ -230,7 +230,6 @@ const getForm = (
 	});
 
 	const onSubmit = (values: IModifyTripInput) => {
-		console.log(values['destinations']);
 		modifyTripMutation({
 			variables: {
 				tripId: object._id,

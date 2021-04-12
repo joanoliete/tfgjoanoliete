@@ -24,7 +24,7 @@ export class Trip {
 @ObjectType()
 export class Destination {
 	@Field(() => ID)
-	_id: ObjectID;
+	_id?: ObjectID;
 
 	@Field()
 	city: string;

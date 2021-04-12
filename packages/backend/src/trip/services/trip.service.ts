@@ -57,10 +57,16 @@ export class TripService {
 		email: string,
 		tripData: TripCreateDto
 	): Promise<void> {
+		const newDestinations = await this.createDestinations(
+			tripData.destinations
+		);
+
+		const changedTripData = tripData;
+		changedTripData.destinations = newDestinations;
 		const newTrip = await this.tripModel.create({
-			...tripData,
+			...changedTripData,
 		});
-		console.log(newTrip);
+
 		await this.userService.addTripToUser(newTrip, email);
 	}
 
@@ -103,26 +109,22 @@ export class TripService {
 	}
 
 	/**
-	 * Creates a new Destination and add it to a trip
-	 * @param tripId Trip ObjectId
-	 * @param destination`Data` Destination input
+	 * Creates new Destinations and returns it as an Array
+	 * @param destinationData Destination input Array
 	 * @returns void
 	 */
-	async createDestinationAndAddition(
-		tripId: string,
-		destinationData: DestinationCreateDto
-	): Promise<void> {
-		const existingTrip = await this.tripModel.findOne({ _id: tripId });
+	async createDestinations(
+		destinationData: DestinationCreateDto[]
+	): Promise<DestinationCreateDto[]> {
+		const destinations = [] as DocumentType<Destination>[];
 
-		if (!existingTrip) throw new NotFoundException('Trip does not exist');
-
-		const newDestination = await this.destinationModel.create({
-			...destinationData,
-		});
-
-		existingTrip.destinations.push(newDestination);
-
-		await existingTrip.save();
+		for (const data of destinationData) {
+			const newDestination = await this.destinationModel.create({
+				...data,
+			});
+			destinations.push(newDestination);
+		}
+		return destinations;
 	}
 
 	/**

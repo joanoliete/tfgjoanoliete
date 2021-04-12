@@ -78,26 +78,6 @@ export class TripResolver {
 	}
 
 	/**
-	 * Creates a new destinaiton, and adds it to the trip
-	 * 	@param tripId Trip ObjectId
-	 * @param DestinationData Destination creation data
-	 * @returns True if success
-	 */
-	@Mutation(() => Boolean)
-	async destination_create_and_trip_addition(
-		@Args('tripId')
-		tripId: string,
-		@Args('destinationData', { type: () => DestinationCreateDto }) //DestinationCreatePipe
-		destinationData: DestinationCreateDto
-	) {
-		await this.tripService.createDestinationAndAddition(
-			tripId,
-			destinationData
-		);
-		return true;
-	}
-
-	/**
 	 * Removes a destination from an user
 	 * @param tripId ObjectId
 	 * @param destinationId ObjectId

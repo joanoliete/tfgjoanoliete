@@ -14,12 +14,13 @@ export class TripCreateDto {
 
 	@Field(() => [DestinationCreateDto], { nullable: true })
 	destinations?: DestinationCreateDto[];
+	changedTripData: Promise<DestinationCreateDto[]>;
 }
 
 @InputType()
 export class DestinationCreateDto {
-	@Field(() => ID)
-	_id: ObjectID;
+	@Field(() => ID, { nullable: true })
+	_id?: ObjectID;
 
 	@Field()
 	city: string;

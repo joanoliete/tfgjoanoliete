@@ -232,14 +232,13 @@ const getForm = (
 	});
 
 	const onSubmit = (values: ICreateTripInput) => {
-		console.log(values['destinations']);
 		createTripMutation({
 			variables: {
 				email: session.user.email,
 				tripData: {
 					name: values['name'],
 					description: values['description'],
-					//destinations: values['destinations'],
+					destinations: values['destinations'],
 				},
 			},
 		});
