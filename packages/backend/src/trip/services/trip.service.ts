@@ -87,6 +87,7 @@ export class TripService {
 
 		if (name) existingTrip.name = name;
 		if (description) existingTrip.description = description;
+		//Modify destination in his document otherwise it doesnt udapte, fer nou metode
 		if (destinations) existingTrip.destinations = destinations;
 
 		await existingTrip.save();

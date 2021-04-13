@@ -14,4 +14,6 @@ RUN lerna bootstrap --hoist
 COPY . ./
 RUN npm run build
 
-CMD ["npm", "run", "dev"]
+EXPOSE 3000
+
+CMD ["npm", "run", "start"]
