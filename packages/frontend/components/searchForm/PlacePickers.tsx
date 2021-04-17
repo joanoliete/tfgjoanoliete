@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import { LocationFromIcon } from '../icons/others/location-from-icon';
 import { LocationToIcon } from '../icons/others/location-to-icon';
 import { SearchContext } from '../../searchContext';
-import { AutoSuggest } from 'react-autosuggestions';
 
 const PlacePickers: FC<any> = ({}) => {
 	const { travelFrom, travelTo, setTravelFrom, setTravelTo } = useContext(
