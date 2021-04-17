@@ -108,7 +108,7 @@ input TripModifyDto {
 }
 
 input DestinationModifyDto {
-  _id: ID!
+  _id: ID
   city: String
   arrival_date: DateTime
   flight_associated: FlightCreateDto

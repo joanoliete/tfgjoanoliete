@@ -41,13 +41,13 @@ export const Favourites: FC = () => {
 	);
 };
 
-// Export the `session` prop to use sessions with Server Side Rendering (Per si es vol fer SSR en un futur)
+/*  Export the `session` prop to use sessions with Server Side Rendering (Per si es vol fer SSR en un futur)
 export async function getServerSideProps(context) {
 	return {
 		props: {
 			session: await getSession(context),
 		},
 	};
-}
+} */
 
 export default withApollo({ ssr: false })(Favourites);

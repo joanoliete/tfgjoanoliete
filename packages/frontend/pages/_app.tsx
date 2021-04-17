@@ -10,6 +10,7 @@ import {
 	defaultState,
 	SearchContext,
 } from '../../frontend/searchContext/searchContext';
+import './../styles/datepickerstyles.css';
 
 /**
  * Application entry point component

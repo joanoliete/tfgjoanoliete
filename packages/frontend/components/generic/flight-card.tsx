@@ -53,7 +53,7 @@ const FlightCard: FC<FlightCardProps> = ({ object }) => {
 		<li
 			className={`${
 				dateNow < new Date(object.date_from).getTime()
-					? 'bg-green-300 hover:bg-green-200'
+					? ''
 					: 'bg-red-300 hover:bg-red-200'
 			} text-sm font-normal text-gray-700 border rounded-md border-b-0 shadow-md`}
 			key={object.url_reference}>

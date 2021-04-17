@@ -107,7 +107,6 @@ const EditTripModal: FC<any> = ({ show, onClose, object }) => {
 																	<label className='block mb-2 text-sm text-gray-600 dark:text-gray-400 font-bold text-center pt-2'>
 																		Destination {index + 1}
 																	</label>
-
 																	<label
 																		className='block mb-2 text-sm text-gray-600 dark:text-gray-400'
 																		htmlFor={`destinations[${index}].city`}>
@@ -217,6 +216,7 @@ const getForm = (
 	const initialValues: IModifyTripInput = {
 		name: object.name || '',
 		description: object.description || '',
+		//Borrar el __typename del cache perque malmet funcionament graphql i mirar forma de pasar el ID perque el resolver pugui fer els canvis
 		destinations: object.destinations || [''],
 	};
 
@@ -230,6 +230,7 @@ const getForm = (
 	});
 
 	const onSubmit = (values: IModifyTripInput) => {
+		console.log(values['destinations']);
 		modifyTripMutation({
 			variables: {
 				tripId: object._id,
