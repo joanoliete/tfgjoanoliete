@@ -13,22 +13,18 @@ const defaultDepartureDate = DateFNS.addDays(new Date(), 1);
 const defaultReturnDate = DateFNS.addDays(defaultDepartureDate, 2);
 
 const defaultPlaces = {
-	origin: [
-		{
-			id: 'TG9jYXRpb246cHJhZ3VlX2N6',
-			locationId: 'prague_cz',
-			name: 'Prague',
-			type: 'destination',
-		},
-	],
-	departure: [
-		{
-			id: 'TG9jYXRpb246b3Nsb19ubw==',
-			locationId: 'oslo_no',
-			name: 'Oslo',
-			type: 'destination',
-		},
-	],
+	origin: {
+		id: 'TG9jYXRpb246cHJhZ3VlX2N6',
+		locationId: 'prague_cz',
+		name: 'Prague',
+		type: 'destination',
+	},
+	departure: {
+		id: 'TG9jYXRpb246b3Nsb19ubw==',
+		locationId: 'oslo_no',
+		name: 'Oslo',
+		type: 'destination',
+	},
 };
 
 export const defaultState: SearchContextState = {
@@ -49,6 +45,8 @@ export const defaultState: SearchContextState = {
 	switchFromTo: () => null,
 	setDepartureDate: () => null,
 	setReturnDate: () => null,
+	setTravelFrom: () => null,
+	setTravelTo: () => null,
 };
 
 //Other way of making searchContect?

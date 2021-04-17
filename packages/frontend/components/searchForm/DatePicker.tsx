@@ -44,7 +44,6 @@ const DatePickers: FC<any> = ({ oneway }: DatePickerProps) => {
 									{...inputProps}
 								/>
 							</div>
-							//Icona de calendari
 						)}
 					</DatePicker>
 				</div>

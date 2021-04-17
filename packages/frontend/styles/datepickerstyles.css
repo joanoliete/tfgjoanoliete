@@ -2,6 +2,10 @@ textarea:focus,
 input:focus {
 	outline: none;
 }
+.nice-dates-day.-disabled.-selected.-wide:before {
+	background-color: rgb(17, 24, 39);
+	z-index: 1;
+}
 
 .nice-dates-navigation,
 .nice-dates-day {

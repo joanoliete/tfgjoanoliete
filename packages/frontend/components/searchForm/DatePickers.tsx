@@ -8,7 +8,7 @@ const DatePickers: FC<any> = ({}) => {
 	const { tripType } = useContext(SearchContext);
 	return (
 		<>
-			<DatePicker oneway={'OneWay'} />
+			<DatePicker oneway={tripType} />
 			{/*If multiway then show second datePikcer*/}
 		</>
 	);
