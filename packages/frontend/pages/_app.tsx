@@ -11,8 +11,8 @@ import {
 	SearchContext,
 	SearchContextProvider,
 } from '../../frontend/searchContext/searchContext';
-import * as DateFNS from 'date-fns';
 import './../styles/datepickerstyles.css';
+import './../styles/placepickerstyles.css';
 /**
  * Application entry point component
  */
