@@ -4,6 +4,7 @@ import Head from '../components/utils/head';
 import * as DateFNS from 'date-fns';
 import {
 	ParseFieldsParams,
+	Location,
 	TRIP_TYPES,
 	SearchContextState,
 } from './searchContextTypes';
@@ -31,26 +32,41 @@ export const defaultState: SearchContextState = {
 	tripType: TRIP_TYPES.ONEWAY,
 	travelFrom: defaultPlaces.origin,
 	travelTo: defaultPlaces.departure,
-	isNightsInDestinationSelected: false,
-	nightsInDestinationFrom: 3,
-	nightsInDestinationTo: 6,
+	//isNightsInDestinationSelected: false,
+	//nightsInDestinationFrom: 3,
+	//nightsInDestinationTo: 6,
 	dateFrom: defaultDepartureDate,
 	dateTo: defaultDepartureDate,
-	sortBy: 'QUALITY',
-	limit: 20,
+	//sortBy: 'QUALITY',
+	//limit: 20,
 	returnDateFrom: defaultReturnDate,
 	returnDateTo: defaultReturnDate,
-	adults: 1,
-	infants: 0,
-	switchFromTo: () => null,
-	setDepartureDate: () => null,
-	setReturnDate: () => null,
-	setTravelFrom: () => null,
-	setTravelTo: () => null,
+	//adults: 1,
+	//infants: 0,
+	setTripType: () => undefined,
+	setDepartureDate: () => undefined,
+	setReturnDate: () => undefined,
+	setTravelFrom: () => undefined,
+	setTravelTo: () => undefined,
 };
 
 //Other way of making searchContect?
-const SearchContextProvider = ({ children }) => {
+export const SearchContextProvider = () => {
+	const [tripType, settripType] = useState(defaultState.tripType);
+	const [travelFrom, settravelFrom] = useState(defaultState.travelFrom);
+	const [travelTo, settravelTo] = useState(defaultState.travelTo);
+	const [dateFrom, setdateFrom] = useState(defaultState.dateFrom);
+	const [dateTo, setdateTo] = useState(defaultState.dateTo);
+	const [returnDateFrom, setreturnDateFrom] = useState(
+		defaultState.returnDateFrom
+	);
+	const [returnDateTo, setreturnDateTo] = useState(defaultState.returnDateTo);
+	const setTripType = (tripType: string) => settripType(tripType);
+	const setDepartureDate = (dateFrom: Date) => setdateFrom(dateFrom);
+	const setReturnDate = (dateTo: Date) => setdateTo(dateTo);
+	const setTravelFrom = (travelFrom: Location) => settravelFrom(travelFrom);
+	const setTravelTo = (travelTo: Location) => settravelTo(travelTo);
+
 	function getDefaultState(routerQuery?: ParseFieldsParams) {
 		const derivedStateFromURL = parseURLqueryToState(routerQuery);
 		return {
@@ -72,6 +88,20 @@ const SearchContextProvider = ({ children }) => {
 			return acc;
 		}, {});
 	}
+	return {
+		tripType,
+		travelFrom,
+		travelTo,
+		dateFrom,
+		dateTo,
+		returnDateFrom,
+		returnDateTo,
+		setTripType,
+		setDepartureDate,
+		setReturnDate,
+		setTravelFrom,
+		setTravelTo,
+	} as SearchContextState;
 };
 
 export const SearchContext = createContext<SearchContextState>(defaultState);

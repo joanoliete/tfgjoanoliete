@@ -3,16 +3,13 @@ import Router from 'next/router';
 import { useRouter } from 'next/router';
 import { LocationFromIcon } from '../icons/others/location-from-icon';
 import { LocationToIcon } from '../icons/others/location-to-icon';
+import { Location } from '././../../searchContext/searchContextTypes';
 import { SearchContext } from '../../searchContext';
 
 const PlacePickers: FC<any> = ({}) => {
 	const { travelFrom, travelTo, setTravelFrom, setTravelTo } = useContext(
 		SearchContext
 	);
-	//Cambiar aquest metode per els setters de useContext
-	function handleClick() {
-		console.log(travelFrom.name);
-	}
 	return (
 		<div className='flex flex-wrap pr-4 justify-center'>
 			<div className='flex justify-center sm:py-4 sm:pl-4 pl-0'>
@@ -22,7 +19,14 @@ const PlacePickers: FC<any> = ({}) => {
 					</span>
 					<input
 						value={travelFrom.name}
-						onChange={handleClick}
+						onChange={e =>
+							setTravelFrom({
+								id: '',
+								locationId: '',
+								name: e.target.value,
+								type: '',
+							} as Location)
+						}
 						type='text'
 						placeholder='Where are you?'
 						className='flex-shrink flex-grow flex-auto outline-none'></input>
@@ -36,7 +40,14 @@ const PlacePickers: FC<any> = ({}) => {
 					</span>
 					<input
 						value={travelTo.name}
-						onChange={handleClick}
+						onChange={e =>
+							setTravelTo({
+								id: '',
+								locationId: '',
+								name: e.target.value,
+								type: '',
+							} as Location)
+						}
 						type='text'
 						placeholder='Where to go?'
 						className='flex-shrink flex-grow flex-auto outline-none'></input>

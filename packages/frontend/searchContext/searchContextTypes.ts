@@ -4,21 +4,21 @@ export interface StateParamsType {
 	tripType: string;
 	travelFrom: Location;
 	travelTo: Location;
-	isNightsInDestinationSelected: boolean;
-	nightsInDestinationFrom: number;
-	nightsInDestinationTo: number;
+	//isNightsInDestinationSelected: boolean;
+	//nightsInDestinationFrom: number;
+	//nightsInDestinationTo: number;
 	dateFrom: Date;
-	sortBy: string;
-	limit: number;
+	//sortBy: string;
+	//limit: number;
 	dateTo: Date;
 	returnDateFrom: Date;
 	returnDateTo: Date;
-	infants: number;
-	adults: number;
+	//infants: number;
+	//adults: number;
 }
 
 export interface StateActionsType {
-	switchFromTo: () => void;
+	setTripType: (tripType: string) => void;
 	setDepartureDate: (dateFrom: Date) => void;
 	setReturnDate: (dateTo: Date) => void;
 	setTravelFrom: (travelFrom: Location) => void;

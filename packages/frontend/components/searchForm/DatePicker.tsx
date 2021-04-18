@@ -21,7 +21,6 @@ type DatePickerProps = {
 };
 
 const DatePickers: FC<any> = ({ oneway }: DatePickerProps) => {
-	const [date, setDate] = useState(new Date());
 	const { dateFrom, dateTo, setDepartureDate, setReturnDate } = useContext(
 		SearchContext
 	);
@@ -29,7 +28,10 @@ const DatePickers: FC<any> = ({ oneway }: DatePickerProps) => {
 		<>
 			{oneway === (TRIP_TYPES.ONEWAY || TRIP_TYPES.RETURN) ? (
 				<div className='items-center flex justify-center pr-4'>
-					<DatePicker date={dateFrom} onDateChange={setDate} locale={enGB}>
+					<DatePicker
+						date={dateFrom}
+						onDateChange={setDepartureDate}
+						locale={enGB}>
 						{({ inputProps, focused }) => (
 							<div className='bg-white border rounded-md px-1 py-3 border-gray-400 text-base text-gray-900 flex'>
 								<span className='flex items-center leading-normal bg-white px-3 border-0 rounded rounded-r-none text-2xl text-gray-600'>
@@ -52,8 +54,8 @@ const DatePickers: FC<any> = ({ oneway }: DatePickerProps) => {
 					<DateRangePicker
 						startDate={dateFrom}
 						endDate={dateTo}
-						onStartDateChange={setDate}
-						onEndDateChange={setDate}
+						onStartDateChange={setDepartureDate}
+						onEndDateChange={setReturnDate}
 						locale={enGB}>
 						{({ startDateInputProps, endDateInputProps, focus }) => (
 							<div className='date-range flex space-x-1 items-center'>
