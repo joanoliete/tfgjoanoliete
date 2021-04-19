@@ -19,10 +19,11 @@ const PlacePickers: FC<any> = ({}) => {
 	);
 	//Fer crida o agafar del JSON tots els aeroports
 	const options = [
-		{ value: 'Utirik Airport' },
+		{ value: 'Utirik Airport', a: 'AUT' },
 		{ value: 'Five Finger CG Heliport' },
 		{ value: 'False Island Seaplane Base' },
 	];
+
 	return (
 		<div className='flex flex-wrap pr-4 justify-center'>
 			<div className='flex justify-center sm:py-4 sm:pl-4 pl-0'>
