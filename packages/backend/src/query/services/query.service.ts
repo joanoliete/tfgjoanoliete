@@ -14,6 +14,7 @@ import { DocumentType, Ref } from '@typegoose/typegoose/lib/types';
 import { UserService } from './../../user/services/user.service';
 import { QueryCreateDto } from '../dto/query-create.dto';
 import { query } from 'express';
+import fetch from 'node-fetch';
 
 /**
  * Service for communicating with the Query database
@@ -45,6 +46,7 @@ export class QueryService {
 		const newQuery = await this.queryModel.create({
 			...queryData,
 		});
+
 		await this.userService.addQueryToUserHistory(newQuery, email);
 	}
 
@@ -60,6 +62,24 @@ export class QueryService {
 
 		//Cal popular searchQueries?
 		return queryReferences;
+	}
+
+	/**
+	 * Finds all flights from our provider matching user context and returns json
+	 * @param email String
+	 * @returns Queries array
+	 */
+	async searchProviderApiContext(url: string): Promise<[]> {
+		const finalUrl =
+			'https://tequila-api.kiwi.com/v2/search?' +
+			url +
+			'&apikey=4xdovHrJn2tw6M5SZA0CMssmZWi0t5ZZ';
+
+		return await fetch(
+			'https://tequila-api.kiwi.com/v2/search?fly_from=FRA&fly_to=PRG&date_from=01%2F04%2F2021&limit=20&apikey=4xdovHrJn2tw6M5SZA0CMssmZWi0t5ZZ'
+		)
+			.then(res => res.json())
+			.then(data => data.data);
 	}
 
 	/**

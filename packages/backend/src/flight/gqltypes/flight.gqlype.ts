@@ -31,3 +31,27 @@ export class Flight {
 	@Field(type => Float)
 	price: number;
 }
+
+@ObjectType()
+export class ResultFlight {
+	@Field()
+	id: string;
+
+	@Field()
+	flyFrom: string;
+
+	@Field()
+	flyTo: string;
+
+	@Field(type => [String])
+	airlines: [string];
+
+	@Field()
+	utc_departure: string;
+
+	@Field()
+	utc_arrival: string;
+
+	@Field(type => Float)
+	price: number;
+}

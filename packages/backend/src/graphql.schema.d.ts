@@ -7,6 +7,13 @@
 
 /* tslint:disable */
 /* eslint-disable */
+export class Context {
+    travelFrom: string;
+    travelTo: string;
+    dateFrom: DateTime;
+    dateTo: DateTime;
+}
+
 export class FlightCreateDto {
     url_reference: string;
     fly_from: string;
@@ -16,14 +23,6 @@ export class FlightCreateDto {
     adults: number;
     children: number;
     price: number;
-}
-
-export class QueryCreateDto {
-    departure_ap: string;
-    arrival_ap: string;
-    departure_date: DateTime;
-    arrival_date: DateTime;
-    adults: number;
 }
 
 export class TripCreateDto {
@@ -60,6 +59,16 @@ export class Flight {
     date_to: DateTime;
     adults: number;
     children: number;
+    price: number;
+}
+
+export class ResultFlight {
+    id: string;
+    flyFrom: string;
+    flyTo: string;
+    airlines: string[];
+    utc_departure: string;
+    utc_arrival: string;
     price: number;
 }
 
@@ -100,13 +109,13 @@ export abstract class IQuery {
     abstract favourite_flights_by_user_find_all(email: string): Flight[] | Promise<Flight[]>;
     abstract getAllUsers(): User[] | Promise<User[]>;
     abstract query_history_find_all_of_user(email: string): QueryObject[] | Promise<QueryObject[]>;
+    abstract query_create_and_user_addition(context: Context, email?: string): ResultFlight[] | Promise<ResultFlight[]>;
     abstract trip_find_all_of_user(email: string): Trip[] | Promise<Trip[]>;
 }
 
 export abstract class IMutation {
     abstract flight_create_and_user_addition(flightData: FlightCreateDto, email: string): boolean | Promise<boolean>;
     abstract user_favourite_flight_delete(url_reference: string, email: string): boolean | Promise<boolean>;
-    abstract query_create_and_user_addition(queryData: QueryCreateDto, email: string): boolean | Promise<boolean>;
     abstract user_history_query_delete(queryId: string, email: string): boolean | Promise<boolean>;
     abstract trip_create_and_user_addition(tripData: TripCreateDto, email: string): boolean | Promise<boolean>;
     abstract trip_modify(tripData: TripModifyDto, tripId: string): boolean | Promise<boolean>;

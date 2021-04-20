@@ -1,7 +1,8 @@
 import { Args, ID, Mutation, Query, Resolver } from '@nestjs/graphql';
+import { Flight, ResultFlight } from 'src/flight/gqltypes/flight.gqlype';
 import { ObjectID } from '../../common/types/objectid.type';
 import { UserService } from '../../user/services/user.service';
-import { QueryCreateDto } from '../dto/query-create.dto';
+import { Context, QueryCreateDto } from '../dto/query-create.dto';
 import { QueryObject } from '../gqltypes/query.gqltype';
 import { QueryService } from '../services/query.service';
 
@@ -33,15 +34,27 @@ export class QueryResolver {
 	 * @param queryData Query creation data
 	 * @returns True if success
 	 */
-	@Mutation(() => Boolean)
+	@Query(() => [ResultFlight])
 	async query_create_and_user_addition(
-		@Args('email')
+		@Args('email', { type: () => String, nullable: true })
 		email: string,
-		@Args('queryData', { type: () => QueryCreateDto }) //QueryCreatePipe
-		queryData: QueryCreateDto
-	) {
-		await this.queryService.createHistoryQueryAndAddition(email, queryData);
-		return true;
+		@Args('context', { type: () => Context }) //QueryCreatePipe
+		context: Context
+	): Promise<any[]> {
+		const url = '';
+		console.log(context);
+
+		//If user is logged we create Query and save it to its user
+		if (email) {
+			//Parse context to queryData and create
+			//await this.queryService.createHistoryQueryAndAddition(email, queryData);
+		}
+
+		//Parsejar context com a params de la url
+
+		//Search flights in a wrapped API in a service using context info
+		const results = await this.queryService.searchProviderApiContext(url);
+		return results;
 	}
 
 	/**

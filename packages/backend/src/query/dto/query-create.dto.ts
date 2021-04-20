@@ -19,3 +19,18 @@ export class QueryCreateDto {
 	@Field(type => Int)
 	adults: number;
 }
+
+@InputType()
+export class Context {
+	@Field()
+	travelFrom: string;
+
+	@Field()
+	travelTo: string;
+
+	@Field()
+	dateFrom: Date;
+
+	@Field()
+	dateTo: Date;
+}

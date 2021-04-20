@@ -18,6 +18,16 @@ A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date
 """
 scalar DateTime
 
+type ResultFlight {
+  id: String!
+  flyFrom: String!
+  flyTo: String!
+  airlines: [String!]!
+  utc_departure: String!
+  utc_arrival: String!
+  price: Float!
+}
+
 type QueryObject {
   departure_ap: String!
   arrival_ap: String!
@@ -55,13 +65,20 @@ type Query {
   favourite_flights_by_user_find_all(email: String!): [Flight!]!
   getAllUsers: [User!]!
   query_history_find_all_of_user(email: String!): [QueryObject!]!
+  query_create_and_user_addition(context: Context!, email: String): [ResultFlight!]!
   trip_find_all_of_user(email: String!): [Trip!]!
+}
+
+input Context {
+  travelFrom: String!
+  travelTo: String!
+  dateFrom: DateTime!
+  dateTo: DateTime!
 }
 
 type Mutation {
   flight_create_and_user_addition(flightData: FlightCreateDto!, email: String!): Boolean!
   user_favourite_flight_delete(url_reference: String!, email: String!): Boolean!
-  query_create_and_user_addition(queryData: QueryCreateDto!, email: String!): Boolean!
   user_history_query_delete(queryId: ID!, email: String!): Boolean!
   trip_create_and_user_addition(tripData: TripCreateDto!, email: String!): Boolean!
   trip_modify(tripData: TripModifyDto!, tripId: ID!): Boolean!
@@ -78,14 +95,6 @@ input FlightCreateDto {
   adults: Int!
   children: Int!
   price: Float!
-}
-
-input QueryCreateDto {
-  departure_ap: String!
-  arrival_ap: String!
-  departure_date: DateTime!
-  arrival_date: DateTime!
-  adults: Int!
 }
 
 input TripCreateDto {
