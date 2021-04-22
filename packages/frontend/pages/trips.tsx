@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/react-hooks';
 import { getSession, useSession } from 'next-auth/client';
 import React, { FC, useContext, useEffect } from 'react';
-import TripsList from '../components/generic/trips-list';
+import TripsList from '../components/generic/Trips/trips-list';
 import withApollo from '../lib/apollo/apolloClient';
 import Head from '../components/utils/head';
 import Loader from '../components/utils/loader';

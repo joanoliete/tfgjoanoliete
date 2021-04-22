@@ -7,6 +7,9 @@ import { ObjectID } from '../../common/types/objectid.type';
 
 @ObjectType()
 export class QueryObject {
+	@Field(() => ID)
+	_id?: ObjectID;
+
 	@Field()
 	departure_ap: string;
 
@@ -16,9 +19,9 @@ export class QueryObject {
 	@Field()
 	departure_date: Date;
 
-	@Field()
-	arrival_date: Date;
+	@Field({ nullable: true })
+	arrival_date?: Date;
 
-	@Field(type => Int)
-	adults: number;
+	@Field(type => Int, { nullable: true })
+	adults?: number;
 }

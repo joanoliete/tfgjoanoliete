@@ -9,9 +9,9 @@ import Link from 'next/link';
 import ReactPaginate from 'react-paginate';
 import Router from 'next/router';
 import { useRouter } from 'next/router';
-import { ExpandIcon } from '../icons/others/expand-icon';
-import { FavouritesIcon } from '../icons/header/favourites-icon';
-import { BuyIcon } from '../icons/header/buy-icon';
+import { ExpandIcon } from '../../icons/others/expand-icon';
+import { FavouritesIcon } from '../../icons/header/favourites-icon';
+import { BuyIcon } from '../../icons/header/buy-icon';
 import { useSession } from 'next-auth/client';
 import {
 	ApolloError,
@@ -22,7 +22,7 @@ import { toast } from 'react-toastify';
 import {
 	favourite_flights_by_user_find_all,
 	user_favourite_flight_delete,
-} from '../../gql/favourites.gql';
+} from '../../../gql/favourites.gql';
 
 type FlightCardProps = {
 	object: any | null;
@@ -47,6 +47,7 @@ const FlightCard: FC<FlightCardProps> = ({ object }) => {
 		onClickDelete({
 			variables: { url_reference: url_reference, email: email },
 		});
+		toast.success('Flight search!');
 	};
 
 	return (

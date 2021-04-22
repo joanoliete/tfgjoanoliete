@@ -10,8 +10,8 @@ import ReactPaginate from 'react-paginate';
 import Router from 'next/router';
 import { useRouter } from 'next/router';
 import { ObjectId } from 'bson';
-import Loader from '../utils/loader';
-import { DoubleRightArrowIcon } from '../icons/others/double-right-arrow-icon';
+import Loader from '../../utils/loader';
+import { DoubleRightArrowIcon } from '../../icons/others/double-right-arrow-icon';
 
 type DestinationCardProps = {
 	object: any | null;

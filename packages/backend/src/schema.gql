@@ -29,11 +29,12 @@ type ResultFlight {
 }
 
 type QueryObject {
+  _id: ID!
   departure_ap: String!
   arrival_ap: String!
   departure_date: DateTime!
-  arrival_date: DateTime!
-  adults: Int!
+  arrival_date: DateTime
+  adults: Int
 }
 
 type Trip {
@@ -65,15 +66,16 @@ type Query {
   favourite_flights_by_user_find_all(email: String!): [Flight!]!
   getAllUsers: [User!]!
   query_history_find_all_of_user(email: String!): [QueryObject!]!
-  query_create_and_user_addition(context: Context!, email: String): [ResultFlight!]!
+  query_create_and_user_addition(context: QueryCreateDto!, email: String): [ResultFlight!]!
   trip_find_all_of_user(email: String!): [Trip!]!
 }
 
-input Context {
-  travelFrom: String!
-  travelTo: String!
-  dateFrom: DateTime!
-  dateTo: DateTime!
+input QueryCreateDto {
+  departure_ap: String!
+  arrival_ap: String!
+  departure_date: DateTime!
+  arrival_date: DateTime
+  adults: Int
 }
 
 type Mutation {

@@ -15,6 +15,12 @@ const FlightsList: FC<FlightsListProps> = ({ list }) => {
 			<div className='items-center flex flex-col justify-center'>
 				<h2 className='text-2xl inset-0 pb-6 p-4'>Your favourite flights</h2>
 				<ul className='space-y-2'>
+					{list.length == 0 && (
+						<p>
+							No favourite flights yet, go search and add new ones to keep track
+							of them!
+						</p>
+					)}
 					{list.map(object => (
 						<FlightCard object={object}></FlightCard>
 					))}

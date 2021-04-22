@@ -16,8 +16,8 @@ export class QueryObject {
 	departure_date: Date;
 
 	@prop()
-	arrival_date: Date;
+	arrival_date?: Date;
 
 	@prop()
-	adults: number;
+	adults?: number;
 }

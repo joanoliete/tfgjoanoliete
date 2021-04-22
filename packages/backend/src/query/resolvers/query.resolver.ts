@@ -2,7 +2,7 @@ import { Args, ID, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { Flight, ResultFlight } from 'src/flight/gqltypes/flight.gqlype';
 import { ObjectID } from '../../common/types/objectid.type';
 import { UserService } from '../../user/services/user.service';
-import { Context, QueryCreateDto } from '../dto/query-create.dto';
+import { QueryCreateDto } from '../dto/query-create.dto';
 import { QueryObject } from '../gqltypes/query.gqltype';
 import { QueryService } from '../services/query.service';
 
@@ -38,19 +38,30 @@ export class QueryResolver {
 	async query_create_and_user_addition(
 		@Args('email', { type: () => String, nullable: true })
 		email: string,
-		@Args('context', { type: () => Context }) //QueryCreatePipe
-		context: Context
+		@Args('context', { type: () => QueryCreateDto }) //QueryCreatePipe
+		context: QueryCreateDto
 	): Promise<any[]> {
-		const url = '';
-		console.log(context);
-
 		//If user is logged we create Query and save it to its user
 		if (email) {
-			//Parse context to queryData and create
-			//await this.queryService.createHistoryQueryAndAddition(email, queryData);
+			const queryDataInput = {
+				departure_ap: context.departure_ap,
+				arrival_ap: context.arrival_ap,
+				departure_date: context.departure_date,
+			};
+			await this.queryService.createHistoryQueryAndAddition(
+				email,
+				queryDataInput
+			);
 		}
 
 		//Parsejar context com a params de la url
+		const url =
+			'fly_from=' +
+			context.departure_ap +
+			'&fly_to=' +
+			context.arrival_ap +
+			'&date_from=' +
+			getFormattedDate(context.departure_date);
 
 		//Search flights in a wrapped API in a service using context info
 		const results = await this.queryService.searchProviderApiContext(url);
@@ -73,4 +84,12 @@ export class QueryResolver {
 		await this.queryService.deleteHistoryQueryFromUser(email, queryId);
 		return true;
 	}
+}
+
+function getFormattedDate(date) {
+	const year = date.getFullYear();
+	const month = (1 + date.getMonth()).toString().padStart(2, '0');
+	const day = date.getDate().toString().padStart(2, '0');
+
+	return day + '/' + month + '/' + year;
 }

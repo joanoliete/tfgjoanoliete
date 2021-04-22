@@ -2,7 +2,7 @@ import withApollo from '../lib/apollo/apolloClient';
 import React, { FC, useEffect, useState } from 'react';
 import Head from '../components/utils/head';
 import SearchForm from '../components/searchForm/SearchForm';
-import ResultsList from '../components/generic/result-list';
+import ResultsList from '../components/generic/Results/result-list';
 
 /**
  * Index route

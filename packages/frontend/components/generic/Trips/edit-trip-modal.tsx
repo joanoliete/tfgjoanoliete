@@ -8,8 +8,8 @@ import React, {
 import Link from 'next/link';
 import ReactPaginate from 'react-paginate';
 import TripCard from './trip-card';
-import { CreateIcon } from '../icons/others/create-icon';
-import { DeleteIcon } from '../icons/others/delete-icon';
+import { CreateIcon } from '../../icons/others/create-icon';
+import { DeleteIcon } from '../../icons/others/delete-icon';
 import { Form, Formik, Field, FormikConfig, FieldArray } from 'formik';
 import { object as YupObject, string as YupString } from 'yup';
 import { session, useSession } from 'next-auth/client';
@@ -19,9 +19,9 @@ import {
 	trip_create_and_user_addition,
 	trip_find_all_of_user,
 	trip_modify,
-} from '../../gql/trips.gql';
+} from '../../../gql/trips.gql';
 import { Prompt } from 'react-router-dom';
-import { FormValidations } from '../../utils';
+import { FormValidations } from '../../../utils';
 
 interface IModifyTripInput {
 	name: string;

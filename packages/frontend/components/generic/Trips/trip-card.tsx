@@ -9,17 +9,20 @@ import Link from 'next/link';
 import ReactPaginate from 'react-paginate';
 import Router from 'next/router';
 import { useRouter } from 'next/router';
-import FlightCard from './flight-card';
+import FlightCard from '../Favourites/flight-card';
 import { useSession } from 'next-auth/client';
 import { useMutation } from '@apollo/react-hooks';
-import { DeleteIcon } from '../icons/others/delete-icon';
-import { ExpandIcon } from '../icons/others/expand-icon';
-import { trip_find_all_of_user, user_trip_delete } from '../../gql/trips.gql';
+import { DeleteIcon } from '../../icons/others/delete-icon';
+import { ExpandIcon } from '../../icons/others/expand-icon';
+import {
+	trip_find_all_of_user,
+	user_trip_delete,
+} from '../../../gql/trips.gql';
 import { ObjectId } from 'bson';
 import DestinationCard from './destination-card';
-import { EditIcon } from '../icons/others/edit-icon';
+import { EditIcon } from '../../icons/others/edit-icon';
 import EditModal from './edit-trip-modal';
-import { CreateIcon } from '../icons/others/create-icon';
+import { CreateIcon } from '../../icons/others/create-icon';
 import { toast } from 'react-toastify';
 
 type TripCardProps = {

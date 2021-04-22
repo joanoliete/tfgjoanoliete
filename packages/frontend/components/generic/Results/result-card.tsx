@@ -9,9 +9,9 @@ import Link from 'next/link';
 import ReactPaginate from 'react-paginate';
 import Router from 'next/router';
 import { useRouter } from 'next/router';
-import { ExpandIcon } from '../icons/others/expand-icon';
-import { FavouritesIcon } from '../icons/header/favourites-icon';
-import { BuyIcon } from '../icons/header/buy-icon';
+import { ExpandIcon } from '../../icons/others/expand-icon';
+import { FavouritesIcon } from '../../icons/header/favourites-icon';
+import { BuyIcon } from '../../icons/header/buy-icon';
 import { useSession } from 'next-auth/client';
 import {
 	ApolloError,
@@ -23,7 +23,8 @@ import { toast } from 'react-toastify';
 import {
 	favourite_flights_by_user_find_all,
 	user_favourite_flight_delete,
-} from '../../gql/favourites.gql';
+} from '../../../gql/favourites.gql';
+import { query_history_find_all_of_user } from '../../../gql/queries.gql';
 
 type ResultCardProps = {
 	object: any | null;
@@ -34,13 +35,13 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 	const [isOn, setIsOn] = useState(false);
 
 	if (session) {
-		const { data, loading } = useQuery(favourite_flights_by_user_find_all, {
+		const { data, loading } = useQuery(query_history_find_all_of_user, {
 			variables: {
 				email: session.user.email,
 			},
 		});
 		const favouriteFlightsList =
-			data && !loading ? data.favourite_flights_by_user_find_all : null;
+			data && !loading ? data.query_history_find_all_of_user : null;
 	}
 	return (
 		<li

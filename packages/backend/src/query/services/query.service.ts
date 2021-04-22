@@ -66,18 +66,16 @@ export class QueryService {
 
 	/**
 	 * Finds all flights from our provider matching user context and returns json
-	 * @param email String
-	 * @returns Queries array
+	 * @param contextParsedUrl String
+	 * @returns Array with flights
 	 */
-	async searchProviderApiContext(url: string): Promise<[]> {
+	async searchProviderApiContext(contextParsedUrl: string): Promise<[]> {
 		const finalUrl =
 			'https://tequila-api.kiwi.com/v2/search?' +
-			url +
+			contextParsedUrl +
 			'&apikey=4xdovHrJn2tw6M5SZA0CMssmZWi0t5ZZ';
-
-		return await fetch(
-			'https://tequila-api.kiwi.com/v2/search?fly_from=FRA&fly_to=PRG&date_from=01%2F04%2F2021&limit=20&apikey=4xdovHrJn2tw6M5SZA0CMssmZWi0t5ZZ'
-		)
+		console.log(finalUrl);
+		return await fetch(finalUrl)
 			.then(res => res.json())
 			.then(data => data.data);
 	}

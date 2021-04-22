@@ -13,24 +13,9 @@ export class QueryCreateDto {
 	@Field()
 	departure_date: Date;
 
-	@Field()
-	arrival_date: Date;
+	@Field({ nullable: true })
+	arrival_date?: Date;
 
-	@Field(type => Int)
-	adults: number;
-}
-
-@InputType()
-export class Context {
-	@Field()
-	travelFrom: string;
-
-	@Field()
-	travelTo: string;
-
-	@Field()
-	dateFrom: Date;
-
-	@Field()
-	dateTo: Date;
+	@Field(type => Int, { nullable: true })
+	adults?: number;
 }

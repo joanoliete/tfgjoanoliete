@@ -1,30 +1,17 @@
-import React, {
-	Dispatch,
-	FC,
-	SetStateAction,
-	useContext,
-	useEffect,
-	useState,
-} from 'react';
-import Link from 'next/link';
-import ReactPaginate from 'react-paginate';
-import Router from 'next/router';
-import { useRouter } from 'next/router';
-import FlightCard from './flight-card';
-import Loader from '../utils/loader';
+import React, { FC, useContext } from 'react';
+import Loader from '../../utils/loader';
 import ResultCard from './result-card';
-import { SearchContext } from '../../searchContext';
+import { SearchContext } from '../../../searchContext';
 import { useSession } from 'next-auth/client';
 import { useMutation, useQuery } from '@apollo/react-hooks';
-import { query_create_and_user_addition } from '../../gql/queries.gql';
+import { query_create_and_user_addition } from '../../../gql/queries.gql';
 
 const ResultsList: FC = () => {
 	const searchContext = useContext(SearchContext);
 	const searchContextObject = {
-		travelFrom: searchContext.travelFrom.name,
-		travelTo: searchContext.travelTo.name,
-		dateFrom: searchContext.dateFrom,
-		dateTo: searchContext.dateTo,
+		departure_ap: searchContext.travelFrom.name,
+		arrival_ap: searchContext.travelTo.name,
+		departure_date: searchContext.dateFrom,
 	};
 	const [session, loadingSession] = useSession();
 	let email = null;

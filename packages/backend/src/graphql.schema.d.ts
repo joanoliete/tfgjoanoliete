@@ -7,11 +7,12 @@
 
 /* tslint:disable */
 /* eslint-disable */
-export class Context {
-    travelFrom: string;
-    travelTo: string;
-    dateFrom: DateTime;
-    dateTo: DateTime;
+export class QueryCreateDto {
+    departure_ap: string;
+    arrival_ap: string;
+    departure_date: DateTime;
+    arrival_date?: DateTime;
+    adults?: number;
 }
 
 export class FlightCreateDto {
@@ -73,11 +74,12 @@ export class ResultFlight {
 }
 
 export class QueryObject {
+    _id: string;
     departure_ap: string;
     arrival_ap: string;
     departure_date: DateTime;
-    arrival_date: DateTime;
-    adults: number;
+    arrival_date?: DateTime;
+    adults?: number;
 }
 
 export class Trip {
@@ -109,7 +111,7 @@ export abstract class IQuery {
     abstract favourite_flights_by_user_find_all(email: string): Flight[] | Promise<Flight[]>;
     abstract getAllUsers(): User[] | Promise<User[]>;
     abstract query_history_find_all_of_user(email: string): QueryObject[] | Promise<QueryObject[]>;
-    abstract query_create_and_user_addition(context: Context, email?: string): ResultFlight[] | Promise<ResultFlight[]>;
+    abstract query_create_and_user_addition(context: QueryCreateDto, email?: string): ResultFlight[] | Promise<ResultFlight[]>;
     abstract trip_find_all_of_user(email: string): Trip[] | Promise<Trip[]>;
 }
 

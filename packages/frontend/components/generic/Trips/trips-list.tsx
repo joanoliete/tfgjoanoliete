@@ -6,7 +6,7 @@ import React, {
 	useState,
 } from 'react';
 import TripCard from './trip-card';
-import { CreateIcon } from '../icons/others/create-icon';
+import { CreateIcon } from '../../icons/others/create-icon';
 import CreateTripModal from './create-trip-modal';
 
 type TripsListProps = {

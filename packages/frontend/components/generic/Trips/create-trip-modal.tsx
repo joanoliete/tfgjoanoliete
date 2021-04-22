@@ -8,19 +8,19 @@ import React, {
 import Link from 'next/link';
 import ReactPaginate from 'react-paginate';
 import TripCard from './trip-card';
-import { CreateIcon } from '../icons/others/create-icon';
-import { DeleteIcon } from '../icons/others/delete-icon';
+import { CreateIcon } from '../../icons/others/create-icon';
+import { DeleteIcon } from '../../icons/others/delete-icon';
 import { Form, Formik, Field, FormikConfig, FieldArray } from 'formik';
 import { Prompt } from 'react-router-dom';
 import { object as YupObject, string as YupString } from 'yup';
-import { FormValidations } from './../../utils/index';
+import { FormValidations } from '../../../utils/index';
 import { session, useSession } from 'next-auth/client';
 import { ApolloError, useMutation } from '@apollo/react-hooks';
 import { toast } from 'react-toastify';
 import {
 	trip_create_and_user_addition,
 	trip_find_all_of_user,
-} from '../../gql/trips.gql';
+} from '../../../gql/trips.gql';
 
 interface ICreateTripInput {
 	name: string;
