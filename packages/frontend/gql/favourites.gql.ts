@@ -3,21 +3,33 @@ import gql from 'graphql-tag';
 export const favourite_flights_by_user_find_all = gql`
 	query favourite_flights_by_user_find_all($email: String!) {
 		favourite_flights_by_user_find_all(email: $email) {
-			url_reference
-			fly_from
-			fly_to
-			date_from
-			date_to
+			id
+			flyFrom
+			flyTo
+			cityFrom
+			cityTo
+			cityCodeFrom
+			cityCodeTo
+			utc_departure
+			utc_arrival
+			distance
+			airlines
 			price
 		}
 	}
 `;
 
 export const user_favourite_flight_delete = gql`
-	mutation user_favourite_flight_delete(
+	mutation user_favourite_flight_delete($email: String!, $id: String!) {
+		user_favourite_flight_delete(email: $email, id: $id)
+	}
+`;
+
+export const flight_create_and_user_addition = gql`
+	mutation flight_create_and_user_addition(
 		$email: String!
-		$url_reference: String!
+		$flightData: FlightCreateDto!
 	) {
-		user_favourite_flight_delete(email: $email, url_reference: $url_reference)
+		flight_create_and_user_addition(email: $email, flightData: $flightData)
 	}
 `;

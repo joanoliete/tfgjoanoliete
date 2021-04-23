@@ -23,6 +23,7 @@ import {
 	favourite_flights_by_user_find_all,
 	user_favourite_flight_delete,
 } from '../../../gql/favourites.gql';
+import { query_history_find_all_of_user } from '../../../gql/queries.gql';
 
 type FlightCardProps = {
 	object: any | null;
@@ -43,21 +44,21 @@ const FlightCard: FC<FlightCardProps> = ({ object }) => {
 		],
 	});
 
-	const onDelete = (url_reference: any, email: string) => {
+	const onDelete = (id: any, email: string) => {
 		onClickDelete({
-			variables: { url_reference: url_reference, email: email },
+			variables: { id: id, email: email },
 		});
-		toast.success('Flight search!');
+		toast.success('Flight deleted!');
 	};
 
 	return (
 		<li
 			className={`${
-				dateNow < new Date(object.date_from).getTime()
+				dateNow < new Date(object.utc_departure).getTime()
 					? ''
 					: 'bg-red-300 hover:bg-red-200'
 			} text-sm font-normal text-gray-700 border rounded-md border-b-0 shadow-md`}
-			key={object.url_reference}>
+			key={object.id}>
 			<div className=' border-gray-200 py-4 align-baseline flex '>
 				<div className='px-4 py-1 font-bold'>USD {object.price}</div>
 
@@ -66,21 +67,21 @@ const FlightCard: FC<FlightCardProps> = ({ object }) => {
 				</div>
 
 				<div className='px-4 py-1 hidden sm:block'>
-					{new Date(object.date_from).toUTCString()}
+					{new Date(object.utc_departure).toUTCString()}
 				</div>
 
 				<div className='px-4 py-1 hidden sm:block'>
-					{new Date(object.date_to).toUTCString()}
+					{new Date(object.utc_arrival).toUTCString()}
 				</div>
 
-				<div className='px-4 py-1 '>{object.fly_from}</div>
+				<div className='px-4 py-1 '>{object.cityCodeFrom}</div>
 
-				<div className='pl-4 py-1 '>{object.fly_to}</div>
+				<div className='pl-4 py-1 '>{object.cityCodeTo}</div>
 
 				<div className='px-4 pl-10 py-1 '>Direct</div>
 
 				<button
-					onClick={() => onDelete(object.url_reference, session.user.email)}
+					onClick={() => onDelete(object.id, session.user.email)}
 					className='px-4 py-1'>
 					<FavouritesIcon className=' fill-current blue cursor-pointer' />
 				</button>
@@ -101,7 +102,7 @@ const FlightCard: FC<FlightCardProps> = ({ object }) => {
 				</div>
 				<div className='pb-1'>
 					<button className='p-1  cursor-pointer border border-gray-900 rounded-md flex'>
-						<a href={object.url_reference}>Book flight</a>
+						<a href={undefined}>Book flight</a>
 						<div className='pl-1'>
 							<BuyIcon className='fill-current blue cursor-pointer p-0.5'></BuyIcon>
 						</div>

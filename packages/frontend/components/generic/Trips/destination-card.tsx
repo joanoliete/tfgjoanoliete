@@ -30,7 +30,7 @@ const DestinationCard: FC<DestinationCardProps> = ({ object }) => {
 				{object.flight_associated && (
 					<a
 						target='_blank'
-						href={object.flight_associated.url_reference}
+						href={object.flight_associated}
 						className='flex px-2 py-1 bg-gray-800 rounded-xl font-bold items-center text-white text-center hover:bg-gray-700'>
 						Associated flight
 						<DoubleRightArrowIcon />

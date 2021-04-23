@@ -27,6 +27,6 @@ export class DestinationModifyDto {
 	@Field({ nullable: true })
 	arrival_date: Date;
 
-	@Field(() => FlightCreateDto, { nullable: true })
-	flight_associated?: FlightCreateDto;
+	@Field({ nullable: true })
+	flight_associated?: string;
 }

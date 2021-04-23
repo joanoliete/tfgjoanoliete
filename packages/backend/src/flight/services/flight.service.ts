@@ -32,15 +32,13 @@ export class FlightService {
 	) {}
 
 	/**
-	 * Finds a flight by Url_reference
+	 * Finds a flight by id
 	 * @param {ObjectID} userId User ObjectId
-	 * @param url_reference	url_reference String
+	 * @param id	id String
 	 * @returns Flight
 	 */
-	findFlightByUrl(url_reference: string): Promise<Flight> {
-		return this.flightModel
-			.findOne({ url_reference: url_reference })
-			.exec() as Promise<Flight>;
+	findFlightByUrl(id: string): Promise<Flight> {
+		return this.flightModel.findOne({ id: id }).exec() as Promise<Flight>;
 	}
 
 	/**
@@ -53,9 +51,9 @@ export class FlightService {
 		email: string,
 		flightData: FlightCreateDto
 	): Promise<void> {
-		const { url_reference } = flightData;
+		const { id } = flightData;
 
-		let existingFlight = await this.findFlightByUrl(url_reference);
+		let existingFlight = await this.findFlightByUrl(id);
 
 		if (!existingFlight) {
 			existingFlight = await this.flightModel.create({
@@ -71,19 +69,14 @@ export class FlightService {
 	 * @param flight Flight object
 	 * @param email User email
 	 */
-	async deleteFavouriteFlight(
-		email: string,
-		url_reference: string
-	): Promise<void> {
+	async deleteFavouriteFlight(email: string, id: string): Promise<void> {
 		const user = await this.userService.findByEmail(email);
 		if (!user) throw new NotFoundException('User does not exist');
 
 		//const flight=await this.flightService.findById(flightId);
 		//if (!flight) throw new NotFoundException('Flight does not exist');
 
-		user.savedFlights = user.savedFlights.filter(
-			x => x.url_reference !== url_reference
-		);
+		user.savedFlights = user.savedFlights.filter(x => x.id !== id);
 
 		await user.save();
 	}
@@ -128,16 +121,14 @@ export class FlightService {
 	}
 
 	/**
-	 * Finds a flight by url_reference
-	 * @param url_reference String
+	 * Finds a flight by id
+	 * @param id String
 	 * @returns Flight data
 	 */
-	findByEmail(
-		url_reference: string
-	): Promise<DocumentType<Flight> | undefined> {
-		return this.flightModel
-			.findOne({ url_reference: url_reference.toLowerCase() })
-			.exec() as Promise<DocumentType<Flight>>;
+	findByEmail(id: string): Promise<DocumentType<Flight> | undefined> {
+		return this.flightModel.findOne({ id: id.toLowerCase() }).exec() as Promise<
+			DocumentType<Flight>
+		>;
 	}
 
 	/**

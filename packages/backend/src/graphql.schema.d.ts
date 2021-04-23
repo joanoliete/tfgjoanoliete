@@ -16,13 +16,17 @@ export class QueryCreateDto {
 }
 
 export class FlightCreateDto {
-    url_reference: string;
-    fly_from: string;
-    fly_to: string;
-    date_from: DateTime;
-    date_to: DateTime;
-    adults: number;
-    children: number;
+    id: string;
+    flyFrom: string;
+    flyTo: string;
+    cityFrom: string;
+    cityTo: string;
+    cityCodeFrom: string;
+    cityCodeTo: string;
+    utc_departure?: string;
+    utc_arrival?: string;
+    distance: number;
+    airlines: string[];
     price: number;
 }
 
@@ -36,7 +40,7 @@ export class DestinationCreateDto {
     _id?: string;
     city: string;
     arrival_date: DateTime;
-    flight_associated?: FlightCreateDto;
+    flight_associated?: string;
 }
 
 export class TripModifyDto {
@@ -49,27 +53,21 @@ export class DestinationModifyDto {
     _id?: string;
     city?: string;
     arrival_date?: DateTime;
-    flight_associated?: FlightCreateDto;
+    flight_associated?: string;
 }
 
 export class Flight {
-    url_reference: string;
-    fly_from: string;
-    fly_to: string;
-    date_from: DateTime;
-    date_to: DateTime;
-    adults: number;
-    children: number;
-    price: number;
-}
-
-export class ResultFlight {
     id: string;
     flyFrom: string;
     flyTo: string;
+    cityFrom: string;
+    cityTo: string;
+    cityCodeFrom: string;
+    cityCodeTo: string;
+    utc_departure?: string;
+    utc_arrival?: string;
+    distance: number;
     airlines: string[];
-    utc_departure: string;
-    utc_arrival: string;
     price: number;
 }
 
@@ -93,7 +91,7 @@ export class Destination {
     _id: string;
     city: string;
     arrival_date: DateTime;
-    flight_associated?: Flight;
+    flight_associated?: string;
 }
 
 export class User {
@@ -111,13 +109,13 @@ export abstract class IQuery {
     abstract favourite_flights_by_user_find_all(email: string): Flight[] | Promise<Flight[]>;
     abstract getAllUsers(): User[] | Promise<User[]>;
     abstract query_history_find_all_of_user(email: string): QueryObject[] | Promise<QueryObject[]>;
-    abstract query_create_and_user_addition(context: QueryCreateDto, email?: string): ResultFlight[] | Promise<ResultFlight[]>;
+    abstract query_create_and_user_addition(context: QueryCreateDto, email?: string): Flight[] | Promise<Flight[]>;
     abstract trip_find_all_of_user(email: string): Trip[] | Promise<Trip[]>;
 }
 
 export abstract class IMutation {
     abstract flight_create_and_user_addition(flightData: FlightCreateDto, email: string): boolean | Promise<boolean>;
-    abstract user_favourite_flight_delete(url_reference: string, email: string): boolean | Promise<boolean>;
+    abstract user_favourite_flight_delete(id: string, email: string): boolean | Promise<boolean>;
     abstract user_history_query_delete(queryId: string, email: string): boolean | Promise<boolean>;
     abstract trip_create_and_user_addition(tripData: TripCreateDto, email: string): boolean | Promise<boolean>;
     abstract trip_modify(tripData: TripModifyDto, tripId: string): boolean | Promise<boolean>;

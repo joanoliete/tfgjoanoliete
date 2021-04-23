@@ -69,10 +69,10 @@ export class FlightResolver {
 	async user_favourite_flight_delete(
 		@Args('email', { type: () => String })
 		email: string,
-		@Args('url_reference', { type: () => String })
-		url_reference: string
+		@Args('id', { type: () => String })
+		id: string
 	): Promise<boolean> {
-		await this.flightService.deleteFavouriteFlight(email, url_reference);
+		await this.flightService.deleteFavouriteFlight(email, id);
 		return true;
 	}
 }

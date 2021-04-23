@@ -28,6 +28,7 @@ import {
 	query_history_find_all_of_user,
 	user_history_query_delete,
 } from '../../../gql/queries.gql';
+import { SearchIcon } from '../../icons/header/search-icon';
 
 type QueryCardProps = {
 	object: any | null;
@@ -58,11 +59,11 @@ const QueryCard: FC<QueryCardProps> = ({ object }) => {
 	return (
 		<li
 			className={`${
-				dateNow < new Date(object.date_from).getTime()
+				dateNow < new Date(object.departure_date).getTime()
 					? ''
 					: 'bg-red-300 hover:bg-red-200'
 			} text-sm font-normal text-gray-700 border rounded-md border-b-0 shadow-md`}
-			key={object.url_reference}>
+			key={object.id}>
 			<div className=' border-gray-200 py-4 align-baseline flex '>
 				<div className='px-4 py-1 font-bold'>Search</div>
 
@@ -72,7 +73,11 @@ const QueryCard: FC<QueryCardProps> = ({ object }) => {
 
 				<div className='px-4 py-1 '>Departure: {object.departure_ap}</div>
 
-				<div className='pl-4 py-1 '>Arrival: {object.arrival_ap}</div>
+				<div className='pl-4 py-1 pr-8'>Arrival: {object.arrival_ap}</div>
+
+				<button onClick={() => undefined} className=' py-1'>
+					<SearchIcon className=' fill-current blue cursor-pointer' />
+				</button>
 
 				<button
 					onClick={() => onDelete(session.user.email, object._id)}

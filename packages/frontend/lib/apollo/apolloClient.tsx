@@ -9,7 +9,7 @@ const apolloClient = new ApolloClient({
 		credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
 		fetch,
 	}),
-	cache: new InMemoryCache(),
+	cache: new InMemoryCache({ addTypename: false }),
 });
 
 export default withApollo(apolloClient);

@@ -9,9 +9,7 @@ export const trip_find_all_of_user = gql`
 			destinations {
 				city
 				arrival_date
-				flight_associated {
-					url_reference
-				}
+				flight_associated
 			}
 		}
 	}

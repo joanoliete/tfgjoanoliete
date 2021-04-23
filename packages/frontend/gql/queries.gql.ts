@@ -6,13 +6,18 @@ export const query_create_and_user_addition = gql`
 		$context: QueryCreateDto!
 	) {
 		query_create_and_user_addition(email: $email, context: $context) {
-			price
-			flyTo
+			id
 			flyFrom
+			flyTo
+			cityFrom
+			cityTo
+			cityCodeFrom
+			cityCodeTo
 			utc_departure
 			utc_arrival
-			id
+			distance
 			airlines
+			price
 		}
 	}
 `;

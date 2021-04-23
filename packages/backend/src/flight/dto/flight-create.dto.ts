@@ -5,25 +5,37 @@ import { ObjectID } from '../../common/types/objectid.type';
 @InputType()
 export class FlightCreateDto {
 	@Field()
-	url_reference: string;
+	id: string;
 
 	@Field()
-	fly_from: string;
+	flyFrom: string;
 
 	@Field()
-	fly_to: string;
+	flyTo: string;
 
 	@Field()
-	date_from: Date;
+	cityFrom: string;
 
 	@Field()
-	date_to: Date;
+	cityTo: string;
 
-	@Field(type => Int)
-	adults: number;
+	@Field()
+	cityCodeFrom: string;
 
-	@Field(type => Int)
-	children: number;
+	@Field()
+	cityCodeTo: string;
+
+	@Field({ nullable: true })
+	utc_departure?: string;
+
+	@Field({ nullable: true })
+	utc_arrival?: string;
+
+	@Field(type => Float)
+	distance: number;
+
+	@Field(type => [String])
+	airlines: [string];
 
 	@Field(type => Float)
 	price: number;

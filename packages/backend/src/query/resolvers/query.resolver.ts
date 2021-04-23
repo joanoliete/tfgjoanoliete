@@ -1,5 +1,5 @@
 import { Args, ID, Mutation, Query, Resolver } from '@nestjs/graphql';
-import { Flight, ResultFlight } from 'src/flight/gqltypes/flight.gqlype';
+import { Flight } from 'src/flight/gqltypes/flight.gqlype';
 import { ObjectID } from '../../common/types/objectid.type';
 import { UserService } from '../../user/services/user.service';
 import { QueryCreateDto } from '../dto/query-create.dto';
@@ -34,7 +34,7 @@ export class QueryResolver {
 	 * @param queryData Query creation data
 	 * @returns True if success
 	 */
-	@Query(() => [ResultFlight])
+	@Query(() => [Flight])
 	async query_create_and_user_addition(
 		@Args('email', { type: () => String, nullable: true })
 		email: string,
@@ -60,7 +60,7 @@ export class QueryResolver {
 			context.departure_ap +
 			'&fly_to=' +
 			context.arrival_ap +
-			'&date_from=' +
+			'&limit=20&date_from=' +
 			getFormattedDate(context.departure_date);
 
 		//Search flights in a wrapped API in a service using context info

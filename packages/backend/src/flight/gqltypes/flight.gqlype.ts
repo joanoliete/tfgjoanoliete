@@ -8,33 +8,6 @@ import { ObjectID } from '../../common/types/objectid.type';
 @ObjectType()
 export class Flight {
 	@Field()
-	url_reference: string;
-
-	@Field()
-	fly_from: string;
-
-	@Field()
-	fly_to: string;
-
-	@Field()
-	date_from: Date;
-
-	@Field()
-	date_to: Date;
-
-	@Field(type => Int)
-	adults: number;
-
-	@Field(type => Int)
-	children: number;
-
-	@Field(type => Float)
-	price: number;
-}
-
-@ObjectType()
-export class ResultFlight {
-	@Field()
 	id: string;
 
 	@Field()
@@ -43,14 +16,29 @@ export class ResultFlight {
 	@Field()
 	flyTo: string;
 
+	@Field()
+	cityFrom: string;
+
+	@Field()
+	cityTo: string;
+
+	@Field()
+	cityCodeFrom: string;
+
+	@Field()
+	cityCodeTo: string;
+
+	@Field({ nullable: true })
+	utc_departure?: string;
+
+	@Field({ nullable: true })
+	utc_arrival?: string;
+
+	@Field(type => Float)
+	distance: number;
+
 	@Field(type => [String])
 	airlines: [string];
-
-	@Field()
-	utc_departure: string;
-
-	@Field()
-	utc_arrival: string;
 
 	@Field(type => Float)
 	price: number;

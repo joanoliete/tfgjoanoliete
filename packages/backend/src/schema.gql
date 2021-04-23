@@ -3,28 +3,17 @@
 # ------------------------------------------------------
 
 type Flight {
-  url_reference: String!
-  fly_from: String!
-  fly_to: String!
-  date_from: DateTime!
-  date_to: DateTime!
-  adults: Int!
-  children: Int!
-  price: Float!
-}
-
-"""
-A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
-"""
-scalar DateTime
-
-type ResultFlight {
   id: String!
   flyFrom: String!
   flyTo: String!
+  cityFrom: String!
+  cityTo: String!
+  cityCodeFrom: String!
+  cityCodeTo: String!
+  utc_departure: String
+  utc_arrival: String
+  distance: Float!
   airlines: [String!]!
-  utc_departure: String!
-  utc_arrival: String!
   price: Float!
 }
 
@@ -37,6 +26,11 @@ type QueryObject {
   adults: Int
 }
 
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
 type Trip {
   _id: ID!
   name: String!
@@ -48,7 +42,7 @@ type Destination {
   _id: ID!
   city: String!
   arrival_date: DateTime!
-  flight_associated: Flight
+  flight_associated: String
 }
 
 type User {
@@ -66,7 +60,7 @@ type Query {
   favourite_flights_by_user_find_all(email: String!): [Flight!]!
   getAllUsers: [User!]!
   query_history_find_all_of_user(email: String!): [QueryObject!]!
-  query_create_and_user_addition(context: QueryCreateDto!, email: String): [ResultFlight!]!
+  query_create_and_user_addition(context: QueryCreateDto!, email: String): [Flight!]!
   trip_find_all_of_user(email: String!): [Trip!]!
 }
 
@@ -80,7 +74,7 @@ input QueryCreateDto {
 
 type Mutation {
   flight_create_and_user_addition(flightData: FlightCreateDto!, email: String!): Boolean!
-  user_favourite_flight_delete(url_reference: String!, email: String!): Boolean!
+  user_favourite_flight_delete(id: String!, email: String!): Boolean!
   user_history_query_delete(queryId: ID!, email: String!): Boolean!
   trip_create_and_user_addition(tripData: TripCreateDto!, email: String!): Boolean!
   trip_modify(tripData: TripModifyDto!, tripId: ID!): Boolean!
@@ -89,13 +83,17 @@ type Mutation {
 }
 
 input FlightCreateDto {
-  url_reference: String!
-  fly_from: String!
-  fly_to: String!
-  date_from: DateTime!
-  date_to: DateTime!
-  adults: Int!
-  children: Int!
+  id: String!
+  flyFrom: String!
+  flyTo: String!
+  cityFrom: String!
+  cityTo: String!
+  cityCodeFrom: String!
+  cityCodeTo: String!
+  utc_departure: String
+  utc_arrival: String
+  distance: Float!
+  airlines: [String!]!
   price: Float!
 }
 
@@ -109,7 +107,7 @@ input DestinationCreateDto {
   _id: ID
   city: String!
   arrival_date: DateTime!
-  flight_associated: FlightCreateDto
+  flight_associated: String
 }
 
 input TripModifyDto {
@@ -122,5 +120,5 @@ input DestinationModifyDto {
   _id: ID
   city: String
   arrival_date: DateTime
-  flight_associated: FlightCreateDto
+  flight_associated: String
 }

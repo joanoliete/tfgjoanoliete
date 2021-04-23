@@ -22,8 +22,10 @@ import {
 import { toast } from 'react-toastify';
 import {
 	favourite_flights_by_user_find_all,
+	flight_create_and_user_addition,
 	user_favourite_flight_delete,
 } from '../../../gql/favourites.gql';
+import { UnFavouritesIcon } from '../../icons/header/unfavourites-icon';
 import { query_history_find_all_of_user } from '../../../gql/queries.gql';
 
 type ResultCardProps = {
@@ -31,18 +33,50 @@ type ResultCardProps = {
 };
 
 const ResultCard: FC<ResultCardProps> = ({ object }) => {
+	const favouriteArrayIds = [];
 	const [session, loading] = useSession();
 	const [isOn, setIsOn] = useState(false);
 
+	const [onClickCreate, result] = useMutation(flight_create_and_user_addition, {
+		refetchQueries: [
+			{
+				query: favourite_flights_by_user_find_all,
+				variables: {
+					email: session.user.email,
+				},
+			},
+			{
+				query: query_history_find_all_of_user,
+				variables: {
+					email: session.user.email,
+				},
+			},
+		],
+	});
+
+	const onClick = (email: string, flightData: any) => {
+		onClickCreate({
+			variables: { email: email, flightData: flightData },
+		});
+		toast.success('Flight added to favourites!');
+	};
+
 	if (session) {
-		const { data, loading } = useQuery(query_history_find_all_of_user, {
+		const { data, loading } = useQuery(favourite_flights_by_user_find_all, {
 			variables: {
 				email: session.user.email,
 			},
 		});
 		const favouriteFlightsList =
-			data && !loading ? data.query_history_find_all_of_user : null;
+			data && !loading ? data.favourite_flights_by_user_find_all : null;
+
+		if (favouriteFlightsList) {
+			favouriteFlightsList.forEach(flight => {
+				favouriteArrayIds.push(flight.id);
+			});
+		}
 	}
+
 	return (
 		<li
 			className='text-sm font-normal text-gray-700 border rounded-md border-b-0 shadow-md'
@@ -70,9 +104,19 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 
 				{/* Si el id de l'objecte es troba dins de l'array de ids que l'usuari té a preferits 
 				fillejar o no l'icona, i posar mutació onClick de afegir/borrar el vol de preferits*/}
-				{session && (
-					<button className='px-4 py-1'>
-						<FavouritesIcon className=' fill-current blue cursor-pointer' />
+				{session && !favouriteArrayIds.includes(object.id) && (
+					<button
+						className='px-4 py-1'
+						onClick={() => onClick(session.user.email, object)}>
+						<UnFavouritesIcon className=' fill-current red cursor-pointer' />
+					</button>
+				)}
+
+				{session && favouriteArrayIds.includes(object.id) && (
+					<button
+						className='px-4 py-1'
+						onClick={() => onClick(session.user.email, object)}>
+						<FavouritesIcon className=' fill-current red cursor-pointer' />
 					</button>
 				)}
 

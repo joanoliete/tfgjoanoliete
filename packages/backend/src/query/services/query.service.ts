@@ -74,7 +74,6 @@ export class QueryService {
 			'https://tequila-api.kiwi.com/v2/search?' +
 			contextParsedUrl +
 			'&apikey=4xdovHrJn2tw6M5SZA0CMssmZWi0t5ZZ';
-		console.log(finalUrl);
 		return await fetch(finalUrl)
 			.then(res => res.json())
 			.then(data => data.data);

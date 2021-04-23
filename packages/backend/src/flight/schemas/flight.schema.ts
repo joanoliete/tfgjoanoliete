@@ -1,29 +1,40 @@
 import { Float, Int } from '@nestjs/graphql';
 import { modelOptions, mongoose, prop } from '@typegoose/typegoose';
-import { ObjectID } from '../../common/types/objectid.type';
 
 @modelOptions({ options: { allowMixed: 0 } })
 export class Flight {
 	@prop()
-	url_reference: string;
+	id: string;
 
 	@prop()
-	fly_from: string;
+	flyFrom: string;
 
 	@prop()
-	fly_to: string;
+	flyTo: string;
 
 	@prop()
-	date_from: Date;
+	cityFrom: string;
 
 	@prop()
-	date_to: Date;
+	cityTo: string;
 
 	@prop()
-	adults: number;
+	cityCodeFrom: string;
 
 	@prop()
-	children: number;
+	cityCodeTo: string;
+
+	@prop()
+	utc_departure?: string;
+
+	@prop()
+	utc_arrival?: string;
+
+	@prop()
+	distance: number;
+
+	@prop()
+	airlines: [string];
 
 	@prop()
 	price: number;

@@ -63,20 +63,6 @@ describe('All tests (e2e)', () => {
 			_id: mongoose.Types.ObjectId('56cb91bdc3464f14678934ca'),
 		});
 		expect(insertedUser).toEqual(mockUser);
-
-		/*const mockFlight = {
-			_id: new mongoose.mongo.ObjectId('60cb91bdc3464f14678934ca'),
-			url_reference: 'http://hola.com',
-			fly_from: 'BCN',
-			fly_to: 'MDR',
-			date_from: '1990/07/15',
-			date_to: '1990/07/15',
-			adults: 4,
-			children: 4,
-			price: 4.0,
-		};
-		await flights.insertOne(mockFlight);
-		*/
 	});
 
 	it('Favourite flights - Add one to a user', async () => {
