@@ -37,28 +37,58 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 	const [session, loading] = useSession();
 	const [isOn, setIsOn] = useState(false);
 
-	const [onClickCreate, result] = useMutation(flight_create_and_user_addition, {
-		refetchQueries: [
-			{
-				query: favourite_flights_by_user_find_all,
-				variables: {
-					email: session.user.email,
+	const [onClickCreate, resultCreate] = useMutation(
+		flight_create_and_user_addition,
+		{
+			refetchQueries: [
+				{
+					query: favourite_flights_by_user_find_all,
+					variables: {
+						email: session.user.email,
+					},
 				},
-			},
-			{
-				query: query_history_find_all_of_user,
-				variables: {
-					email: session.user.email,
+				{
+					query: query_history_find_all_of_user,
+					variables: {
+						email: session.user.email,
+					},
 				},
-			},
-		],
-	});
+			],
+		}
+	);
 
-	const onClick = (email: string, flightData: any) => {
+	const [onClickDelete, resultDelete] = useMutation(
+		user_favourite_flight_delete,
+		{
+			refetchQueries: [
+				{
+					query: favourite_flights_by_user_find_all,
+					variables: {
+						email: session.user.email,
+					},
+				},
+				{
+					query: query_history_find_all_of_user,
+					variables: {
+						email: session.user.email,
+					},
+				},
+			],
+		}
+	);
+
+	const onClickAdd = (email: string, flightData: any) => {
 		onClickCreate({
 			variables: { email: email, flightData: flightData },
 		});
 		toast.success('Flight added to favourites!');
+	};
+
+	const onClickRemove = (email: string, id: any) => {
+		onClickDelete({
+			variables: { email: email, id: id },
+		});
+		toast.success('Flight deleted from favourites!');
 	};
 
 	if (session) {
@@ -102,12 +132,10 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 
 				<div className='px-4 pl-10 py-1 '>Direct</div>
 
-				{/* Si el id de l'objecte es troba dins de l'array de ids que l'usuari té a preferits 
-				fillejar o no l'icona, i posar mutació onClick de afegir/borrar el vol de preferits*/}
 				{session && !favouriteArrayIds.includes(object.id) && (
 					<button
 						className='px-4 py-1'
-						onClick={() => onClick(session.user.email, object)}>
+						onClick={() => onClickAdd(session.user.email, object)}>
 						<UnFavouritesIcon className=' fill-current red cursor-pointer' />
 					</button>
 				)}
@@ -115,7 +143,7 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 				{session && favouriteArrayIds.includes(object.id) && (
 					<button
 						className='px-4 py-1'
-						onClick={() => onClick(session.user.email, object)}>
+						onClick={() => onClickRemove(session.user.email, object.id)}>
 						<FavouritesIcon className=' fill-current red cursor-pointer' />
 					</button>
 				)}

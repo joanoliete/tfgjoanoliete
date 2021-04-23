@@ -216,7 +216,6 @@ const getForm = (
 	const initialValues: IModifyTripInput = {
 		name: object.name || '',
 		description: object.description || '',
-		//Borrar el __typename del cache perque malmet funcionament graphql i mirar forma de pasar el ID perque el resolver pugui fer els canvis
 		destinations: object.destinations || [''],
 	};
 

@@ -87,8 +87,16 @@ export class TripService {
 
 		if (name) existingTrip.name = name;
 		if (description) existingTrip.description = description;
-		//Modify destination in his document otherwise it doesnt udapte, fer nou metode
-		if (destinations) existingTrip.destinations = destinations;
+
+		if (destinations) {
+			destinations.forEach(async x => {
+				if (!x._id) {
+					await this.createAndAddDestination(tripId, x);
+				} else {
+					await this.updateDestination(x);
+				}
+			});
+		}
 
 		await existingTrip.save();
 	}
@@ -129,6 +137,57 @@ export class TripService {
 	}
 
 	/**
+	 * Creates new destination and add its to a trip
+	 * @param tripId ObjectID
+	 * @param destinationData Destination input Array
+	 * @returns boolean
+	 */
+	async createAndAddDestination(
+		tripId: ObjectID,
+		destinationData: DestinationCreateDto
+	): Promise<boolean> {
+		const trip = await this.findTripById(tripId);
+
+		if (!trip) throw new NotFoundException('Trip does not exist');
+
+		const newDestination = await this.destinationModel.create({
+			...destinationData,
+		});
+
+		trip.destinations.push(newDestination);
+
+		await trip.save();
+
+		return true;
+	}
+
+	/**
+	 * Updates destinations and add its to a trip
+	 * @param tripId ObjectID
+	 * @param destinationData Destination input Array
+	 * @returns boolean
+	 */
+	async updateDestination(
+		destinationData: DestinationCreateDto
+	): Promise<boolean> {
+		const destination = await this.findDestinationById(destinationData._id);
+
+		if (!destination) throw new NotFoundException('Destination does not exist');
+
+		if (destinationData.arrival_date)
+			destination.arrival_date = destinationData.arrival_date;
+
+		if (destinationData.city) destination.city = destinationData.city;
+
+		if (destinationData.flight_associated)
+			destination.flight_associated = destinationData.flight_associated;
+
+		await destination.save();
+
+		return true;
+	}
+
+	/**
 	 * Removes a destination from a given user trip
 	 * @param tripId ObjectId
 	 * @param destinationId ObjectId
@@ -158,15 +217,16 @@ export class TripService {
 	 * @returns Trip data
 	 */
 	findTripById(tripId: ObjectID): Promise<DocumentType<Trip> | undefined> {
-		return this.tripModel.findById(tripId).exec() as Promise<
-			DocumentType<Trip>
-		>;
+		return this.tripModel
+			.findById(tripId)
+			.populate('destinations')
+			.exec() as Promise<DocumentType<Trip>>;
 	}
 
 	/**
 	 * Finds a Destination by id.
 	 * @param DestinationId Destination ObjectId
-	 * @returns Trip data
+	 * @returns Destination data
 	 */
 	findDestinationById(
 		destinationId: ObjectID

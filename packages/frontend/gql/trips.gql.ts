@@ -7,6 +7,7 @@ export const trip_find_all_of_user = gql`
 			name
 			description
 			destinations {
+				_id
 				city
 				arrival_date
 				flight_associated

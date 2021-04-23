@@ -26,7 +26,9 @@ const DestinationCard: FC<DestinationCardProps> = ({ object }) => {
 					{new Date(object.arrival_date).toUTCString()}
 				</div>
 
-				{!object.flight_associated && <p>No flight associated</p>}
+				{!object.flight_associated && (
+					<p className='items-center py-1'>No flight associated</p>
+				)}
 				{object.flight_associated && (
 					<a
 						target='_blank'
