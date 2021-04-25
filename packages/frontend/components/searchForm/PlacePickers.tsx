@@ -12,16 +12,52 @@ import { LocationToIcon } from '../icons/others/location-to-icon';
 import { Location } from '././../../searchContext/searchContextTypes';
 import { SearchContext } from '../../searchContext';
 import { AutoComplete } from 'antd';
+import JSONAirports from './../utils/airports.json';
 
 const PlacePickers: FC<any> = ({}) => {
 	const { travelFrom, travelTo, setTravelFrom, setTravelTo } = useContext(
 		SearchContext
 	);
 	//Fer crida o agafar del JSON tots els aeroports
-	const options = [
-		{ value: 'Utirik Airport', a: 'AUT' },
-		{ value: 'Five Finger CG Heliport' },
-		{ value: 'False Island Seaplane Base' },
+	const array = [
+		{
+			iata: 'UTK',
+			lon: '169.86667',
+			iso: 'MH',
+			status: 1,
+			value: 'Utirik Airport',
+			continent: 'OC',
+			type: 'airport',
+			lat: '11.233333',
+			size: 'small',
+		},
+		{
+			iata: 'FIV',
+			iso: 'US',
+			status: 1,
+			value: 'Five Finger CG Heliport',
+			continent: 'NA',
+			type: 'heliport',
+			size: null,
+		},
+		{
+			iata: 'FAK',
+			iso: 'US',
+			status: 1,
+			value: 'False Island Seaplane Base',
+			continent: 'NA',
+			type: 'seaplanes',
+			size: null,
+		},
+		{
+			iata: 'BWS',
+			iso: 'US',
+			status: 0,
+			value: 'Blaine Municipal Airport',
+			continent: 'NA',
+			type: 'closed',
+			size: null,
+		},
 	];
 
 	return (
@@ -42,7 +78,7 @@ const PlacePickers: FC<any> = ({}) => {
 						}
 						value={travelFrom.name}
 						style={{ width: 200 }}
-						options={options}
+						options={array}
 						placeholder='Travel from?'
 						filterOption={(inputValue, option) =>
 							option?.value.toUpperCase().indexOf(inputValue.toUpperCase()) !==
@@ -69,7 +105,7 @@ const PlacePickers: FC<any> = ({}) => {
 						value={travelTo.name}
 						style={{ width: 200 }}
 						placeholder='To?'
-						options={options}
+						options={array}
 						filterOption={(inputValue, option) =>
 							option?.value.toUpperCase().indexOf(inputValue.toUpperCase()) !==
 							-1

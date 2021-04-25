@@ -12,7 +12,7 @@ type QueriesListProps = {
 
 const QueriesList: FC<QueriesListProps> = ({ list }) => {
 	return (
-		<div className='bg-white pb-4 px-4 rounded-md w-full flex-grow'>
+		<div className='bg-white pb-10 px-4 rounded-md w-full flex-grow'>
 			<div className='items-center flex flex-col justify-center'>
 				<h2 className='text-2xl inset-0 pb-6 p-4'>Your last Queries</h2>
 				<ul className='space-y-2'>
@@ -21,8 +21,8 @@ const QueriesList: FC<QueriesListProps> = ({ list }) => {
 							No searches yet, go search and add new ones to keep track of them!
 						</p>
 					)}
-					{list.map(object => (
-						<QueryCard object={object}></QueryCard>
+					{[...list].reverse().map(object => (
+						<QueryCard key={object._id} object={object}></QueryCard>
 					))}
 				</ul>
 			</div>

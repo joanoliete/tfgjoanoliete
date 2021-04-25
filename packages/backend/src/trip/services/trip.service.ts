@@ -14,6 +14,7 @@ import { DocumentType, Ref } from '@typegoose/typegoose/lib/types';
 import { UserService } from './../../user/services/user.service';
 import { DestinationCreateDto, TripCreateDto } from '../dto/trip-create.dto';
 import { TripModifyDto } from '../dto/trip-modify.dto';
+import { id } from 'date-fns/locale';
 
 /**
  * Service for communicating with the Trip database
@@ -87,6 +88,8 @@ export class TripService {
 
 		if (name) existingTrip.name = name;
 		if (description) existingTrip.description = description;
+
+		if (destinations) existingTrip.destinations = destinations;
 
 		if (destinations) {
 			destinations.forEach(async x => {

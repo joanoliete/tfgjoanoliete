@@ -21,8 +21,8 @@ const FlightsList: FC<FlightsListProps> = ({ list }) => {
 							of them!
 						</p>
 					)}
-					{list.map(object => (
-						<FlightCard object={object}></FlightCard>
+					{[...list].reverse().map(object => (
+						<FlightCard key={object.id} object={object}></FlightCard>
 					))}
 				</ul>
 			</div>

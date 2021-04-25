@@ -115,7 +115,14 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 				<div className='px-4 py-1 font-bold'>USD {object.price}</div>
 
 				<div className='px-4 py-1 '>
-					<img src='' alt='' />
+					<img
+						src={`${
+							'https://images.kiwi.com/airlines/32/' +
+							object.airlines[0] +
+							'.png'
+						}`}
+						alt=''
+					/>
 				</div>
 
 				<div className='px-4 py-1 hidden sm:block'>
