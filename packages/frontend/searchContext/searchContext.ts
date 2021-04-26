@@ -50,7 +50,7 @@ export const defaultState: SearchContextState = {
 	setTravelTo: () => undefined,
 };
 
-//Other way of making searchContect?
+//Other way of making searchContext?
 export const SearchContextProvider = () => {
 	const [tripType, settripType] = useState(defaultState.tripType);
 	const [travelFrom, settravelFrom] = useState(defaultState.travelFrom);
@@ -88,6 +88,7 @@ export const SearchContextProvider = () => {
 			return acc;
 		}, {});
 	}
+
 	return {
 		tripType,
 		travelFrom,

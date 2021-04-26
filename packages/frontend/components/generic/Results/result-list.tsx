@@ -1,4 +1,4 @@
-import React, { FC, useContext } from 'react';
+import React, { FC, useContext, useEffect } from 'react';
 import Loader from '../../utils/loader';
 import ResultCard from './result-card';
 import { SearchContext } from '../../../searchContext';
@@ -31,7 +31,7 @@ const ResultsList: FC = () => {
 
 	return queryList ? (
 		<>
-			<div className='bg-white pb-4 px-4 rounded-md w-full flex-grow'>
+			<div className='bg-white pb-4 px-4 rounded-md w-full flex-grow pt-2'>
 				<div className='items-center flex flex-col justify-center'>
 					<h2 className='text-2xl inset-0 pb-6 p-4'>Search results</h2>
 					{queryList.length != 0 && (

@@ -74,11 +74,11 @@ const FlightCard: FC<FlightCardProps> = ({ object }) => {
 				</div>
 
 				<div className='px-4 py-1 hidden sm:block'>
-					{new Date(object.utc_departure).toUTCString()}
+					{new Date(object.utc_departure).toLocaleString()}
 				</div>
 
 				<div className='px-4 py-1 hidden sm:block'>
-					{new Date(object.utc_arrival).toUTCString()}
+					{new Date(object.utc_arrival).toLocaleString()}
 				</div>
 
 				<div className='px-4 py-1 '>{object.cityCodeFrom}</div>
@@ -103,15 +103,40 @@ const FlightCard: FC<FlightCardProps> = ({ object }) => {
 					isOn ? 'block' : 'hidden'
 				} px-4 py-2 items-center flex flex-col justify-center `}>
 				<div className='pb-2'>
-					<button className='px-4 py-2 pb-3 border border-gray-900 rounded-md'>
-						<p>Detailed flight information</p>
-					</button>
+					<div className='px-4 py-2 pb-3 border border-gray-300 rounded-md flex'>
+						<p className='pr-1'>
+							{new Date(object.utc_departure).toLocaleDateString()}
+						</p>
+						<p className='pr-1'>{object.airlines[0]}</p>
+						<p className='pr-1'>
+							Depart at{' '}
+							{new Date(object.utc_departure).toLocaleTimeString().slice(0, 5)}{' '}
+							from {object.cityFrom}
+						</p>
+						<p className='pr-1'>Distance {object.distance}Km</p>
+						<p className='pr-1'>
+							Fly for{' '}
+							{(
+								(new Date(object.utc_arrival).getTime() -
+									new Date(object.utc_departure).getTime()) /
+								1000 /
+								60 /
+								60
+							).toPrecision(2)}{' '}
+							hours
+						</p>
+						<p>
+							Arrival {object.cityTo} at{' '}
+							{new Date(object.utc_arrival).toLocaleTimeString().slice(0, 5)}
+						</p>
+					</div>
 				</div>
+
 				<div className='pb-1'>
-					<button className='p-1  cursor-pointer border border-gray-900 rounded-md flex'>
-						<a href={undefined}>Book flight</a>
+					<button className='p-1 pt-2 pl-2 cursor-pointer border border-gray-900 rounded-md flex hover:bg-gray-900 hover:text-white text-md font-bold'>
+						<a>Book flight</a>
 						<div className='pl-1'>
-							<BuyIcon className='fill-current blue cursor-pointer p-0.5'></BuyIcon>
+							<BuyIcon className='fill-current blue cursor-pointer '></BuyIcon>
 						</div>
 					</button>
 				</div>

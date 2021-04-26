@@ -15,7 +15,7 @@ const Index: FC = () => {
 			<div className='my-auto px-1 pb-6 flex-grow'>
 				<SearchForm show={setShowResults} />
 				{showResults ? <ResultsList /> : null}
-				{/*Secció de cards amb destinacions més buscades i estadístiques del lloc*/}
+				{/*Secció de cards amb destinacions més buscades i estadístiques del lloc, amagar al buscar*/}
 			</div>
 		</>
 	);
