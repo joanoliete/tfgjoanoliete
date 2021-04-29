@@ -26,8 +26,25 @@ export class FlightCreateDto {
     utc_departure?: string;
     utc_arrival?: string;
     distance: number;
+    route: RouteCreateDTO[];
     airlines: string[];
     price: number;
+}
+
+export class RouteCreateDTO {
+    id?: string;
+    flyFrom?: string;
+    flyTo?: string;
+    cityFrom?: string;
+    cityCodeFrom?: string;
+    cityTo?: string;
+    cityCodeTo?: string;
+    airline?: string;
+    flight_no?: number;
+    local_arrival?: string;
+    utc_arrival?: string;
+    local_departure?: string;
+    utc_departure?: string;
 }
 
 export class TripCreateDto {
@@ -67,8 +84,25 @@ export class Flight {
     utc_departure?: string;
     utc_arrival?: string;
     distance: number;
+    route: Route[];
     airlines: string[];
     price: number;
+}
+
+export class Route {
+    id?: string;
+    flyFrom?: string;
+    flyTo?: string;
+    cityFrom?: string;
+    cityCodeFrom?: string;
+    cityTo?: string;
+    cityCodeTo?: string;
+    airline?: string;
+    flight_no?: number;
+    local_arrival?: string;
+    utc_arrival?: string;
+    local_departure?: string;
+    utc_departure?: string;
 }
 
 export class QueryObject {

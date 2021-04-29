@@ -16,6 +16,21 @@ export const query_create_and_user_addition = gql`
 			utc_departure
 			utc_arrival
 			distance
+			route {
+				id
+				flyFrom
+				flyTo
+				cityFrom
+				cityCodeFrom
+				cityTo
+				cityCodeTo
+				airline
+				flight_no
+				local_arrival
+				utc_arrival
+				local_departure
+				utc_departure
+			}
 			airlines
 			price
 		}

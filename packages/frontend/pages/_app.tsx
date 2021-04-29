@@ -13,6 +13,7 @@ import {
 } from '../../frontend/searchContext/searchContext';
 import './../styles/datepickerstyles.css';
 import './../styles/placepickerstyles.css';
+
 /**
  * Application entry point component
  */

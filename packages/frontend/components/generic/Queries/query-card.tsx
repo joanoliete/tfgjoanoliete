@@ -1,28 +1,7 @@
-import React, {
-	Dispatch,
-	FC,
-	SetStateAction,
-	useContext,
-	useState,
-} from 'react';
-import Link from 'next/link';
-import ReactPaginate from 'react-paginate';
-import Router from 'next/router';
-import { useRouter } from 'next/router';
-import { ExpandIcon } from '../../icons/others/expand-icon';
-import { FavouritesIcon } from '../../icons/header/favourites-icon';
-import { BuyIcon } from '../../icons/header/buy-icon';
+import React, { Dispatch, FC, useState } from 'react';
 import { useSession } from 'next-auth/client';
-import {
-	ApolloError,
-	ApolloQueryResult,
-	useMutation,
-} from '@apollo/react-hooks';
+import { useMutation } from '@apollo/react-hooks';
 import { toast } from 'react-toastify';
-import {
-	favourite_flights_by_user_find_all,
-	user_favourite_flight_delete,
-} from '../../../gql/favourites.gql';
 import { DeleteIcon } from '../../icons/others/delete-icon';
 import {
 	query_history_find_all_of_user,
@@ -75,16 +54,37 @@ const QueryCard: FC<QueryCardProps> = ({ object }) => {
 
 				<div className='pl-4 py-1 pr-8'>Arrival: {object.arrival_ap}</div>
 
-				<button onClick={() => undefined} className=' py-1'>
+				<button onClick={() => undefined} className=' py-1 pr-2'>
 					<SearchIcon className=' fill-current blue cursor-pointer' />
 				</button>
 
+				<label className='flex justify-start items-start py-1 '>
+					<div className='bg-white border-2 rounded border-gray-600 w-5 h-5 flex flex-shrink-0 justify-center items-center'>
+						<input
+							type='checkbox'
+							className='checkbox opacity-0 absolute cursor-pointer '
+						/>
+						<div className='check-icon hidden  text-white rounded-sm'>
+							<svg
+								className='fill-current  w-4 h-4 text-green-500 pointer-events-none'
+								viewBox='0 0 20 20'>
+								<path d='M0 11l2-2 5 5L18 3l2 2L7 18z' />
+							</svg>
+						</div>
+					</div>
+				</label>
+
 				<button
 					onClick={() => onDelete(session.user.email, object._id)}
-					className='px-4 py-1'>
+					className='p-3 py-1'>
 					<DeleteIcon className=' fill-current blue cursor-pointer' />
 				</button>
 			</div>
+			<style>
+				{`  .checkbox:checked + .check-icon {
+                            display: flex;
+                        }`}
+			</style>
 		</li>
 	);
 };

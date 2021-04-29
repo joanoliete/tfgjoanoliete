@@ -13,6 +13,21 @@ export const favourite_flights_by_user_find_all = gql`
 			utc_departure
 			utc_arrival
 			distance
+			route {
+				id
+				flyFrom
+				flyTo
+				cityFrom
+				cityCodeFrom
+				cityTo
+				cityCodeTo
+				airline
+				flight_no
+				local_arrival
+				utc_arrival
+				local_departure
+				utc_departure
+			}
 			airlines
 			price
 		}

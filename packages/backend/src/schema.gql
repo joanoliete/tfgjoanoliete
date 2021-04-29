@@ -13,8 +13,25 @@ type Flight {
   utc_departure: String
   utc_arrival: String
   distance: Float!
+  route: [Route!]!
   airlines: [String!]!
   price: Float!
+}
+
+type Route {
+  id: String
+  flyFrom: String
+  flyTo: String
+  cityFrom: String
+  cityCodeFrom: String
+  cityTo: String
+  cityCodeTo: String
+  airline: String
+  flight_no: Int
+  local_arrival: String
+  utc_arrival: String
+  local_departure: String
+  utc_departure: String
 }
 
 type QueryObject {
@@ -93,8 +110,25 @@ input FlightCreateDto {
   utc_departure: String
   utc_arrival: String
   distance: Float!
+  route: [RouteCreateDTO!]!
   airlines: [String!]!
   price: Float!
+}
+
+input RouteCreateDTO {
+  id: String
+  flyFrom: String
+  flyTo: String
+  cityFrom: String
+  cityCodeFrom: String
+  cityTo: String
+  cityCodeTo: String
+  airline: String
+  flight_no: Int
+  local_arrival: String
+  utc_arrival: String
+  local_departure: String
+  utc_departure: String
 }
 
 input TripCreateDto {

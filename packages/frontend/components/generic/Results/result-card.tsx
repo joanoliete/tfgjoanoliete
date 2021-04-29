@@ -114,15 +114,17 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 			<div className=' border-gray-200 py-5 align-baseline flex '>
 				<div className='px-4 py-1 font-bold'>USD {object.price}</div>
 
-				<div className='px-4 py-1 '>
-					<img
-						src={`${
-							'https://images.kiwi.com/airlines/32/' +
-							object.airlines[0] +
-							'.png'
-						}`}
-						alt=''
-					/>
+				<div className='px-4 py-1 flex '>
+					{object.airlines.map(image => {
+						return (
+							<img
+								className='px-1'
+								src={`${
+									'https://images.kiwi.com/airlines/32/' + image + '.png'
+								}`}
+							/>
+						);
+					})}
 				</div>
 
 				<div className='px-4 py-1 hidden sm:block'>
@@ -137,7 +139,9 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 
 				<div className='pl-4 py-1 '>{object.flyTo}</div>
 
-				<div className='px-4 pl-10 py-1 '>Direct</div>
+				<div className='px-4 pl-10 py-1 '>
+					{object.route.length == 1 ? 'Direct' : object.route.length + ' Stops'}
+				</div>
 
 				{session && !favouriteArrayIds.includes(object.id) && (
 					<button
@@ -164,35 +168,46 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 				className={`${
 					isOn ? 'block' : 'hidden'
 				} px-4 py-2 items-center flex flex-col justify-center `}>
-				<div className='pb-2'>
-					<div className='px-4 py-2 pb-3 border border-gray-300 rounded-md flex'>
-						<p className='pr-1'>
-							{new Date(object.utc_departure).toLocaleDateString()}
-						</p>
-						<p className='pr-1'>{object.airlines[0]}</p>
-						<p className='pr-1'>
-							Depart at{' '}
-							{new Date(object.utc_departure).toLocaleTimeString().slice(0, 5)}{' '}
-							from {object.cityFrom}
-						</p>
-						<p className='pr-1'>Distance {object.distance}Km</p>
-						<p className='pr-1'>
-							Fly for{' '}
-							{(
-								(new Date(object.utc_arrival).getTime() -
-									new Date(object.utc_departure).getTime()) /
-								1000 /
-								60 /
-								60
-							).toPrecision(2)}{' '}
-							hours
-						</p>
-						<p>
-							Arrival {object.cityTo} at{' '}
-							{new Date(object.utc_arrival).toLocaleTimeString().slice(0, 5)}
-						</p>
-					</div>
-				</div>
+				{object.route.map(route => {
+					return (
+						<div className='pb-2'>
+							<div className='px-4 py-2 pb-3 border border-gray-300 rounded-md flex'>
+								<p className='pr-1'>
+									{new Date(route.utc_departure).toLocaleDateString()}
+								</p>
+
+								<p className='pr-1'>{route.airline}</p>
+
+								<p className='pr-1'>{route.flight_no}</p>
+
+								<p className='pr-1'>
+									Depart at{' '}
+									{new Date(route.utc_departure)
+										.toLocaleTimeString()
+										.slice(0, 5)}{' '}
+									from {route.cityFrom}
+								</p>
+
+								<p className='pr-1'>
+									Fly for{' '}
+									{(
+										(new Date(route.utc_arrival).getTime() -
+											new Date(route.utc_departure).getTime()) /
+										1000 /
+										60 /
+										60
+									).toPrecision(2)}{' '}
+									hours
+								</p>
+								<p>
+									Arrival {route.cityTo} at{' '}
+									{new Date(route.utc_arrival).toLocaleTimeString().slice(0, 5)}
+								</p>
+							</div>
+						</div>
+					);
+				})}
+
 				<div className='pb-1'>
 					<button className='p-1 pt-2 pl-2 cursor-pointer border border-gray-900 rounded-md flex hover:bg-gray-900 hover:text-white text-md font-bold'>
 						<a>Book flight</a>
