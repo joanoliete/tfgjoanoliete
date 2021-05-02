@@ -528,17 +528,6 @@
         "size": null
     },
     {
-        "iata": "AMC",
-        "lon": "20.283333",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "11.033333",
-        "size": "large"
-    },
-    {
         "iata": "AME",
         "lon": "37.583332",
         "iso": "MZ",
@@ -788,15 +777,6 @@
         "type": "airport",
         "lat": "-40.833332",
         "size": "small"
-    },
-    {
-        "iata": "SZQ",
-        "iso": "AR",
-        "status": 0,
-        "value": null,
-        "continent": "SA",
-        "type": "closed",
-        "size": null
     },
     {
         "iata": "VCF",
@@ -2278,17 +2258,6 @@
         "size": null
     },
     {
-        "iata": "BHL",
-        "lon": "-113.55",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "28.95",
-        "size": "small"
-    },
-    {
         "iata": "AEY",
         "lon": "-18.075068",
         "iso": "IS",
@@ -2311,28 +2280,6 @@
         "size": "small"
     },
     {
-        "iata": "BGJ",
-        "lon": "-14.5",
-        "iso": "IS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "66.0",
-        "size": "small"
-    },
-    {
-        "iata": "BJD",
-        "lon": "-14.75",
-        "iso": "IS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "66.066666",
-        "size": "small"
-    },
-    {
         "iata": "BLO",
         "lon": "-20.3",
         "iso": "IS",
@@ -2341,114 +2288,6 @@
         "continent": "EU",
         "type": "airport",
         "lat": "65.666664",
-        "size": "small"
-    },
-    {
-        "iata": "BQD",
-        "iso": "IS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "size": "small"
-    },
-    {
-        "iata": "BXV",
-        "lon": "-14.0",
-        "iso": "IS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "64.76667",
-        "size": "small"
-    },
-    {
-        "iata": "DJU",
-        "lon": "-14.268333",
-        "iso": "IS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "64.650276",
-        "size": "small"
-    },
-    {
-        "iata": "EGS",
-        "lon": "-14.402778",
-        "iso": "IS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "65.27778",
-        "size": "medium"
-    },
-    {
-        "iata": "FAS",
-        "lon": "-14.016667",
-        "iso": "IS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "64.95",
-        "size": "small"
-    },
-    {
-        "iata": "FAG",
-        "lon": "-16.65",
-        "iso": "IS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "63.88333",
-        "size": "small"
-    },
-    {
-        "iata": "GUU",
-        "lon": "-23.166668",
-        "iso": "IS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "64.96667",
-        "size": "small"
-    },
-    {
-        "iata": "GJR",
-        "lon": "-21.35",
-        "iso": "IS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "65.98333",
-        "size": "small"
-    },
-    {
-        "iata": "GRY",
-        "lon": "-18.016666",
-        "iso": "IS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "66.566666",
-        "size": "small"
-    },
-    {
-        "iata": "HVK",
-        "lon": "-22.466667",
-        "iso": "IS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "65.7",
         "size": "small"
     },
     {
@@ -2485,39 +2324,6 @@
         "size": "medium"
     },
     {
-        "iata": "HVM",
-        "lon": "-21.0",
-        "iso": "IS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "65.416664",
-        "size": "small"
-    },
-    {
-        "iata": "HLO",
-        "lon": "15.5",
-        "iso": "IS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "29.5",
-        "size": "small"
-    },
-    {
-        "iata": "IFJ",
-        "lon": "-23.132778",
-        "iso": "IS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "66.05972",
-        "size": "medium"
-    },
-    {
         "iata": "KEF",
         "lon": "-22.624283",
         "iso": "IS",
@@ -2527,50 +2333,6 @@
         "type": "airport",
         "lat": "63.997765",
         "size": "large"
-    },
-    {
-        "iata": "OPA",
-        "lon": "-16.483334",
-        "iso": "IS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "66.416664",
-        "size": "small"
-    },
-    {
-        "iata": "SAK",
-        "lon": "-19.65",
-        "iso": "IS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "65.75",
-        "size": "small"
-    },
-    {
-        "iata": "NOR",
-        "lon": "-22.0",
-        "iso": "IS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "65.166664",
-        "size": "small"
-    },
-    {
-        "iata": "OFJ",
-        "lon": "-19.833332",
-        "iso": "IS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "65.583336",
-        "size": "small"
     },
     {
         "iata": "PFJ",
@@ -2584,17 +2346,6 @@
         "size": "medium"
     },
     {
-        "iata": "RHA",
-        "lon": "-21.416668",
-        "iso": "IS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "65.166664",
-        "size": "small"
-    },
-    {
         "iata": "OLI",
         "lon": "-23.983334",
         "iso": "IS",
@@ -2603,17 +2354,6 @@
         "continent": "EU",
         "type": "airport",
         "lat": "65.0",
-        "size": "small"
-    },
-    {
-        "iata": "RFN",
-        "lon": "-15.016667",
-        "iso": "IS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "66.416664",
         "size": "small"
     },
     {
@@ -2626,17 +2366,6 @@
         "size": "medium"
     },
     {
-        "iata": "MVA",
-        "lon": "-16.966667",
-        "iso": "IS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "65.61667",
-        "size": "small"
-    },
-    {
         "iata": "SIJ",
         "lon": "-18.933332",
         "iso": "IS",
@@ -2646,37 +2375,6 @@
         "type": "airport",
         "lat": "66.166664",
         "size": "medium"
-    },
-    {
-        "iata": "SYK",
-        "lon": "-22.8",
-        "iso": "IS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "65.1",
-        "size": "small"
-    },
-    {
-        "iata": "TEY",
-        "lon": "-23.45",
-        "iso": "IS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "65.88333",
-        "size": "small"
-    },
-    {
-        "iata": "THO",
-        "iso": "IS",
-        "status": 0,
-        "value": null,
-        "continent": "EU",
-        "type": "closed",
-        "size": null
     },
     {
         "iata": "THO",
@@ -2701,17 +2399,6 @@
         "size": "medium"
     },
     {
-        "iata": "VPN",
-        "lon": "-14.846748",
-        "iso": "IS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "65.72167",
-        "size": "small"
-    },
-    {
         "iata": "BJE",
         "iso": "SD",
         "status": 1,
@@ -2728,17 +2415,6 @@
         "continent": "AS",
         "type": "airport",
         "size": "small"
-    },
-    {
-        "iata": "PRN",
-        "lon": "21.035557",
-        "iso": "KS",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "42.573612",
-        "size": "large"
     },
     {
         "iata": "BLM",
@@ -2783,15 +2459,6 @@
         "type": "airport",
         "lat": "-13.583333",
         "size": "small"
-    },
-    {
-        "iata": "TUZ",
-        "iso": "BR",
-        "status": 0,
-        "value": null,
-        "continent": "SA",
-        "type": "closed",
-        "size": null
     },
     {
         "iata": "ALT",
@@ -3219,26 +2886,6 @@
         "size": "small"
     },
     {
-        "iata": "EE7",
-        "iso": "CA",
-        "status": 1,
-        "value": "Edmonton\/Cooking Lake Seaplane Base",
-        "continent": "NA",
-        "type": "seaplanes",
-        "size": null
-    },
-    {
-        "iata": "YLE",
-        "lon": "-117.24318",
-        "iso": "CA",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "63.132942",
-        "size": "small"
-    },
-    {
         "iata": "NML",
         "iso": "CA",
         "status": 1,
@@ -3502,17 +3149,6 @@
         "size": "small"
     },
     {
-        "iata": "APO",
-        "lon": "-76.71766",
-        "iso": "CO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "7.817678",
-        "size": "small"
-    },
-    {
         "iata": "ARQ",
         "lon": "-71.43166",
         "iso": "CO",
@@ -3543,17 +3179,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "7.666667",
-        "size": "small"
-    },
-    {
-        "iata": "TCD",
-        "lon": "-69.76667",
-        "iso": "CO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-2.933333",
         "size": "small"
     },
     {
@@ -3597,17 +3222,6 @@
         "size": "small"
     },
     {
-        "iata": "ZTB",
-        "lon": "-59.333332",
-        "iso": "CA",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "50.716667",
-        "size": "small"
-    },
-    {
         "iata": "YAU",
         "lon": "-73.31694",
         "iso": "CA",
@@ -3628,17 +3242,6 @@
         "size": null
     },
     {
-        "iata": "ZLT",
-        "lon": "-58.97601",
-        "iso": "CA",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "50.828056",
-        "size": "small"
-    },
-    {
         "iata": "PST",
         "lon": "-75.666664",
         "iso": "CU",
@@ -3648,17 +3251,6 @@
         "type": "airport",
         "lat": "20.75",
         "size": "small"
-    },
-    {
-        "iata": "GEC",
-        "lon": "33.716667",
-        "iso": "CY",
-        "status": 1,
-        "value": null,
-        "continent": "AS",
-        "type": "airport",
-        "lat": "35.233334",
-        "size": "medium"
     },
     {
         "iata": "NIC",
@@ -4505,17 +4097,6 @@
         "size": "medium"
     },
     {
-        "iata": "YGL",
-        "lon": "-77.70639",
-        "iso": "CA",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "53.629723",
-        "size": "medium"
-    },
-    {
         "iata": "YGM",
         "lon": "-97.0",
         "iso": "CA",
@@ -4538,17 +4119,6 @@
         "size": "medium"
     },
     {
-        "iata": "YGP",
-        "lon": "-64.48333",
-        "iso": "CA",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "48.766666",
-        "size": "medium"
-    },
-    {
         "iata": "YGQ",
         "lon": "-86.93593",
         "iso": "CA",
@@ -4557,17 +4127,6 @@
         "continent": "NA",
         "type": "airport",
         "lat": "49.779892",
-        "size": "medium"
-    },
-    {
-        "iata": "YGR",
-        "lon": "-61.9",
-        "iso": "CA",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "47.36667",
         "size": "medium"
     },
     {
@@ -4668,17 +4227,6 @@
         "size": "medium"
     },
     {
-        "iata": "YHF",
-        "lon": "-83.683334",
-        "iso": "CA",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "49.716667",
-        "size": "medium"
-    },
-    {
         "iata": "YNS",
         "lon": "-76.74167",
         "iso": "CA",
@@ -4764,17 +4312,6 @@
         "continent": "NA",
         "type": "airport",
         "lat": "60.75",
-        "size": "medium"
-    },
-    {
-        "iata": "YHU",
-        "lon": "-73.6",
-        "iso": "CA",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "45.5",
         "size": "medium"
     },
     {
@@ -5865,17 +5402,6 @@
         "size": "medium"
     },
     {
-        "iata": "YRI",
-        "lon": "-69.53333",
-        "iso": "CA",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "47.833332",
-        "size": "medium"
-    },
-    {
         "iata": "YRJ",
         "lon": "-72.26733",
         "iso": "CA",
@@ -5915,17 +5441,6 @@
         "value": "Ottawa \/ Carp Airport",
         "continent": "NA",
         "type": "airport",
-        "size": "medium"
-    },
-    {
-        "iata": "YRQ",
-        "lon": "-72.683334",
-        "iso": "CA",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "46.35",
         "size": "medium"
     },
     {
@@ -6438,17 +5953,6 @@
         "continent": "NA",
         "type": "seaplanes",
         "size": null
-    },
-    {
-        "iata": "YWJ",
-        "lon": "-123.5",
-        "iso": "CA",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "65.166664",
-        "size": "medium"
     },
     {
         "iata": "YWK",
@@ -6988,17 +6492,6 @@
         "size": "medium"
     },
     {
-        "iata": "YZV",
-        "lon": "-66.26404",
-        "iso": "CA",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "50.21751",
-        "size": "medium"
-    },
-    {
         "iata": "YZW",
         "lon": "-132.71666",
         "iso": "CA",
@@ -7489,17 +6982,6 @@
         "size": "medium"
     },
     {
-        "iata": "TMR",
-        "lon": "5.459167",
-        "iso": "DZ",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "22.814722",
-        "size": "medium"
-    },
-    {
         "iata": "GJL",
         "lon": "5.883333",
         "iso": "DZ",
@@ -7554,17 +7036,7 @@
         "lat": "36.286476",
         "size": "medium"
     },
-    {
-        "iata": "TEE",
-        "lon": "8.124067",
-        "iso": "DZ",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "35.428593",
-        "size": "medium"
-    },
+
     {
         "iata": "BLJ",
         "lon": "6.183333",
@@ -7630,17 +7102,6 @@
         "size": "medium"
     },
     {
-        "iata": "TLM",
-        "lon": "-1.45",
-        "iso": "DZ",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "35.016666",
-        "size": "medium"
-    },
-    {
         "iata": "ORN",
         "lon": "-0.606108",
         "iso": "DZ",
@@ -7649,17 +7110,6 @@
         "continent": "AF",
         "type": "airport",
         "lat": "35.620018",
-        "size": "medium"
-    },
-    {
-        "iata": "CBH",
-        "lon": "-2.259722",
-        "iso": "DZ",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "31.647778",
         "size": "medium"
     },
     {
@@ -7740,17 +7190,6 @@
         "size": "medium"
     },
     {
-        "iata": "GHA",
-        "lon": "3.800556",
-        "iso": "DZ",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "32.38222",
-        "size": "medium"
-    },
-    {
         "iata": "HME",
         "lon": "6.145436",
         "iso": "DZ",
@@ -7828,17 +7267,6 @@
         "size": "medium"
     },
     {
-        "iata": "IAM",
-        "lon": "9.638056",
-        "iso": "DZ",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "28.051111",
-        "size": "medium"
-    },
-    {
         "iata": "COO",
         "lon": "2.385271",
         "iso": "BJ",
@@ -7880,17 +7308,6 @@
         "continent": "AF",
         "type": "airport",
         "lat": "9.35",
-        "size": "small"
-    },
-    {
-        "iata": "SVF",
-        "lon": "2.483333",
-        "iso": "BJ",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "8.033333",
         "size": "small"
     },
     {
@@ -8090,17 +7507,6 @@
         "size": "small"
     },
     {
-        "iata": "XZA",
-        "lon": "-1.0",
-        "iso": "BF",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "11.133333",
-        "size": "small"
-    },
-    {
         "iata": "OUA",
         "lon": "-1.514283",
         "iso": "BF",
@@ -8295,17 +7701,6 @@
         "type": "airport",
         "lat": "8.75",
         "size": "small"
-    },
-    {
-        "iata": "BYK",
-        "lon": "-5.069167",
-        "iso": "CI",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "7.739444",
-        "size": "medium"
     },
     {
         "iata": "BQO",
@@ -8854,17 +8249,6 @@
         "size": "medium"
     },
     {
-        "iata": "GAE",
-        "lon": "9.919377",
-        "iso": "TN",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "33.73569",
-        "size": "medium"
-    },
-    {
         "iata": "DJE",
         "lon": "10.775145",
         "iso": "TN",
@@ -8929,17 +8313,6 @@
         "size": "medium"
     },
     {
-        "iata": "LFW",
-        "lon": "1.250347",
-        "iso": "TG",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "6.167103",
-        "size": "medium"
-    },
-    {
         "iata": "ANR",
         "lon": "4.450672",
         "iso": "BE",
@@ -8984,26 +8357,6 @@
         "size": "medium"
     },
     {
-        "iata": "LGG",
-        "lon": "5.460149",
-        "iso": "BE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "50.643333",
-        "size": "large"
-    },
-    {
-        "iata": "QNM",
-        "iso": "BE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "size": "small"
-    },
-    {
         "iata": "OST",
         "lon": "2.863611",
         "iso": "BE",
@@ -9032,17 +8385,6 @@
         "continent": "EU",
         "type": "airport",
         "lat": "51.266666",
-        "size": "small"
-    },
-    {
-        "iata": "MZD",
-        "lon": "-78.316666",
-        "iso": "EC",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-2.733333",
         "size": "small"
     },
     {
@@ -9097,17 +8439,6 @@
         "type": "airport",
         "lat": "51.77028",
         "size": "medium"
-    },
-    {
-        "iata": "SXF",
-        "lon": "13.521388",
-        "iso": "DE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "52.370277",
-        "size": "large"
     },
     {
         "iata": "DRS",
@@ -9227,17 +8558,6 @@
         "type": "airport",
         "lat": "51.42026",
         "size": "large"
-    },
-    {
-        "iata": "SCN",
-        "lon": "7.112705",
-        "iso": "DE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "49.22009",
-        "size": "medium"
     },
     {
         "iata": "STR",
@@ -9366,28 +8686,6 @@
         "size": "medium"
     },
     {
-        "iata": "LBC",
-        "lon": "10.701162",
-        "iso": "DE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "53.80527",
-        "size": "medium"
-    },
-    {
-        "iata": "EUM",
-        "lon": "9.966667",
-        "iso": "DE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "54.066666",
-        "size": "small"
-    },
-    {
         "iata": "FMM",
         "lon": "10.239444",
         "iso": "DE",
@@ -9397,17 +8695,6 @@
         "type": "airport",
         "lat": "47.98861",
         "size": "medium"
-    },
-    {
-        "iata": "AAH",
-        "lon": "6.133333",
-        "iso": "DE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "50.75",
-        "size": "small"
     },
     {
         "iata": "ESS",
@@ -9430,17 +8717,6 @@
         "type": "airport",
         "lat": "52.016666",
         "size": "small"
-    },
-    {
-        "iata": "MGL",
-        "lon": "6.544444",
-        "iso": "DE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "51.35278",
-        "size": "medium"
     },
     {
         "iata": "PAD",
@@ -9581,17 +8857,6 @@
         "continent": "EU",
         "type": "airport",
         "lat": "49.966667",
-        "size": "small"
-    },
-    {
-        "iata": "ZQW",
-        "lon": "7.399708",
-        "iso": "DE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "49.21516",
         "size": "small"
     },
     {
@@ -9789,39 +9054,6 @@
         "size": "small"
     },
     {
-        "iata": "HEI",
-        "lon": "8.902778",
-        "iso": "DE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "54.155556",
-        "size": "small"
-    },
-    {
-        "iata": "FLF",
-        "lon": "9.383333",
-        "iso": "DE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "54.77222",
-        "size": "small"
-    },
-    {
-        "iata": "HGL",
-        "lon": "7.916667",
-        "iso": "DE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "54.186943",
-        "size": "small"
-    },
-    {
         "iata": "PSH",
         "lon": "8.116667",
         "iso": "DE",
@@ -9844,28 +9076,6 @@
         "size": "medium"
     },
     {
-        "iata": "OHR",
-        "lon": "8.529167",
-        "iso": "DE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "54.685833",
-        "size": "small"
-    },
-    {
-        "iata": "KDL",
-        "lon": "22.8",
-        "iso": "EE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "58.983334",
-        "size": "medium"
-    },
-    {
         "iata": "URE",
         "lon": "22.5",
         "iso": "EE",
@@ -9874,17 +9084,6 @@
         "continent": "EU",
         "type": "airport",
         "lat": "58.216667",
-        "size": "medium"
-    },
-    {
-        "iata": "EPU",
-        "lon": "24.472778",
-        "iso": "EE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "58.418888",
         "size": "medium"
     },
     {
@@ -10189,17 +9388,6 @@
         "continent": "EU",
         "type": "airport",
         "lat": "61.95",
-        "size": "medium"
-    },
-    {
-        "iata": "SJY",
-        "lon": "22.835285",
-        "iso": "FI",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "62.6932",
         "size": "medium"
     },
     {
@@ -12005,17 +11193,6 @@
         "size": "medium"
     },
     {
-        "iata": "BYR",
-        "lon": "11.005083",
-        "iso": "DK",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "57.27756",
-        "size": "small"
-    },
-    {
         "iata": "MRW",
         "lon": "11.435",
         "iso": "DK",
@@ -12057,17 +11234,6 @@
         "continent": "EU",
         "type": "airport",
         "lat": "55.065556",
-        "size": "medium"
-    },
-    {
-        "iata": "SGD",
-        "lon": "9.790798",
-        "iso": "DK",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "54.96476",
         "size": "medium"
     },
     {
@@ -12170,28 +11336,6 @@
         "size": "large"
     },
     {
-        "iata": "AES",
-        "lon": "6.116605",
-        "iso": "NO",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "62.559643",
-        "size": "medium"
-    },
-    {
-        "iata": "ANX",
-        "lon": "16.133326",
-        "iso": "NO",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "69.30492",
-        "size": "medium"
-    },
-    {
         "iata": "ALF",
         "lon": "23.355808",
         "iso": "NO",
@@ -12214,28 +11358,6 @@
         "size": "small"
     },
     {
-        "iata": "BNN",
-        "lon": "12.215772",
-        "iso": "NO",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "65.4617",
-        "size": "medium"
-    },
-    {
-        "iata": "BOO",
-        "lon": "14.367839",
-        "iso": "NO",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "67.27262",
-        "size": "large"
-    },
-    {
         "iata": "BGO",
         "lon": "5.228169",
         "iso": "NO",
@@ -12245,28 +11367,6 @@
         "type": "airport",
         "lat": "60.289062",
         "size": "large"
-    },
-    {
-        "iata": "BJF",
-        "lon": "29.666668",
-        "iso": "NO",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "70.6",
-        "size": "medium"
-    },
-    {
-        "iata": "BVG",
-        "lon": "29.0",
-        "iso": "NO",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "70.86667",
-        "size": "medium"
     },
     {
         "iata": "KRS",
@@ -12330,17 +11430,6 @@
         "continent": "EU",
         "type": "airport",
         "lat": "61.015556",
-        "size": "medium"
-    },
-    {
-        "iata": "FRO",
-        "lon": "5.024577",
-        "iso": "NO",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "61.58643",
         "size": "medium"
     },
     {
@@ -12441,17 +11530,6 @@
         "size": "small"
     },
     {
-        "iata": "KKN",
-        "lon": "29.891184",
-        "iso": "NO",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "69.7235",
-        "size": "medium"
-    },
-    {
         "iata": "FAN",
         "lon": "6.625556",
         "iso": "NO",
@@ -12496,17 +11574,6 @@
         "size": "medium"
     },
     {
-        "iata": "MJF",
-        "lon": "13.218328",
-        "iso": "NO",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "65.78439",
-        "size": "medium"
-    },
-    {
         "iata": "LKL",
         "lon": "24.973612",
         "iso": "NO",
@@ -12529,17 +11596,6 @@
         "size": "medium"
     },
     {
-        "iata": "OSY",
-        "lon": "11.570002",
-        "iso": "NO",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "64.47273",
-        "size": "small"
-    },
-    {
         "iata": "NTB",
         "lon": "9.215656",
         "iso": "NO",
@@ -12549,72 +11605,6 @@
         "type": "airport",
         "lat": "59.56487",
         "size": "medium"
-    },
-    {
-        "iata": "OLA",
-        "lon": "9.616667",
-        "iso": "NO",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "63.7",
-        "size": "medium"
-    },
-    {
-        "iata": "HOV",
-        "lon": "6.078802",
-        "iso": "NO",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "62.179787",
-        "size": "medium"
-    },
-    {
-        "iata": "MQN",
-        "lon": "14.302748",
-        "iso": "NO",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "66.36465",
-        "size": "medium"
-    },
-    {
-        "iata": "RVK",
-        "lon": "11.233333",
-        "iso": "NO",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "64.88333",
-        "size": "medium"
-    },
-    {
-        "iata": "RRS",
-        "lon": "11.345556",
-        "iso": "NO",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "62.579166",
-        "size": "medium"
-    },
-    {
-        "iata": "RET",
-        "lon": "12.083333",
-        "iso": "NO",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "67.48333",
-        "size": "small"
     },
     {
         "iata": "RYG",
@@ -12661,17 +11651,6 @@
         "size": "small"
     },
     {
-        "iata": "SVJ",
-        "lon": "14.667774",
-        "iso": "NO",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "68.24498",
-        "size": "medium"
-    },
-    {
         "iata": "SKN",
         "lon": "15.032921",
         "iso": "NO",
@@ -12705,50 +11684,6 @@
         "size": "medium"
     },
     {
-        "iata": "SOJ",
-        "lon": "20.933332",
-        "iso": "NO",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "69.78333",
-        "size": "medium"
-    },
-    {
-        "iata": "VAW",
-        "lon": "31.045555",
-        "iso": "NO",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "70.35472",
-        "size": "medium"
-    },
-    {
-        "iata": "SSJ",
-        "lon": "12.476518",
-        "iso": "NO",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "65.959946",
-        "size": "medium"
-    },
-    {
-        "iata": "TOS",
-        "lon": "18.907343",
-        "iso": "NO",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "69.67983",
-        "size": "large"
-    },
-    {
         "iata": "TRF",
         "lon": "10.251807",
         "iso": "NO",
@@ -12758,37 +11693,6 @@
         "type": "airport",
         "lat": "59.178085",
         "size": "medium"
-    },
-    {
-        "iata": "TRD",
-        "lon": "10.917863",
-        "iso": "NO",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "63.454285",
-        "size": "large"
-    },
-    {
-        "iata": "VDS",
-        "lon": "29.845278",
-        "iso": "NO",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "70.065",
-        "size": "medium"
-    },
-    {
-        "iata": "VRY",
-        "iso": "NO",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "heliport",
-        "size": null
     },
     {
         "iata": "SVG",
@@ -12853,17 +11757,6 @@
         "size": "small"
     },
     {
-        "iata": "KRK",
-        "lon": "19.793743",
-        "iso": "PL",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "50.075493",
-        "size": "large"
-    },
-    {
         "iata": "OSZ",
         "lon": "16.264444",
         "iso": "PL",
@@ -12893,17 +11786,6 @@
         "continent": "EU",
         "type": "airport",
         "size": "small"
-    },
-    {
-        "iata": "LCJ",
-        "lon": "19.398333",
-        "iso": "PL",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "51.721943",
-        "size": "medium"
     },
     {
         "iata": "QLU",
@@ -12953,28 +11835,6 @@
         "size": "medium"
     },
     {
-        "iata": "RZE",
-        "lon": "22.03133",
-        "iso": "PL",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "50.11525",
-        "size": "medium"
-    },
-    {
-        "iata": "SZZ",
-        "lon": "14.894611",
-        "iso": "PL",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "53.593525",
-        "size": "medium"
-    },
-    {
         "iata": "OSP",
         "iso": "PL",
         "status": 0,
@@ -13015,17 +11875,6 @@
         "size": "medium"
     },
     {
-        "iata": "IEG",
-        "lon": "15.516667",
-        "iso": "PL",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "51.933334",
-        "size": "medium"
-    },
-    {
         "iata": "RNB",
         "lon": "15.261111",
         "iso": "SE",
@@ -13035,15 +11884,6 @@
         "type": "airport",
         "lat": "56.25833",
         "size": "medium"
-    },
-    {
-        "iata": "XWP",
-        "iso": "SE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "size": "small"
     },
     {
         "iata": "GOT",
@@ -13057,28 +11897,6 @@
         "size": "large"
     },
     {
-        "iata": "JKG",
-        "lon": "14.070497",
-        "iso": "SE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "57.7501",
-        "size": "medium"
-    },
-    {
-        "iata": "LDK",
-        "lon": "13.166667",
-        "iso": "SE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "58.5",
-        "size": "medium"
-    },
-    {
         "iata": "GSE",
         "lon": "11.864513",
         "iso": "SE",
@@ -13087,28 +11905,6 @@
         "continent": "EU",
         "type": "airport",
         "lat": "57.77775",
-        "size": "medium"
-    },
-    {
-        "iata": "KVB",
-        "lon": "13.966667",
-        "iso": "SE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "58.45",
-        "size": "medium"
-    },
-    {
-        "iata": "THN",
-        "lon": "12.3",
-        "iso": "SE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "58.266666",
         "size": "medium"
     },
     {
@@ -13178,17 +11974,6 @@
         "size": "medium"
     },
     {
-        "iata": "MMX",
-        "lon": "13.363727",
-        "iso": "SE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "55.538757",
-        "size": "large"
-    },
-    {
         "iata": "HAD",
         "lon": "12.815005",
         "iso": "SE",
@@ -13197,17 +11982,6 @@
         "continent": "EU",
         "type": "airport",
         "lat": "56.680935",
-        "size": "medium"
-    },
-    {
-        "iata": "VXO",
-        "lon": "14.732046",
-        "iso": "SE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "56.925095",
         "size": "medium"
     },
     {
@@ -13222,17 +11996,6 @@
         "size": "medium"
     },
     {
-        "iata": "GEV",
-        "lon": "20.816668",
-        "iso": "SE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "67.134445",
-        "size": "medium"
-    },
-    {
         "iata": "HUV",
         "iso": "SE",
         "status": 0,
@@ -13240,17 +12003,6 @@
         "continent": "EU",
         "type": "closed",
         "size": null
-    },
-    {
-        "iata": "KRF",
-        "lon": "17.772778",
-        "iso": "SE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "63.049442",
-        "size": "medium"
     },
     {
         "iata": "LYC",
@@ -13264,28 +12016,6 @@
         "size": "medium"
     },
     {
-        "iata": "SDL",
-        "lon": "17.438147",
-        "iso": "SE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "62.52165",
-        "size": "medium"
-    },
-    {
-        "iata": "OER",
-        "lon": "18.992073",
-        "iso": "SE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "63.412582",
-        "size": "medium"
-    },
-    {
         "iata": "KRN",
         "lon": "20.345833",
         "iso": "SE",
@@ -13294,28 +12024,6 @@
         "continent": "EU",
         "type": "airport",
         "lat": "67.82222",
-        "size": "medium"
-    },
-    {
-        "iata": "SFT",
-        "lon": "21.068548",
-        "iso": "SE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "64.62251",
-        "size": "medium"
-    },
-    {
-        "iata": "UME",
-        "lon": "20.28954",
-        "iso": "SE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "63.79333",
         "size": "medium"
     },
     {
@@ -13341,39 +12049,6 @@
         "size": "medium"
     },
     {
-        "iata": "SOO",
-        "lon": "17.05",
-        "iso": "SE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "61.3",
-        "size": "medium"
-    },
-    {
-        "iata": "OSD",
-        "lon": "14.494444",
-        "iso": "SE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "63.198612",
-        "size": "medium"
-    },
-    {
-        "iata": "ORB",
-        "lon": "15.047543",
-        "iso": "SE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "59.225758",
-        "size": "medium"
-    },
-    {
         "iata": "HFS",
         "lon": "13.569167",
         "iso": "SE",
@@ -13394,28 +12069,6 @@
         "type": "airport",
         "lat": "59.360283",
         "size": "medium"
-    },
-    {
-        "iata": "VST",
-        "lon": "16.630556",
-        "iso": "SE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "59.58917",
-        "size": "medium"
-    },
-    {
-        "iata": "LLA",
-        "lon": "22.123587",
-        "iso": "SE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "65.54939",
-        "size": "large"
     },
     {
         "iata": "ARN",
@@ -13462,39 +12115,6 @@
         "size": "medium"
     },
     {
-        "iata": "GVX",
-        "lon": "16.954721",
-        "iso": "SE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "60.593887",
-        "size": "medium"
-    },
-    {
-        "iata": "LPI",
-        "lon": "15.656944",
-        "iso": "SE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "58.406944",
-        "size": "medium"
-    },
-    {
-        "iata": "NRK",
-        "lon": "16.232393",
-        "iso": "SE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "58.583298",
-        "size": "medium"
-    },
-    {
         "iata": "TYF",
         "lon": "12.99661",
         "iso": "SE",
@@ -13525,28 +12145,6 @@
         "continent": "EU",
         "type": "airport",
         "lat": "57.660446",
-        "size": "medium"
-    },
-    {
-        "iata": "VVK",
-        "lon": "16.633333",
-        "iso": "SE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "57.75",
-        "size": "small"
-    },
-    {
-        "iata": "AGH",
-        "lon": "12.8625",
-        "iso": "SE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "56.293056",
         "size": "medium"
     },
     {
@@ -13769,34 +12367,12 @@
         "size": "medium"
     },
     {
-        "iata": "FEL",
-        "lon": "11.266667",
-        "iso": "DE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "48.2",
-        "size": "medium"
-    },
-    {
         "iata": "IGS",
         "iso": "DE",
         "status": 1,
         "value": "Ingolstadt Manching Airport",
         "continent": "EU",
         "type": "airport",
-        "size": "medium"
-    },
-    {
-        "iata": "GUT",
-        "lon": "8.383333",
-        "iso": "DE",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "51.9",
         "size": "medium"
     },
     {
@@ -13883,28 +12459,6 @@
         "continent": "EU",
         "type": "airport",
         "lat": "55.95",
-        "size": "medium"
-    },
-    {
-        "iata": "PNV",
-        "lon": "24.383333",
-        "iso": "LT",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "55.733334",
-        "size": "medium"
-    },
-    {
-        "iata": "SQQ",
-        "lon": "23.39311",
-        "iso": "LT",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "55.89529",
         "size": "medium"
     },
     {
@@ -15286,17 +13840,6 @@
         "size": "small"
     },
     {
-        "iata": "BEM",
-        "lon": "17.65",
-        "iso": "CF",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "5.266667",
-        "size": "small"
-    },
-    {
         "iata": "BBY",
         "lon": "20.649721",
         "iso": "CF",
@@ -15305,17 +13848,6 @@
         "continent": "AF",
         "type": "airport",
         "lat": "5.845833",
-        "size": "small"
-    },
-    {
-        "iata": "NDL",
-        "lon": "20.6",
-        "iso": "CF",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "8.416667",
         "size": "small"
     },
     {
@@ -15350,17 +13882,6 @@
         "type": "airport",
         "lat": "6.583333",
         "size": "small"
-    },
-    {
-        "iata": "BBT",
-        "lon": "15.788056",
-        "iso": "CF",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "4.219167",
-        "size": "medium"
     },
     {
         "iata": "ODA",
@@ -15437,28 +13958,6 @@
         "continent": "AF",
         "type": "airport",
         "lat": "5.733333",
-        "size": "small"
-    },
-    {
-        "iata": "ODJ",
-        "lon": "22.883333",
-        "iso": "CF",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "8.916667",
-        "size": "small"
-    },
-    {
-        "iata": "RFA",
-        "lon": "23.966667",
-        "iso": "CF",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "4.983333",
         "size": "small"
     },
     {
@@ -15623,17 +14122,6 @@
         "size": "small"
     },
     {
-        "iata": "KLE",
-        "lon": "14.45",
-        "iso": "CM",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "10.116667",
-        "size": "small"
-    },
-    {
         "iata": "OUR",
         "lon": "14.363611",
         "iso": "CM",
@@ -15675,17 +14163,6 @@
         "continent": "AF",
         "type": "airport",
         "lat": "5.75",
-        "size": "medium"
-    },
-    {
-        "iata": "NGE",
-        "lon": "13.561389",
-        "iso": "CM",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "7.356389",
         "size": "medium"
     },
     {
@@ -15753,28 +14230,6 @@
         "type": "airport",
         "lat": "2.916667",
         "size": "small"
-    },
-    {
-        "iata": "YAO",
-        "lon": "11.523611",
-        "iso": "CM",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "3.833611",
-        "size": "medium"
-    },
-    {
-        "iata": "NSI",
-        "lon": "11.550278",
-        "iso": "CM",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "3.702222",
-        "size": "medium"
     },
     {
         "iata": "MMQ",
@@ -16016,17 +14471,6 @@
         "continent": "AF",
         "type": "airport",
         "lat": "-11.537275",
-        "size": "medium"
-    },
-    {
-        "iata": "NWA",
-        "lon": "43.767155",
-        "iso": "KM",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "-12.298664",
         "size": "medium"
     },
     {
@@ -16338,17 +14782,6 @@
         "size": "small"
     },
     {
-        "iata": "WPB",
-        "lon": "47.666668",
-        "iso": "MG",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "-15.55",
-        "size": "small"
-    },
-    {
         "iata": "ANM",
         "lon": "50.316666",
         "iso": "MG",
@@ -16523,17 +14956,6 @@
         "type": "airport",
         "lat": "-21.033333",
         "size": "small"
-    },
-    {
-        "iata": "FTU",
-        "lon": "46.955555",
-        "iso": "MG",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "-25.038055",
-        "size": "medium"
     },
     {
         "iata": "WFI",
@@ -17293,17 +15715,6 @@
         "size": "medium"
     },
     {
-        "iata": "TMS",
-        "lon": "6.725",
-        "iso": "ST",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "0.378333",
-        "size": "medium"
-    },
-    {
         "iata": "ANO",
         "lon": "39.936943",
         "iso": "MZ",
@@ -17400,17 +15811,6 @@
         "continent": "AF",
         "type": "airport",
         "lat": "-11.666667",
-        "size": "medium"
-    },
-    {
-        "iata": "MZB",
-        "lon": "40.356075",
-        "iso": "MZ",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "-11.360261",
         "size": "medium"
     },
     {
@@ -17552,17 +15952,6 @@
         "continent": "AF",
         "type": "airport",
         "lat": "-3.8",
-        "size": "small"
-    },
-    {
-        "iata": "FRK",
-        "lon": "55.966667",
-        "iso": "SC",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "-4.583333",
         "size": "small"
     },
     {
@@ -19150,17 +17539,6 @@
         "size": "medium"
     },
     {
-        "iata": "EYL",
-        "lon": "-10.566667",
-        "iso": "ML",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "15.133333",
-        "size": "small"
-    },
-    {
         "iata": "DOC",
         "lon": "-4.033333",
         "iso": "GB",
@@ -19628,17 +18006,6 @@
         "size": "medium"
     },
     {
-        "iata": "FEZ",
-        "lon": "-4.982138",
-        "iso": "MA",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "33.93079",
-        "size": "medium"
-    },
-    {
         "iata": "ERH",
         "lon": "-4.4",
         "iso": "MA",
@@ -19701,17 +18068,6 @@
         "type": "airport",
         "lat": "33.559723",
         "size": "small"
-    },
-    {
-        "iata": "RBA",
-        "lon": "-6.748619",
-        "iso": "MA",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "34.036137",
-        "size": "medium"
     },
     {
         "iata": "SII",
@@ -19912,17 +18268,6 @@
         "size": "medium"
     },
     {
-        "iata": "DKR",
-        "lon": "-17.490194",
-        "iso": "SN",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "14.744975",
-        "size": "large"
-    },
-    {
         "iata": "MAX",
         "lon": "-13.323611",
         "iso": "SN",
@@ -19975,17 +18320,6 @@
         "continent": "AF",
         "type": "airport",
         "lat": "14.841667",
-        "size": "medium"
-    },
-    {
-        "iata": "KGG",
-        "lon": "-12.217222",
-        "iso": "SN",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "12.570833",
         "size": "medium"
     },
     {
@@ -20088,17 +18422,6 @@
         "size": "small"
     },
     {
-        "iata": "EMN",
-        "lon": "-7.283333",
-        "iso": "MR",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "16.6",
-        "size": "small"
-    },
-    {
         "iata": "AJJ",
         "lon": "-14.374444",
         "iso": "MR",
@@ -20107,17 +18430,6 @@
         "continent": "AF",
         "type": "airport",
         "lat": "19.730556",
-        "size": "small"
-    },
-    {
-        "iata": "KED",
-        "lon": "-13.507778",
-        "iso": "MR",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "16.161388",
         "size": "small"
     },
     {
@@ -20141,17 +18453,6 @@
         "type": "airport",
         "lat": "18.098148",
         "size": "medium"
-    },
-    {
-        "iata": "SEY",
-        "lon": "-12.206111",
-        "iso": "MR",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "15.182222",
-        "size": "small"
     },
     {
         "iata": "THT",
@@ -20272,17 +18573,6 @@
         "continent": "NA",
         "type": "airport",
         "lat": "15.667778",
-        "size": "small"
-    },
-    {
-        "iata": "TKM",
-        "lon": "-89.605",
-        "iso": "GT",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "17.226389",
         "size": "small"
     },
     {
@@ -20440,17 +18730,6 @@
         "size": "small"
     },
     {
-        "iata": "SID",
-        "lon": "-22.943613",
-        "iso": "CV",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "16.734695",
-        "size": "medium"
-    },
-    {
         "iata": "NTO",
         "lon": "-25.083332",
         "iso": "CV",
@@ -20503,39 +18782,6 @@
         "continent": "AF",
         "type": "airport",
         "lat": "14.945321",
-        "size": "medium"
-    },
-    {
-        "iata": "SFL",
-        "lon": "-24.516666",
-        "iso": "CV",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "14.9",
-        "size": "small"
-    },
-    {
-        "iata": "SNE",
-        "lon": "-24.28861",
-        "iso": "CV",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "16.586945",
-        "size": "medium"
-    },
-    {
-        "iata": "VXE",
-        "lon": "-25.057571",
-        "iso": "CV",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "16.835613",
         "size": "medium"
     },
     {
@@ -29455,17 +27701,6 @@
         "size": "medium"
     },
     {
-        "iata": "LSZ",
-        "lon": "14.385833",
-        "iso": "HR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "44.566944",
-        "size": "small"
-    },
-    {
         "iata": "OSI",
         "lon": "18.683332",
         "iso": "HR",
@@ -29565,17 +27800,6 @@
         "size": "large"
     },
     {
-        "iata": "LEI",
-        "lon": "-2.371873",
-        "iso": "ES",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "36.847984",
-        "size": "medium"
-    },
-    {
         "iata": "OVD",
         "lon": "-6.032094",
         "iso": "ES",
@@ -29584,17 +27808,6 @@
         "continent": "EU",
         "type": "airport",
         "lat": "43.55891",
-        "size": "medium"
-    },
-    {
-        "iata": "ODB",
-        "lon": "-4.847222",
-        "iso": "ES",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "37.84111",
         "size": "medium"
     },
     {
@@ -29649,17 +27862,6 @@
         "continent": "EU",
         "type": "airport",
         "size": "small"
-    },
-    {
-        "iata": "LCG",
-        "lon": "-8.381923",
-        "iso": "ES",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "43.30236",
-        "size": "medium"
     },
     {
         "iata": "GRO",
@@ -29748,17 +27950,6 @@
         "size": "medium"
     },
     {
-        "iata": "RJL",
-        "lon": "-2.323611",
-        "iso": "ES",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "42.456944",
-        "size": "small"
-    },
-    {
         "iata": "MAD",
         "lon": "-3.570209",
         "iso": "ES",
@@ -29767,28 +27958,6 @@
         "continent": "EU",
         "type": "airport",
         "lat": "40.46515",
-        "size": "large"
-    },
-    {
-        "iata": "HEV",
-        "lon": "-6.95",
-        "iso": "ES",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "37.266666",
-        "size": "small"
-    },
-    {
-        "iata": "AGP",
-        "lon": "-4.489616",
-        "iso": "ES",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "36.675182",
         "size": "large"
     },
     {
@@ -29891,28 +28060,6 @@
         "size": "large"
     },
     {
-        "iata": "LEU",
-        "lon": "1.466667",
-        "iso": "ES",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "42.416668",
-        "size": "small"
-    },
-    {
-        "iata": "TOJ",
-        "lon": "-3.546667",
-        "iso": "ES",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "40.455555",
-        "size": "medium"
-    },
-    {
         "iata": "VLC",
         "lon": "-0.473475",
         "iso": "ES",
@@ -30012,15 +28159,6 @@
         "size": "medium"
     },
     {
-        "iata": "XCP",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "size": "small"
-    },
-    {
         "iata": "XLN",
         "iso": "FR",
         "status": 1,
@@ -30028,15 +28166,6 @@
         "continent": "EU",
         "type": "airport",
         "size": "small"
-    },
-    {
-        "iata": "XSJ",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "size": "medium"
     },
     {
         "iata": "XDK",
@@ -30057,17 +28186,6 @@
         "type": "airport",
         "lat": "49.97039",
         "size": "small"
-    },
-    {
-        "iata": "LTQ",
-        "lon": "1.627071",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "50.514774",
-        "size": "medium"
     },
     {
         "iata": "XVS",
@@ -30099,50 +28217,6 @@
         "size": "medium"
     },
     {
-        "iata": "BOD",
-        "lon": "-0.70217",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "44.83102",
-        "size": "large"
-    },
-    {
-        "iata": "EGC",
-        "lon": "0.483333",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "44.85",
-        "size": "medium"
-    },
-    {
-        "iata": "CNG",
-        "lon": "-0.333333",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "45.683334",
-        "size": "medium"
-    },
-    {
-        "iata": "LRH",
-        "lon": "-1.185833",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "46.180557",
-        "size": "medium"
-    },
-    {
         "iata": "PIS",
         "lon": "0.306389",
         "iso": "FR",
@@ -30151,17 +28225,6 @@
         "continent": "EU",
         "type": "airport",
         "lat": "46.58611",
-        "size": "medium"
-    },
-    {
-        "iata": "MCU",
-        "lon": "2.6",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "46.35",
         "size": "medium"
     },
     {
@@ -30184,17 +28247,7 @@
         "type": "airport",
         "size": "medium"
     },
-    {
-        "iata": "NIT",
-        "lon": "-0.45",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "46.316666",
-        "size": "medium"
-    },
+
     {
         "iata": "TLS",
         "lon": "1.374321",
@@ -30207,39 +28260,6 @@
         "size": "large"
     },
     {
-        "iata": "PUF",
-        "lon": "-0.413573",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "43.382347",
-        "size": "medium"
-    },
-    {
-        "iata": "LDE",
-        "lon": "0.003368",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "43.18651",
-        "size": "medium"
-    },
-    {
-        "iata": "ANG",
-        "lon": "0.216667",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "45.733334",
-        "size": "medium"
-    },
-    {
         "iata": "BVE",
         "lon": "1.533333",
         "iso": "FR",
@@ -30249,17 +28269,6 @@
         "type": "airport",
         "lat": "45.166668",
         "size": "large"
-    },
-    {
-        "iata": "PGX",
-        "lon": "0.716667",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "45.183334",
-        "size": "medium"
     },
     {
         "iata": "XDA",
@@ -30282,15 +28291,6 @@
         "size": "medium"
     },
     {
-        "iata": "XCX",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "size": "small"
-    },
-    {
         "iata": "ZAO",
         "lon": "1.45",
         "iso": "FR",
@@ -30302,32 +28302,12 @@
         "size": "medium"
     },
     {
-        "iata": "XGT",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "size": "small"
-    },
-    {
         "iata": "XAC",
         "iso": "FR",
         "status": 1,
         "value": "Arcachon-La Teste-de-Buch Airport",
         "continent": "EU",
         "type": "airport",
-        "size": "medium"
-    },
-    {
-        "iata": "LBI",
-        "lon": "2.15",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "43.933334",
         "size": "medium"
     },
     {
@@ -30350,17 +28330,6 @@
         "continent": "EU",
         "type": "airport",
         "lat": "44.410595",
-        "size": "medium"
-    },
-    {
-        "iata": "RYN",
-        "lon": "-1.016667",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "45.61667",
         "size": "medium"
     },
     {
@@ -30402,26 +28371,6 @@
         "size": "small"
     },
     {
-        "iata": "XTB",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "size": "small"
-    },
-    {
-        "iata": "IDY",
-        "lon": "-2.388694",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "46.71787",
-        "size": "medium"
-    },
-    {
         "iata": "CMR",
         "lon": "7.366667",
         "iso": "FR",
@@ -30459,28 +28408,6 @@
         "value": "Verdun-Le Rozelier Airport",
         "continent": "EU",
         "type": "airport",
-        "size": "medium"
-    },
-    {
-        "iata": "MVV",
-        "lon": "6.65",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "45.816666",
-        "size": "small"
-    },
-    {
-        "iata": "OBS",
-        "lon": "4.7",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "44.666668",
         "size": "medium"
     },
     {
@@ -30561,17 +28488,6 @@
         "size": "medium"
     },
     {
-        "iata": "AJA",
-        "lon": "8.794013",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "41.91987",
-        "size": "medium"
-    },
-    {
         "iata": "PRP",
         "lon": "8.9",
         "iso": "FR",
@@ -30593,17 +28509,7 @@
         "lat": "41.88333",
         "size": "medium"
     },
-    {
-        "iata": "MFX",
-        "lon": "6.566667",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "45.416668",
-        "size": "small"
-    },
+
     {
         "iata": "AUF",
         "lon": "3.5",
@@ -30613,17 +28519,6 @@
         "continent": "EU",
         "type": "airport",
         "lat": "47.85",
-        "size": "medium"
-    },
-    {
-        "iata": "CMF",
-        "lon": "5.88437",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "45.637993",
         "size": "medium"
     },
     {
@@ -30669,26 +28564,6 @@
         "size": "small"
     },
     {
-        "iata": "LYS",
-        "lon": "5.080334",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "45.721424",
-        "size": "medium"
-    },
-    {
-        "iata": "QNX",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "size": "medium"
-    },
-    {
         "iata": "SYT",
         "lon": "4.033333",
         "iso": "FR",
@@ -30720,37 +28595,6 @@
         "type": "airport",
         "lat": "45.930557",
         "size": "medium"
-    },
-    {
-        "iata": "XMK",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "size": "small"
-    },
-    {
-        "iata": "GNB",
-        "lon": "5.332019",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "45.359833",
-        "size": "medium"
-    },
-    {
-        "iata": "MCU",
-        "lon": "2.6",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "46.35",
-        "size": "small"
     },
     {
         "iata": "VAF",
@@ -30786,17 +28630,6 @@
         "size": "medium"
     },
     {
-        "iata": "CHR",
-        "lon": "1.728128",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "46.861954",
-        "size": "medium"
-    },
-    {
         "iata": "LYN",
         "lon": "4.943333",
         "iso": "FR",
@@ -30816,28 +28649,6 @@
         "continent": "EU",
         "type": "airport",
         "lat": "43.54639",
-        "size": "medium"
-    },
-    {
-        "iata": "EBU",
-        "lon": "4.296944",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "45.54139",
-        "size": "medium"
-    },
-    {
-        "iata": "QIE",
-        "lon": "85.53333",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "38.13333",
         "size": "medium"
     },
     {
@@ -30863,34 +28674,12 @@
         "size": "large"
     },
     {
-        "iata": "NCE",
-        "lon": "7.205232",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "43.66049",
-        "size": "large"
-    },
-    {
         "iata": "XOG",
         "iso": "FR",
         "status": 1,
         "value": "Orange-Caritat (BA 115) Air Base",
         "continent": "EU",
         "type": "airport",
-        "size": "medium"
-    },
-    {
-        "iata": "PGF",
-        "lon": "2.868183",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "42.741016",
         "size": "medium"
     },
     {
@@ -30914,37 +28703,6 @@
         "type": "airport",
         "lat": "44.38333",
         "size": "small"
-    },
-    {
-        "iata": "XAS",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "size": "medium"
-    },
-    {
-        "iata": "MPL",
-        "lon": "3.959174",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "43.57843",
-        "size": "medium"
-    },
-    {
-        "iata": "BZR",
-        "lon": "3.354444",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "43.324165",
-        "size": "medium"
     },
     {
         "iata": "AVN",
@@ -30980,28 +28738,6 @@
         "size": "medium"
     },
     {
-        "iata": "SCP",
-        "lon": "0.616667",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "45.416668",
-        "size": "small"
-    },
-    {
-        "iata": "BVA",
-        "lon": "2.110815",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "49.459488",
-        "size": "medium"
-    },
-    {
         "iata": "XSU",
         "iso": "FR",
         "status": 1,
@@ -31009,26 +28745,6 @@
         "continent": "EU",
         "type": "airport",
         "size": "medium"
-    },
-    {
-        "iata": "EVX",
-        "lon": "1.15",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "49.016666",
-        "size": "medium"
-    },
-    {
-        "iata": "XAN",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "size": "small"
     },
     {
         "iata": "LEH",
@@ -31048,28 +28764,6 @@
         "value": "Abbeville-Buigny-Saint-Maclou Airport",
         "continent": "EU",
         "type": "airport",
-        "size": "medium"
-    },
-    {
-        "iata": "ORE",
-        "lon": "1.9",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "47.916668",
-        "size": "medium"
-    },
-    {
-        "iata": "XCR",
-        "lon": "4.201111",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "48.767776",
         "size": "medium"
     },
     {
@@ -31221,17 +28915,6 @@
         "size": "medium"
     },
     {
-        "iata": "VIY",
-        "lon": "2.191667",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "48.774166",
-        "size": "medium"
-    },
-    {
         "iata": "QYR",
         "iso": "FR",
         "status": 1,
@@ -31249,24 +28932,6 @@
         "continent": "EU",
         "type": "airport",
         "lat": "47.0",
-        "size": "medium"
-    },
-    {
-        "iata": "XCB",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "size": "medium"
-    },
-    {
-        "iata": "XME",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
         "size": "medium"
     },
     {
@@ -31289,15 +28954,6 @@
         "continent": "EU",
         "type": "airport",
         "lat": "50.61667",
-        "size": "medium"
-    },
-    {
-        "iata": "XCZ",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
         "size": "medium"
     },
     {
@@ -31442,17 +29098,6 @@
         "size": "medium"
     },
     {
-        "iata": "LAI",
-        "lon": "-3.481944",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "48.754166",
-        "size": "medium"
-    },
-    {
         "iata": "UIP",
         "lon": "-4.170833",
         "iso": "FR",
@@ -31519,15 +29164,6 @@
         "size": "medium"
     },
     {
-        "iata": "QBQ",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "size": "small"
-    },
-    {
         "iata": "BSL",
         "lon": "7.532604",
         "iso": "FR",
@@ -31558,26 +29194,6 @@
         "continent": "EU",
         "type": "airport",
         "lat": "49.0725",
-        "size": "medium"
-    },
-    {
-        "iata": "EPL",
-        "lon": "6.069444",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "48.325832",
-        "size": "medium"
-    },
-    {
-        "iata": "XMF",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
         "size": "medium"
     },
     {
@@ -31633,37 +29249,6 @@
         "continent": "EU",
         "type": "airport",
         "lat": "48.2",
-        "size": "small"
-    },
-    {
-        "iata": "XHE",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "size": "medium"
-    },
-    {
-        "iata": "FNI",
-        "lon": "4.416667",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "43.75",
-        "size": "medium"
-    },
-    {
-        "iata": "LTT",
-        "lon": "6.633333",
-        "iso": "FR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "43.283333",
         "size": "small"
     },
     {
@@ -32206,48 +29791,6 @@
         "size": "small"
     },
     {
-        "iata": "PEV",
-        "lon": "170.6",
-        "iso": "HU",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "69.78333",
-        "size": "medium"
-    },
-    {
-        "iata": "QGY",
-        "iso": "HU",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "size": "medium"
-    },
-    {
-        "iata": "SOB",
-        "lon": "17.240444",
-        "iso": "HU",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "46.71347",
-        "size": "medium"
-    },
-    {
-        "iata": "TZR",
-        "lon": "-83.17194",
-        "iso": "HU",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "39.90817",
-        "size": "medium"
-    },
-    {
         "iata": "QZD",
         "iso": "HU",
         "status": 1,
@@ -32702,17 +30245,6 @@
         "size": "large"
     },
     {
-        "iata": "FRL",
-        "lon": "12.07076",
-        "iso": "IT",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "44.19857",
-        "size": "medium"
-    },
-    {
         "iata": "VBS",
         "lon": "10.326545",
         "iso": "IT",
@@ -32901,17 +30433,6 @@
         "size": "medium"
     },
     {
-        "iata": "NAP",
-        "lon": "14.291667",
-        "iso": "IT",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "40.886112",
-        "size": "large"
-    },
-    {
         "iata": "PSA",
         "lon": "10.399915",
         "iso": "IT",
@@ -32956,17 +30477,6 @@
         "size": "medium"
     },
     {
-        "iata": "LJU",
-        "lon": "14.454972",
-        "iso": "SI",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "46.23102",
-        "size": "large"
-    },
-    {
         "iata": "MBX",
         "lon": "15.686741",
         "iso": "SI",
@@ -32989,17 +30499,6 @@
         "size": "medium"
     },
     {
-        "iata": "GTW",
-        "lon": "17.516666",
-        "iso": "CZ",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "49.2",
-        "size": "small"
-    },
-    {
         "iata": "UHE",
         "lon": "17.45",
         "iso": "CZ",
@@ -33019,28 +30518,6 @@
         "continent": "EU",
         "type": "airport",
         "lat": "50.2",
-        "size": "medium"
-    },
-    {
-        "iata": "MKA",
-        "lon": "12.716667",
-        "iso": "CZ",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "49.983334",
-        "size": "small"
-    },
-    {
-        "iata": "OSR",
-        "lon": "18.121284",
-        "iso": "CZ",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "49.69552",
         "size": "medium"
     },
     {
@@ -33527,17 +31004,6 @@
         "size": "medium"
     },
     {
-        "iata": "PDL",
-        "lon": "-25.696468",
-        "iso": "PT",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "37.743847",
-        "size": "large"
-    },
-    {
         "iata": "PIX",
         "lon": "-28.3",
         "iso": "PT",
@@ -33558,17 +31024,6 @@
         "type": "airport",
         "lat": "37.13333",
         "size": "medium"
-    },
-    {
-        "iata": "OPO",
-        "lon": "-8.670272",
-        "iso": "PT",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "41.237774",
-        "size": "large"
     },
     {
         "iata": "PXO",
@@ -33602,17 +31057,6 @@
         "type": "airport",
         "lat": "37.933334",
         "size": "small"
-    },
-    {
-        "iata": "SJZ",
-        "lon": "-28.16843",
-        "iso": "PT",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "38.664616",
-        "size": "medium"
     },
     {
         "iata": "VRL",
@@ -33855,17 +31299,6 @@
         "size": "medium"
     },
     {
-        "iata": "TGM",
-        "lon": "24.533333",
-        "iso": "RO",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "46.533333",
-        "size": "medium"
-    },
-    {
         "iata": "TSR",
         "lon": "21.32012",
         "iso": "RO",
@@ -33968,17 +31401,6 @@
         "continent": "EU",
         "type": "airport",
         "size": "medium"
-    },
-    {
-        "iata": "ZRH",
-        "lon": "8.561746",
-        "iso": "CH",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "47.450603",
-        "size": "large"
     },
     {
         "iata": "ZJI",
@@ -34175,17 +31597,6 @@
         "size": "small"
     },
     {
-        "iata": "MLX",
-        "lon": "38.253613",
-        "iso": "TR",
-        "status": 1,
-        "value": null,
-        "continent": "AS",
-        "type": "airport",
-        "lat": "38.354443",
-        "size": "medium"
-    },
-    {
         "iata": "ASR",
         "lon": "35.490707",
         "iso": "TR",
@@ -34208,17 +31619,6 @@
         "size": "medium"
     },
     {
-        "iata": "DNZ",
-        "lon": "29.703333",
-        "iso": "TR",
-        "status": 1,
-        "value": null,
-        "continent": "AS",
-        "type": "airport",
-        "lat": "37.787224",
-        "size": "medium"
-    },
-    {
         "iata": "NAV",
         "lon": "34.716667",
         "iso": "TR",
@@ -34237,17 +31637,6 @@
         "continent": "OC",
         "type": "closed",
         "size": null
-    },
-    {
-        "iata": "IST",
-        "lon": "28.815277",
-        "iso": "TR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "40.976665",
-        "size": "large"
     },
     {
         "iata": "BTZ",
@@ -34283,17 +31672,6 @@
         "size": "medium"
     },
     {
-        "iata": "CKZ",
-        "lon": "26.4",
-        "iso": "TR",
-        "status": 1,
-        "value": null,
-        "continent": "AS",
-        "type": "airport",
-        "lat": "40.13333",
-        "size": "medium"
-    },
-    {
         "iata": "ESK",
         "lon": "30.582111",
         "iso": "TR",
@@ -34314,17 +31692,6 @@
         "type": "airport",
         "lat": "38.294403",
         "size": "large"
-    },
-    {
-        "iata": "IGL",
-        "lon": "27.159445",
-        "iso": "TR",
-        "status": 1,
-        "value": null,
-        "continent": "AS",
-        "type": "airport",
-        "lat": "38.31889",
-        "size": "medium"
     },
     {
         "iata": "USQ",
@@ -34369,17 +31736,6 @@
         "type": "airport",
         "lat": "36.717552",
         "size": "large"
-    },
-    {
-        "iata": "TEQ",
-        "lon": "27.5",
-        "iso": "TR",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "40.966667",
-        "size": "medium"
     },
     {
         "iata": "BXN",
@@ -34602,28 +31958,6 @@
         "size": "medium"
     },
     {
-        "iata": "ISE",
-        "lon": "30.382221",
-        "iso": "TR",
-        "status": 1,
-        "value": null,
-        "continent": "AS",
-        "type": "airport",
-        "lat": "37.86611",
-        "size": "large"
-    },
-    {
-        "iata": "EDO",
-        "lon": "27.033333",
-        "iso": "TR",
-        "status": 1,
-        "value": null,
-        "continent": "AS",
-        "type": "airport",
-        "lat": "39.583332",
-        "size": "medium"
-    },
-    {
         "iata": "BJV",
         "lon": "27.672781",
         "iso": "TR",
@@ -34632,28 +31966,6 @@
         "continent": "AS",
         "type": "airport",
         "lat": "37.243954",
-        "size": "large"
-    },
-    {
-        "iata": "SZF",
-        "lon": "36.555058",
-        "iso": "TR",
-        "status": 1,
-        "value": null,
-        "continent": "AS",
-        "type": "airport",
-        "lat": "41.25738",
-        "size": "medium"
-    },
-    {
-        "iata": "SAW",
-        "lon": "29.309189",
-        "iso": "TR",
-        "status": 1,
-        "value": null,
-        "continent": "AS",
-        "type": "airport",
-        "lat": "40.904675",
         "size": "large"
     },
     {
@@ -34893,28 +32205,6 @@
         "size": "medium"
     },
     {
-        "iata": "BTS",
-        "lon": "17.199799",
-        "iso": "SK",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "48.170017",
-        "size": "large"
-    },
-    {
-        "iata": "KSC",
-        "lon": "21.25",
-        "iso": "SK",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "48.666668",
-        "size": "medium"
-    },
-    {
         "iata": "LUE",
         "lon": "19.666668",
         "iso": "SK",
@@ -34926,28 +32216,6 @@
         "size": "small"
     },
     {
-        "iata": "PZY",
-        "lon": "17.833332",
-        "iso": "SK",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "48.63333",
-        "size": "medium"
-    },
-    {
-        "iata": "POV",
-        "lon": "21.25",
-        "iso": "SK",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "49.0",
-        "size": "small"
-    },
-    {
         "iata": "SLD",
         "lon": "19.133333",
         "iso": "SK",
@@ -34956,17 +32224,6 @@
         "continent": "EU",
         "type": "airport",
         "lat": "48.63333",
-        "size": "medium"
-    },
-    {
-        "iata": "ILZ",
-        "lon": "18.766666",
-        "iso": "SK",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "49.233334",
         "size": "medium"
     },
     {
@@ -35091,17 +32348,6 @@
         "size": "medium"
     },
     {
-        "iata": "AZS",
-        "lon": "-69.736946",
-        "iso": "DO",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "19.270555",
-        "size": "small"
-    },
-    {
         "iata": "COZ",
         "lon": "-70.71667",
         "iso": "DO",
@@ -35186,17 +32432,6 @@
         "type": "airport",
         "lat": "19.116667",
         "size": "small"
-    },
-    {
-        "iata": "SDQ",
-        "lon": "-69.67674",
-        "iso": "DO",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "18.430124",
-        "size": "large"
     },
     {
         "iata": "SJM",
@@ -35307,17 +32542,6 @@
         "size": "medium"
     },
     {
-        "iata": "PON",
-        "lon": "-89.433334",
-        "iso": "GT",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "16.35",
-        "size": "small"
-    },
-    {
         "iata": "AQB",
         "iso": "GT",
         "status": 1,
@@ -35355,15 +32579,6 @@
         "continent": "NA",
         "type": "airport",
         "lat": "14.520278",
-        "size": "medium"
-    },
-    {
-        "iata": "GSJ",
-        "iso": "GT",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
         "size": "medium"
     },
     {
@@ -35664,17 +32879,6 @@
         "size": "small"
     },
     {
-        "iata": "SAP",
-        "lon": "-87.927795",
-        "iso": "HN",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "15.456245",
-        "size": "medium"
-    },
-    {
         "iata": "GJA",
         "lon": "-85.90583",
         "iso": "HN",
@@ -35708,17 +32912,6 @@
         "size": "medium"
     },
     {
-        "iata": "SDH",
-        "lon": "-88.77639",
-        "iso": "HN",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "14.777222",
-        "size": "small"
-    },
-    {
         "iata": "RUY",
         "lon": "-88.0",
         "iso": "HN",
@@ -35749,17 +32942,6 @@
         "continent": "NA",
         "type": "airport",
         "lat": "15.771667",
-        "size": "medium"
-    },
-    {
-        "iata": "TGU",
-        "lon": "-87.21972",
-        "iso": "HN",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "14.060123",
         "size": "medium"
     },
     {
@@ -35928,17 +33110,6 @@
         "size": "medium"
     },
     {
-        "iata": "HUX",
-        "lon": "-96.23556",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "15.768333",
-        "size": "medium"
-    },
-    {
         "iata": "CNA",
         "lon": "-110.333336",
         "iso": "MX",
@@ -35959,17 +33130,6 @@
         "type": "airport",
         "lat": "18.834608",
         "size": "medium"
-    },
-    {
-        "iata": "ACN",
-        "lon": "-100.916664",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "29.3",
-        "size": "small"
     },
     {
         "iata": "CME",
@@ -36016,17 +33176,6 @@
         "size": "medium"
     },
     {
-        "iata": "CEN",
-        "lon": "-109.839165",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "27.391945",
-        "size": "medium"
-    },
-    {
         "iata": "CJT",
         "lon": "-92.05",
         "iso": "MX",
@@ -36036,28 +33185,6 @@
         "type": "airport",
         "lat": "16.166668",
         "size": "small"
-    },
-    {
-        "iata": "CPE",
-        "lon": "-90.509445",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "19.835",
-        "size": "medium"
-    },
-    {
-        "iata": "CJS",
-        "lon": "-106.4361",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "31.63593",
-        "size": "medium"
     },
     {
         "iata": "CZA",
@@ -36115,17 +33242,6 @@
         "size": "medium"
     },
     {
-        "iata": "CUA",
-        "lon": "-111.664444",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "25.036943",
-        "size": "medium"
-    },
-    {
         "iata": "MMC",
         "lon": "-99.0",
         "iso": "MX",
@@ -36179,17 +33295,6 @@
         "type": "airport",
         "lat": "20.525198",
         "size": "large"
-    },
-    {
-        "iata": "GYM",
-        "lon": "-110.93056",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "27.955557",
-        "size": "medium"
     },
     {
         "iata": "GUB",
@@ -36291,17 +33396,6 @@
         "size": "small"
     },
     {
-        "iata": "LZC",
-        "lon": "-102.21667",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "18.0",
-        "size": "medium"
-    },
-    {
         "iata": "LMM",
         "lon": "-108.98333",
         "iso": "MX",
@@ -36310,28 +33404,6 @@
         "continent": "NA",
         "type": "airport",
         "lat": "25.816668",
-        "size": "medium"
-    },
-    {
-        "iata": "BJX",
-        "lon": "-101.479",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "20.985699",
-        "size": "medium"
-    },
-    {
-        "iata": "LAP",
-        "lon": "-110.367836",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "24.076088",
         "size": "medium"
     },
     {
@@ -36379,17 +33451,6 @@
         "size": "small"
     },
     {
-        "iata": "MXL",
-        "lon": "-115.248215",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "32.6282",
-        "size": "medium"
-    },
-    {
         "iata": "MLM",
         "lon": "-101.02693",
         "iso": "MX",
@@ -36398,17 +33459,6 @@
         "continent": "NA",
         "type": "airport",
         "lat": "19.84351",
-        "size": "medium"
-    },
-    {
-        "iata": "MTT",
-        "lon": "-94.51667",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "17.983334",
         "size": "medium"
     },
     {
@@ -36467,50 +33517,6 @@
         "size": "small"
     },
     {
-        "iata": "NLD",
-        "lon": "-99.566666",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "27.434723",
-        "size": "medium"
-    },
-    {
-        "iata": "OAX",
-        "lon": "-96.721634",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "17.000883",
-        "size": "medium"
-    },
-    {
-        "iata": "PAZ",
-        "lon": "-97.467224",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "20.516666",
-        "size": "medium"
-    },
-    {
-        "iata": "PBC",
-        "lon": "-98.3675",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "19.135",
-        "size": "medium"
-    },
-    {
         "iata": "PPE",
         "iso": "MX",
         "status": 0,
@@ -36553,17 +33559,6 @@
         "size": "small"
     },
     {
-        "iata": "PVR",
-        "lon": "-105.24898",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "20.678297",
-        "size": "large"
-    },
-    {
         "iata": "PXM",
         "lon": "-97.083336",
         "iso": "MX",
@@ -36572,17 +33567,6 @@
         "continent": "NA",
         "type": "airport",
         "lat": "15.85",
-        "size": "medium"
-    },
-    {
-        "iata": "QRO",
-        "lon": "-100.38333",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "20.6",
         "size": "medium"
     },
     {
@@ -36641,17 +33625,6 @@
         "size": "medium"
     },
     {
-        "iata": "TGM",
-        "lon": "24.533333",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "46.533333",
-        "size": "medium"
-    },
-    {
         "iata": "TRC",
         "lon": "-103.39874",
         "iso": "MX",
@@ -36661,17 +33634,6 @@
         "type": "airport",
         "lat": "25.563066",
         "size": "medium"
-    },
-    {
-        "iata": "TIJ",
-        "lon": "-116.97466",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "32.546284",
-        "size": "large"
     },
     {
         "iata": "TAM",
@@ -36725,28 +33687,6 @@
         "continent": "NA",
         "type": "airport",
         "size": "small"
-    },
-    {
-        "iata": "CUN",
-        "lon": "-86.874435",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "21.040457",
-        "size": "large"
-    },
-    {
-        "iata": "VSA",
-        "lon": "-92.818985",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "17.99243",
-        "size": "medium"
     },
     {
         "iata": "VER",
@@ -36812,17 +33752,6 @@
         "continent": "AS",
         "type": "airport",
         "lat": "45.766666",
-        "size": "small"
-    },
-    {
-        "iata": "ULG",
-        "lon": "89.96667",
-        "iso": "MN",
-        "status": 1,
-        "value": null,
-        "continent": "AS",
-        "type": "airport",
-        "lat": "48.966667",
         "size": "small"
     },
     {
@@ -36969,17 +33898,6 @@
         "size": "medium"
     },
     {
-        "iata": "CHX",
-        "lon": "-82.45",
-        "iso": "PA",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "9.45",
-        "size": "medium"
-    },
-    {
         "iata": "DAV",
         "lon": "-82.433334",
         "iso": "PA",
@@ -37010,17 +33928,6 @@
         "continent": "NA",
         "type": "airport",
         "lat": "8.914011",
-        "size": "small"
-    },
-    {
-        "iata": "JQE",
-        "lon": "-78.166664",
-        "iso": "PA",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "7.5",
         "size": "small"
     },
     {
@@ -37431,17 +34338,6 @@
         "size": "medium"
     },
     {
-        "iata": "JEE",
-        "lon": "-74.16972",
-        "iso": "HT",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "18.662222",
-        "size": "medium"
-    },
-    {
         "iata": "PAP",
         "lon": "-72.29471",
         "iso": "HT",
@@ -37561,15 +34457,6 @@
         "size": "medium"
     },
     {
-        "iata": "QCO",
-        "iso": "CU",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "size": "small"
-    },
-    {
         "iata": "SCU",
         "lon": "-75.83583",
         "iso": "CU",
@@ -37601,17 +34488,6 @@
         "type": "airport",
         "lat": "20.084723",
         "size": "medium"
-    },
-    {
-        "iata": "HAV",
-        "lon": "-82.40818",
-        "iso": "CU",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "22.99845",
-        "size": "large"
     },
     {
         "iata": "HOG",
@@ -37955,28 +34831,6 @@
         "continent": "NA",
         "type": "airport",
         "lat": "20.216667",
-        "size": "small"
-    },
-    {
-        "iata": "UAC",
-        "lon": "-114.8",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "32.45",
-        "size": "small"
-    },
-    {
-        "iata": "XAL",
-        "lon": "-108.933334",
-        "iso": "MX",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "27.016666",
         "size": "small"
     },
     {
@@ -38416,17 +35270,6 @@
         "continent": "AF",
         "type": "closed",
         "size": null
-    },
-    {
-        "iata": "TGS",
-        "lon": "32.416668",
-        "iso": "MZ",
-        "status": 1,
-        "value": null,
-        "continent": "AF",
-        "type": "airport",
-        "lat": "-24.616667",
-        "size": "small"
     },
     {
         "iata": "BZE",
@@ -39859,17 +36702,6 @@
         "size": "small"
     },
     {
-        "iata": "ULB",
-        "lon": "168.33333",
-        "iso": "VU",
-        "status": 1,
-        "value": null,
-        "continent": "OC",
-        "type": "airport",
-        "lat": "-16.416668",
-        "size": "small"
-    },
-    {
         "iata": "VLS",
         "lon": "168.2",
         "iso": "VU",
@@ -40013,39 +36845,6 @@
         "size": "medium"
     },
     {
-        "iata": "BMY",
-        "lon": "163.66667",
-        "iso": "NC",
-        "status": 1,
-        "value": null,
-        "continent": "OC",
-        "type": "airport",
-        "lat": "-19.75",
-        "size": "medium"
-    },
-    {
-        "iata": "KNQ",
-        "lon": "164.83778",
-        "iso": "NC",
-        "status": 1,
-        "value": null,
-        "continent": "OC",
-        "type": "airport",
-        "lat": "-21.053333",
-        "size": "medium"
-    },
-    {
-        "iata": "ILP",
-        "lon": "167.4475",
-        "iso": "NC",
-        "status": 1,
-        "value": null,
-        "continent": "OC",
-        "type": "airport",
-        "lat": "-22.589722",
-        "size": "medium"
-    },
-    {
         "iata": "HLU",
         "lon": "166.06667",
         "iso": "NC",
@@ -40079,28 +36878,6 @@
         "size": "medium"
     },
     {
-        "iata": "GEA",
-        "lon": "166.47078",
-        "iso": "NC",
-        "status": 1,
-        "value": null,
-        "continent": "OC",
-        "type": "airport",
-        "lat": "-22.260536",
-        "size": "medium"
-    },
-    {
-        "iata": "IOU",
-        "lon": "166.78305",
-        "iso": "NC",
-        "status": 1,
-        "value": null,
-        "continent": "OC",
-        "type": "airport",
-        "lat": "-22.463888",
-        "size": "small"
-    },
-    {
         "iata": "PUV",
         "lon": "164.1014",
         "iso": "NC",
@@ -40123,17 +36900,6 @@
         "size": "small"
     },
     {
-        "iata": "MEE",
-        "lon": "168.03609",
-        "iso": "NC",
-        "status": 1,
-        "value": null,
-        "continent": "OC",
-        "type": "airport",
-        "lat": "-21.482311",
-        "size": "medium"
-    },
-    {
         "iata": "TOU",
         "lon": "165.25",
         "iso": "NC",
@@ -40142,17 +36908,6 @@
         "continent": "OC",
         "type": "airport",
         "lat": "-20.8",
-        "size": "medium"
-    },
-    {
-        "iata": "UVE",
-        "lon": "166.57198",
-        "iso": "NC",
-        "status": 1,
-        "value": null,
-        "continent": "OC",
-        "type": "airport",
-        "lat": "-20.64242",
         "size": "medium"
     },
     {
@@ -43373,17 +40128,6 @@
         "size": "small"
     },
     {
-        "iata": "BFQ",
-        "lon": "-78.166664",
-        "iso": "PA",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "7.583333",
-        "size": "small"
-    },
-    {
         "iata": "ELE",
         "lon": "-77.833336",
         "iso": "PA",
@@ -45478,17 +42222,6 @@
         "type": "airport",
         "lat": "19.283333",
         "size": "medium"
-    },
-    {
-        "iata": "BFA",
-        "lon": "-58.170277",
-        "iso": "PY",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-20.232779",
-        "size": "small"
     },
     {
         "iata": "OLK",
@@ -48000,17 +44733,6 @@
         "size": "medium"
     },
     {
-        "iata": "LGS",
-        "lon": "-69.57457",
-        "iso": "AR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-35.49324",
-        "size": "medium"
-    },
-    {
         "iata": "AFA",
         "lon": "-68.40056",
         "iso": "AR",
@@ -48030,17 +44752,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-28.448334",
-        "size": "medium"
-    },
-    {
-        "iata": "SDE",
-        "lon": "-64.32222",
-        "iso": "AR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-27.765278",
         "size": "medium"
     },
     {
@@ -48187,17 +44898,6 @@
         "size": "medium"
     },
     {
-        "iata": "IGR",
-        "lon": "-54.47635",
-        "iso": "AR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-25.731504",
-        "size": "medium"
-    },
-    {
         "iata": "AOL",
         "lon": "-57.15",
         "iso": "AR",
@@ -48261,17 +44961,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-24.4",
-        "size": "medium"
-    },
-    {
-        "iata": "ORA",
-        "lon": "-64.166664",
-        "iso": "AR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-23.333332",
         "size": "medium"
     },
     {
@@ -48418,17 +45107,6 @@
         "size": "medium"
     },
     {
-        "iata": "IGB",
-        "lon": "-69.583336",
-        "iso": "AR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-41.3",
-        "size": "small"
-    },
-    {
         "iata": "OES",
         "lon": "-64.95",
         "iso": "AR",
@@ -48547,17 +45225,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-53.779167",
-        "size": "medium"
-    },
-    {
-        "iata": "RGL",
-        "lon": "-69.28333",
-        "iso": "AR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-51.61667",
         "size": "medium"
     },
     {
@@ -48715,17 +45382,6 @@
         "size": "medium"
     },
     {
-        "iata": "MDQ",
-        "lon": "-57.572224",
-        "iso": "AR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-37.934723",
-        "size": "medium"
-    },
-    {
         "iata": "NQN",
         "lon": "-68.15222",
         "iso": "AR",
@@ -48778,17 +45434,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-41.145966",
-        "size": "medium"
-    },
-    {
-        "iata": "TDL",
-        "lon": "-59.083332",
-        "iso": "AR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-37.333332",
         "size": "medium"
     },
     {
@@ -48854,28 +45499,6 @@
         "size": null
     },
     {
-        "iata": "CDJ",
-        "lon": "-49.283333",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-8.233333",
-        "size": "medium"
-    },
-    {
-        "iata": "APS",
-        "lon": "-48.966667",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-16.333332",
-        "size": "medium"
-    },
-    {
         "iata": "AQA",
         "lon": "-48.13691",
         "iso": "BR",
@@ -48918,17 +45541,6 @@
         "type": "airport",
         "lat": "-21.143612",
         "size": "medium"
-    },
-    {
-        "iata": "AAX",
-        "lon": "-46.92917",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-19.568056",
-        "size": "small"
     },
     {
         "iata": "BEL",
@@ -49016,17 +45628,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "2.833333",
-        "size": "medium"
-    },
-    {
-        "iata": "BPG",
-        "lon": "-52.38333",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-15.85",
         "size": "medium"
     },
     {
@@ -49624,39 +46225,6 @@
         "size": "medium"
     },
     {
-        "iata": "MGF",
-        "lon": "-51.933334",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-23.383612",
-        "size": "medium"
-    },
-    {
-        "iata": "MOC",
-        "lon": "-43.817223",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-16.707779",
-        "size": "medium"
-    },
-    {
-        "iata": "MII",
-        "lon": "-49.933334",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-22.2",
-        "size": "medium"
-    },
-    {
         "iata": "PLL",
         "lon": "-59.984444",
         "iso": "BR",
@@ -49710,17 +46278,6 @@
         "size": "medium"
     },
     {
-        "iata": "MNX",
-        "lon": "-61.283333",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-5.816667",
-        "size": "medium"
-    },
-    {
         "iata": "NVT",
         "lon": "-48.63333",
         "iso": "BR",
@@ -49729,17 +46286,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-26.866667",
-        "size": "medium"
-    },
-    {
-        "iata": "GEL",
-        "lon": "-54.168056",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-28.28111",
         "size": "medium"
     },
     {
@@ -49773,28 +46319,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-29.98961",
-        "size": "medium"
-    },
-    {
-        "iata": "PBB",
-        "lon": "-51.183334",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-19.666668",
-        "size": "small"
-    },
-    {
-        "iata": "POO",
-        "lon": "-46.5675",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-21.841389",
         "size": "medium"
     },
     {
@@ -49853,17 +46377,6 @@
         "size": "medium"
     },
     {
-        "iata": "PMG",
-        "lon": "-55.7",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-22.55",
-        "size": "medium"
-    },
-    {
         "iata": "BPS",
         "lon": "-39.081097",
         "iso": "BR",
@@ -49883,17 +46396,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-8.714311",
-        "size": "medium"
-    },
-    {
-        "iata": "VDC",
-        "lon": "-40.86667",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-14.883333",
         "size": "medium"
     },
     {
@@ -50018,28 +46520,6 @@
         "size": "large"
     },
     {
-        "iata": "SJP",
-        "lon": "-49.416668",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-20.816668",
-        "size": "medium"
-    },
-    {
-        "iata": "SSZ",
-        "lon": "-46.36667",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-23.933332",
-        "size": "medium"
-    },
-    {
         "iata": "SSA",
         "lon": "-38.335197",
         "iso": "BR",
@@ -50049,15 +46529,6 @@
         "type": "airport",
         "lat": "-12.913988",
         "size": "large"
-    },
-    {
-        "iata": "QHP",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "size": "medium"
     },
     {
         "iata": "TMT",
@@ -50071,17 +46542,6 @@
         "size": "medium"
     },
     {
-        "iata": "UNA",
-        "lon": "-38.997223",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-15.353333",
-        "size": "small"
-    },
-    {
         "iata": "TOW",
         "lon": "-53.69611",
         "iso": "BR",
@@ -50093,61 +46553,6 @@
         "size": "small"
     },
     {
-        "iata": "THE",
-        "lon": "-42.821087",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-5.06335",
-        "size": "medium"
-    },
-    {
-        "iata": "TFF",
-        "lon": "-64.7",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-3.366667",
-        "size": "medium"
-    },
-    {
-        "iata": "TRQ",
-        "lon": "-70.75",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-8.1",
-        "size": "medium"
-    },
-    {
-        "iata": "TEC",
-        "lon": "-50.65167",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-24.315832",
-        "size": "medium"
-    },
-    {
-        "iata": "OBI",
-        "lon": "-55.516666",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-1.916667",
-        "size": "medium"
-    },
-    {
         "iata": "TBT",
         "lon": "-69.933334",
         "iso": "BR",
@@ -50156,28 +46561,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-4.233333",
-        "size": "medium"
-    },
-    {
-        "iata": "TUR",
-        "lon": "-49.733334",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-3.7",
-        "size": "medium"
-    },
-    {
-        "iata": "SJL",
-        "lon": "-66.98556",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-0.148333",
         "size": "medium"
     },
     {
@@ -50200,28 +46583,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-29.781668",
-        "size": "medium"
-    },
-    {
-        "iata": "UDI",
-        "lon": "-48.225822",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-18.884567",
-        "size": "medium"
-    },
-    {
-        "iata": "UBA",
-        "lon": "-47.958332",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-19.776388",
         "size": "medium"
     },
     {
@@ -50333,17 +46694,6 @@
         "size": "medium"
     },
     {
-        "iata": "WPA",
-        "lon": "-72.7",
-        "iso": "CL",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-45.4",
-        "size": "small"
-    },
-    {
         "iata": "DAT",
         "lon": "113.48136",
         "iso": "CL",
@@ -50399,28 +46749,6 @@
         "size": "medium"
     },
     {
-        "iata": "YAI",
-        "lon": "-72.11667",
-        "iso": "CL",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-36.6",
-        "size": "medium"
-    },
-    {
-        "iata": "PUQ",
-        "lon": "-70.84307",
-        "iso": "CL",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-53.005356",
-        "size": "medium"
-    },
-    {
         "iata": "GXQ",
         "lon": "-72.09861",
         "iso": "CL",
@@ -50440,28 +46768,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-20.547937",
-        "size": "medium"
-    },
-    {
-        "iata": "SCL",
-        "lon": "-70.79382",
-        "iso": "CL",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-33.397175",
-        "size": "large"
-    },
-    {
-        "iata": "ESR",
-        "lon": "-69.76528",
-        "iso": "CL",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-26.315277",
         "size": "medium"
     },
     {
@@ -50495,39 +46801,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-53.25",
-        "size": "medium"
-    },
-    {
-        "iata": "FFU",
-        "lon": "-71.816666",
-        "iso": "CL",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-43.2",
-        "size": "small"
-    },
-    {
-        "iata": "LSQ",
-        "lon": "-72.422775",
-        "iso": "CL",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-37.3975",
-        "size": "small"
-    },
-    {
-        "iata": "WPU",
-        "lon": "-68.25",
-        "iso": "CL",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-54.95",
         "size": "medium"
     },
     {
@@ -50575,17 +46848,6 @@
         "size": "medium"
     },
     {
-        "iata": "ZOS",
-        "lon": "-73.05556",
-        "iso": "CL",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-40.607777",
-        "size": "medium"
-    },
-    {
         "iata": "VLR",
         "lon": "-70.761665",
         "iso": "CL",
@@ -50630,17 +46892,6 @@
         "size": "small"
     },
     {
-        "iata": "ZPC",
-        "lon": "-71.63333",
-        "iso": "CL",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-39.76389",
-        "size": "small"
-    },
-    {
         "iata": "PUX",
         "lon": "-72.94444",
         "iso": "CL",
@@ -50650,17 +46901,6 @@
         "type": "airport",
         "lat": "-40.34028",
         "size": "small"
-    },
-    {
-        "iata": "CNR",
-        "lon": "-70.604164",
-        "iso": "CL",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-26.329166",
-        "size": "medium"
     },
     {
         "iata": "VAP",
@@ -50705,17 +46945,6 @@
         "type": "airport",
         "lat": "-29.917297",
         "size": "medium"
-    },
-    {
-        "iata": "SSD",
-        "lon": "-67.1",
-        "iso": "CL",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "1.916667",
-        "size": "small"
     },
     {
         "iata": "WCA",
@@ -50771,17 +47000,6 @@
         "size": "medium"
     },
     {
-        "iata": "WCH",
-        "lon": "-72.71667",
-        "iso": "CL",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-42.916668",
-        "size": "medium"
-    },
-    {
         "iata": "ZIC",
         "lon": "-72.333336",
         "iso": "CL",
@@ -50812,17 +47030,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-39.791668",
-        "size": "medium"
-    },
-    {
-        "iata": "KNA",
-        "lon": "-71.566666",
-        "iso": "CL",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-33.033333",
         "size": "medium"
     },
     {
@@ -50903,17 +47110,6 @@
         "size": "small"
     },
     {
-        "iata": "QGC",
-        "lon": "-48.85278",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-22.672222",
-        "size": "small"
-    },
-    {
         "iata": "QNV",
         "lon": "-43.59722",
         "iso": "BR",
@@ -50958,17 +47154,6 @@
         "size": "small"
     },
     {
-        "iata": "QVP",
-        "lon": "-48.99167",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-23.180555",
-        "size": "small"
-    },
-    {
         "iata": "QRZ",
         "lon": "-44.61667",
         "iso": "BR",
@@ -50977,15 +47162,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-22.586111",
-        "size": "small"
-    },
-    {
-        "iata": "QSC",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
         "size": "small"
     },
     {
@@ -51037,17 +47213,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-21.513056",
-        "size": "medium"
-    },
-    {
-        "iata": "ATF",
-        "lon": "-78.7",
-        "iso": "EC",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-1.083333",
         "size": "medium"
     },
     {
@@ -51258,17 +47423,6 @@
         "size": "small"
     },
     {
-        "iata": "SCY",
-        "lon": "-89.433334",
-        "iso": "EC",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-0.833333",
-        "size": "small"
-    },
-    {
         "iata": "BHA",
         "lon": "-80.416664",
         "iso": "EC",
@@ -51390,17 +47544,6 @@
         "size": "small"
     },
     {
-        "iata": "ENO",
-        "lon": "-55.833332",
-        "iso": "PY",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-27.25",
-        "size": "small"
-    },
-    {
         "iata": "AGT",
         "lon": "-54.833332",
         "iso": "PY",
@@ -51421,17 +47564,6 @@
         "type": "airport",
         "lat": "-22.35",
         "size": "small"
-    },
-    {
-        "iata": "ESG",
-        "lon": "-60.61667",
-        "iso": "PY",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-22.033333",
-        "size": "medium"
     },
     {
         "iata": "PIL",
@@ -51586,17 +47718,6 @@
         "size": "small"
     },
     {
-        "iata": "ACD",
-        "lon": "-77.3",
-        "iso": "CO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "8.516667",
-        "size": "small"
-    },
-    {
         "iata": "AFI",
         "lon": "-75.066666",
         "iso": "CO",
@@ -51696,39 +47817,6 @@
         "size": "medium"
     },
     {
-        "iata": "BSC",
-        "lon": "-77.4",
-        "iso": "CO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "6.183333",
-        "size": "medium"
-    },
-    {
-        "iata": "BUN",
-        "lon": "-76.995834",
-        "iso": "CO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "3.825",
-        "size": "medium"
-    },
-    {
-        "iata": "CPB",
-        "lon": "-77.333336",
-        "iso": "CO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "8.633333",
-        "size": "small"
-    },
-    {
         "iata": "CUC",
         "lon": "-72.50815",
         "iso": "CO",
@@ -51749,17 +47837,6 @@
         "type": "airport",
         "lat": "5.079167",
         "size": "small"
-    },
-    {
-        "iata": "CTG",
-        "lon": "-75.51659",
-        "iso": "CO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "10.445704",
-        "size": "medium"
     },
     {
         "iata": "CCO",
@@ -51817,17 +47894,6 @@
         "size": "medium"
     },
     {
-        "iata": "CUO",
-        "lon": "-71.23333",
-        "iso": "CO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "1.033333",
-        "size": "small"
-    },
-    {
         "iata": "CAQ",
         "lon": "-75.19718",
         "iso": "CO",
@@ -51836,17 +47902,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "7.967905",
-        "size": "medium"
-    },
-    {
-        "iata": "CVE",
-        "lon": "-75.73333",
-        "iso": "CO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "9.4",
         "size": "medium"
     },
     {
@@ -51872,17 +47927,6 @@
         "size": "medium"
     },
     {
-        "iata": "EJA",
-        "lon": "-73.799164",
-        "iso": "CO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "7.015833",
-        "size": "medium"
-    },
-    {
         "iata": "FLA",
         "lon": "-75.55889",
         "iso": "CO",
@@ -51892,15 +47936,6 @@
         "type": "airport",
         "lat": "1.588889",
         "size": "medium"
-    },
-    {
-        "iata": "FDA",
-        "iso": "CO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "size": "small"
     },
     {
         "iata": "GIR",
@@ -51936,15 +47971,6 @@
         "size": "medium"
     },
     {
-        "iata": "GLJ",
-        "iso": "CO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "size": "small"
-    },
-    {
         "iata": "CPL",
         "lon": "-75.46667",
         "iso": "CO",
@@ -51976,17 +48002,6 @@
         "type": "airport",
         "lat": "4.423948",
         "size": "medium"
-    },
-    {
-        "iata": "IGO",
-        "lon": "-76.68667",
-        "iso": "CO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "7.681667",
-        "size": "small"
     },
     {
         "iata": "MMP",
@@ -52042,17 +48057,6 @@
         "type": "airport",
         "lat": "-1.3",
         "size": "small"
-    },
-    {
-        "iata": "LET",
-        "lon": "-69.939445",
-        "iso": "CO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-4.196389",
-        "size": "medium"
     },
     {
         "iata": "EOH",
@@ -52220,17 +48224,6 @@
         "size": "medium"
     },
     {
-        "iata": "PEI",
-        "lon": "-75.736534",
-        "iso": "CO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "4.815945",
-        "size": "medium"
-    },
-    {
         "iata": "PTX",
         "lon": "-76.03333",
         "iso": "CO",
@@ -52262,17 +48255,6 @@
         "type": "airport",
         "lat": "6.2",
         "size": "small"
-    },
-    {
-        "iata": "PPN",
-        "lon": "-76.60889",
-        "iso": "CO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "2.45",
-        "size": "medium"
     },
     {
         "iata": "PQE",
@@ -52339,17 +48321,6 @@
         "size": "medium"
     },
     {
-        "iata": "MDE",
-        "lon": "-75.42821",
-        "iso": "CO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "6.171382",
-        "size": "medium"
-    },
-    {
         "iata": "RCH",
         "lon": "-72.924446",
         "iso": "CO",
@@ -52369,17 +48340,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "2.583333",
-        "size": "medium"
-    },
-    {
-        "iata": "SMR",
-        "lon": "-74.232704",
-        "iso": "CO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "11.117132",
         "size": "medium"
     },
     {
@@ -52416,17 +48376,6 @@
         "size": "medium"
     },
     {
-        "iata": "TBU",
-        "lon": "-175.14131",
-        "iso": "CO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-21.24117",
-        "size": "small"
-    },
-    {
         "iata": "TDA",
         "lon": "-71.72444",
         "iso": "CO",
@@ -52435,17 +48384,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "5.423611",
-        "size": "small"
-    },
-    {
-        "iata": "TLU",
-        "lon": "-75.583336",
-        "iso": "CO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "9.516667",
         "size": "small"
     },
     {
@@ -52471,28 +48409,6 @@
         "size": "medium"
     },
     {
-        "iata": "TRB",
-        "lon": "-76.748055",
-        "iso": "CO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "8.078333",
-        "size": "small"
-    },
-    {
-        "iata": "MQZ",
-        "lon": "115.1",
-        "iso": "CO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-33.933334",
-        "size": "medium"
-    },
-    {
         "iata": "AUC",
         "lon": "-70.7425",
         "iso": "CO",
@@ -52501,17 +48417,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "7.071667",
-        "size": "medium"
-    },
-    {
-        "iata": "UIB",
-        "lon": "-76.641945",
-        "iso": "CO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "5.690556",
         "size": "medium"
     },
     {
@@ -52535,17 +48440,6 @@
         "type": "airport",
         "lat": "6.333333",
         "size": "small"
-    },
-    {
-        "iata": "VUP",
-        "lon": "-73.25278",
-        "iso": "CO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "10.436667",
-        "size": "medium"
     },
     {
         "iata": "VVC",
@@ -52603,17 +48497,6 @@
         "size": "small"
     },
     {
-        "iata": "ASC",
-        "lon": "-63.15",
-        "iso": "BO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-15.916667",
-        "size": "small"
-    },
-    {
         "iata": "BJO",
         "lon": "-64.333336",
         "iso": "BO",
@@ -52647,28 +48530,6 @@
         "size": "medium"
     },
     {
-        "iata": "CIJ",
-        "lon": "-68.75278",
-        "iso": "BO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-11.026389",
-        "size": "medium"
-    },
-    {
-        "iata": "CEP",
-        "lon": "-62.083332",
-        "iso": "BO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-16.233334",
-        "size": "small"
-    },
-    {
         "iata": "SRZ",
         "lon": "-63.1725",
         "iso": "BO",
@@ -52680,17 +48541,6 @@
         "size": "medium"
     },
     {
-        "iata": "GYA",
-        "lon": "-65.361664",
-        "iso": "BO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-10.83",
-        "size": "small"
-    },
-    {
         "iata": "BVK",
         "lon": "-63.75",
         "iso": "BO",
@@ -52699,28 +48549,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-13.55",
-        "size": "small"
-    },
-    {
-        "iata": "SJS",
-        "lon": "-60.738335",
-        "iso": "BO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-17.827223",
-        "size": "small"
-    },
-    {
-        "iata": "SJB",
-        "lon": "-64.8",
-        "iso": "BO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-13.083333",
         "size": "small"
     },
     {
@@ -52790,50 +48618,6 @@
         "size": "small"
     },
     {
-        "iata": "PSZ",
-        "lon": "-57.8",
-        "iso": "BO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-18.966667",
-        "size": "medium"
-    },
-    {
-        "iata": "SRD",
-        "lon": "-64.71667",
-        "iso": "BO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-13.283333",
-        "size": "small"
-    },
-    {
-        "iata": "RBO",
-        "lon": "-59.75528",
-        "iso": "BO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-18.344444",
-        "size": "small"
-    },
-    {
-        "iata": "RIB",
-        "lon": "-66.093056",
-        "iso": "BO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-11.006944",
-        "size": "small"
-    },
-    {
         "iata": "REY",
         "lon": "-67.26667",
         "iso": "BO",
@@ -52854,28 +48638,6 @@
         "type": "airport",
         "lat": "-13.716667",
         "size": "medium"
-    },
-    {
-        "iata": "SRJ",
-        "lon": "-66.833336",
-        "iso": "BO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-14.816667",
-        "size": "small"
-    },
-    {
-        "iata": "SNG",
-        "lon": "-60.97639",
-        "iso": "BO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-16.383057",
-        "size": "small"
     },
     {
         "iata": "SNM",
@@ -52911,17 +48673,6 @@
         "size": "medium"
     },
     {
-        "iata": "MQK",
-        "lon": "-58.385555",
-        "iso": "BO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-16.334444",
-        "size": "small"
-    },
-    {
         "iata": "TJA",
         "lon": "-64.745834",
         "iso": "BO",
@@ -52953,28 +48704,6 @@
         "type": "airport",
         "lat": "-20.4463",
         "size": "small"
-    },
-    {
-        "iata": "VAH",
-        "lon": "-64.1",
-        "iso": "BO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-18.483334",
-        "size": "small"
-    },
-    {
-        "iata": "VLM",
-        "lon": "-63.5",
-        "iso": "BO",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-21.25",
-        "size": "medium"
     },
     {
         "iata": "VVI",
@@ -53098,17 +48827,6 @@
         "size": "small"
     },
     {
-        "iata": "APY",
-        "lon": "-45.933334",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-9.133333",
-        "size": "small"
-    },
-    {
         "iata": "APQ",
         "lon": "-36.65",
         "iso": "BR",
@@ -53117,17 +48835,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-9.75",
-        "size": "small"
-    },
-    {
-        "iata": "AMJ",
-        "lon": "-40.683334",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-16.183332",
         "size": "small"
     },
     {
@@ -53186,17 +48893,6 @@
         "size": "small"
     },
     {
-        "iata": "BMS",
-        "lon": "-41.63333",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-14.233333",
-        "size": "small"
-    },
-    {
         "iata": "BQQ",
         "lon": "-43.13333",
         "iso": "BR",
@@ -53239,17 +48935,6 @@
         "size": "small"
     },
     {
-        "iata": "RDC",
-        "lon": "-49.98",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-8.030278",
-        "size": "small"
-    },
-    {
         "iata": "LEP",
         "lon": "-42.666668",
         "iso": "BR",
@@ -53261,17 +48946,6 @@
         "size": "small"
     },
     {
-        "iata": "DIQ",
-        "lon": "-44.869446",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-20.181389",
-        "size": "small"
-    },
-    {
         "iata": "CNV",
         "lon": "-38.983334",
         "iso": "BR",
@@ -53280,17 +48954,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-15.666667",
-        "size": "small"
-    },
-    {
-        "iata": "SXX",
-        "lon": "-51.983334",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-6.633333",
         "size": "small"
     },
     {
@@ -53327,17 +48990,6 @@
         "size": "small"
     },
     {
-        "iata": "GMS",
-        "lon": "-44.7",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-2.15",
-        "size": "small"
-    },
-    {
         "iata": "QGP",
         "lon": "-36.65",
         "iso": "BR",
@@ -53356,17 +49008,6 @@
         "continent": "SA",
         "type": "closed",
         "size": null
-    },
-    {
-        "iata": "IRE",
-        "lon": "-41.86667",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-11.3",
-        "size": "small"
     },
     {
         "iata": "QIG",
@@ -53391,17 +49032,6 @@
         "size": "small"
     },
     {
-        "iata": "IPU",
-        "lon": "-39.733334",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-14.133333",
-        "size": "small"
-    },
-    {
         "iata": "JCM",
         "lon": "-40.516666",
         "iso": "BR",
@@ -53410,50 +49040,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-11.183333",
-        "size": "small"
-    },
-    {
-        "iata": "FEC",
-        "lon": "-38.906113",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-12.2025",
-        "size": "small"
-    },
-    {
-        "iata": "JEQ",
-        "lon": "-40.083332",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-13.85",
-        "size": "small"
-    },
-    {
-        "iata": "JNA",
-        "lon": "-44.385834",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-15.474167",
-        "size": "small"
-    },
-    {
-        "iata": "JDR",
-        "lon": "-44.2301",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-21.087957",
         "size": "small"
     },
     {
@@ -53512,17 +49098,6 @@
         "size": "small"
     },
     {
-        "iata": "SSO",
-        "lon": "-45.05",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-22.116667",
-        "size": "small"
-    },
-    {
         "iata": "MTE",
         "lon": "-54.066666",
         "iso": "BR",
@@ -53542,17 +49117,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-18.083332",
-        "size": "small"
-    },
-    {
-        "iata": "SBJ",
-        "lon": "-39.733334",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-18.583332",
         "size": "small"
     },
     {
@@ -53586,28 +49150,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-3.781521",
-        "size": "small"
-    },
-    {
-        "iata": "PSW",
-        "lon": "-46.61667",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-20.716667",
-        "size": "small"
-    },
-    {
-        "iata": "ORX",
-        "lon": "-55.86667",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-1.75",
         "size": "small"
     },
     {
@@ -53664,17 +49206,6 @@
         "size": null
     },
     {
-        "iata": "PIV",
-        "lon": "-44.93222",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-17.338612",
-        "size": "small"
-    },
-    {
         "iata": "PDF",
         "lon": "-39.216667",
         "iso": "BR",
@@ -53708,17 +49239,6 @@
         "size": "small"
     },
     {
-        "iata": "OBI",
-        "lon": "-55.516666",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-1.916667",
-        "size": "small"
-    },
-    {
         "iata": "TFL",
         "lon": "-41.5",
         "iso": "BR",
@@ -53727,28 +49247,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-17.85",
-        "size": "small"
-    },
-    {
-        "iata": "VAL",
-        "lon": "-38.988876",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-13.295259",
-        "size": "small"
-    },
-    {
-        "iata": "QID",
-        "lon": "-45.291668",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-21.855556",
         "size": "small"
     },
     {
@@ -53774,17 +49272,6 @@
         "size": "small"
     },
     {
-        "iata": "QXC",
-        "lon": "-43.355556",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-4.870141",
-        "size": "small"
-    },
-    {
         "iata": "PHI",
         "lon": "-45.083332",
         "iso": "BR",
@@ -53793,17 +49280,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-2.516667",
-        "size": "small"
-    },
-    {
-        "iata": "ITI",
-        "lon": "-41.5",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-18.0",
         "size": "small"
     },
     {
@@ -53893,17 +49369,6 @@
         "size": "small"
     },
     {
-        "iata": "XAU",
-        "lon": "-53.2",
-        "iso": "GF",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "3.616667",
-        "size": "small"
-    },
-    {
         "iata": "APE",
         "lon": "-69.083336",
         "iso": "PE",
@@ -53933,17 +49398,6 @@
         "continent": "SA",
         "type": "airport",
         "size": "small"
-    },
-    {
-        "iata": "ATG",
-        "lon": "72.25",
-        "iso": "PE",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "33.9",
-        "size": "medium"
     },
     {
         "iata": "MBP",
@@ -54096,17 +49550,6 @@
         "type": "airport",
         "lat": "-13.25",
         "size": "small"
-    },
-    {
-        "iata": "LIM",
-        "lon": "-77.107666",
-        "iso": "PE",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-12.019421",
-        "size": "large"
     },
     {
         "iata": "SFK",
@@ -54338,17 +49781,6 @@
         "size": "medium"
     },
     {
-        "iata": "AQP",
-        "lon": "-71.56799",
-        "iso": "PE",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-16.344812",
-        "size": "medium"
-    },
-    {
         "iata": "TRU",
         "lon": "-79.115",
         "iso": "PE",
@@ -54367,17 +49799,6 @@
         "continent": "SA",
         "type": "airport",
         "size": "small"
-    },
-    {
-        "iata": "PIO",
-        "lon": "-76.21667",
-        "iso": "PE",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-13.75",
-        "size": "medium"
     },
     {
         "iata": "TPP",
@@ -54421,17 +49842,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-12.583333",
-        "size": "medium"
-    },
-    {
-        "iata": "PIU",
-        "lon": "-80.613335",
-        "iso": "PE",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-5.201667",
         "size": "medium"
     },
     {
@@ -54512,17 +49922,6 @@
         "size": "small"
     },
     {
-        "iata": "CCI",
-        "lon": "-52.050556",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-27.181389",
-        "size": "small"
-    },
-    {
         "iata": "QCN",
         "lon": "-50.922222",
         "iso": "BR",
@@ -54531,17 +49930,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-29.497223",
-        "size": "small"
-    },
-    {
-        "iata": "CKO",
-        "lon": "-50.666668",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-23.116667",
         "size": "small"
     },
     {
@@ -54564,39 +49952,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-27.641666",
-        "size": "small"
-    },
-    {
-        "iata": "FBE",
-        "lon": "-53.066666",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-26.083332",
-        "size": "small"
-    },
-    {
-        "iata": "QGA",
-        "lon": "-54.230556",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-24.197222",
-        "size": "small"
-    },
-    {
-        "iata": "IJU",
-        "lon": "-53.916668",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-28.416668",
         "size": "small"
     },
     {
@@ -54699,17 +50054,6 @@
         "size": "small"
     },
     {
-        "iata": "SQX",
-        "lon": "-53.502777",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-26.780556",
-        "size": "small"
-    },
-    {
         "iata": "APX",
         "lon": "-51.466667",
         "iso": "BR",
@@ -54732,39 +50076,6 @@
         "size": "small"
     },
     {
-        "iata": "PNG",
-        "lon": "-48.5",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-25.516666",
-        "size": "small"
-    },
-    {
-        "iata": "PVI",
-        "lon": "-52.466667",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-23.066668",
-        "size": "small"
-    },
-    {
-        "iata": "PBB",
-        "lon": "-51.183334",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-19.666668",
-        "size": "small"
-    },
-    {
         "iata": "QAC",
         "lon": "-50.052776",
         "iso": "BR",
@@ -54773,28 +50084,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-24.875",
-        "size": "small"
-    },
-    {
-        "iata": "SQY",
-        "lon": "-52.032223",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-31.382778",
-        "size": "small"
-    },
-    {
-        "iata": "QOJ",
-        "lon": "-56.177776",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-28.680555",
         "size": "small"
     },
     {
@@ -54820,17 +50109,6 @@
         "size": "small"
     },
     {
-        "iata": "QVB",
-        "lon": "-51.08889",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-26.366667",
-        "size": "small"
-    },
-    {
         "iata": "VIA",
         "lon": "-51.136112",
         "iso": "BR",
@@ -54839,28 +50117,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-27.008333",
-        "size": "small"
-    },
-    {
-        "iata": "CTQ",
-        "lon": "-50.1",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-18.85",
-        "size": "small"
-    },
-    {
-        "iata": "AXE",
-        "lon": "-52.38333",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-26.883333",
         "size": "small"
     },
     {
@@ -55161,17 +50417,6 @@
         "size": "medium"
     },
     {
-        "iata": "CBL",
-        "lon": "-63.534657",
-        "iso": "VE",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "8.122381",
-        "size": "medium"
-    },
-    {
         "iata": "CXA",
         "lon": "-66.15",
         "iso": "VE",
@@ -55224,39 +50469,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "10.183333",
-        "size": "medium"
-    },
-    {
-        "iata": "CUP",
-        "lon": "-63.2625",
-        "iso": "VE",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "10.658889",
-        "size": "medium"
-    },
-    {
-        "iata": "CZE",
-        "lon": "-69.681946",
-        "iso": "VE",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "11.415833",
-        "size": "medium"
-    },
-    {
-        "iata": "CUM",
-        "lon": "-64.131744",
-        "iso": "VE",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "10.449879",
         "size": "medium"
     },
     {
@@ -55326,17 +50538,6 @@
         "size": "medium"
     },
     {
-        "iata": "ICA",
-        "lon": "-61.733334",
-        "iso": "VE",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "4.333333",
-        "size": "small"
-    },
-    {
         "iata": "LSP",
         "lon": "-70.14961",
         "iso": "VE",
@@ -55389,39 +50590,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "8.582471",
-        "size": "medium"
-    },
-    {
-        "iata": "PMV",
-        "lon": "-63.96899",
-        "iso": "VE",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "10.917189",
-        "size": "medium"
-    },
-    {
-        "iata": "CCS",
-        "lon": "-67.00551",
-        "iso": "VE",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "10.596942",
-        "size": "medium"
-    },
-    {
-        "iata": "MUN",
-        "lon": "-63.156933",
-        "iso": "VE",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "9.749384",
         "size": "medium"
     },
     {
@@ -55535,17 +50703,6 @@
         "size": "medium"
     },
     {
-        "iata": "SBB",
-        "lon": "-71.166664",
-        "iso": "VE",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "7.783333",
-        "size": "small"
-    },
-    {
         "iata": "SNV",
         "lon": "-61.11667",
         "iso": "VE",
@@ -55601,17 +50758,6 @@
         "size": "medium"
     },
     {
-        "iata": "STB",
-        "lon": "-71.95",
-        "iso": "VE",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "9.033333",
-        "size": "medium"
-    },
-    {
         "iata": "TUV",
         "lon": "-62.05",
         "iso": "VE",
@@ -55653,28 +50799,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "10.15429",
-        "size": "medium"
-    },
-    {
-        "iata": "VIG",
-        "lon": "-71.65",
-        "iso": "VE",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "8.633333",
-        "size": "medium"
-    },
-    {
-        "iata": "VLV",
-        "lon": "-70.58583",
-        "iso": "VE",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "9.339167",
         "size": "medium"
     },
     {
@@ -55744,39 +50868,6 @@
         "size": "small"
     },
     {
-        "iata": "DNO",
-        "lon": "-46.85",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-11.616667",
-        "size": "small"
-    },
-    {
-        "iata": "ARS",
-        "lon": "-52.233334",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-15.9",
-        "size": "small"
-    },
-    {
-        "iata": "ERN",
-        "lon": "-69.88333",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-6.583333",
-        "size": "small"
-    },
-    {
         "iata": "CQA",
         "lon": "-52.27028",
         "iso": "BR",
@@ -55788,28 +50879,6 @@
         "size": "small"
     },
     {
-        "iata": "FEJ",
-        "lon": "-70.35",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-8.15",
-        "size": "small"
-    },
-    {
-        "iata": "SXO",
-        "lon": "-50.65",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-11.6",
-        "size": "small"
-    },
-    {
         "iata": "GRP",
         "lon": "-49.216667",
         "iso": "BR",
@@ -55818,17 +50887,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-11.666667",
-        "size": "small"
-    },
-    {
-        "iata": "AUX",
-        "lon": "-48.2",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-7.2",
         "size": "small"
     },
     {
@@ -55854,28 +50912,6 @@
         "size": "small"
     },
     {
-        "iata": "JPR",
-        "lon": "-61.84667",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-10.870556",
-        "size": "small"
-    },
-    {
-        "iata": "JIA",
-        "lon": "-58.88333",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-11.5",
-        "size": "small"
-    },
-    {
         "iata": "JRN",
         "lon": "-58.488888",
         "iso": "BR",
@@ -55884,17 +50920,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-10.305556",
-        "size": "small"
-    },
-    {
-        "iata": "CCX",
-        "lon": "-57.7",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-16.066668",
         "size": "small"
     },
     {
@@ -55909,28 +50934,6 @@
         "size": "small"
     },
     {
-        "iata": "TLZ",
-        "lon": "-47.95",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-18.166668",
-        "size": "small"
-    },
-    {
-        "iata": "LBR",
-        "lon": "-64.85",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-7.25",
-        "size": "small"
-    },
-    {
         "iata": "RVD",
         "lon": "-50.933334",
         "iso": "BR",
@@ -55939,28 +50942,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-17.716667",
-        "size": "small"
-    },
-    {
-        "iata": "MBZ",
-        "lon": "-57.7",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-3.4",
-        "size": "small"
-    },
-    {
-        "iata": "NVP",
-        "lon": "-60.36667",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-5.133333",
         "size": "small"
     },
     {
@@ -55986,28 +50967,6 @@
         "size": "small"
     },
     {
-        "iata": "NQL",
-        "lon": "-48.983334",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-14.0",
-        "size": "small"
-    },
-    {
-        "iata": "APS",
-        "lon": "-48.966667",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-16.333332",
-        "size": "small"
-    },
-    {
         "iata": "PIN",
         "lon": "-56.770027",
         "iso": "BR",
@@ -56016,17 +50975,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-2.669208",
-        "size": "small"
-    },
-    {
-        "iata": "PMW",
-        "lon": "-48.35278",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-10.241667",
         "size": "small"
     },
     {
@@ -56052,39 +51000,6 @@
         "size": "small"
     },
     {
-        "iata": "ROO",
-        "lon": "-54.716667",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-16.433332",
-        "size": "small"
-    },
-    {
-        "iata": "AIR",
-        "lon": "-59.38333",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-10.25",
-        "size": "small"
-    },
-    {
-        "iata": "OPS",
-        "lon": "-55.58156",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-11.878573",
-        "size": "small"
-    },
-    {
         "iata": "STZ",
         "lon": "-50.45",
         "iso": "BR",
@@ -56107,15 +51022,6 @@
         "size": "small"
     },
     {
-        "iata": "AZL",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "size": "small"
-    },
-    {
         "iata": "QHN",
         "lon": "-46.405556",
         "iso": "BR",
@@ -56124,17 +51030,6 @@
         "continent": "SA",
         "type": "airport",
         "lat": "-12.438889",
-        "size": "small"
-    },
-    {
-        "iata": "SQM",
-        "lon": "-50.216667",
-        "iso": "BR",
-        "status": 1,
-        "value": null,
-        "continent": "SA",
-        "type": "airport",
-        "lat": "-13.316667",
         "size": "small"
     },
     {
@@ -56444,17 +51339,6 @@
         "size": "medium"
     },
     {
-        "iata": "DSD",
-        "lon": "-61.016666",
-        "iso": "GP",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "16.333332",
-        "size": "small"
-    },
-    {
         "iata": "BBR",
         "lon": "-61.739445",
         "iso": "GP",
@@ -56464,39 +51348,6 @@
         "type": "airport",
         "lat": "16.01639",
         "size": "small"
-    },
-    {
-        "iata": "SFC",
-        "lon": "-61.283333",
-        "iso": "GP",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "16.25",
-        "size": "small"
-    },
-    {
-        "iata": "FDF",
-        "lon": "-60.999947",
-        "iso": "MQ",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "14.596061",
-        "size": "medium"
-    },
-    {
-        "iata": "SFG",
-        "lon": "-63.04889",
-        "iso": "MF",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "18.100555",
-        "size": "medium"
     },
     {
         "iata": "SBH",
@@ -56518,17 +51369,6 @@
         "continent": "NA",
         "type": "airport",
         "lat": "15.866667",
-        "size": "medium"
-    },
-    {
-        "iata": "PTP",
-        "lon": "-61.52639",
-        "iso": "GP",
-        "status": 1,
-        "value": null,
-        "continent": "NA",
-        "type": "airport",
-        "lat": "16.2675",
         "size": "medium"
     },
     {
@@ -62267,17 +57107,6 @@
         "size": "medium"
     },
     {
-        "iata": "MLE",
-        "lon": "73.524445",
-        "iso": "MV",
-        "status": 1,
-        "value": null,
-        "continent": "AS",
-        "type": "airport",
-        "lat": "4.201389",
-        "size": "large"
-    },
-    {
         "iata": "KDM",
         "lon": "72.99593",
         "iso": "MV",
@@ -62847,17 +57676,6 @@
         "continent": "AS",
         "type": "airport",
         "lat": "10.371389",
-        "size": "medium"
-    },
-    {
-        "iata": "VCA",
-        "lon": "105.76639",
-        "iso": "VN",
-        "status": 1,
-        "value": null,
-        "continent": "AS",
-        "type": "airport",
-        "lat": "10.047222",
         "size": "medium"
     },
     {
@@ -71402,17 +66220,6 @@
         "size": "medium"
     },
     {
-        "iata": "ZBK",
-        "lon": "19.116667",
-        "iso": "ME",
-        "status": 1,
-        "value": null,
-        "continent": "EU",
-        "type": "airport",
-        "lat": "43.15",
-        "size": "small"
-    },
-    {
         "iata": "HLD",
         "lon": "119.80654",
         "iso": "CN",
@@ -72165,17 +66972,6 @@
         "continent": "AS",
         "type": "airport",
         "lat": "48.016666",
-        "size": "medium"
-    },
-    {
-        "iata": "MXV",
-        "lon": "100.166664",
-        "iso": "MN",
-        "status": 1,
-        "value": null,
-        "continent": "AS",
-        "type": "airport",
-        "lat": "49.63333",
         "size": "medium"
     },
     {
@@ -73024,17 +67820,6 @@
         "type": "airport",
         "lat": "37.040436",
         "size": "medium"
-    },
-    {
-        "iata": "URC",
-        "lon": "87.47515",
-        "iso": "CN",
-        "status": 1,
-        "value": null,
-        "continent": "AS",
-        "type": "airport",
-        "lat": "43.90126",
-        "size": "large"
     },
     {
         "iata": "YIN",

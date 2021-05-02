@@ -9,8 +9,8 @@ import { query_create_and_user_addition } from '../../../gql/queries.gql';
 const ResultsList: FC = () => {
 	const searchContext = useContext(SearchContext);
 	const searchContextObject = {
-		departure_ap: searchContext.travelFrom.name,
-		arrival_ap: searchContext.travelTo.name,
+		departure_ap: searchContext.travelFrom.locationId,
+		arrival_ap: searchContext.travelTo.locationId,
 		departure_date: searchContext.dateFrom,
 	};
 	const [session, loadingSession] = useSession();

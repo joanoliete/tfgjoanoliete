@@ -18,47 +18,8 @@ const PlacePickers: FC<any> = ({}) => {
 	const { travelFrom, travelTo, setTravelFrom, setTravelTo } = useContext(
 		SearchContext
 	);
-	//Fer crida o agafar del JSON tots els aeroports
-	const array = [
-		{
-			iata: 'UTK',
-			lon: '169.86667',
-			iso: 'MH',
-			status: 1,
-			value: 'Utirik Airport',
-			continent: 'OC',
-			type: 'airport',
-			lat: '11.233333',
-			size: 'small',
-		},
-		{
-			iata: 'FIV',
-			iso: 'US',
-			status: 1,
-			value: 'Five Finger CG Heliport',
-			continent: 'NA',
-			type: 'heliport',
-			size: null,
-		},
-		{
-			iata: 'FAK',
-			iso: 'US',
-			status: 1,
-			value: 'False Island Seaplane Base',
-			continent: 'NA',
-			type: 'seaplanes',
-			size: null,
-		},
-		{
-			iata: 'BWS',
-			iso: 'US',
-			status: 0,
-			value: 'Blaine Municipal Airport',
-			continent: 'NA',
-			type: 'closed',
-			size: null,
-		},
-	];
+	//All airports dummy data, change in the future for city/country and airports
+	const array = JSONAirports;
 
 	return (
 		<div className='flex flex-wrap pr-4 justify-center'>
@@ -71,7 +32,7 @@ const PlacePickers: FC<any> = ({}) => {
 						onChange={e =>
 							setTravelFrom({
 								id: '',
-								locationId: '',
+								locationId: array.find(item => item?.value == e)?.iata,
 								name: e,
 								type: '',
 							} as Location)
@@ -97,7 +58,7 @@ const PlacePickers: FC<any> = ({}) => {
 						onChange={e =>
 							setTravelTo({
 								id: '',
-								locationId: '',
+								locationId: array.find(item => item?.value == e)?.iata,
 								name: e,
 								type: '',
 							} as Location)

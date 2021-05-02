@@ -15,15 +15,15 @@ const defaultReturnDate = DateFNS.addDays(defaultDepartureDate, 2);
 
 const defaultPlaces = {
 	origin: {
-		id: 'TG9jYXRpb246cHJhZ3VlX2N6',
-		locationId: 'prague_cz',
-		name: 'Prague',
+		id: '',
+		locationId: 'BCN',
+		name: 'Barcelona International Airport',
 		type: 'destination',
 	},
 	departure: {
-		id: 'TG9jYXRpb246b3Nsb19ubw==',
-		locationId: 'oslo_no',
-		name: 'Oslo',
+		id: '',
+		locationId: 'MAH',
+		name: 'Menorca Airport',
 		type: 'destination',
 	},
 };
