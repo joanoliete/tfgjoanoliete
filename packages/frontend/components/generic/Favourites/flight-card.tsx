@@ -59,8 +59,8 @@ const FlightCard: FC<FlightCardProps> = ({ object }) => {
 					: 'bg-red-300 hover:bg-red-200'
 			} text-sm font-normal text-gray-700 border rounded-md border-b-0 shadow-md`}
 			key={object.id}>
-			<div className=' border-gray-200 py-4 align-baseline flex '>
-				<div className='px-4 py-1 font-bold'>USD {object.price}</div>
+			<div className=' border-gray-200 py-4 align-baseline flex'>
+				<div className='pl-4 py-1 font-bold'>USD {object.price}</div>
 
 				<div className='px-4 py-1 flex'>
 					{object.airlines.map(image => {
@@ -83,17 +83,22 @@ const FlightCard: FC<FlightCardProps> = ({ object }) => {
 					{new Date(object.utc_arrival).toLocaleString()}
 				</div>
 
-				<div className='px-4 py-1 '>{object.cityCodeFrom}</div>
+				<div className='pl-4 py-1 '>
+					{object.cityCodeFrom}
+					{' - '}
+				</div>
 
-				<div className='pl-4 py-1 '>{object.cityCodeTo}</div>
+				<div className=' pl-1 py-1 '> {object.cityCodeTo}</div>
 
 				<div className='px-4 pl-10 py-1 '>
-					{object.route.length == 1 ? 'Direct' : object.route.length + ' Stops'}
+					{object.route.length == 1
+						? 'Direct'
+						: object.route.length - 1 + ' Stops'}
 				</div>
 
 				<button
 					onClick={() => onDelete(object.id, session.user.email)}
-					className='px-4 py-1'>
+					className='pl-2 py-1'>
 					<FavouritesIcon className=' fill-current blue cursor-pointer' />
 				</button>
 

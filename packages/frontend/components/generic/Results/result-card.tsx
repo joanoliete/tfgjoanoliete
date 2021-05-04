@@ -111,10 +111,10 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 		<li
 			className='text-sm font-normal text-gray-700 border rounded-md border-b-0 shadow-md'
 			key={object.id}>
-			<div className=' border-gray-200 py-5 align-baseline flex '>
-				<div className='px-4 py-1 font-bold'>USD {object.price}</div>
+			<div className=' border-gray-200 py-5 align-baseline flex'>
+				<div className='pl-4 pr-3 py-1 font-bold'>USD {object.price}</div>
 
-				<div className='px-4 py-1 flex '>
+				<div className=' py-1 flex'>
 					{object.airlines.map(image => {
 						return (
 							<img
@@ -135,17 +135,22 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 					{new Date(object.utc_arrival).toLocaleString()}
 				</div>
 
-				<div className='px-4 py-1 '>{object.flyFrom}</div>
+				<div className='pl-4 py-1 '>
+					{object.flyFrom}
+					{' - '}
+				</div>
 
-				<div className='pl-4 py-1 '>{object.flyTo}</div>
+				<div className=' pl-1 py-1 '> {object.flyTo}</div>
 
-				<div className='px-4 pl-10 py-1 '>
-					{object.route.length == 1 ? 'Direct' : object.route.length + ' Stops'}
+				<div className='px-4 pl-8 py-1 '>
+					{object.route.length == 1
+						? 'Direct'
+						: object.route.length - 1 + ' Stops'}
 				</div>
 
 				{session && !favouriteArrayIds.includes(object.id) && (
 					<button
-						className='px-4 py-1'
+						className='pl-2 py-1'
 						onClick={() => onClickAdd(session.user.email, object)}>
 						<UnFavouritesIcon className=' fill-current red cursor-pointer' />
 					</button>
@@ -153,7 +158,7 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 
 				{session && favouriteArrayIds.includes(object.id) && (
 					<button
-						className='px-4 py-1'
+						className='pl-2 py-1'
 						onClick={() => onClickRemove(session.user.email, object.id)}>
 						<FavouritesIcon className=' fill-current red cursor-pointer' />
 					</button>

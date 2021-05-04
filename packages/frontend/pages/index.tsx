@@ -12,7 +12,7 @@ const Index: FC = () => {
 	return (
 		<>
 			<Head title='tfgjoanoliete' noindex />
-			<div className='my-auto px-1 pb-6 flex-grow'>
+			<div className='my-auto px-1 pb-8 flex-grow'>
 				<SearchForm show={setShowResults} />
 				{showResults ? <ResultsList /> : null}
 				{/*Secció de cards amb destinacions més buscades i estadístiques del lloc, amagar al buscar*/}
