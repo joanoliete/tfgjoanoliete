@@ -36,6 +36,11 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 	const favouriteArrayIds = [];
 	const [session, loading] = useSession();
 	const [isOn, setIsOn] = useState(false);
+	let email = null;
+
+	if (session) {
+		email = session.user.email;
+	}
 
 	const [onClickCreate, resultCreate] = useMutation(
 		flight_create_and_user_addition,
@@ -44,13 +49,13 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 				{
 					query: favourite_flights_by_user_find_all,
 					variables: {
-						email: session.user.email,
+						email: email,
 					},
 				},
 				{
 					query: query_history_find_all_of_user,
 					variables: {
-						email: session.user.email,
+						email: email,
 					},
 				},
 			],
@@ -64,13 +69,13 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 				{
 					query: favourite_flights_by_user_find_all,
 					variables: {
-						email: session.user.email,
+						email: email,
 					},
 				},
 				{
 					query: query_history_find_all_of_user,
 					variables: {
-						email: session.user.email,
+						email: email,
 					},
 				},
 			],

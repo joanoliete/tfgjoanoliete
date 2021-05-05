@@ -144,6 +144,7 @@ export abstract class IQuery {
     abstract getAllUsers(): User[] | Promise<User[]>;
     abstract query_history_find_all_of_user(email: string): QueryObject[] | Promise<QueryObject[]>;
     abstract query_create_and_user_addition(context: QueryCreateDto, email?: string): Flight[] | Promise<Flight[]>;
+    abstract automatize_queries(queries?: QueryCreateDto): Flight[] | Promise<Flight[]>;
     abstract trip_find_all_of_user(email: string): Trip[] | Promise<Trip[]>;
 }
 

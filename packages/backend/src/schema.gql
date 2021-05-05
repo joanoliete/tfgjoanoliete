@@ -78,6 +78,7 @@ type Query {
   getAllUsers: [User!]!
   query_history_find_all_of_user(email: String!): [QueryObject!]!
   query_create_and_user_addition(context: QueryCreateDto!, email: String): [Flight!]!
+  automatize_queries(queries: QueryCreateDto): [Flight!]!
   trip_find_all_of_user(email: String!): [Trip!]!
 }
 

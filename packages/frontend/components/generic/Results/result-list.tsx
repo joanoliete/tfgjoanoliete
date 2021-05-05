@@ -16,7 +16,7 @@ const ResultsList: FC = () => {
 	};
 	const [session, loadingSession] = useSession();
 	const [results, loadingResults] = useState(null);
-	let email = null;
+	let email = 'none';
 
 	if (session) {
 		email = session.user.email;

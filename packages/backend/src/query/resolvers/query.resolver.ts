@@ -32,7 +32,7 @@ export class QueryResolver {
 	 * Creates a new query, and adds it to the user history queries
 	 * @param email User email String
 	 * @param queryData Query creation data
-	 * @returns True if success
+	 * @returns Returns result array from provider
 	 */
 	@Query(() => [Flight])
 	async query_create_and_user_addition(
@@ -42,7 +42,7 @@ export class QueryResolver {
 		context: QueryCreateDto
 	): Promise<any[]> {
 		//If user is logged we create Query and save it to its user
-		if (email) {
+		if (email != 'none') {
 			const queryDataInput = {
 				departure_ap: context.departure_ap,
 				arrival_ap: context.arrival_ap,
@@ -54,7 +54,7 @@ export class QueryResolver {
 			);
 		}
 
-		//Parsejar context com a params de la url
+		//Parse context to URL
 		const url =
 			'fly_from=' +
 			context.departure_ap +
@@ -65,6 +65,35 @@ export class QueryResolver {
 
 		//Search flights in a wrapped API in a service using context info
 		const results = await this.queryService.searchProviderApiContext(url);
+		return results;
+	}
+
+	/**
+	 * Creates a new query, and adds it to the user history queries
+	 * @param queries Array queries
+	 * @returns True if success
+	 */
+
+	@Query(() => [Flight])
+	async automatize_queries(
+		@Args('queries', { type: () => QueryCreateDto, nullable: true })
+		queries: QueryCreateDto[]
+	): Promise<any[]> {
+		const results = [];
+		queries.forEach(async query => {
+			//Parse context to URL
+			const url =
+				'fly_from=' +
+				query.departure_ap +
+				'&fly_to=' +
+				query.arrival_ap +
+				'&limit=20&date_from=' +
+				getFormattedDate(query.arrival_date);
+
+			//We save best flight
+			results.push(await this.queryService.searchProviderApiContext(url)[0]);
+		});
+
 		return results;
 	}
 

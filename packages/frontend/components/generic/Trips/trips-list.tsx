@@ -36,7 +36,12 @@ const TripsList: FC<TripsListProps> = ({ list }) => {
 						<CreateIcon className='inline ml-2 fill-current white cursor-pointer ' />
 					</button>
 
-					<h2 className='text-2xl inset-0 pb-6 p-6'>Your trips</h2>
+					<h2 className='text-2xl inset-0 pb-2 p-6'>Your trips</h2>
+					{list.length == 0 && (
+						<p className='pb-4'>
+							No trips created, start adding new destinations
+						</p>
+					)}
 					<ul className='space-y-2 sm:w-8/12 md:w-7/12 lg:w-6/12 w-10/12'>
 						{list.map(object => (
 							<TripCard key={object._id} object={object}></TripCard>

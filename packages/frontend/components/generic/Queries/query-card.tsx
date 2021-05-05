@@ -47,7 +47,8 @@ const QueryCard: FC<QueryCardProps> = ({ object }) => {
 				<div className='px-4 py-1 font-bold'>Search</div>
 
 				<div className='px-4 py-1 hidden sm:block'>
-					Date from: {new Date(object.departure_date).toUTCString()}
+					Date from:{' '}
+					{new Date(object.departure_date).toLocaleString().split(',')[0]}
 				</div>
 
 				<div className='px-4 py-1 '>Departure: {object.departure_ap}</div>
