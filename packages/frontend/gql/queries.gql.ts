@@ -38,7 +38,7 @@ export const query_create_and_user_addition = gql`
 `;
 
 export const automatize_queries = gql`
-	query automatize_queries($queries: [ID]!) {
+	query automatize_queries($queries: [ID!]!) {
 		automatize_queries(queries: $queries) {
 			id
 			flyFrom

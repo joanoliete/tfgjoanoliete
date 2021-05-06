@@ -1,4 +1,5 @@
 import { Args, ID, Mutation, Query, Resolver } from '@nestjs/graphql';
+import { kMaxLength } from 'node:buffer';
 import { Flight } from 'src/flight/gqltypes/flight.gqlype';
 import { ObjectID } from '../../common/types/objectid.type';
 import { UserService } from '../../user/services/user.service';
@@ -76,30 +77,33 @@ export class QueryResolver {
 
 	@Query(() => [Flight])
 	async automatize_queries(
-		@Args('queries', { type: () => [ID], nullable: true })
+		@Args('queries', { type: () => [ID] })
 		queries: ObjectID[]
 	): Promise<any[]> {
-		const results = [];
+		let results = [];
 		//Buscar a la base de dades les queries passant array objectsIDs
 		const queriesList = (await this.queryService.searchQueriesByArrayIDs(
 			queries
 		)) as QueryObject[];
 
-		queriesList.forEach(async query => {
+		for (const query of queriesList) {
 			//Parse context to URL
 			const url =
 				'fly_from=' +
 				query.departure_ap +
 				'&fly_to=' +
 				query.arrival_ap +
-				'&limit=20&date_from=' +
+				'&limit=2&date_from=' +
 				getFormattedDate(new Date(query.departure_date));
-			console.log(url);
-
 			//We save best flight
-			results.push(await this.queryService.searchProviderApiContext(url)[0]);
-		});
-		return results;
+			results = [
+				...results,
+				await this.queryService.searchProviderApiContext(url),
+			];
+		}
+
+		console.log(results);
+		return results.flat();
 	}
 
 	/**

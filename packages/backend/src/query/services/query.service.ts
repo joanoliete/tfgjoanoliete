@@ -15,6 +15,7 @@ import { UserService } from './../../user/services/user.service';
 import { QueryCreateDto } from '../dto/query-create.dto';
 import { query } from 'express';
 import fetch from 'node-fetch';
+import { Flight } from 'src/flight/gqltypes/flight.gqlype';
 
 /**
  * Service for communicating with the Query database
@@ -84,13 +85,13 @@ export class QueryService {
 	 * @param contextParsedUrl String
 	 * @returns Array with flights
 	 */
-	async searchProviderApiContext(contextParsedUrl: string): Promise<[]> {
+	async searchProviderApiContext(contextParsedUrl: string): Promise<Flight[]> {
 		//Apikey on header
 		const finalUrl =
-			'https://tequila-api.kiwi.com/v2/search?' +
-			contextParsedUrl +
-			'&apikey=4xdovHrJn2tw6M5SZA0CMssmZWi0t5ZZ';
-		return await fetch(finalUrl)
+			'https://tequila-api.kiwi.com/v2/search?' + contextParsedUrl;
+		return await fetch(finalUrl, {
+			headers: { apikey: '4xdovHrJn2tw6M5SZA0CMssmZWi0t5ZZ' },
+		})
 			.then(res => res.json())
 			.then(data => data.data);
 	}
