@@ -13,6 +13,10 @@ import FlightCard from '../Favourites/flight-card';
 import QueryCard from './query-card';
 import { CreateIcon } from '../../icons/others/create-icon';
 import { SearchIcon } from '../../icons/header/search-icon';
+import { Divider } from 'antd';
+import { useQuery } from '@apollo/react-hooks';
+import { automatize_queries } from '../../../gql/queries.gql';
+import AutomaticList from './automatic-list';
 
 type QueriesListProps = {
 	list: any | null;
@@ -20,6 +24,8 @@ type QueriesListProps = {
 
 const QueriesList: FC<QueriesListProps> = ({ list }) => {
 	const [showAutomaticResults, setShowAutomaticResults] = useState(false);
+	const [selectedQueries, setSelectedQueries] = useState([]);
+
 	return (
 		<div className='bg-white pb-10 px-4 rounded-md w-full flex-grow'>
 			<div className='items-center flex flex-col justify-center'>
@@ -29,11 +35,14 @@ const QueriesList: FC<QueriesListProps> = ({ list }) => {
 					<span>Automatize search </span>
 					<SearchIcon className='inline ml-2 fill-current white cursor-pointer ' />
 				</button>
-				{/*Generar llista dels 10 millors vols de les queries seleccionades (max 5)*/}
+
+				{showAutomaticResults ? (
+					<AutomaticList selectedQueries={selectedQueries} />
+				) : null}
 
 				<h2 className='text-2xl inset-0 pt-4 pb-2'>Your last Queries</h2>
 				<h3 className=' inset-0 pb-4'>
-					Select available searches and automate the search!
+					Select up to 5 available searches and automate the search!
 				</h3>
 				<ul className='space-y-2'>
 					{list.length == 0 && (
@@ -42,7 +51,11 @@ const QueriesList: FC<QueriesListProps> = ({ list }) => {
 						</p>
 					)}
 					{[...list].reverse().map(object => (
-						<QueryCard key={object._id} object={object}></QueryCard>
+						<QueryCard
+							key={object._id}
+							object={object}
+							selectedQueries={selectedQueries}
+							setSelectedQueries={setSelectedQueries}></QueryCard>
 					))}
 				</ul>
 			</div>

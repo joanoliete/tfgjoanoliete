@@ -70,17 +70,22 @@ export class QueryResolver {
 
 	/**
 	 * Creates a new query, and adds it to the user history queries
-	 * @param queries Array queries
+	 * @param queries Array ObjectsID
 	 * @returns True if success
 	 */
 
 	@Query(() => [Flight])
 	async automatize_queries(
-		@Args('queries', { type: () => QueryCreateDto, nullable: true })
-		queries: QueryCreateDto[]
+		@Args('queries', { type: () => [ID], nullable: true })
+		queries: ObjectID[]
 	): Promise<any[]> {
 		const results = [];
-		queries.forEach(async query => {
+		//Buscar a la base de dades les queries passant array objectsIDs
+		const queriesList = (await this.queryService.searchQueriesByArrayIDs(
+			queries
+		)) as QueryObject[];
+
+		queriesList.forEach(async query => {
 			//Parse context to URL
 			const url =
 				'fly_from=' +
@@ -88,12 +93,12 @@ export class QueryResolver {
 				'&fly_to=' +
 				query.arrival_ap +
 				'&limit=20&date_from=' +
-				getFormattedDate(query.arrival_date);
+				getFormattedDate(new Date(query.departure_date));
+			console.log(url);
 
 			//We save best flight
 			results.push(await this.queryService.searchProviderApiContext(url)[0]);
 		});
-
 		return results;
 	}
 

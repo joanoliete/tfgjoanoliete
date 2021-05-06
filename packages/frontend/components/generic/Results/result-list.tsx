@@ -15,7 +15,7 @@ const ResultsList: FC = () => {
 		departure_date: searchContext.dateFrom,
 	};
 	const [session, loadingSession] = useSession();
-	const [results, loadingResults] = useState(null);
+
 	let email = 'none';
 
 	if (session) {

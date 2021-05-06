@@ -37,6 +37,40 @@ export const query_create_and_user_addition = gql`
 	}
 `;
 
+export const automatize_queries = gql`
+	query automatize_queries($queries: [ID]!) {
+		automatize_queries(queries: $queries) {
+			id
+			flyFrom
+			flyTo
+			cityFrom
+			cityTo
+			cityCodeFrom
+			cityCodeTo
+			utc_departure
+			utc_arrival
+			distance
+			route {
+				id
+				flyFrom
+				flyTo
+				cityFrom
+				cityCodeFrom
+				cityTo
+				cityCodeTo
+				airline
+				flight_no
+				local_arrival
+				utc_arrival
+				local_departure
+				utc_departure
+			}
+			airlines
+			price
+		}
+	}
+`;
+
 export const query_history_find_all_of_user = gql`
 	query query_history_find_all_of_user($email: String!) {
 		query_history_find_all_of_user(email: $email) {

@@ -11,9 +11,15 @@ import { SearchIcon } from '../../icons/header/search-icon';
 
 type QueryCardProps = {
 	object: any | null;
+	selectedQueries?: any | null;
+	setSelectedQueries?: any | null;
 };
 
-const QueryCard: FC<QueryCardProps> = ({ object }) => {
+const QueryCard: FC<QueryCardProps> = ({
+	object,
+	selectedQueries,
+	setSelectedQueries,
+}) => {
 	const dateNow = new Date().getTime();
 	const [session, loading] = useSession();
 	const [isOn, setIsOn] = useState(false);
@@ -33,6 +39,18 @@ const QueryCard: FC<QueryCardProps> = ({ object }) => {
 			variables: { email: email, queryId: id },
 		});
 		toast.success('Deleted search!');
+	};
+
+	const updateSelectedQueries = id => {
+		if (!selectedQueries.includes(id)) {
+			if (selectedQueries.length >= 5) {
+				toast.error('Already selected 5, unselect one!');
+			} else {
+				setSelectedQueries([...selectedQueries, id]);
+			}
+		} else {
+			setSelectedQueries(selectedQueries.filter(query => query !== id));
+		}
 	};
 
 	return (
@@ -64,6 +82,7 @@ const QueryCard: FC<QueryCardProps> = ({ object }) => {
 						<input
 							type='checkbox'
 							className='checkbox opacity-0 absolute cursor-pointer '
+							onChange={() => updateSelectedQueries(object._id)}
 						/>
 						<div className='check-icon hidden  text-white rounded-sm'>
 							<svg

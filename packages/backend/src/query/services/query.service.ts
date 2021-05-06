@@ -65,11 +65,27 @@ export class QueryService {
 	}
 
 	/**
+	 * Finds all QueriesObjects of the ID array
+	 * @param queries String
+	 * @returns Queries array
+	 */
+	async searchQueriesByArrayIDs(queries: ObjectID[]): Promise<QueryObject[]> {
+		const queriesList = [];
+
+		for (const id of queries) {
+			queriesList.push(await this.findById(id));
+		}
+
+		return queriesList;
+	}
+
+	/**
 	 * Finds all flights from our provider matching user context and returns json
 	 * @param contextParsedUrl String
 	 * @returns Array with flights
 	 */
 	async searchProviderApiContext(contextParsedUrl: string): Promise<[]> {
+		//Apikey on header
 		const finalUrl =
 			'https://tequila-api.kiwi.com/v2/search?' +
 			contextParsedUrl +
@@ -97,5 +113,16 @@ export class QueryService {
 		//We delete reference of the user array
 		user.searchQueries = user.searchQueries.filter(x => !x._id.equals(queryId));
 		await user.save();
+	}
+
+	/**
+	 * Finds a query by id.
+	 * @param queryId Query ObjectId
+	 * @returns Query data
+	 */
+	findById(queryId: ObjectID): Promise<DocumentType<QueryObject> | undefined> {
+		return this.queryModel.findById(queryId).exec() as Promise<
+			DocumentType<QueryObject>
+		>;
 	}
 }
