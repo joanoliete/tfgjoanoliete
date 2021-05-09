@@ -15,6 +15,9 @@ import { UserService } from './../../user/services/user.service';
 import { DestinationCreateDto, TripCreateDto } from '../dto/trip-create.dto';
 import { TripModifyDto } from '../dto/trip-modify.dto';
 import { id } from 'date-fns/locale';
+import { FlightCreateDto } from 'src/flight/dto/flight-create.dto';
+import { User } from 'src/user/schemas/user.schema';
+import { Flight } from 'src/flight/schemas/flight.schema';
 
 /**
  * Service for communicating with the Trip database
@@ -31,6 +34,8 @@ export class TripService {
 		private readonly tripModel: ReturnModelType<typeof Trip>,
 		@InjectModel(Destination)
 		private readonly destinationModel: ReturnModelType<typeof Destination>,
+		@InjectModel(Flight)
+		private readonly flightModel: ReturnModelType<typeof Flight>,
 		@Inject(forwardRef(() => UserService))
 		private readonly userService: UserService
 	) {}
@@ -42,6 +47,7 @@ export class TripService {
 	 */
 	async findAllTripsByEmail(email: string): Promise<Trip[]> {
 		const user = await this.userService.findByEmail(email);
+		console.log(user);
 
 		const tripsReferences = user.userTrips;
 
@@ -131,6 +137,12 @@ export class TripService {
 		const destinations = [] as DocumentType<Destination>[];
 
 		for (const data of destinationData) {
+			if (data.flight_associated) {
+				const newFlightAssociated = await this.flightModel.findOne({
+					id: data.flight_associated.id,
+				});
+				data.flight_associated = newFlightAssociated;
+			}
 			const newDestination = await this.destinationModel.create({
 				...data,
 			});
@@ -182,9 +194,6 @@ export class TripService {
 
 		if (destinationData.city) destination.city = destinationData.city;
 
-		if (destinationData.flight_associated)
-			destination.flight_associated = destinationData.flight_associated;
-
 		await destination.save();
 
 		return true;
@@ -215,6 +224,27 @@ export class TripService {
 	}
 
 	/**
+	 * Adds Flight to a destination
+	 * @param destInationId String
+	 * @param FlightDTO Flight data
+	 * @returns boolean
+	 */
+	async addFlightAssociatedToDestination(
+		destinationId: ObjectID,
+		flightData: Flight
+	): Promise<boolean> {
+		const destination = await this.findDestinationById(destinationId);
+
+		if (!destination) throw new NotFoundException('Destination does not exist');
+
+		destination.flight_associated = flightData;
+
+		await destination.save();
+
+		return true;
+	}
+
+	/**
 	 * Finds a Trip by id.
 	 * @param TripId Trip ObjectId
 	 * @returns Trip data
@@ -237,5 +267,21 @@ export class TripService {
 		return this.destinationModel.findById(destinationId).exec() as Promise<
 			DocumentType<Destination>
 		>;
+	}
+
+	/**
+	 * Finds all Destinations for a user given email
+	 * @param email String
+	 * @returns Array with destinations
+	 */
+	async findDestinationByEmail(email: string): Promise<Destination[]> {
+		const destinationsArray = [];
+		const user = await this.userService.findByEmail(email);
+		user.userTrips.forEach(destinations => {
+			destinations.destinations.forEach(element => {
+				destinationsArray.push(element);
+			});
+		});
+		return destinationsArray;
 	}
 }

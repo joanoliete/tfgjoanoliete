@@ -57,7 +57,7 @@ export class DestinationCreateDto {
     _id?: string;
     city: string;
     arrival_date: DateTime;
-    flight_associated?: string;
+    flight_associated?: FlightCreateDto;
 }
 
 export class TripModifyDto {
@@ -70,7 +70,6 @@ export class DestinationModifyDto {
     _id?: string;
     city?: string;
     arrival_date?: DateTime;
-    flight_associated?: string;
 }
 
 export class Flight {
@@ -125,7 +124,7 @@ export class Destination {
     _id: string;
     city: string;
     arrival_date: DateTime;
-    flight_associated?: string;
+    flight_associated?: Flight;
 }
 
 export class User {
@@ -146,6 +145,7 @@ export abstract class IQuery {
     abstract query_create_and_user_addition(context: QueryCreateDto, email?: string): Flight[] | Promise<Flight[]>;
     abstract automatize_queries(queries: string[]): Flight[] | Promise<Flight[]>;
     abstract trip_find_all_of_user(email: string): Trip[] | Promise<Trip[]>;
+    abstract destination_find_all_of_user(email: string): Destination[] | Promise<Destination[]>;
 }
 
 export abstract class IMutation {
@@ -155,6 +155,7 @@ export abstract class IMutation {
     abstract trip_create_and_user_addition(tripData: TripCreateDto, email: string): boolean | Promise<boolean>;
     abstract trip_modify(tripData: TripModifyDto, tripId: string): boolean | Promise<boolean>;
     abstract user_trip_delete(tripId: string, email: string): boolean | Promise<boolean>;
+    abstract user_destination_add_flight_associated(flightData: FlightCreateDto, destinationId: string): boolean | Promise<boolean>;
     abstract user_trip_destination_delete(destinationId: string, tripId: string): boolean | Promise<boolean>;
 }
 

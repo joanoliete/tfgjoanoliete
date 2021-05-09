@@ -12,6 +12,7 @@ import { useRouter } from 'next/router';
 import { ObjectId } from 'bson';
 import Loader from '../../utils/loader';
 import { DoubleRightArrowIcon } from '../../icons/others/double-right-arrow-icon';
+import FlightCard from '../Favourites/flight-card';
 
 type DestinationCardProps = {
 	object: any | null;
@@ -33,9 +34,8 @@ const DestinationCard: FC<DestinationCardProps> = ({ object }) => {
 					<a
 						target='_blank'
 						href={object.flight_associated}
-						className='flex px-2 py-1 bg-gray-800 rounded-xl font-bold items-center text-white text-center hover:bg-gray-700'>
-						Associated flight
-						<DoubleRightArrowIcon />
+						className='flex px-2 py-1 '>
+						<FlightCard object={object.flight_associated} />
 					</a>
 				)}
 			</div>

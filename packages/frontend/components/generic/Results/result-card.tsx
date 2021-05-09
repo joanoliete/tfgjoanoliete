@@ -27,6 +27,8 @@ import {
 } from '../../../gql/favourites.gql';
 import { UnFavouritesIcon } from '../../icons/header/unfavourites-icon';
 import { query_history_find_all_of_user } from '../../../gql/queries.gql';
+import { CreateIcon } from '../../icons/others/create-icon';
+import { destination_find_all_of_user } from '../../../gql/trips.gql';
 
 type ResultCardProps = {
 	object: any | null;
@@ -34,8 +36,9 @@ type ResultCardProps = {
 
 const ResultCard: FC<ResultCardProps> = ({ object }) => {
 	const favouriteArrayIds = [];
-	const [session, loading] = useSession();
+	const [session, loadingSession] = useSession();
 	const [isOn, setIsOn] = useState(false);
+	// const { data, loading } = getDestinations(session.user.email);
 	let email = null;
 
 	if (session) {
@@ -95,6 +98,11 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 		});
 		toast.success('Flight deleted from favourites!');
 	};
+
+	// const showDropdown = (id: string, destinations: any) => {
+	// 	console.log(destinations);
+	// 	console.log(id);
+	// };
 
 	if (session) {
 		const { data, loading } = useQuery(favourite_flights_by_user_find_all, {
@@ -169,7 +177,15 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 					</button>
 				)}
 
-				<button onClick={() => setIsOn(!isOn)} className='px-4 py-1'>
+				{/* {session && (
+					<button
+						className='pl-2 py-1'
+						onClick={() => showDropdown(object.id, data)}>
+						<CreateIcon className='fill-current white cursor-pointer ' />
+					</button>
+				)} */}
+
+				<button onClick={() => setIsOn(!isOn)} className='pr-3 pl-2 py-1'>
 					<ExpandIcon className=' fill-current blue cursor-pointer' />
 				</button>
 			</div>
@@ -229,6 +245,20 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 			</div>
 		</li>
 	);
+};
+
+const getDestinations = (email: string) => {
+	if (email) {
+		const { data, loading } = useQuery(destination_find_all_of_user, {
+			variables: {
+				email: email,
+			},
+		});
+
+		return { data, loading };
+	} else {
+		return null;
+	}
 };
 
 export default ResultCard;

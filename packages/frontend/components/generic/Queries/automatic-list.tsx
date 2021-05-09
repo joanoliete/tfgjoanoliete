@@ -5,15 +5,6 @@ import React, {
 	useContext,
 	useState,
 } from 'react';
-import Link from 'next/link';
-import ReactPaginate from 'react-paginate';
-import Router from 'next/router';
-import { useRouter } from 'next/router';
-import FlightCard from '../Favourites/flight-card';
-import QueryCard from './query-card';
-import { CreateIcon } from '../../icons/others/create-icon';
-import { SearchIcon } from '../../icons/header/search-icon';
-import { Divider } from 'antd';
 import { useQuery } from '@apollo/react-hooks';
 import { automatize_queries } from '../../../gql/queries.gql';
 import ResultCard from '../Results/result-card';
@@ -23,7 +14,6 @@ type AutomaticListProps = {
 };
 
 const AutomaticList: FC<AutomaticListProps> = ({ selectedQueries }) => {
-	console.log(selectedQueries);
 	const { data, loading } = useQuery(automatize_queries, {
 		variables: {
 			queries: selectedQueries as string,

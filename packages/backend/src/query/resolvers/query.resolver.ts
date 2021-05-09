@@ -102,7 +102,6 @@ export class QueryResolver {
 			];
 		}
 
-		console.log(results);
 		return results.flat();
 	}
 

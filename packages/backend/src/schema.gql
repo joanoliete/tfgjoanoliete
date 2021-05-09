@@ -59,7 +59,7 @@ type Destination {
   _id: ID!
   city: String!
   arrival_date: DateTime!
-  flight_associated: String
+  flight_associated: Flight
 }
 
 type User {
@@ -80,6 +80,7 @@ type Query {
   query_create_and_user_addition(context: QueryCreateDto!, email: String): [Flight!]!
   automatize_queries(queries: [ID!]!): [Flight!]!
   trip_find_all_of_user(email: String!): [Trip!]!
+  destination_find_all_of_user(email: String!): [Destination!]!
 }
 
 input QueryCreateDto {
@@ -97,6 +98,7 @@ type Mutation {
   trip_create_and_user_addition(tripData: TripCreateDto!, email: String!): Boolean!
   trip_modify(tripData: TripModifyDto!, tripId: ID!): Boolean!
   user_trip_delete(tripId: ID!, email: String!): Boolean!
+  user_destination_add_flight_associated(flightData: FlightCreateDto!, destinationId: ID!): Boolean!
   user_trip_destination_delete(destinationId: ID!, tripId: ID!): Boolean!
 }
 
@@ -142,7 +144,7 @@ input DestinationCreateDto {
   _id: ID
   city: String!
   arrival_date: DateTime!
-  flight_associated: String
+  flight_associated: FlightCreateDto
 }
 
 input TripModifyDto {
@@ -155,5 +157,4 @@ input DestinationModifyDto {
   _id: ID
   city: String
   arrival_date: DateTime
-  flight_associated: String
 }

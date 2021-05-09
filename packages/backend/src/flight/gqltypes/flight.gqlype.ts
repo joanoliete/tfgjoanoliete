@@ -38,7 +38,7 @@ export class Flight {
 	distance: number;
 
 	@Field(type => [Route])
-	route: Route[];
+	route: [Route];
 
 	@Field(type => [String])
 	airlines: [string];

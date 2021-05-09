@@ -25,6 +25,6 @@ export class Destination {
 	@prop()
 	arrival_date: Date;
 
-	@prop()
-	flight_associated?: string;
+	@prop({ ref: () => Flight })
+	flight_associated?: Flight;
 }

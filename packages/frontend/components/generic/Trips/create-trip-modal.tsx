@@ -15,17 +15,24 @@ import { Prompt } from 'react-router-dom';
 import { object as YupObject, string as YupString } from 'yup';
 import { FormValidations } from '../../../utils/index';
 import { session, useSession } from 'next-auth/client';
-import { ApolloError, useMutation } from '@apollo/react-hooks';
+import { ApolloError, useMutation, useQuery } from '@apollo/react-hooks';
 import { toast } from 'react-toastify';
 import {
 	trip_create_and_user_addition,
 	trip_find_all_of_user,
 } from '../../../gql/trips.gql';
+import { favourite_flights_by_user_find_all } from '../../../gql/favourites.gql';
 
 interface ICreateTripInput {
 	name: string;
 	description: string;
-	destinations: Array<any>;
+	destinations: Array<IDestination>;
+}
+
+interface IDestination {
+	city: string;
+	date: Date;
+	flight_associated: any;
 }
 
 const CreateTripModal: FC<any> = ({ show, onClose }) => {
@@ -35,6 +42,36 @@ const CreateTripModal: FC<any> = ({ show, onClose }) => {
 		setIsDone,
 		session
 	);
+
+	const { data } = useQuery(favourite_flights_by_user_find_all, {
+		variables: {
+			email: session.user.email,
+		},
+	});
+
+	const favouriteFlightsList = data
+		? data.favourite_flights_by_user_find_all
+		: null;
+
+	const options = [];
+	{
+		favouriteFlightsList
+			? favouriteFlightsList.forEach(element => {
+					options.push(
+						<option key={element.id} value={JSON.stringify(element)}>
+							{element.flyFrom +
+								' - ' +
+								element.flyTo +
+								'   ' +
+								new Date(element.utc_departure).toLocaleString().split(',')[0] +
+								' - ' +
+								new Date(element.utc_arrival).toLocaleString().split(',')[0]}
+						</option>
+					);
+			  })
+			: null;
+	}
+
 	const formikConfig = getForm(session, createTripMutation, onClose);
 
 	if (show) {
@@ -65,7 +102,7 @@ const CreateTripModal: FC<any> = ({ show, onClose }) => {
 												<Field
 													type='text'
 													name='name'
-													placeholder='Barcelona'
+													placeholder='Europe trip'
 													className='w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500'
 												/>
 												{errors.name ? (
@@ -112,6 +149,7 @@ const CreateTripModal: FC<any> = ({ show, onClose }) => {
 																	</label>
 																	<Field
 																		type='text'
+																		placeholder='Barcelona'
 																		className='w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500'
 																		name={`destinations[${index}].city`}
 																	/>
@@ -122,9 +160,22 @@ const CreateTripModal: FC<any> = ({ show, onClose }) => {
 																	</label>
 																	<Field
 																		type='text'
+																		placeholder='yyyy/mm/dd'
 																		className='w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500'
 																		name={`destinations[${index}].arrival_date`}
 																	/>
+																	<label
+																		className='block mb-2 text-sm text-gray-600 dark:text-gray-400'
+																		htmlFor={`destinations[${index}].flight_associated`}>
+																		Flight
+																	</label>
+																	<Field
+																		className='form-control w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500'
+																		as='select'
+																		name={`destinations[${index}].flight_associated`}>
+																		{options}
+																	</Field>
+
 																	<div className='pt-2 w-full inline-flex justify-center'>
 																		<button
 																			type='button'
@@ -217,7 +268,7 @@ const getForm = (
 	const initialValues: ICreateTripInput = {
 		name: '',
 		description: '',
-		destinations: [''],
+		destinations: [],
 	};
 
 	const validationSchema = YupObject().shape({
@@ -232,6 +283,12 @@ const getForm = (
 	});
 
 	const onSubmit = (values: ICreateTripInput) => {
+		values['destinations'].forEach((x, index) => {
+			values['destinations'][index].flight_associated = JSON.parse(
+				values['destinations'][index].flight_associated
+			);
+		});
+
 		createTripMutation({
 			variables: {
 				email: session.user.email,

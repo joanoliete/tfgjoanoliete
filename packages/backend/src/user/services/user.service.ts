@@ -102,6 +102,9 @@ export class UserService {
 				path: 'userTrips',
 				populate: {
 					path: 'destinations',
+					populate: {
+						path: 'flight_associated',
+					},
 				},
 			})
 			.populate('searchQueries')
