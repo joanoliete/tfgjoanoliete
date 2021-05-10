@@ -73,9 +73,9 @@ const QueryCard: FC<QueryCardProps> = ({
 
 				<div className='pl-4 py-1 pr-8'>Arrival: {object.arrival_ap}</div>
 
-				<button onClick={() => undefined} className=' py-1 pr-2'>
+				{/* <button onClick={() => undefined} className=' py-1 pr-2'>
 					<SearchIcon className=' fill-current blue cursor-pointer' />
-				</button>
+				</button> */}
 
 				<label className='flex justify-start items-start py-1 '>
 					<div className='bg-white border-2 rounded border-gray-600 w-5 h-5 flex flex-shrink-0 justify-center items-center'>

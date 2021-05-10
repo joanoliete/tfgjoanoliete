@@ -99,11 +99,6 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 		toast.success('Flight deleted from favourites!');
 	};
 
-	// const showDropdown = (id: string, destinations: any) => {
-	// 	console.log(destinations);
-	// 	console.log(id);
-	// };
-
 	if (session) {
 		const { data, loading } = useQuery(favourite_flights_by_user_find_all, {
 			variables: {
@@ -176,14 +171,6 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 						<FavouritesIcon className=' fill-current red cursor-pointer' />
 					</button>
 				)}
-
-				{/* {session && (
-					<button
-						className='pl-2 py-1'
-						onClick={() => showDropdown(object.id, data)}>
-						<CreateIcon className='fill-current white cursor-pointer ' />
-					</button>
-				)} */}
 
 				<button onClick={() => setIsOn(!isOn)} className='pr-3 pl-2 py-1'>
 					<ExpandIcon className=' fill-current blue cursor-pointer' />

@@ -5,11 +5,6 @@ import React, {
 	useContext,
 	useState,
 } from 'react';
-import Link from 'next/link';
-import ReactPaginate from 'react-paginate';
-import Router from 'next/router';
-import { useRouter } from 'next/router';
-import FlightCard from '../Favourites/flight-card';
 import { useSession } from 'next-auth/client';
 import { useMutation } from '@apollo/react-hooks';
 import { DeleteIcon } from '../../icons/others/delete-icon';

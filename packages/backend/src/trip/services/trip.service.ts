@@ -47,7 +47,6 @@ export class TripService {
 	 */
 	async findAllTripsByEmail(email: string): Promise<Trip[]> {
 		const user = await this.userService.findByEmail(email);
-		console.log(user);
 
 		const tripsReferences = user.userTrips;
 

@@ -5,9 +5,7 @@ import React, {
 	useContext,
 	useState,
 } from 'react';
-import Link from 'next/link';
-import ReactPaginate from 'react-paginate';
-import TripCard from './trip-card';
+
 import { CreateIcon } from '../../icons/others/create-icon';
 import { DeleteIcon } from '../../icons/others/delete-icon';
 import { Form, Formik, Field, FormikConfig, FieldArray } from 'formik';
@@ -22,6 +20,7 @@ import {
 	trip_find_all_of_user,
 } from '../../../gql/trips.gql';
 import { favourite_flights_by_user_find_all } from '../../../gql/favourites.gql';
+import DatePickerFieldCreate from '../../utils/DatePickerFormCreate';
 
 interface ICreateTripInput {
 	name: string;
@@ -54,6 +53,11 @@ const CreateTripModal: FC<any> = ({ show, onClose }) => {
 		: null;
 
 	const options = [];
+	options.push(
+		<option value={''} selected disabled hidden>
+			Choose an associated flight
+		</option>
+	);
 	{
 		favouriteFlightsList
 			? favouriteFlightsList.forEach(element => {
@@ -158,10 +162,7 @@ const CreateTripModal: FC<any> = ({ show, onClose }) => {
 																		htmlFor={`destinations[${index}].arrival_date`}>
 																		Date
 																	</label>
-																	<Field
-																		type='text'
-																		placeholder='yyyy/mm/dd'
-																		className='w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500'
+																	<DatePickerFieldCreate
 																		name={`destinations[${index}].arrival_date`}
 																	/>
 																	<label
@@ -169,12 +170,24 @@ const CreateTripModal: FC<any> = ({ show, onClose }) => {
 																		htmlFor={`destinations[${index}].flight_associated`}>
 																		Flight
 																	</label>
-																	<Field
-																		className='form-control w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500'
-																		as='select'
-																		name={`destinations[${index}].flight_associated`}>
-																		{options}
-																	</Field>
+																	<div className='relative '>
+																		<svg
+																			className='w-3 h-3 absolute top-0 right-0 m-4 pointer-events-none fill-current blue'
+																			xmlns='http://www.w3.org/2000/svg'
+																			viewBox='0 0 412 232'>
+																			<path
+																				d='M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z'
+																				fill='#648299'
+																				fill-rule='nonzero'
+																			/>
+																		</svg>
+																		<Field
+																			className='form-control  w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500 appearance-none'
+																			as='select'
+																			name={`destinations[${index}].flight_associated`}>
+																			{options}
+																		</Field>
+																	</div>
 
 																	<div className='pt-2 w-full inline-flex justify-center'>
 																		<button

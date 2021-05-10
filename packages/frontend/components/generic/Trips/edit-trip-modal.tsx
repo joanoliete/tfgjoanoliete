@@ -5,15 +5,12 @@ import React, {
 	useContext,
 	useState,
 } from 'react';
-import Link from 'next/link';
-import ReactPaginate from 'react-paginate';
-import TripCard from './trip-card';
 import { CreateIcon } from '../../icons/others/create-icon';
 import { DeleteIcon } from '../../icons/others/delete-icon';
 import { Form, Formik, Field, FormikConfig, FieldArray } from 'formik';
 import { object as YupObject, string as YupString } from 'yup';
 import { session, useSession } from 'next-auth/client';
-import { ApolloError, useMutation } from '@apollo/react-hooks';
+import { ApolloError, useMutation, useQuery } from '@apollo/react-hooks';
 import { toast } from 'react-toastify';
 import {
 	trip_create_and_user_addition,
@@ -22,11 +19,18 @@ import {
 } from '../../../gql/trips.gql';
 import { Prompt } from 'react-router-dom';
 import { FormValidations } from '../../../utils';
-
+import { favourite_flights_by_user_find_all } from '../../../gql/favourites.gql';
+import DatePickerFieldEdit from '../../utils/DatePickerFormEdit';
 interface IModifyTripInput {
 	name: string;
 	description: string;
-	destinations: Array<any>;
+	destinations: Array<IDestination>;
+}
+
+interface IDestination {
+	city: string;
+	date: Date;
+	flight_associated: any;
 }
 
 const EditTripModal: FC<any> = ({ show, onClose, object }) => {
@@ -122,9 +126,7 @@ const EditTripModal: FC<any> = ({ show, onClose, object }) => {
 																		htmlFor={`destinations[${index}].arrival_date`}>
 																		Date
 																	</label>
-																	<Field
-																		type='text'
-																		className='w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500'
+																	<DatePickerFieldEdit
 																		name={`destinations[${index}].arrival_date`}
 																	/>
 																	<div className='pt-2 w-full inline-flex justify-center'>
@@ -229,6 +231,10 @@ const getForm = (
 	});
 
 	const onSubmit = (values: IModifyTripInput) => {
+		values.destinations.forEach(element => {
+			delete element.flight_associated;
+		});
+
 		modifyTripMutation({
 			variables: {
 				tripId: object._id,
