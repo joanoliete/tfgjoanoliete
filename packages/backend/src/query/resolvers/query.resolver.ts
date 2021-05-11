@@ -48,6 +48,7 @@ export class QueryResolver {
 				departure_ap: context.departure_ap,
 				arrival_ap: context.arrival_ap,
 				departure_date: context.departure_date,
+				adults: context.adults,
 			};
 			await this.queryService.createHistoryQueryAndAddition(
 				email,
@@ -61,6 +62,8 @@ export class QueryResolver {
 			context.departure_ap +
 			'&fly_to=' +
 			context.arrival_ap +
+			'&adults=' +
+			context.adults +
 			'&limit=20&date_from=' +
 			getFormattedDate(context.departure_date);
 
@@ -93,6 +96,8 @@ export class QueryResolver {
 				query.departure_ap +
 				'&fly_to=' +
 				query.arrival_ap +
+				'&adults=' +
+				query.adults +
 				'&limit=2&date_from=' +
 				getFormattedDate(new Date(query.departure_date));
 			//We save best flight

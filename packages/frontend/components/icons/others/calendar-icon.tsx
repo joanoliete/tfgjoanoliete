@@ -4,10 +4,11 @@ export const CalendarIcon: FC<ComponentProps<'svg'>> = props => (
 	<svg
 		{...props}
 		xmlns='http://www.w3.org/2000/svg'
-		version='1.1'
-		width='24'
-		height='24'
-		viewBox='0 0 24 24'>
-		<path d='M19,4H18V2H16V4H8V2H6V4H5C3.89,4 3,4.9 3,6V20A2,2 0 0,0 5,22H19A2,2 0 0,0 21,20V6A2,2 0 0,0 19,4M19,20H5V10H19V20M19,8H5V6H19V8Z' />
+		height='24px'
+		viewBox='0 0 24 24'
+		width='24px'
+		fill='#000000'>
+		<path d='M0 0h24v24H0V0z' fill='none' />
+		<path d='M20 3h-1V2c0-.55-.45-1-1-1s-1 .45-1 1v1H7V2c0-.55-.45-1-1-1s-1 .45-1 1v1H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 18H5c-.55 0-1-.45-1-1V8h16v12c0 .55-.45 1-1 1z' />
 	</svg>
 );

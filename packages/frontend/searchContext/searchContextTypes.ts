@@ -14,7 +14,7 @@ export interface StateParamsType {
 	returnDateFrom: Date;
 	returnDateTo: Date;
 	//infants: number;
-	//adults: number;
+	adults: number;
 }
 
 export interface StateActionsType {
@@ -23,6 +23,7 @@ export interface StateActionsType {
 	setReturnDate: (dateTo: Date) => void;
 	setTravelFrom: (travelFrom: Location) => void;
 	setTravelTo: (travelTo: Location) => void;
+	setAdults: (adults: number) => void;
 }
 
 export interface Passengers {

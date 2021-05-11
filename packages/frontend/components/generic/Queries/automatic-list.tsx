@@ -27,7 +27,7 @@ const AutomaticList: FC<AutomaticListProps> = ({ selectedQueries }) => {
 			<div className='items-center flex flex-col justify-center'>
 				{multipleSearch ? (
 					<>
-						<h2 className='py-2 text-2xl inset-0'>Best flights!</h2>
+						<h2 className='pb-3 text-2xl inset-0'>Best flights!</h2>
 						<ul className='space-y-3'>
 							{[...multipleSearch].reverse().map(object => (
 								<ResultCard object={object}></ResultCard>

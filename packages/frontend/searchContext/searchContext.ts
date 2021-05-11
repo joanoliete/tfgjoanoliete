@@ -41,16 +41,16 @@ export const defaultState: SearchContextState = {
 	//limit: 20,
 	returnDateFrom: defaultReturnDate,
 	returnDateTo: defaultReturnDate,
-	//adults: 1,
+	adults: 1,
 	//infants: 0,
 	setTripType: () => undefined,
 	setDepartureDate: () => undefined,
 	setReturnDate: () => undefined,
 	setTravelFrom: () => undefined,
 	setTravelTo: () => undefined,
+	setAdults: () => undefined,
 };
 
-//Other way of making searchContext?
 export const SearchContextProvider = () => {
 	const [tripType, settripType] = useState(defaultState.tripType);
 	const [travelFrom, settravelFrom] = useState(defaultState.travelFrom);
@@ -61,11 +61,13 @@ export const SearchContextProvider = () => {
 		defaultState.returnDateFrom
 	);
 	const [returnDateTo, setreturnDateTo] = useState(defaultState.returnDateTo);
+	const [adults, setadults] = useState(defaultState.adults);
 	const setTripType = (tripType: string) => settripType(tripType);
 	const setDepartureDate = (dateFrom: Date) => setdateFrom(dateFrom);
 	const setReturnDate = (dateTo: Date) => setdateTo(dateTo);
 	const setTravelFrom = (travelFrom: Location) => settravelFrom(travelFrom);
 	const setTravelTo = (travelTo: Location) => settravelTo(travelTo);
+	const setAdults = (adults: number) => setadults(adults);
 
 	function getDefaultState(routerQuery?: ParseFieldsParams) {
 		const derivedStateFromURL = parseURLqueryToState(routerQuery);
@@ -97,11 +99,13 @@ export const SearchContextProvider = () => {
 		dateTo,
 		returnDateFrom,
 		returnDateTo,
+		adults,
 		setTripType,
 		setDepartureDate,
 		setReturnDate,
 		setTravelFrom,
 		setTravelTo,
+		setAdults,
 	} as SearchContextState;
 };
 

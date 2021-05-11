@@ -6,12 +6,11 @@ import PassangersInput from './PassengersInput';
 
 const SearchMode: FC<any> = ({}) => {
 	return (
-		<div className='bg-white pb-4 px-4 rounded-md w-full'>
+		<div className='bg-white px-4 rounded-md w-full'>
 			<div className='items-center flex flex-col justify-center'>
-				<div className='flex space-x-2 pt-4'>
+				<div className='flex space-x-1 pt-3'>
 					<TripTypeSelect />
 					<PassangersInput />
-					{/*Flight class select flight*/}
 				</div>
 			</div>
 		</div>

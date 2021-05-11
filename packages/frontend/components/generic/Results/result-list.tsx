@@ -13,6 +13,7 @@ const ResultsList: FC = () => {
 		departure_ap: searchContext.travelFrom.locationId,
 		arrival_ap: searchContext.travelTo.locationId,
 		departure_date: searchContext.dateFrom,
+		adults: searchContext.adults,
 	};
 	const [session, loadingSession] = useSession();
 

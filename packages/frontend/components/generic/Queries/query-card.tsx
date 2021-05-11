@@ -73,6 +73,8 @@ const QueryCard: FC<QueryCardProps> = ({
 
 				<div className='pl-4 py-1 pr-8'>Arrival: {object.arrival_ap}</div>
 
+				<div className='pl-4 py-1 pr-8'>Adults: {object.adults}</div>
+
 				{/* <button onClick={() => undefined} className=' py-1 pr-2'>
 					<SearchIcon className=' fill-current blue cursor-pointer' />
 				</button> */}
