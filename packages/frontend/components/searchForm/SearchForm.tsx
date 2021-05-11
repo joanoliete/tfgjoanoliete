@@ -21,7 +21,7 @@ const SearchForm: FC<any> = ({ show }) => {
 				<h2 className='text-2xl inset-0 pb-6 p-4'>Search flights</h2>
 				<div className='text-sm font-normal text-gray-700 border rounded-lg border-b-0 shadow-lg items-center flex flex-col justify-center pb-6 px-6'>
 					<SearchMode />
-					<div className='flex flex-wrap justify-center pb-2 pt-3'>
+					<div className='flex flex-wrap justify-center pb-2 sm:pt-0 pt-3'>
 						<PlacePickers />
 						<DatePickers />
 					</div>
