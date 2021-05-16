@@ -62,7 +62,20 @@ const DestinationFlightCard: FC<DestinationFlightCardProps> = ({ object }) => {
 			<div className=' border-gray-200 py-4 align-baseline flex'>
 				<div className='pl-4 py-1 font-bold'>USD {object.price}</div>
 
-				<div className='px-4 py-1 hidden sm:block'>
+				<div className='px-4 py-1  hidden lg:flex'>
+					{object.airlines.map(image => {
+						return (
+							<img
+								className='px-1 object-contain'
+								src={`${
+									'https://images.kiwi.com/airlines/32/' + image + '.png'
+								}`}
+							/>
+						);
+					})}
+				</div>
+
+				<div className='px-2 py-1 hidden sm:block'>
 					{new Date(object.utc_departure).toLocaleString()}
 				</div>
 

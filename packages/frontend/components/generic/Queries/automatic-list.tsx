@@ -23,7 +23,7 @@ const AutomaticList: FC<AutomaticListProps> = ({ selectedQueries }) => {
 	const multipleSearch = data && !loading ? data.automatize_queries : null;
 
 	return (
-		<div className='bg-white pb-10 px-4 rounded-md w-full flex-grow pt-6'>
+		<div className='bg-white pb-10 rounded-md w-full flex-grow pt-6'>
 			<div className='items-center flex flex-col justify-center'>
 				{multipleSearch ? (
 					<>
