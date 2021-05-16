@@ -11,6 +11,7 @@ import {
 	SearchContext,
 	SearchContextProvider,
 } from '../../frontend/searchContext/searchContext';
+import dynamic from 'next/dynamic';
 import './../styles/datepickerstyles.css';
 import './../styles/placepickerstyles.css';
 
@@ -18,15 +19,22 @@ import './../styles/placepickerstyles.css';
  * Application entry point component
  */
 const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
+	const MenuMobile = dynamic(() => import('../components/menu/menu-mobile'), {
+		ssr: false,
+	});
 	const searchContext = SearchContextProvider();
+
 	return (
 		<>
 			<Provider session={pageProps.session}>
 				<SearchContext.Provider value={searchContext}>
-					<div className='min-h-screen flex flex-col'>
-						<Header />
-						<Component {...pageProps} />
-						<Footer />
+					{<MenuMobile />}
+					<div className='page bg-secondary' id='mobilemenuContent'>
+						<div className='min-h-screen flex flex-col'>
+							<Header />
+							<Component {...pageProps} />
+							<Footer />
+						</div>
 					</div>
 				</SearchContext.Provider>
 			</Provider>

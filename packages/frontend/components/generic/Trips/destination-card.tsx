@@ -1,18 +1,5 @@
-import React, {
-	Dispatch,
-	FC,
-	SetStateAction,
-	useContext,
-	useState,
-} from 'react';
-import Link from 'next/link';
-import ReactPaginate from 'react-paginate';
-import Router from 'next/router';
-import { useRouter } from 'next/router';
-import { ObjectId } from 'bson';
-import Loader from '../../utils/loader';
-import { DoubleRightArrowIcon } from '../../icons/others/double-right-arrow-icon';
-import FlightCard from '../Favourites/flight-card';
+import React, { Dispatch, FC } from 'react';
+import DestinationFlightCard from '../Favourites/destination-flight-card';
 
 type DestinationCardProps = {
 	object: any | null;
@@ -34,7 +21,7 @@ const DestinationCard: FC<DestinationCardProps> = ({ object }) => {
 				)}
 				{object.flight_associated && (
 					<div className='flex px-2 py-1 col-span-3'>
-						<FlightCard object={object.flight_associated} />
+						<DestinationFlightCard object={object.flight_associated} />
 					</div>
 				)}
 			</div>

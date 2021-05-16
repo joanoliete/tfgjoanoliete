@@ -10,11 +10,11 @@ import { useRouter } from 'next/router';
 import { SearchContext } from '../../searchContext/searchContext';
 import { DatePicker, DateRangePicker } from 'react-nice-dates';
 import { enGB } from 'date-fns/locale';
-import 'react-nice-dates/build/style.css';
 import { CalendarIcon } from '../icons/others/calendar-icon';
 import { RightArrowIcon } from '../icons/others/rightarrow-icon';
 import { TRIP_TYPES } from '../../searchContext/searchContextTypes';
 import { LocationToIcon } from '../icons/others/location-to-icon';
+import 'react-nice-dates/build/style.css';
 
 type DatePickerProps = {
 	oneway: string;

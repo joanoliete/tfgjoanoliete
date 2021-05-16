@@ -29,6 +29,7 @@ import { UnFavouritesIcon } from '../../icons/header/unfavourites-icon';
 import { query_history_find_all_of_user } from '../../../gql/queries.gql';
 import { CreateIcon } from '../../icons/others/create-icon';
 import { destination_find_all_of_user } from '../../../gql/trips.gql';
+import { isMobile } from 'react-device-detect';
 
 type ResultCardProps = {
 	object: any | null;
@@ -122,7 +123,7 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 			<div className=' border-gray-200 py-5 align-baseline flex'>
 				<div className='pl-4 pr-3 py-1 font-bold'>USD {object.price}</div>
 
-				<div className=' py-1 flex'>
+				<div className=' py-1 hidden sm:flex'>
 					{object.airlines.map(image => {
 						return (
 							<img
@@ -135,6 +136,21 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 					})}
 				</div>
 
+				{isMobile ? (
+					<div className='py-1'>
+						{object.airlines.map(image => {
+							return (
+								<img
+									className='py-1 h-10 w-8'
+									src={`${
+										'https://images.kiwi.com/airlines/32/' + image + '.png'
+									}`}
+								/>
+							);
+						})}
+					</div>
+				) : null}
+
 				<div className='px-4 py-1 hidden sm:block'>
 					{new Date(object.utc_departure).toLocaleString()}
 				</div>
@@ -144,13 +160,12 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 				</div>
 
 				<div className='pl-4 py-1 '>
-					{object.flyFrom}
+					{object.cityCodeFrom}
 					{' - '}
+					{object.cityCodeTo}
 				</div>
 
-				<div className=' pl-1 py-1 '> {object.flyTo}</div>
-
-				<div className='px-4 pl-8 py-1 '>
+				<div className='px-4 pl-3 py-1 '>
 					{object.route.length == 1
 						? 'Direct'
 						: object.route.length - 1 + ' Stops'}
@@ -172,7 +187,7 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 					</button>
 				)}
 
-				<button onClick={() => setIsOn(!isOn)} className='pr-3 pl-2 py-1'>
+				<button onClick={() => setIsOn(!isOn)} className='sm:px-4 px-2 py-1'>
 					<ExpandIcon className=' fill-current blue cursor-pointer' />
 				</button>
 			</div>

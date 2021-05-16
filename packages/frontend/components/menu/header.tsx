@@ -5,6 +5,7 @@ import { FavouritesIcon } from '../icons/header/favourites-icon';
 import { TripsIcon } from '../icons/header/trips-icon';
 import { MenuIcon } from '../icons/header/menu-icon';
 import Link from 'next/link';
+import { menuController } from '../../node_modules/@ionic/core';
 import { signIn, signOut, useSession } from 'next-auth/client';
 import { LoginIcon } from '../icons/header/login-icon';
 import { LogoutIcon } from '../icons/header/logout-icon';
@@ -111,7 +112,10 @@ const Header: FC<any> = () => {
 								</div>
 							</div>
 						</div>
-						<MenuIcon className='md:hidden h-1_75 fill-current text-white cursor-pointer' />
+						<MenuIcon
+							className='md:hidden h-1_75 fill-current text-white cursor-pointer'
+							onClick={() => menuController.toggle('mobilemenu')}
+						/>
 					</div>
 				</div>
 			</nav>

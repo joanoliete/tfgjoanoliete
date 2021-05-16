@@ -1,4 +1,14 @@
-import React, { FC, useState } from 'react';
+import React, {
+	Dispatch,
+	FC,
+	SetStateAction,
+	useContext,
+	useState,
+} from 'react';
+import Link from 'next/link';
+import ReactPaginate from 'react-paginate';
+import Router from 'next/router';
+import { useRouter } from 'next/router';
 import { ExpandIcon } from '../../icons/others/expand-icon';
 import { FavouritesIcon } from '../../icons/header/favourites-icon';
 import { BuyIcon } from '../../icons/header/buy-icon';
@@ -15,11 +25,11 @@ import {
 	user_favourite_flight_delete,
 } from '../../../gql/favourites.gql';
 
-type FlightCardProps = {
+type DestinationFlightCardProps = {
 	object: any | null;
 };
 
-const FlightCard: FC<FlightCardProps> = ({ object }) => {
+const DestinationFlightCard: FC<DestinationFlightCardProps> = ({ object }) => {
 	const dateNow = new Date().getTime();
 	const [session, loading] = useSession();
 	const [isOn, setIsOn] = useState(false);
@@ -51,34 +61,6 @@ const FlightCard: FC<FlightCardProps> = ({ object }) => {
 			key={object.id}>
 			<div className=' border-gray-200 py-4 align-baseline flex'>
 				<div className='pl-4 py-1 font-bold'>USD {object.price}</div>
-
-				<div className='px-4 py-1  hidden sm:flex'>
-					{object.airlines.map(image => {
-						return (
-							<img
-								className='px-1'
-								src={`${
-									'https://images.kiwi.com/airlines/32/' + image + '.png'
-								}`}
-							/>
-						);
-					})}
-				</div>
-
-				{isMobile ? (
-					<div className='py-1 pl-2'>
-						{object.airlines.map(image => {
-							return (
-								<img
-									className='py-1 h-10 w-8'
-									src={`${
-										'https://images.kiwi.com/airlines/32/' + image + '.png'
-									}`}
-								/>
-							);
-						})}
-					</div>
-				) : null}
 
 				<div className='px-4 py-1 hidden sm:block'>
 					{new Date(object.utc_departure).toLocaleString()}
@@ -118,7 +100,7 @@ const FlightCard: FC<FlightCardProps> = ({ object }) => {
 				{object.route.map(route => {
 					return (
 						<div className='pb-2'>
-							<div className='px-4 py-2 pb-3 border border-gray-300 rounded-md flex'>
+							<div className='px-4 py-2 pb-3 border border-gray-300 rounded-md flex-col'>
 								<p className='pr-1'>
 									{new Date(route.utc_departure).toLocaleDateString()}
 								</p>
@@ -167,4 +149,4 @@ const FlightCard: FC<FlightCardProps> = ({ object }) => {
 	);
 };
 
-export default FlightCard;
+export default DestinationFlightCard;
