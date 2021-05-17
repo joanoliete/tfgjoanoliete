@@ -3,7 +3,7 @@ import { useSession } from 'next-auth/client';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { FC, useEffect } from 'react';
-import { menuController } from '../../node_modules/@ionic/core';
+import { menuController } from '@ionic/core';
 import { FavouritesIcon } from '../icons/header/favourites-icon';
 import { HistoryIcon } from '../icons/header/history-icon';
 import { LoginIcon } from '../icons/header/login-icon';

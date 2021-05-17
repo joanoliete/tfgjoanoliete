@@ -5,12 +5,12 @@ import { FavouritesIcon } from '../icons/header/favourites-icon';
 import { TripsIcon } from '../icons/header/trips-icon';
 import { MenuIcon } from '../icons/header/menu-icon';
 import Link from 'next/link';
-import { menuController } from '../../node_modules/@ionic/core';
 import { signIn, signOut, useSession } from 'next-auth/client';
 import { LoginIcon } from '../icons/header/login-icon';
 import { LogoutIcon } from '../icons/header/logout-icon';
 import { useApolloClient } from '@apollo/react-hooks';
 import { useRouter } from 'next/router';
+import { menuController } from '@ionic/core';
 
 const Header: FC<any> = () => {
 	const [session, loading] = useSession();
