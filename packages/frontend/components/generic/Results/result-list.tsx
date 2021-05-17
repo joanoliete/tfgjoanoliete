@@ -6,6 +6,7 @@ import { useSession } from 'next-auth/client';
 import { useMutation, useQuery } from '@apollo/react-hooks';
 import { query_create_and_user_addition } from '../../../gql/queries.gql';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import { isMobile } from 'react-device-detect';
 
 const ResultsList: FC = () => {
 	const searchContext = useContext(SearchContext);
@@ -53,15 +54,29 @@ const ResultsList: FC = () => {
 				<div className='items-center flex flex-col justify-center'>
 					<h2 className='text-2xl  pb-6 p-4 justify-center '>Searching</h2>
 
-					{/*<Skeleton duration={2} height={75} width='850px' />
-					<Skeleton duration={2} height={75} width='850px' />
-					<Skeleton duration={2} height={75} width='850px' />
-					<Skeleton duration={2} height={75} width='850px' />
-					<Skeleton duration={2} height={75} width='850px' />
-					<Skeleton duration={2} height={75} width='850px' />
-					<Skeleton duration={2} height={75} width='850px' />
-					<Skeleton duration={2} height={75} width='850px' />
-					*/}
+					{!isMobile ? (
+						<>
+							<Skeleton duration={2} height={75} width='700px' />
+							<Skeleton duration={2} height={75} width='700px' />
+							<Skeleton duration={2} height={75} width='700px' />
+							<Skeleton duration={2} height={75} width='700px' />
+							<Skeleton duration={2} height={75} width='700px' />
+							<Skeleton duration={2} height={75} width='700px' />
+							<Skeleton duration={2} height={75} width='700px' />
+							<Skeleton duration={2} height={75} width='700px' />
+						</>
+					) : (
+						<>
+							<Skeleton duration={2} height={90} width='340px' />
+							<Skeleton duration={2} height={90} width='340px' />
+							<Skeleton duration={2} height={90} width='340px' />
+							<Skeleton duration={2} height={90} width='340px' />
+							<Skeleton duration={2} height={90} width='340px' />
+							<Skeleton duration={2} height={90} width='340px' />
+							<Skeleton duration={2} height={90} width='340px' />
+							<Skeleton duration={2} height={90} width='340px' />
+						</>
+					)}
 				</div>
 			</div>
 		</>

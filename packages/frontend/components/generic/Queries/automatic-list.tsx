@@ -8,6 +8,8 @@ import React, {
 import { useQuery } from '@apollo/react-hooks';
 import { automatize_queries } from '../../../gql/queries.gql';
 import ResultCard from '../Results/result-card';
+import Skeleton from 'react-loading-skeleton';
+import { isMobile } from 'react-device-detect';
 
 type AutomaticListProps = {
 	selectedQueries: any | null;
@@ -35,7 +37,24 @@ const AutomaticList: FC<AutomaticListProps> = ({ selectedQueries }) => {
 						</ul>
 					</>
 				) : (
-					<h2 className='text-2xl inset-0 p-4'>Searching results</h2>
+					<>
+						<h2 className='text-2xl inset-0 p-4'>Searching results</h2>
+						{!isMobile ? (
+							<>
+								<Skeleton duration={2} height={75} width='700px' />
+								<Skeleton duration={2} height={75} width='700px' />
+								<Skeleton duration={2} height={75} width='700px' />
+								<Skeleton duration={2} height={75} width='700px' />
+							</>
+						) : (
+							<>
+								<Skeleton duration={2} height={90} width='340px' />
+								<Skeleton duration={2} height={90} width='340px' />
+								<Skeleton duration={2} height={90} width='340px' />
+								<Skeleton duration={2} height={90} width='340px' />
+							</>
+						)}
+					</>
 				)}
 			</div>
 		</div>

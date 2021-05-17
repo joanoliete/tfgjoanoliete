@@ -18,8 +18,8 @@ const MenuMobile: FC = () => {
 
 	useEffect(() => {
 		const handleRouteChange = async () => {
-			(await menuController.isOpen('menuMob')) &&
-				menuController.close('menuMob');
+			(await menuController.isOpen('mobilemenu')) &&
+				menuController.close('mobilemenu');
 		};
 
 		router.events.on('routeChangeStart', handleRouteChange);
