@@ -29,6 +29,7 @@ export class FlightCreateDto {
     route: RouteCreateDTO[];
     airlines: string[];
     price: number;
+    deep_link: string;
 }
 
 export class RouteCreateDTO {
@@ -86,6 +87,7 @@ export class Flight {
     route: Route[];
     airlines: string[];
     price: number;
+    deep_link?: string;
 }
 
 export class Route {

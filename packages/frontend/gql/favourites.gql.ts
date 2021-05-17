@@ -30,6 +30,7 @@ export const favourite_flights_by_user_find_all = gql`
 			}
 			airlines
 			price
+			deep_link
 		}
 	}
 `;

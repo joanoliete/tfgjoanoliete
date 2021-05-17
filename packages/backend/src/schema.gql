@@ -16,6 +16,7 @@ type Flight {
   route: [Route!]!
   airlines: [String!]!
   price: Float!
+  deep_link: String
 }
 
 type Route {
@@ -116,6 +117,7 @@ input FlightCreateDto {
   route: [RouteCreateDTO!]!
   airlines: [String!]!
   price: Float!
+  deep_link: String!
 }
 
 input RouteCreateDTO {

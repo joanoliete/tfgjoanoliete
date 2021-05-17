@@ -42,6 +42,9 @@ export class FlightCreateDto {
 
 	@Field(type => Float)
 	price: number;
+
+	@Field()
+	deep_link: string;
 }
 
 @InputType()

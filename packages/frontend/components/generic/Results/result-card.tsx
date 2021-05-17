@@ -121,7 +121,7 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 			className='text-sm font-normal text-gray-700 border rounded-md border-b-0 shadow-md'
 			key={object.id}>
 			<div className=' border-gray-200 py-5 align-baseline flex'>
-				<div className='pl-4 pr-3 py-1 font-bold'>USD {object.price}</div>
+				<div className='pl-4 pr-3 py-1 font-bold'>EUR {object.price}</div>
 
 				<div className=' py-1 hidden sm:flex'>
 					{object.airlines.map(image => {
@@ -236,14 +236,14 @@ const ResultCard: FC<ResultCardProps> = ({ object }) => {
 					);
 				})}
 
-				<div className='pb-1'>
+				<a href={object.deep_link} target='_blank' className='pb-1'>
 					<button className='p-1 pt-2 pl-2 cursor-pointer border border-gray-900 rounded-md flex hover:bg-gray-900 hover:text-white text-md font-bold'>
 						<a>Book flight</a>
 						<div className='pl-1'>
 							<BuyIcon className='fill-current blue cursor-pointer '></BuyIcon>
 						</div>
 					</button>
-				</div>
+				</a>
 			</div>
 		</li>
 	);

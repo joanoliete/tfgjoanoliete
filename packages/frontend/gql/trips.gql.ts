@@ -38,6 +38,7 @@ export const trip_find_all_of_user = gql`
 					}
 					airlines
 					price
+					deep_link
 				}
 			}
 		}

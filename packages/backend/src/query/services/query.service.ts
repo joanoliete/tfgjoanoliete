@@ -90,7 +90,7 @@ export class QueryService {
 		const finalUrl =
 			'https://tequila-api.kiwi.com/v2/search?' + contextParsedUrl;
 		return await fetch(finalUrl, {
-			headers: { apikey: '4xdovHrJn2tw6M5SZA0CMssmZWi0t5ZZ' },
+			headers: { apikey: 'yPYuWGgZ_S_2gqwxZ41hs-sYtiwaS78R' },
 		})
 			.then(res => res.json())
 			.then(data => data.data);

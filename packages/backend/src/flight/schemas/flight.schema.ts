@@ -41,6 +41,9 @@ export class Flight {
 
 	@prop()
 	price: number;
+
+	@prop()
+	deep_link: string;
 }
 
 export class Route {

@@ -33,6 +33,7 @@ export const query_create_and_user_addition = gql`
 			}
 			airlines
 			price
+			deep_link
 		}
 	}
 `;
@@ -67,6 +68,7 @@ export const automatize_queries = gql`
 			}
 			airlines
 			price
+			deep_link
 		}
 	}
 `;

@@ -45,6 +45,9 @@ export class Flight {
 
 	@Field(type => Float)
 	price: number;
+
+	@Field({ nullable: true })
+	deep_link: string;
 }
 
 @ObjectType()
