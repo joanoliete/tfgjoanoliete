@@ -14,6 +14,7 @@ const History: FC = () => {
 	if (!loadingSession && !session) return <NotFound />;
 
 	const { data, loading } = useQuery(query_history_find_all_of_user, {
+		fetchPolicy: 'network-only',
 		variables: {
 			email: session.user.email,
 		},

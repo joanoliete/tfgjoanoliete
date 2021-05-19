@@ -30,6 +30,7 @@ const ResultsList: FC = () => {
 			context: searchContextObject,
 		},
 	});
+
 	const queryList =
 		data && !loading ? data.query_create_and_user_addition : null;
 
