@@ -1,9 +1,8 @@
-import NextAuth from 'next-auth';
+import NextAuth, { Theme } from 'next-auth';
 import Providers from 'next-auth/providers';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 const options = {
-	theme: 'light',
 	providers: [
 		Providers.Email({
 			server: process.env.EMAIL_SERVER,
@@ -36,6 +35,7 @@ const options = {
 		},
 	},
 	debug: false,
+	theme: 'light' as Theme,
 };
 
 export default (req: NextApiRequest, res: NextApiResponse<any>) =>
