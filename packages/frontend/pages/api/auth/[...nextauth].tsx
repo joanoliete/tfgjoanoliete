@@ -1,17 +1,13 @@
 import NextAuth from 'next-auth';
 import Providers from 'next-auth/providers';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { toast } from 'react-toastify';
 
 const options = {
+	theme: 'light',
 	providers: [
 		Providers.Email({
 			server: process.env.EMAIL_SERVER,
 			from: process.env.EMAIL_FROM,
-		}),
-		Providers.Google({
-			clientId: process.env.GOOGLE_ID,
-			clientSecret: process.env.GOOGLE_SECRET,
 		}),
 	],
 	database: process.env.DATABASE_URL,
