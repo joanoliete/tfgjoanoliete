@@ -29,7 +29,6 @@ const TripTypeSelect: FC<any> = ({}) => {
 							option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
 						}>
 						<Option value={TRIP_TYPES.ONEWAY}>One Way</Option>
-						<Option value={TRIP_TYPES.RETURN}>Round Trip</Option>
 					</Select>
 				</div>
 			</div>

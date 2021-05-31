@@ -64,7 +64,7 @@ export class QueryResolver {
 			context.arrival_ap +
 			'&adults=' +
 			context.adults +
-			'&limit=20&date_from=' +
+			'&limit=40&date_from=' +
 			getFormattedDate(context.departure_date);
 
 		//Search flights in a wrapped API in a service using context info
@@ -98,7 +98,7 @@ export class QueryResolver {
 				query.arrival_ap +
 				'&adults=' +
 				query.adults +
-				'&limit=2&date_from=' +
+				'&limit=3&date_from=' +
 				getFormattedDate(new Date(query.departure_date));
 			//We save best flight
 			results = [

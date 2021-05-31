@@ -25,6 +25,9 @@ const SearchForm: FC<any> = ({ show }) => {
 						<PlacePickers />
 						<DatePickers />
 					</div>
+					<div className='flex flex-wrap justify-center pb-2 '>
+						{/*Little filters, currency, sort and budget*/}
+					</div>
 					<button
 						onClick={() => onClick()}
 						className='bg-gray-800 rounded-full font-bold inline-flex items-center text-white px-6 py-4 hover:bg-gray-700 text-xl '>

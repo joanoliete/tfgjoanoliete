@@ -4,7 +4,6 @@ import { ObjectID } from '../../common/types/objectid.type';
 /**
  * Graphql type: Flights with all its data.
  */
-
 @ObjectType()
 export class Flight {
 	@Field()
