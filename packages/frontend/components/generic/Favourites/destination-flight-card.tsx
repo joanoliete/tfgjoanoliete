@@ -76,11 +76,15 @@ const DestinationFlightCard: FC<DestinationFlightCardProps> = ({ object }) => {
 				</div>
 
 				<div className='px-2 py-1 hidden sm:block'>
-					{new Date(object.utc_departure).toLocaleString()}
+					{new Date(object.utc_departure)
+						.toLocaleString()
+						.slice(0, object.utc_departure.lastIndexOf(':') + 1)}
 				</div>
 
 				<div className='px-4 py-1 hidden sm:block'>
-					{new Date(object.utc_arrival).toLocaleString()}
+					{new Date(object.utc_arrival)
+						.toLocaleString()
+						.slice(0, object.utc_departure.lastIndexOf(':') + 1)}
 				</div>
 
 				<div className='pl-4 py-1 '>
