@@ -12,7 +12,7 @@ RUN lerna bootstrap --hoist
 
 # Copies everything over to Docker environment tests and builds
 COPY . ./
-RUN CI=true npm run test
+RUN npm run test
 RUN npm run build
 
 EXPOSE 3000 3001
