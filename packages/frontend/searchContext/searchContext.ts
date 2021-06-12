@@ -8,7 +8,6 @@ import {
 	TRIP_TYPES,
 	SearchContextState,
 } from './searchContextTypes';
-import { getParser, PARSER_CONFIG } from '.';
 
 const defaultDepartureDate = DateFNS.addDays(new Date(), 1);
 const defaultReturnDate = DateFNS.addDays(defaultDepartureDate, 2);
@@ -32,9 +31,6 @@ export const defaultState: SearchContextState = {
 	tripType: TRIP_TYPES.ONEWAY,
 	travelFrom: defaultPlaces.origin,
 	travelTo: defaultPlaces.departure,
-	//isNightsInDestinationSelected: false,
-	//nightsInDestinationFrom: 3,
-	//nightsInDestinationTo: 6,
 	dateFrom: defaultDepartureDate,
 	dateTo: defaultDepartureDate,
 	//sortBy: 'QUALITY',
@@ -68,28 +64,6 @@ export const SearchContextProvider = () => {
 	const setTravelFrom = (travelFrom: Location) => settravelFrom(travelFrom);
 	const setTravelTo = (travelTo: Location) => settravelTo(travelTo);
 	const setAdults = (adults: number) => setadults(adults);
-
-	function getDefaultState(routerQuery?: ParseFieldsParams) {
-		const derivedStateFromURL = parseURLqueryToState(routerQuery);
-		return {
-			...defaultState,
-			...derivedStateFromURL,
-		};
-	}
-
-	function parseURLqueryToState(query: any) {
-		const queryKeys = Object.keys(query);
-
-		return queryKeys.reduce((acc, key) => {
-			const parserType = PARSER_CONFIG[key];
-			if (parserType) {
-				const parser = getParser(parserType);
-
-				return { [key]: parser(query[key]), ...acc };
-			}
-			return acc;
-		}, {});
-	}
 
 	return {
 		tripType,

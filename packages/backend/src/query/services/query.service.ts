@@ -15,7 +15,7 @@ import { UserService } from './../../user/services/user.service';
 import { QueryCreateDto } from '../dto/query-create.dto';
 import { query } from 'express';
 import fetch from 'node-fetch';
-import { Flight } from 'src/flight/gqltypes/flight.gqlype';
+import { Flight } from '../../flight/gqltypes/flight.gqlype';
 
 /**
  * Service for communicating with the Query database
@@ -106,7 +106,9 @@ export class QueryService {
 		queryId: ObjectID
 	): Promise<void> {
 		const user = await this.userService.findByEmail(email);
+		const query = await this.findById(queryId);
 		if (!user) throw new NotFoundException('User does not exist');
+		if (!query) throw new NotFoundException('Query does not exist');
 
 		//We delete object from database
 		await this.queryModel.deleteOne({ _id: queryId });

@@ -3,13 +3,9 @@ import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
 import { AppModule } from './../src/app.module';
 import { gql } from 'graphql-request';
-import { MongoMemoryReplSet } from 'mongodb-memory-server';
-import { connect, disconnect } from 'mongoose';
 import { mongoose } from '@typegoose/typegoose';
 import { MongoClient } from 'mongodb';
 require('dotenv/config');
-
-let sessionToken;
 
 describe('All tests (e2e)', () => {
 	let app: INestApplication;
@@ -18,7 +14,7 @@ describe('All tests (e2e)', () => {
 
 	beforeEach(async () => {
 		//Setting up Database
-		connection = await MongoClient.connect(process.env.DATABASE_URI, {
+		connection = await MongoClient.connect(process.env.DATABASE_URI_TESTING, {
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
 		});
@@ -32,12 +28,7 @@ describe('All tests (e2e)', () => {
 		await app.init();
 	});
 
-	it('/ (GET)', () => {
-		return request(app.getHttpServer()).get('/flight').expect(404);
-	});
-
-	//Can nextAuth be tested? Does it need to be inicialized and be passed as a header?
-	it('Mocking registering a user', async () => {
+	it('Mock user', async () => {
 		const users = db.collection('users');
 		const flights = db.collection('flights');
 		const queryobjects = db.collection('queryobjects');
@@ -74,14 +65,51 @@ describe('All tests (e2e)', () => {
 						flight_create_and_user_addition(
 							email: "olietetejedor@gmail.com"
 							flightData: {
-								url_reference: "http://link.com"
-								fly_from: "BCN"
-								fly_to: "MDR"
-								date_from: "1990/07/15"
-								date_to: "1990/07/15"
-								adults: 4
-								children: 4
-								price: 4.0
+								id: "01af032d496800001353250e_0|032d0a2249690000b759e9e3_0"
+								flyFrom: "BCN"
+								flyTo: "MAD"
+								cityFrom: "Barcelona"
+								cityCodeFrom: "BCN"
+								cityTo: "Madrid"
+								cityCodeTo: "MAD"
+								distance: 483.25
+								price: 20
+								airlines: ["FR"]
+								route: [
+									{
+										id: "01af032d496800001353250e_0"
+										flyFrom: "BCN"
+										flyTo: "STN"
+										cityFrom: "Barcelona"
+										cityCodeFrom: "BCN"
+										cityTo: "London"
+										cityCodeTo: "LON"
+										airline: "FR"
+										flight_no: 9815
+										local_arrival: "2021-06-14T20:35:00.000Z"
+										utc_arrival: "2021-06-14T19:35:00.000Z"
+										local_departure: "2021-06-14T19:15:00.000Z"
+										utc_departure: "2021-06-14T17:15:00.000Z"
+									}
+									{
+										id: "032d0a2249690000b759e9e3_0"
+										flyFrom: "STN"
+										flyTo: "MAD"
+										cityFrom: "London"
+										cityCodeFrom: "LON"
+										cityTo: "Madrid"
+										cityCodeTo: "MAD"
+										airline: "FR"
+										flight_no: 5992
+										local_arrival: "2021-06-15T09:45:00.000Z"
+										utc_arrival: "2021-06-15T07:45:00.000Z"
+										local_departure: "2021-06-15T06:25:00.000Z"
+										utc_departure: "2021-06-15T05:25:00.000Z"
+									}
+								]
+								utc_arrival: "2021-06-15T07:45:00.000Z"
+								utc_departure: "2021-06-14T17:15:00.000Z"
+								deep_link: "www.google.com"
 							}
 						)
 					}
@@ -98,7 +126,7 @@ describe('All tests (e2e)', () => {
 					mutation {
 						user_favourite_flight_delete(
 							email: "olietetejedor@gmail.com"
-							url_reference: "http://link.com"
+							id: "01af032d496800001353250e_0|032d0a2249690000b759e9e3_0"
 						)
 					}
 				`,
@@ -115,7 +143,7 @@ describe('All tests (e2e)', () => {
 						favourite_flights_by_user_find_all(
 							email: "olietetejedor@gmail.com"
 						) {
-							url_reference
+							id
 						}
 					}
 				`,
@@ -131,17 +159,18 @@ describe('All tests (e2e)', () => {
 			.post('/graphql')
 			.send({
 				query: gql`
-					mutation {
+					query {
 						query_create_and_user_addition(
 							email: "olietetejedor@gmail.com"
-							queryData: {
-								departure_ap: "MDR"
-								arrival_ap: "BCN"
-								departure_date: "1990/07/15"
-								arrival_date: "1990/07/15"
-								adults: 4
+							context: {
+								departure_ap: "BCN"
+								arrival_ap: "MAH"
+								departure_date: "2021-06-13T10:56:01.982Z"
+								adults: 1
 							}
-						)
+						) {
+							id
+						}
 					}
 				`,
 			})
@@ -161,7 +190,10 @@ describe('All tests (e2e)', () => {
 					}
 				`,
 			})
-			.expect(200);
+			.expect(200)
+			.expect(({ body }) => {
+				expect(body.errors[0].message).toBe('Query does not exist');
+			});
 	});
 
 	it('Query history - Get all from a user', () => {
@@ -202,13 +234,12 @@ describe('All tests (e2e)', () => {
 			.expect(200);
 	});
 
-	//Va bé pero per testejarlo cal crear un mock al inici
 	it('Trips - Modify one from a user', () => {
 		return request(app.getHttpServer())
 			.post('/graphql')
 			.send({
 				query: gql`
-					query {
+					mutation {
 						trip_modify(
 							tripId: "60438ee93e7e2826ccef83e3"
 							tripData: {
@@ -219,7 +250,10 @@ describe('All tests (e2e)', () => {
 					}
 				`,
 			})
-			.expect(400);
+			.expect(200)
+			.expect(({ body }) => {
+				expect(body.errors[0].message).toBe('Trip not found');
+			});
 	});
 
 	it('Trips - Delete one of user', () => {
@@ -235,7 +269,10 @@ describe('All tests (e2e)', () => {
 					}
 				`,
 			})
-			.expect(200);
+			.expect(200)
+			.expect(({ body }) => {
+				expect(body.errors[0].message).toBe('Trip does not exist');
+			});
 	});
 
 	it('Trips - Get all from a user', () => {
@@ -256,29 +293,6 @@ describe('All tests (e2e)', () => {
 			});
 	});
 
-	it('Destination - Add destination to a user trip', async () => {
-		return request(app.getHttpServer())
-			.post('/graphql')
-			.send({
-				query: gql`
-					mutation {
-						destination_create_and_trip_addition(
-							tripId: "604399d812b5f91b4cc33c0d"
-							destinationData: {
-								city: "Barcelona"
-								aeroport: "BCN"
-								arrival_date: "2017-01-22"
-							}
-						)
-					}
-				`,
-			})
-			.expect(200)
-			.expect(({ body }) => {
-				expect(body.errors[0].message).toBe('Trip does not exist');
-			});
-	});
-
 	it('Destination - Delete destination to a user trip', async () => {
 		return request(app.getHttpServer())
 			.post('/graphql')
@@ -296,25 +310,6 @@ describe('All tests (e2e)', () => {
 			.expect(({ body }) => {
 				expect(body.errors[0].message).toBe('Trip does not exist');
 			});
-	});
-
-	it('Destination - Modify one from a user trip', () => {
-		return request(app.getHttpServer())
-			.post('/graphql')
-			.send({
-				query: gql`
-					query {
-						trip_modify(
-							tripId: "60438ee93e7e2826ccef83e3"
-							tripData: {
-								name: "ViatgeModificat"
-								description: "Volta al món modificat"
-							}
-						)
-					}
-				`,
-			})
-			.expect(400);
 	});
 
 	afterAll(async () => {

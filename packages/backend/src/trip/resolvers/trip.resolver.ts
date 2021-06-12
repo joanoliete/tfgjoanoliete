@@ -4,8 +4,8 @@ import { Destination, Trip } from '../gqltypes/trip.gqltype';
 import { TripService } from '../services/trip.service';
 import { ObjectID } from '../../common/types/objectid.type';
 import { TripModifyDto } from '../dto/trip-modify.dto';
-import { FlightCreateDto } from 'src/flight/dto/flight-create.dto';
-import { Flight } from 'src/flight/gqltypes/flight.gqlype';
+import { FlightCreateDto } from '../../flight/dto/flight-create.dto';
+import { Flight } from '../../flight/gqltypes/flight.gqlype';
 
 @Resolver(() => Trip)
 export class TripResolver {

@@ -13,7 +13,6 @@ import { enGB } from 'date-fns/locale';
 import { CalendarIcon } from '../icons/others/calendar-icon';
 import { RightArrowIcon } from '../icons/others/rightarrow-icon';
 import { TRIP_TYPES } from '../../searchContext/searchContextTypes';
-import { LocationToIcon } from '../icons/others/location-to-icon';
 import 'react-nice-dates/build/style.css';
 
 type DatePickerProps = {

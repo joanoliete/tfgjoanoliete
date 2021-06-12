@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypegooseModule } from 'nestjs-typegoose';
-import { Flight } from 'src/flight/schemas/flight.schema';
+import { Flight } from './../flight/schemas/flight.schema';
 import { UserModule } from '../user/users.module';
 import { TripController } from './controller/trip.controller';
 import { TripProviders } from './providers/trip.provider';

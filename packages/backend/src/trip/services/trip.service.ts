@@ -9,15 +9,11 @@ import { InjectModel } from 'nestjs-typegoose';
 import { Destination, Trip } from '../schemas/trip.schema';
 import { ReturnModelType } from '@typegoose/typegoose';
 import { ObjectID } from '../../common/types/objectid.type';
-import { Errors } from '../../common/enums/errors.enum';
 import { DocumentType, Ref } from '@typegoose/typegoose/lib/types';
 import { UserService } from './../../user/services/user.service';
 import { DestinationCreateDto, TripCreateDto } from '../dto/trip-create.dto';
 import { TripModifyDto } from '../dto/trip-modify.dto';
-import { id } from 'date-fns/locale';
-import { FlightCreateDto } from 'src/flight/dto/flight-create.dto';
-import { User } from 'src/user/schemas/user.schema';
-import { Flight } from 'src/flight/schemas/flight.schema';
+import { Flight } from '../../flight/schemas/flight.schema';
 
 /**
  * Service for communicating with the Trip database
@@ -116,7 +112,9 @@ export class TripService {
 	 */
 	async deleteTripFromUser(email: string, tripId: ObjectID): Promise<void> {
 		const user = await this.userService.findByEmail(email);
+		const trip = await this.findTripById(tripId);
 		if (!user) throw new NotFoundException('User does not exist');
+		if (!trip) throw new NotFoundException('Trip does not exist');
 
 		//We delete trip object from database
 		await this.tripModel.deleteOne({ _id: tripId });

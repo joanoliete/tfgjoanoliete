@@ -1,6 +1,5 @@
 import { Args, ID, Mutation, Query, Resolver } from '@nestjs/graphql';
-import { kMaxLength } from 'node:buffer';
-import { Flight } from 'src/flight/gqltypes/flight.gqlype';
+import { Flight } from '../../flight/gqltypes/flight.gqlype';
 import { ObjectID } from '../../common/types/objectid.type';
 import { UserService } from '../../user/services/user.service';
 import { QueryCreateDto } from '../dto/query-create.dto';

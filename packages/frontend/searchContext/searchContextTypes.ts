@@ -4,9 +4,6 @@ export interface StateParamsType {
 	tripType: string;
 	travelFrom: Location;
 	travelTo: Location;
-	//isNightsInDestinationSelected: boolean;
-	//nightsInDestinationFrom: number;
-	//nightsInDestinationTo: number;
 	dateFrom: Date;
 	//sortBy: string;
 	//limit: number;
