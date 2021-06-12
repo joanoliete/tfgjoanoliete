@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  cd/ci:
+  cd_ci:
     name: Push Docker image to GitHub Packages
     runs-on: ubuntu-latest
     steps:
