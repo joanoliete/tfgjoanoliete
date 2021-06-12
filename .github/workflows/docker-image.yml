@@ -7,7 +7,17 @@ on:
     branches: [main]
 
 jobs:
-  push_to_registry:
+  ci:
+    runs-on: ubuntu-latest
+    container:
+      image: node
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install & Tests
+        run: |
+          lerna bootstrap --hoist
+          npm run test
+  cd:
     name: Push Docker image to GitHub Packages
     runs-on: ubuntu-latest
     steps:

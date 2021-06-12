@@ -10,7 +10,7 @@ COPY packages/frontend ./packages/frontend
 COPY package.json package-lock.json lerna.json ./
 RUN lerna bootstrap --hoist
 
-# Copies everything over to Docker environment
+# Copies everything over to Docker environment tests and builds
 COPY . ./
 RUN npm run build
 
