@@ -1,4 +1,4 @@
-import NextAuth, { Theme } from 'next-auth';
+import NextAuth from 'next-auth';
 import Providers from 'next-auth/providers';
 import { NextApiRequest, NextApiResponse } from 'next';
 
@@ -35,7 +35,7 @@ const options = {
 		},
 	},
 	debug: false,
-	theme: 'light' as Theme,
+	//theme: 'light' as Theme,
 };
 
 export default (req: NextApiRequest, res: NextApiResponse<any>) =>
