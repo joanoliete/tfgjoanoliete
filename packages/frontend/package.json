@@ -44,7 +44,7 @@
     "@types/yup": "^0.29.11",
     "antd": "^4.15.1",
     "date-fns": "^2.19.0",
-    "formik": "^2.2.6",
+    "formik": "^2.2.6"
   },
   "devDependencies": {
     "@types/next-auth": "^3.1.20",
