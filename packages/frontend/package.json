@@ -34,7 +34,17 @@
     "react-dom": "17.0.1",
     "react-paginate": "^7.0.0",
     "tailwindcss": "^2.0.3",
-    "typescript": "^4.1.2"
+    "typescript": "^4.1.2",
+    "react-loading-skeleton": "^2.2.0",
+    "react-nice-dates": "^3.1.0",
+    "react-router-dom": "^5.2.0",
+    "react-select": "^4.3.0",
+    "react-toastify": "^7.0.3",
+    "yup": "^0.32.9",
+    "@types/yup": "^0.29.11",
+    "antd": "^4.15.1",
+    "date-fns": "^2.19.0",
+    "formik": "^2.2.6",
   },
   "devDependencies": {
     "@types/next-auth": "^3.1.20",
@@ -45,7 +55,9 @@
     "eslint": "^7.12.1",
     "eslint-config-prettier": "7.2.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "2.2.0"
+    "prettier": "2.2.0",
+    "@tailwindcss/custom-forms": "^0.2.1",
+    "typescript": "^4.1.2"
   },
   "resolutions": {
     "typeorm": "0.3.0-alpha.24"
