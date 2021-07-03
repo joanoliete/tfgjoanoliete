@@ -47,6 +47,7 @@ export class QueryResolver {
 				departure_ap: context.departure_ap,
 				arrival_ap: context.arrival_ap,
 				departure_date: context.departure_date,
+				arrival_date: context.arrival_date,
 				adults: context.adults,
 			};
 			await this.queryService.createHistoryQueryAndAddition(
@@ -64,7 +65,9 @@ export class QueryResolver {
 			'&adults=' +
 			context.adults +
 			'&limit=40&date_from=' +
-			getFormattedDate(context.departure_date);
+			getFormattedDate(context.departure_date) +
+			'&date_to=' +
+			getFormattedDate(context.arrival_date);
 
 		//Search flights in a wrapped API in a service using context info
 		const results = await this.queryService.searchProviderApiContext(url);

@@ -11,6 +11,7 @@ import {
 	SearchContext,
 	SearchContextProvider,
 } from '../../frontend/searchContext/searchContext';
+import { isMobile } from 'react-device-detect';
 import dynamic from 'next/dynamic';
 import './../styles/datepickerstyles.css';
 import './../styles/placepickerstyles.css';
@@ -28,7 +29,7 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
 		<>
 			<Provider session={pageProps.session}>
 				<SearchContext.Provider value={searchContext}>
-					{<MenuMobile />}
+					{isMobile ? <MenuMobile /> : null}
 					<div className='page bg-secondary' id='mobilemenuContent'>
 						<div className='min-h-screen flex flex-col'>
 							<Header />
